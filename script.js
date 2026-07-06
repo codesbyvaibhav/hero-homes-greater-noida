@@ -219,15 +219,15 @@ function closeEnquiryModal() {
   }
 }
 
-// Exit intent popup handles
+// Exit intent / Delayed popup handles
 const popupOverlay = document.getElementById('popup-overlay');
 let popupShown = false;
 
 function initExitIntent() {
-  // Show popup after 15 seconds if not closed/shown
+  // Show popup after 5 seconds if not already shown this session
   setTimeout(() => {
     triggerPopup();
-  }, 15000);
+  }, 5000);
 
   // Exit intent: cursor leaving window boundary top
   document.addEventListener('mouseleave', (e) => {
@@ -239,24 +239,23 @@ function initExitIntent() {
 
 function triggerPopup() {
   if (popupShown) return;
-  const isLocalStorageSupported = typeof Storage !== 'undefined';
   
-  if (isLocalStorageSupported && localStorage.getItem('hero_popup_displayed')) {
-    return; // Don't annoy the user
+  if (sessionStorage.getItem('hero_popup_displayed')) {
+    return; // Already shown this session
   }
 
   if (popupOverlay) {
     popupOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
     popupShown = true;
-    if (isLocalStorageSupported) {
-      localStorage.setItem('hero_popup_displayed', 'true');
-    }
+    sessionStorage.setItem('hero_popup_displayed', 'true');
   }
 }
 
 function closePopup() {
   if (popupOverlay) {
     popupOverlay.classList.remove('active');
+    document.body.style.overflow = '';
   }
 }
 
