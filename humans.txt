@@ -1,0 +1,27 @@
+/* TEAM */
+
+Site: Hero Homes Greater Noida
+Developer: Vaibhav Pandey
+Role: Web Developer & SEO Specialist
+Email: hello@herohomenoida.com
+Website: https://herohomenoida.com
+
+/* TECHNOLOGY */
+
+HTML5
+CSS3
+JavaScript
+Cloudflare Pages
+
+/* SEO */
+
+Structured Data (Schema.org)
+Open Graph
+Twitter Cards
+Core Web Vitals Optimized
+
+/* THANKS */
+
+Hero Realty
+Cloudflare
+Google Maps
