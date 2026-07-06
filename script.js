@@ -65,9 +65,30 @@ document.addEventListener('DOMContentLoaded', () => {
       initExitIntent();
       initEmiCalculator();
       initInvestmentCalculator();
+      initGalleryScrollIndicator();
+    });
+
   });
 
-});
+  function initGalleryScrollIndicator() {
+    const galleryContainer = document.querySelector('.gallery-container');
+    const galleryThumb = document.getElementById('gallery-scrollbar-thumb');
+
+    if (galleryContainer && galleryThumb) {
+      const updateThumb = () => {
+        const maxScroll = galleryContainer.scrollWidth - galleryContainer.clientWidth;
+        if (maxScroll <= 0) return;
+        const scrollRatio = galleryContainer.scrollLeft / maxScroll;
+        // Thumb is 30% wide, so it moves between 0% and 70%
+        const thumbLeft = scrollRatio * 70;
+        galleryThumb.style.left = `${thumbLeft}%`;
+      };
+
+      galleryContainer.addEventListener('scroll', updateThumb, { passive: true });
+      window.addEventListener('resize', updateThumb, { passive: true });
+      updateThumb();
+    }
+  }
 
 // ==========================================
 // TABS SWITCHER (FLOOR PLANS)
