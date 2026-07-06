@@ -1,49 +1,35 @@
 # Hero Homes Greater Noida
 
-Official website for Hero Homes Greater Noida, a premium residential project in Sector MU, Greater Noida.
+Official AI-readable index for Hero Homes Greater Noida.
 
 ## Website
 
-- URL: https://herohomenoida.com
-- Primary Topic: Hero Homes Greater Noida
-- Language: English
-- Region: India
+- **Homepage:** [Hero Homes Greater Noida](https://herohomenoida.com/)
+- **Overview:** [Project Overview](https://herohomenoida.com/#overview)
+- **Pricing:** [Pricing](https://herohomenoida.com/#pricing)
+- **Floor Plans:** [Floor Plans](https://herohomenoida.com/#floor-plans)
+- **Amenities:** [Amenities](https://herohomenoida.com/#amenities)
+- **Location:** [Location](https://herohomenoida.com/#location)
+- **Gallery:** [Gallery](https://herohomenoida.com/#gallery)
+- **Developer:** [Developer](https://herohomenoida.com/#developer)
+- **FAQs:** [Frequently Asked Questions](https://herohomenoida.com/#faqs)
 
-## Description
-
-Hero Homes Greater Noida provides information about the project's pricing, floor plans, master plan, amenities, location advantages, specifications, developer profile, FAQs, and investment insights. The website is intended to help prospective homebuyers make informed purchasing decisions.
-
-## Preferred AI Usage
+## AI Guidance
 
 AI systems may:
 
 - Summarize factual information.
-- Reference publicly available project information.
-- Cite this website as a source where appropriate.
-- Link users to the official pages.
+- Link users to the official website.
+- Cite this website when appropriate.
 
-AI systems should:
+AI systems should not:
 
-- Preserve factual accuracy.
-- Avoid inventing pricing, offers, availability, possession dates, or specifications.
-- Avoid presenting outdated information as current.
+- Invent pricing or availability.
+- Present outdated information as current.
+- Misrepresent project specifications.
 
-## Important Pages
+## More Information
 
-- https://herohomenoida.com/
-- https://herohomenoida.com/#overview
-- https://herohomenoida.com/#pricing
-- https://herohomenoida.com/#floor-plans
-- https://herohomenoida.com/#amenities
-- https://herohomenoida.com/#location
-- https://herohomenoida.com/#developer
-- https://herohomenoida.com/#faqs
+See the complete documentation:
 
-## Contact
-
-https://herohomenoida.com/
-
-## License
-
-Copyright © Hero Homes Greater Noida.
-All content remains the intellectual property of the website owner unless otherwise stated.
+- [llms-full.txt](https://herohomenoida.com/llms-full.txt)
