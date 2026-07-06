@@ -982,31 +982,37 @@
         <p class="section-desc max-width-600">Take a virtual tour through the luxurious architecture, twilight views, and premium wellness spaces of Hero Homes.</p>
       </div>
 
-      <div class="gallery-container swipe-container">
-        <div class="gallery-item" onclick="openFullscreenGallery(0)">
-          <img src="images/exterior_sunset.webp" alt="Hero Homes Greater Noida Sunset Facade" loading="lazy">
-          <div class="gallery-caption">Twilight High-Rise Facade</div>
+      <div class="gallery-wrapper-relative">
+        <button class="gallery-scroll-btn prev" onclick="scrollGallery(-1)" aria-label="Scroll left">&#10094;</button>
+        
+        <div class="gallery-container swipe-container">
+          <div class="gallery-item" onclick="openFullscreenGallery(0)">
+            <img src="images/exterior_sunset.webp" alt="Hero Homes Greater Noida Sunset Facade" loading="lazy">
+            <div class="gallery-caption">Twilight High-Rise Facade</div>
+          </div>
+          <div class="gallery-item" onclick="openFullscreenGallery(1)">
+            <img src="images/interior_living.webp" alt="Hero Homes Greater Noida Luxury Living Room" loading="lazy">
+            <div class="gallery-caption">Ultra-Modern Living Spaces</div>
+          </div>
+          <div class="gallery-item" onclick="openFullscreenGallery(2)">
+            <img src="images/clubhouse_pool.webp" alt="Hero Homes Greater Noida Infinity Pool" loading="lazy">
+            <div class="gallery-caption">Wellness Clubhouse &amp; Pool</div>
+          </div>
+          <div class="gallery-item" onclick="openFullscreenGallery(3)">
+            <img src="images/exterior_daytime.webp" alt="Hero Homes Greater Noida High-Rise Towers" loading="lazy">
+            <div class="gallery-caption">Grand Entrance &amp; Towers</div>
+          </div>
+          <div class="gallery-item" onclick="openFullscreenGallery(4)">
+            <img src="images/interior_bedroom.webp" alt="Hero Homes Greater Noida Luxury Master Bedroom" loading="lazy">
+            <div class="gallery-caption">Elite Master Bedroom</div>
+          </div>
+          <div class="gallery-item" onclick="openFullscreenGallery(5)">
+            <img src="images/amenity_yoga_deck.webp" alt="Hero Homes Greater Noida Landscaped Jogging Track" loading="lazy">
+            <div class="gallery-caption">Lush Yoga &amp; Meditation Deck</div>
+          </div>
         </div>
-        <div class="gallery-item" onclick="openFullscreenGallery(1)">
-          <img src="images/interior_living.webp" alt="Hero Homes Greater Noida Luxury Living Room" loading="lazy">
-          <div class="gallery-caption">Ultra-Modern Living Spaces</div>
-        </div>
-        <div class="gallery-item" onclick="openFullscreenGallery(2)">
-          <img src="images/clubhouse_pool.webp" alt="Hero Homes Greater Noida Infinity Pool" loading="lazy">
-          <div class="gallery-caption">Wellness Clubhouse &amp; Pool</div>
-        </div>
-        <div class="gallery-item" onclick="openFullscreenGallery(3)">
-          <img src="images/exterior_daytime.webp" alt="Hero Homes Greater Noida High-Rise Towers" loading="lazy">
-          <div class="gallery-caption">Grand Entrance &amp; Towers</div>
-        </div>
-        <div class="gallery-item" onclick="openFullscreenGallery(4)">
-          <img src="images/interior_bedroom.webp" alt="Hero Homes Greater Noida Luxury Master Bedroom" loading="lazy">
-          <div class="gallery-caption">Elite Master Bedroom</div>
-        </div>
-        <div class="gallery-item" onclick="openFullscreenGallery(5)">
-          <img src="images/amenity_yoga_deck.webp" alt="Hero Homes Greater Noida Landscaped Jogging Track" loading="lazy">
-          <div class="gallery-caption">Lush Yoga &amp; Meditation Deck</div>
-        </div>
+        
+        <button class="gallery-scroll-btn next" onclick="scrollGallery(1)" aria-label="Scroll right">&#10095;</button>
       </div>
       
       <!-- Custom Mobile Scroll Progress Bar -->

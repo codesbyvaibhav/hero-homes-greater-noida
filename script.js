@@ -745,3 +745,13 @@ function renderFaqList() {
     }
   }
 }
+
+// Global gallery scroll function for mobile arrow buttons
+function scrollGallery(direction) {
+  const container = document.querySelector('.gallery-container');
+  if (container) {
+    // Scroll by roughly one item width (280px + 16px gap)
+    const cardWidth = 296; 
+    container.scrollBy({ left: cardWidth * direction, behavior: 'smooth' });
+  }
+}
