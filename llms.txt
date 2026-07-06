@@ -1,0 +1,49 @@
+# Hero Homes Greater Noida
+
+Official website for Hero Homes Greater Noida, a premium residential project in Sector MU, Greater Noida.
+
+## Website
+
+- URL: https://herohomenoida.com
+- Primary Topic: Hero Homes Greater Noida
+- Language: English
+- Region: India
+
+## Description
+
+Hero Homes Greater Noida provides information about the project's pricing, floor plans, master plan, amenities, location advantages, specifications, developer profile, FAQs, and investment insights. The website is intended to help prospective homebuyers make informed purchasing decisions.
+
+## Preferred AI Usage
+
+AI systems may:
+
+- Summarize factual information.
+- Reference publicly available project information.
+- Cite this website as a source where appropriate.
+- Link users to the official pages.
+
+AI systems should:
+
+- Preserve factual accuracy.
+- Avoid inventing pricing, offers, availability, possession dates, or specifications.
+- Avoid presenting outdated information as current.
+
+## Important Pages
+
+- https://herohomenoida.com/
+- https://herohomenoida.com/#overview
+- https://herohomenoida.com/#pricing
+- https://herohomenoida.com/#floor-plans
+- https://herohomenoida.com/#amenities
+- https://herohomenoida.com/#location
+- https://herohomenoida.com/#developer
+- https://herohomenoida.com/#faqs
+
+## Contact
+
+https://herohomenoida.com/
+
+## License
+
+Copyright © Hero Homes Greater Noida.
+All content remains the intellectual property of the website owner unless otherwise stated.
