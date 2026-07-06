@@ -9,13 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set up Header Scroll effect
   const header = document.getElementById('main-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  let ticking = false;
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+        ticking = false;
+      });
+      ticking = true;
     }
-  });
+  }, { passive: true });
 
   // Mobile Menu Toggle
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -339,6 +343,7 @@ function handleFormSubmit(event, formName) {
 // MOBILE BOTTOM SHEET CAPTURE & DRAG GESTURES
 // ==========================================
 let currentSheetStep = 1;
+let cachedSheetHeight = 0;
 
 function openBottomSheetForm(source) {
   const backdrop = document.getElementById('mobile-bottom-sheet-backdrop');
@@ -359,6 +364,9 @@ function openBottomSheetForm(source) {
     sheet.classList.add('active');
     document.body.style.overflow = 'hidden';
     sheet.style.bottom = '0px'; // Reset any drag transformations
+  }
+  if (sheet) {
+    cachedSheetHeight = sheet.offsetHeight;
   }
 }
 
@@ -448,26 +456,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const deltaY = currentY - startY;
       
       if (deltaY > 0) {
-        sheet.style.bottom = `-${deltaY}px`;
+        sheet.style.transform = `translateY(${deltaY}px)`;
       }
     }, { passive: true });
     
-    dragZone.addEventListener('touchend', (e) => {
-      if (!isDragging) return;
-      isDragging = false;
-      sheet.style.transition = 'bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-      
-      const deltaY = currentY - startY;
-      const sheetHeight = sheet.offsetHeight;
-      
-      if (deltaY > sheetHeight * 0.20 && currentY !== 0) {
+    dragZone.addEventListener('touchend', () => {
+    if (!isDragging) return;
+
+    isDragging = false;
+    sheet.style.transition = 'bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+
+    const deltaY = currentY - startY;
+
+    if (deltaY > cachedSheetHeight * 0.20 && currentY !== 0) {
         closeBottomSheetForm();
-      } else {
-        sheet.style.bottom = '0px'; // Bounce back up
-      }
-      startY = 0;
-      currentY = 0;
-    });
+    } else {
+        sheet.style.bottom = '0px';
+    }
+
+    startY = 0;
+    currentY = 0;
+  });
   }
   
   // Intercept bottom sheet form submission to close it
