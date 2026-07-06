@@ -2959,3 +2959,128 @@ input[type="range"]::-webkit-slider-thumb:hover {
   text-align: left !important;
   flex-grow: 1 !important;
 }
+
+/* ==========================================
+   PRODUCTION LEAD CAPTURE & SECURITY STYLES
+   ========================================== */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+}
+.toast-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+  max-width: 380px;
+  border-left: 4px solid #64748B;
+  transform: translateX(120%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+.toast-alert.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+.toast-alert.success {
+  border-left-color: #10B981; /* Green */
+}
+.toast-alert.error {
+  border-left-color: #EF4444; /* Red */
+}
+.toast-alert .toast-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.toast-alert .toast-message {
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* Math CAPTCHA UI element */
+.form-captcha-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-small);
+  background-color: var(--color-bg-white);
+  margin-bottom: 12px;
+}
+.captcha-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.captcha-label span.math-question {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.captcha-input {
+  width: 70px !important;
+  text-align: center;
+  padding: 8px !important;
+  margin: 0 !important;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+}
+
+/* Button Loading indicator */
+.btn-primary.submitting {
+  position: relative !important;
+  pointer-events: none !important;
+  color: transparent !important;
+}
+.btn-primary.submitting::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: btnSpinner 0.6s linear infinite;
+}
+@keyframes btnSpinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    min-width: 0;
+  }
+  .toast-alert {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

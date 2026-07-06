@@ -2,6 +2,10 @@
 // INITIALIZATION
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+  // Capture campaign details & generate math security challenges
+  captureUtmParameters();
+  initializeAllCaptchas();
+
   // Initialize Lucide Icons
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -292,6 +296,87 @@ window.addEventListener('click', (e) => {
 });
 
 // ==========================================
+// TOAST ALERT NOTIFICATION SYSTEM
+// ==========================================
+function showToast(message, type = 'success') {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = `toast-alert ${type}`;
+  
+  const icon = type === 'success' 
+    ? `<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`
+    : `<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`;
+
+  toast.innerHTML = `
+    ${icon}
+    <div class="toast-message">${message}</div>
+  `;
+
+  container.appendChild(toast);
+  setTimeout(() => toast.classList.add('show'), 50);
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    toast.addEventListener('transitionend', () => toast.remove());
+  }, 4000);
+}
+
+// ==========================================
+// STATELESS MATH CAPTCHA SECURITY
+// ==========================================
+function generateCaptchaForForm(form) {
+  const labelSpan = form.querySelector('.math-question');
+  const inputN1 = form.querySelector('input[name="captcha_n1"]');
+  const inputN2 = form.querySelector('input[name="captcha_n2"]');
+  const inputAns = form.querySelector('input[name="captcha_ans"]');
+
+  if (!labelSpan || !inputN1 || !inputN2) return;
+
+  const num1 = Math.floor(Math.random() * 8) + 2;
+  const num2 = Math.floor(Math.random() * 9) + 1;
+
+  labelSpan.innerText = `${num1} + ${num2}`;
+  inputN1.value = num1;
+  inputN2.value = num2;
+  if (inputAns) inputAns.value = '';
+}
+
+function initializeAllCaptchas() {
+  const forms = document.querySelectorAll('.enquiry-form');
+  forms.forEach(form => generateCaptchaForForm(form));
+}
+
+// ==========================================
+// UTM TRACKING DATA SYSTEM
+// ==========================================
+function captureUtmParameters() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  
+  utmFields.forEach(field => {
+    const value = urlParams.get(field);
+    if (value) {
+      sessionStorage.setItem(`hh_${field}`, value);
+    }
+  });
+
+  if (!sessionStorage.getItem('hh_landing_page')) {
+    sessionStorage.setItem('hh_landing_page', window.location.href);
+  }
+}
+
+function getStoredUtmData() {
+  return {
+    utm_source: sessionStorage.getItem('hh_utm_source') || '',
+    utm_medium: sessionStorage.getItem('hh_utm_medium') || '',
+    utm_campaign: sessionStorage.getItem('hh_utm_campaign') || '',
+    source_url: sessionStorage.getItem('hh_landing_page') || window.location.href
+  };
+}
+
+// ==========================================
 // FORM SUBMISSION & VALIDATION
 // ==========================================
 let isSubmitting = false;
@@ -302,23 +387,21 @@ function handleFormSubmit(event, formName) {
   if (isSubmitting) return;
 
   const form = event.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
   const formData = new FormData(form);
   
-  // Rate Limit check via session storage
   if (sessionStorage.getItem('last_enquiry_submitted')) {
-    const lastSub = parseInt(sessionStorage.getItem('last_enquiry_submitted'));
+    const lastSub = parseInt(sessionStorage.getItem('last_enquiry_submitted'), 10);
     const now = Date.now();
-    if (now - lastSub < 30000) { // 30 seconds rate-limit
-      alert('You have already submitted an enquiry recently. Our agent will call you shortly.');
+    if (now - lastSub < 30000) {
+      showToast('You have already submitted an enquiry recently. Our agent will call you shortly.', 'error');
       return;
     }
   }
 
-  // Honeypot anti-spam check
   const trapVal = formData.get('website_trap');
   if (trapVal && trapVal.trim() !== '') {
-    // Hidden honeypot field filled. Bot submission detected. Silently ignore.
-    console.warn('Bot submission blocked via honeypot.');
+    console.warn('Bot submission blocked.');
     form.reset();
     closePopup();
     closeEnquiryModal();
@@ -329,35 +412,92 @@ function handleFormSubmit(event, formName) {
   const phone = formData.get('phone');
   const email = formData.get('email') || 'N/A';
   const config = formData.get('configuration') || 'All Sizes';
+  const message = formData.get('message') || '';
 
-  // Basic validation rules
+  const captchaN1 = formData.get('captcha_n1');
+  const captchaN2 = formData.get('captcha_n2');
+  const captchaAns = formData.get('captcha_ans');
+
   if (!name || name.trim().length < 3) {
-    alert('Please enter a valid name (at least 3 characters).');
+    showToast('Please enter a valid name (at least 3 characters).', 'error');
     return;
   }
 
   const phoneRegex = /^[0-9]{10}$/;
   if (!phone || !phoneRegex.test(phone)) {
-    alert('Please enter a valid 10-digit mobile number.');
+    showToast('Please enter a valid 10-digit mobile number.', 'error');
     return;
   }
 
-  isSubmitting = true;
-  
-  // Simulated API call (CRM capture)
-  console.log(`[CRM Submission] Form: ${formName} | Name: ${name} | Phone: ${phone} | Email: ${email} | Config: ${config}`);
+  if (parseInt(captchaN1, 10) + parseInt(captchaN2, 10) !== parseInt(captchaAns, 10)) {
+    showToast('Incorrect security question answer. Please try again.', 'error');
+    generateCaptchaForForm(form);
+    return;
+  }
 
-  // Display success feedback
-  setTimeout(() => {
+  const utm = getStoredUtmData();
+
+  isSubmitting = true;
+  if (submitBtn) {
+    submitBtn.classList.add('submitting');
+    submitBtn.disabled = true;
+  }
+
+  fetch('/api/lead', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: name,
+      phone: phone,
+      email: email,
+      config: config,
+      message: message,
+      source: formName,
+      captcha_n1: captchaN1,
+      captcha_n2: captchaN2,
+      captcha_ans: captchaAns,
+      source_url: utm.source_url,
+      utm_source: utm.utm_source,
+      utm_medium: utm.utm_medium,
+      utm_campaign: utm.utm_campaign
+    })
+  })
+  .then(response => {
+    if (!response.ok) {
+      return response.json().then(errData => {
+        throw new Error(errData.message || `API error ${response.status}`);
+      });
+    }
+    return response.json();
+  })
+  .then(data => {
     sessionStorage.setItem('last_enquiry_submitted', Date.now().toString());
-    isSubmitting = false;
+    showToast(data.message || 'Details submitted successfully.', 'success');
     form.reset();
-    closeEnquiryModal();
-    closePopup();
     
-    // Redirect to thank you page
-    window.location.href = 'thankyou.html';
-  }, 1000);
+    setTimeout(() => {
+      closeEnquiryModal();
+      closePopup();
+      if (typeof closeBottomSheetForm === 'function') {
+        closeBottomSheetForm();
+      }
+      window.location.href = 'thankyou.html';
+    }, 1500);
+  })
+  .catch(error => {
+    console.error('Failed to send lead:', error);
+    showToast(error.message || 'There was a problem submitting your request. Please try again.', 'error');
+    generateCaptchaForForm(form);
+  })
+  .finally(() => {
+    isSubmitting = false;
+    if (submitBtn) {
+      submitBtn.classList.remove('submitting');
+      submitBtn.disabled = false;
+    }
+  });
 }
 
 // ==========================================

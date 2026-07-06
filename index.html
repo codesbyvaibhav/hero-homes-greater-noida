@@ -550,6 +550,14 @@
           <!-- Honeypot anti-spam -->
           <input type="text" name="website_trap" class="hidden-trap" style="display:none !important">
           
+          <!-- Math CAPTCHA Security -->
+          <div class="form-captcha-group">
+            <span class="captcha-label">Security: <span class="math-question">...</span> = </span>
+            <input type="number" name="captcha_ans" class="captcha-input" placeholder="?" required>
+            <input type="hidden" name="captcha_n1" value="">
+            <input type="hidden" name="captcha_n2" value="">
+          </div>
+          
           <button type="submit" class="btn btn-primary btn-full">
             <i data-lucide="phone-call"></i> Get Call Back Now
           </button>
@@ -2045,6 +2053,14 @@
             <!-- Honeypot anti-spam -->
             <input type="text" name="website_trap" class="hidden-trap" style="display:none !important">
 
+            <!-- Math CAPTCHA Security -->
+            <div class="form-captcha-group">
+              <span class="captcha-label">Security: <span class="math-question">...</span> = </span>
+              <input type="number" name="captcha_ans" class="captcha-input" placeholder="?" required>
+              <input type="hidden" name="captcha_n1" value="">
+              <input type="hidden" name="captcha_n2" value="">
+            </div>
+
             <button type="submit" class="btn btn-primary btn-full">
               <i data-lucide="check-square"></i> Book Pre-Launch Offer
             </button>
@@ -2162,6 +2178,14 @@
           <!-- Honeypot anti-spam -->
           <input type="text" name="website_trap" class="hidden-trap" style="display:none !important">
 
+          <!-- Math CAPTCHA Security -->
+          <div class="form-captcha-group">
+            <span class="captcha-label">Security: <span class="math-question">...</span> = </span>
+            <input type="number" name="captcha_ans" class="captcha-input" placeholder="?" required>
+            <input type="hidden" name="captcha_n1" value="">
+            <input type="hidden" name="captcha_n2" value="">
+          </div>
+
           <button type="submit" class="btn btn-primary btn-full">
             <i data-lucide="send"></i> Submit Request
           </button>
@@ -2189,6 +2213,14 @@
             <input type="tel" name="phone" placeholder="10-Digit Mobile Number" required pattern="[0-9]{10}">
           </div>
           <input type="text" name="website_trap" class="hidden-trap" style="display:none !important">
+          
+          <!-- Math CAPTCHA Security -->
+          <div class="form-captcha-group">
+            <span class="captcha-label">Security: <span class="math-question">...</span> = </span>
+            <input type="number" name="captcha_ans" class="captcha-input" placeholder="?" required>
+            <input type="hidden" name="captcha_n1" value="">
+            <input type="hidden" name="captcha_n2" value="">
+          </div>
           
           <button type="submit" class="btn btn-primary btn-full">
             Claim My Discount Now
@@ -2315,6 +2347,14 @@
           <!-- Honeypot trap -->
           <input type="text" name="website_trap" class="hidden-trap" style="display:none !important">
 
+          <!-- Math CAPTCHA Security -->
+          <div class="form-captcha-group">
+            <span class="captcha-label">Security: <span class="math-question">...</span> = </span>
+            <input type="number" name="captcha_ans" class="captcha-input" placeholder="?" required>
+            <input type="hidden" name="captcha_n1" value="">
+            <input type="hidden" name="captcha_n2" value="">
+          </div>
+
           <div class="sheet-action-buttons">
             <button type="button" class="btn btn-outline" onclick="prevSheetStep()">
               Back
@@ -2359,6 +2399,9 @@
   <script src="/vendor/lucide.min.js" defer></script>
   <!-- Custom Logic Script -->
   <script src="script.js" defer></script>
+
+  <!-- Toast notification container -->
+  <div id="toast-container" class="toast-container"></div>
 
 </body>
 </html>
