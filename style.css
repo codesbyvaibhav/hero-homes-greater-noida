@@ -1573,14 +1573,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
   font-family: var(--font-body);
 }
 .brand-tagline {
-  color: var(--color-accent-light);
+  color: #E2C799; /* Premium light gold/sand color with high contrast on dark charcoal */
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .project-info {
   font-size: 0.85rem;
-  color: #94A3B8;
+  color: #CBD5E1; /* High contrast light slate */
 }
 
 .footer-links h4,
@@ -1599,24 +1599,33 @@ input[type="range"]::-webkit-slider-thumb:hover {
   margin-bottom: 12px;
 }
 .footer-links a {
-  color: #94A3B8;
+  color: #CBD5E1; /* High contrast light slate */
   font-size: 0.9rem;
+  transition: var(--transition-smooth);
 }
 .footer-links a:hover {
-  color: var(--color-accent-light);
+  color: #E2C799; /* Premium gold hover color */
   padding-left: 4px;
 }
 
 .footer-contact p {
   font-size: 0.9rem;
-  color: #94A3B8;
+  color: #CBD5E1; /* High contrast light slate */
   margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
+.footer-contact p i {
+  color: #E2C799; /* Gold accent for contact icons */
+  flex-shrink: 0;
+}
+.footer-contact a {
+  color: #CBD5E1; /* High contrast light slate */
+  transition: var(--transition-smooth);
+}
 .footer-contact a:hover {
-  color: var(--color-accent-light);
+  color: #E2C799; /* Premium gold hover color */
 }
 
 .footer-bottom {
@@ -1624,13 +1633,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 .legal-disclaimer {
   font-size: 0.72rem;
-  color: #64748B;
+  color: #94A3B8; /* Readable secondary slate on dark background */
   text-align: justify;
   line-height: 1.5;
 }
 .copyright-bar {
   font-size: 0.8rem;
-  color: #64748B;
+  color: #94A3B8; /* Readable secondary slate on dark background */
 }
 
 /* ==========================================
@@ -2251,14 +2260,18 @@ input[type="range"]::-webkit-slider-thumb:hover {
     margin-bottom: 0 !important;
   }
   
-  /* Gallery Card Slider */
+  /* Gallery Grid on Mobile */
   .gallery-container.swipe-container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    overflow-x: visible !important;
   }
   .gallery-container.swipe-container .gallery-item {
-    flex: 0 0 280px !important;
-    scroll-snap-align: center !important;
+    flex: none !important;
+    width: 100% !important;
+    scroll-snap-align: none !important;
     aspect-ratio: 4 / 3 !important;
   }
 }
@@ -2614,8 +2627,24 @@ input[type="range"]::-webkit-slider-thumb:hover {
   width: 80%;
 }
 @media (max-width: 768px) {
-  .prev-btn, .next-btn {
-    display: none; /* Swipe navigations are used on mobile instead */
+  .gallery-nav-btn {
+    padding: 8px 12px !important;
+    font-size: 1.5rem !important;
+    background: rgba(15, 23, 42, 0.75) !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .prev-btn {
+    left: 8px !important;
+    display: flex !important;
+  }
+  .next-btn {
+    right: 8px !important;
+    display: flex !important;
   }
 }
 
