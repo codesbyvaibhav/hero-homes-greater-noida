@@ -471,6 +471,7 @@ img {
   padding: 20px !important;
   max-width: 340px;
   width: 100%;
+  min-height:520px;
   margin-left: auto;
 }
 .hero-form-widget h2 {
