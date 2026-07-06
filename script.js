@@ -55,15 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // Set up FAQ Accordion
-  initFaqModule();
+    // Setup Exit Intent Popup
+    window.addEventListener("load", () => {
+      initFaqModule();
+      initExitIntent();
+      initEmiCalculator();
+      initInvestmentCalculator();
+  });
 
-  // Setup Exit Intent Popup
-  initExitIntent();
-
-  // Setup Calculators
-  initEmiCalculator();
-  initInvestmentCalculator();
 });
 
 // ==========================================
@@ -225,9 +224,7 @@ let popupShown = false;
 
 function initExitIntent() {
   // Show popup after 5 seconds if not already shown this session
-  setTimeout(() => {
-    triggerPopup();
-  }, 5000);
+  setTimeout(triggerPopup, 5000);
 
   // Exit intent: cursor leaving window boundary top
   document.addEventListener('mouseleave', (e) => {
