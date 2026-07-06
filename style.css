@@ -2065,6 +2065,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     grid-template-columns: repeat(2, 1fr);
   }
   
+  .cta-banner h2 {
+    font-size: 1.75rem !important;
+  }
+  
   .site-footer {
     padding: 40px 0 20px 0 !important;
   }
