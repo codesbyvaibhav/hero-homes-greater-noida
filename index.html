@@ -983,9 +983,9 @@
         .gallery-container.swipe-container {
           display: flex !important;
           overflow-x: auto !important;
-          scroll-snap-type: x mandatory !important;
+          scroll-snap-type: none !important; /* Disable scroll snap as it locks programmatic scrolling */
           scroll-behavior: smooth !important;
-          gap: 16px !important;
+          gap: 12px !important;
           margin-left: -24px !important;
           margin-right: -24px !important;
           padding-left: 24px !important;
@@ -994,8 +994,8 @@
           -webkit-overflow-scrolling: touch !important;
         }
         .gallery-container.swipe-container .gallery-item {
-          flex: 0 0 280px !important;
-          scroll-snap-align: center !important;
+          flex: 0 0 260px !important;
+          scroll-snap-align: none !important; /* Disable snapping alignment */
           aspect-ratio: 4 / 3 !important;
         }
         .gallery-container.swipe-container::-webkit-scrollbar {
@@ -1103,6 +1103,41 @@
         </div>
       </div>
     </div>
+    
+    <!-- Self-contained Script to bypass external script caching -->
+    <script>
+      function scrollGallery(direction) {
+        var container = document.querySelector('.gallery-container');
+        if (container) {
+          // Scroll by roughly one item width (260px card + 12px gap)
+          var scrollAmount = 272 * direction;
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+
+      // Bind the scroll progress thumb update dynamically
+      document.addEventListener('DOMContentLoaded', function() {
+        var container = document.querySelector('.gallery-container');
+        var thumb = document.getElementById('gallery-scrollbar-thumb');
+        
+        if (container && thumb) {
+          var updateThumb = function() {
+            var maxScroll = container.scrollWidth - container.clientWidth;
+            if (maxScroll <= 0) return;
+            var scrollRatio = container.scrollLeft / maxScroll;
+            // Thumb is 30% wide, moves between 0% and 70%
+            var thumbLeft = scrollRatio * 70;
+            thumb.style.left = thumbLeft + '%';
+          };
+          
+          container.addEventListener('scroll', updateThumb, { passive: true });
+          window.addEventListener('resize', updateThumb, { passive: true });
+          // Ensure it runs once images are loaded and sizing changes
+          window.addEventListener('load', updateThumb);
+          updateThumb();
+        }
+      });
+    </script>
   </section>
 
   <!-- Location Advantages Section -->
