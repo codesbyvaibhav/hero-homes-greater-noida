@@ -37,8 +37,29 @@
   <!-- LCP Performance Image Preload -->
   <link rel="preload" href="images/exterior_sunset.webp" as="image" type="image/webp" fetchpriority="high">
 
-  <!-- Stylesheet (Standard render-blocking prevents double reflow layout thrashing) -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Stylesheet (Asynchronous loading to eliminate render-blocking requests) -->
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet';document.body.classList.add('css-loaded')">
+  <noscript>
+    <link rel="stylesheet" href="style.css">
+  </noscript>
+
+  <style>
+    /* Critical CSS to prevent Flash of Unstyled Content (FOUC) */
+    body {
+      opacity: 0;
+    }
+    body.css-loaded {
+      opacity: 1;
+      transition: opacity 0.15s ease-in;
+    }
+  </style>
+  <noscript>
+    <style>
+      body {
+        opacity: 1 !important;
+      }
+    </style>
+  </noscript>
 
   <!-- JSON-LD Structured Data Schema -->
   <script type="application/ld+json">
