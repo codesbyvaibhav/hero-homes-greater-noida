@@ -6,9 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   captureUtmParameters();
   initializeAllCaptchas();
 
-  // Initialize Lucide Icons
+  // Initialize Lucide Icons after initial render (non-blocking)
   if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(() => lucide.createIcons());
+    } else {
+      setTimeout(() => lucide.createIcons(), 50);
+    }
   }
 
   // Set up Header Scroll effect
@@ -63,13 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-    // Setup Exit Intent Popup
+    // Setup Exit Intent Popup and defer non-critical features to free up main thread on load
     window.addEventListener("load", () => {
       initFaqModule();
       initExitIntent();
-      initEmiCalculator();
-      initInvestmentCalculator();
-      initGalleryScrollIndicator();
+      
+      // Defer calculators and scroll indicators slightly to avoid layout thrashing during parsing
+      setTimeout(() => {
+        initEmiCalculator();
+        initInvestmentCalculator();
+        initGalleryScrollIndicator();
+      }, 50);
     });
 
   });
