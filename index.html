@@ -37,8 +37,18 @@
   <!-- LCP Performance Image Preload -->
   <link rel="preload" href="images/exterior_sunset.webp" as="image" type="image/webp" fetchpriority="high">
 
-  <!-- Stylesheet (Asynchronous loading to eliminate render-blocking requests) -->
-  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet';document.body.classList.add('css-loaded')">
+  <!-- Stylesheet (Dynamically injected to completely eliminate render-blocking flags) -->
+  <script>
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'style.css';
+      link.onload = function() {
+        document.body.classList.add('css-loaded');
+      };
+      document.head.appendChild(link);
+    })();
+  </script>
   <noscript>
     <link rel="stylesheet" href="style.css">
   </noscript>
