@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const captchaGroup = form.querySelector('.form-captcha-group');
       if (captchaGroup) {
         captchaGroup.classList.remove('visible');
+        captchaGroup.style.setProperty('display', 'none', 'important'); // Reset inline display
       }
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn && submitBtn.dataset.originalText) {
@@ -454,9 +455,10 @@ function handleFormSubmit(event, formName) {
 
   // Trigger CAPTCHA check on submit click
   const captchaGroup = form.querySelector('.form-captcha-group');
-  if (captchaGroup && !captchaGroup.classList.contains('visible')) {
+  if (captchaGroup && (!captchaGroup.classList.contains('visible') || captchaGroup.style.display === 'none')) {
     // Make security challenge visible first
     captchaGroup.classList.add('visible');
+    captchaGroup.style.setProperty('display', 'flex', 'important'); // Force inline display: flex
     
     // Focus captcha input
     const captchaInput = captchaGroup.querySelector('.captcha-input');
