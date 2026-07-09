@@ -454,7 +454,7 @@ function handleFormSubmit(event, formName) {
 
   // Trigger CAPTCHA check on submit click
   const captchaGroup = form.querySelector('.form-captcha-group');
-  if (captchaGroup && (!captchaGroup.classList.contains('visible') || captchaGroup.style.display === 'none')) {
+  if (captchaGroup && !captchaGroup.classList.contains('visible')) {
     // Make security challenge visible first
     captchaGroup.classList.add('visible');
     captchaGroup.style.setProperty('display', 'flex', 'important'); // Force inline display: flex
