@@ -20,16 +20,23 @@ export async function submitToCrm(lead, env) {
   if (crmUrl.includes('sell.do') || crmUrl.includes('selldo')) {
     console.log('[CRM Helper] Formatting payload for Sell.Do URL-encoded API.');
     
-    // Retrieve SRD from environment variables, fallback to user's provided default
+    // Retrieve SRD and Form ID from environment variables, fallback to defaults
     const srdCode = env.SELL_DO_SRD || crmKey || '6a4f77fe58f1e71b0c00dcde';
+    const formId = env.SELL_DO_FORM_ID || '686cff415d8defa24ca06323';
 
     const payload = new URLSearchParams();
     payload.append('srd', srdCode);
+    payload.append('form_id', formId);
     payload.append('sell_do[form][lead][name]', lead.name);
     payload.append('sell_do[form][lead][email]', lead.email === 'N/A' ? '' : lead.email);
     payload.append('sell_do[form][lead][phone]', lead.phone);
 
-    // Build the consolidated lead note details
+    // Optional project assignment if configured
+    if (env.SELL_DO_PROJECT_ID) {
+      payload.append('sell_do[form][lead][project_id]', env.SELL_DO_PROJECT_ID);
+    }
+
+    // Build the consolidated lead note details (comments parameter is sell_do[form][note][content])
     const note = `Project: ${lead.project_name || 'Hero Homes Greater Noida'}
 Configuration: ${lead.config || 'All Sizes'}
 Message: ${lead.message || 'N/A'}
@@ -40,7 +47,7 @@ UTM Medium: ${lead.utm_medium || ''}
 UTM Campaign: ${lead.utm_campaign || ''}
 Submitted: ${lead.timestamp || new Date().toISOString()}`;
     
-    payload.append('sell_do[form][note]', note);
+    payload.append('sell_do[form][note][content]', note);
 
     try {
       const response = await fetch(crmUrl, {
