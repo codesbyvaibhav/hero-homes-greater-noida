@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
 
   // Set up Header Scroll effect
   const header = document.getElementById('main-header');
