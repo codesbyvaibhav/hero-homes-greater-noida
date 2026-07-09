@@ -17,7 +17,7 @@ export async function submitToCrm(lead, env) {
   // ==========================================
   // NATIVE SELL.DO PUBLIC CAPTURE ROUTING
   // ==========================================
-  if (crmUrl.includes('sell.do')) {
+  if (crmUrl.includes('sell.do') || crmUrl.includes('selldo')) {
     console.log('[CRM Helper] Formatting payload for Sell.Do URL-encoded API.');
     
     // Retrieve SRD from environment variables, fallback to user's provided default
