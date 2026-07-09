@@ -1,23 +1,75 @@
 /**
  * Forwards a lead submission to the CRM API endpoint
- * Supports popular CRM payload formats (adaptable via CRM_API_URL and headers)
+ * Supports standard JSON REST formats (Zoho, HubSpot) and Sell.Do URL-encoded capture.
  * @param {Object} lead - Sanitized lead data
  * @param {Object} env - Cloudflare Environment secrets
  * @returns {Promise<{success: boolean, responseText?: string, error?: string}>}
  */
 export async function submitToCrm(lead, env) {
   const crmUrl = env.CRM_API_URL;
-  const crmKey = env.CRM_API_KEY;
+  const crmKey = env.CRM_API_KEY; // Can hold API Key or Sell.Do SRD Code
 
   if (!crmUrl) {
     console.warn('[CRM Helper] CRM_API_URL is not set. Skipping CRM forward.');
     return { success: true, message: 'CRM endpoint is disabled. Skipping submission.' };
   }
 
-  // Format standard payload compatible with Zoho / HubSpot webhook / custom formats
+  // ==========================================
+  // NATIVE SELL.DO PUBLIC CAPTURE ROUTING
+  // ==========================================
+  if (crmUrl.includes('sell.do')) {
+    console.log('[CRM Helper] Formatting payload for Sell.Do URL-encoded API.');
+    
+    // Retrieve SRD from environment variables, fallback to user's provided default
+    const srdCode = env.SELL_DO_SRD || crmKey || '6a4f77fe58f1e71b0c00dcde';
+
+    const payload = new URLSearchParams();
+    payload.append('srd', srdCode);
+    payload.append('sell_do[form][lead][name]', lead.name);
+    payload.append('sell_do[form][lead][email]', lead.email === 'N/A' ? '' : lead.email);
+    payload.append('sell_do[form][lead][phone]', lead.phone);
+
+    // Build the consolidated lead note details
+    const note = `Project: ${lead.project_name || 'Hero Homes Greater Noida'}
+Configuration: ${lead.config || 'All Sizes'}
+Message: ${lead.message || 'N/A'}
+Form Source: ${lead.source || 'Website Form'}
+Source URL: ${lead.source_url || ''}
+UTM Source: ${lead.utm_source || ''}
+UTM Medium: ${lead.utm_medium || ''}
+UTM Campaign: ${lead.utm_campaign || ''}
+Submitted: ${lead.timestamp || new Date().toISOString()}`;
+    
+    payload.append('sell_do[form][note]', note);
+
+    try {
+      const response = await fetch(crmUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: payload.toString()
+      });
+
+      const responseText = await response.text();
+
+      if (!response.ok) {
+        throw new Error(`Sell.Do API HTTP error ${response.status}: ${responseText}`);
+      }
+
+      return { success: true, responseText };
+    } catch (err) {
+      console.error('[CRM Helper] Sell.Do capture failed:', err);
+      return { success: false, error: err.message || 'Unknown Sell.Do error.' };
+    }
+  }
+
+  // ==========================================
+  // STANDARD JSON API CAPTURE (Zoho / HubSpot / Webhooks)
+  // ==========================================
   const payload = {
     first_name: lead.name,
-    last_name: '', // Standard split if CRM requires last name
+    last_name: '',
     phone: lead.phone,
     email: lead.email === 'N/A' ? '' : lead.email,
     project_name: lead.project_name || 'Hero Homes Greater Noida',
@@ -31,7 +83,7 @@ export async function submitToCrm(lead, env) {
     created_at: lead.timestamp || new Date().toISOString()
   };
 
-  // Adjust name format if CRM expects full name combined or split
+  // Split name if CRM requires split first/last names
   if (lead.name) {
     const parts = lead.name.trim().split(/\s+/);
     if (parts.length > 1) {
@@ -47,9 +99,7 @@ export async function submitToCrm(lead, env) {
     'Content-Type': 'application/json'
   };
 
-  // Set auth header if API Key/Token is configured
   if (crmKey) {
-    // Detect key format (typically Bearer or custom x-api-key)
     if (crmKey.startsWith('Bearer ') || crmKey.startsWith('Token ')) {
       headers['Authorization'] = crmKey;
     } else {
