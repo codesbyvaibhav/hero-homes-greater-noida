@@ -3010,7 +3010,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 /* Math CAPTCHA UI element */
 .form-captcha-group {
-  display: flex;
+  display: none !important; /* Hidden by default, shown dynamically on submit */
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -3019,6 +3019,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
   border-radius: var(--radius-small);
   background-color: var(--color-bg-white);
   margin-bottom: 12px;
+}
+.form-captcha-group.visible {
+  display: flex !important; /* Visible when triggered */
+  animation: captchaSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes captchaSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .captcha-label {
   font-size: 0.85rem;

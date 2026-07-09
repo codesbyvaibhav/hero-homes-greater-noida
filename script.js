@@ -15,6 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Auto-reset CAPTCHA visibility and button text when any form is reset
+  document.querySelectorAll('.enquiry-form').forEach(form => {
+    form.addEventListener('reset', () => {
+      const captchaGroup = form.querySelector('.form-captcha-group');
+      if (captchaGroup) {
+        captchaGroup.classList.remove('visible');
+      }
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn && submitBtn.dataset.originalText) {
+        submitBtn.innerHTML = submitBtn.dataset.originalText;
+      }
+    });
+  });
+});
+
   // Set up Header Scroll effect
   const header = document.getElementById('main-header');
   let ticking = false;
@@ -435,6 +450,35 @@ function handleFormSubmit(event, formName) {
   if (!phone || !phoneRegex.test(phone)) {
     showToast('Please enter a valid 10-digit mobile number.', 'error');
     return;
+  }
+
+  // Trigger CAPTCHA check on submit click
+  const captchaGroup = form.querySelector('.form-captcha-group');
+  if (captchaGroup && !captchaGroup.classList.contains('visible')) {
+    // Make security challenge visible first
+    captchaGroup.classList.add('visible');
+    
+    // Focus captcha input
+    const captchaInput = captchaGroup.querySelector('.captcha-input');
+    if (captchaInput) {
+      captchaInput.focus();
+    }
+
+    // Update submit button text to guide user
+    if (submitBtn) {
+      if (!submitBtn.dataset.originalText) {
+        submitBtn.dataset.originalText = submitBtn.innerHTML;
+      }
+      submitBtn.innerHTML = '<i data-lucide="check-square"></i> Verify &amp; Submit';
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons({
+          attrs: { class: 'lucide' },
+          nameAttr: 'data-lucide',
+          node: submitBtn
+        });
+      }
+    }
+    return; // Halt and wait for user's entry
   }
 
   if (parseInt(captchaN1, 10) + parseInt(captchaN2, 10) !== parseInt(captchaAns, 10)) {
