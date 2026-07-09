@@ -20,7 +20,7 @@ export async function onRequest(context) {
   // Only allow POST submissions
   if (context.request.method !== 'POST') {
     return new Response(JSON.stringify({ success: false, message: 'Method Not Allowed' }), {
-      status: 450,
+      status: 405,
       headers: corsHeaders
     });
   }
@@ -64,35 +64,31 @@ export async function onRequest(context) {
       timestamp: new Date().toISOString()
     };
 
-    // 4. Background tasks execution (Email + CRM posting)
-    // context.waitUntil runs tasks in worker thread background after responding, preventing API lags.
+    // 4. Synchronously execute CRM post to capture API responses/errors for debugging
+    const crmResult = await submitToCrm(lead, context.env);
+    
+    // 5. Background task for Email notification (so email lags don't delay user)
     context.waitUntil((async () => {
-      console.log(`[Lead Worker] Processing background tasks for lead: ${lead.name}`);
-      
-      const emailPromise = sendLeadEmail(lead, context.env);
-      const crmPromise = submitToCrm(lead, context.env);
-
-      // Run both concurrently
-      const [emailResult, crmResult] = await Promise.allSettled([emailPromise, crmPromise]);
-
-      if (emailResult.status === 'fulfilled' && emailResult.value.success) {
-        console.log(`[Lead Worker] Email notification sent: ${emailResult.value.messageId}`);
+      const emailResult = await sendLeadEmail(lead, context.env);
+      if (emailResult.success) {
+        console.log(`[Lead Worker] Email notification sent: ${emailResult.messageId}`);
       } else {
-        console.error(`[Lead Worker] Email delivery failed:`, emailResult.reason || emailResult.value?.error);
-      }
-
-      if (crmResult.status === 'fulfilled' && crmResult.value.success) {
-        console.log(`[Lead Worker] CRM forward successful`);
-      } else {
-        console.error(`[Lead Worker] CRM forward failed:`, crmResult.reason || crmResult.value?.error);
+        console.error(`[Lead Worker] Email delivery failed:`, emailResult.error);
       }
     })());
 
-    // 5. Instantly return success feedback to user
-    return new Response(JSON.stringify({
-      success: true,
-      message: 'Thank you! Your enquiry has been received. Our sales team will call you shortly.'
-    }), { status: 200, headers: corsHeaders });
+    // 6. Return response based on CRM success
+    if (crmResult.success) {
+      return new Response(JSON.stringify({
+        success: true,
+        message: 'Thank you! Your enquiry has been received. Our sales team will call you shortly.'
+      }), { status: 200, headers: corsHeaders });
+    } else {
+      return new Response(JSON.stringify({
+        success: false,
+        message: `CRM Integration Error: ${crmResult.error || 'Failed to sync lead details.'}`
+      }), { status: 400, headers: corsHeaders });
+    }
 
   } catch (error) {
     console.error('[API Error] Main controller exception:', error);
@@ -102,9 +98,11 @@ export async function onRequest(context) {
     }), { status: 500, headers: corsHeaders });
   }
 }
+
 export async function onRequestPost(context) {
   return onRequest(context);
 }
+
 export async function onRequestOptions(context) {
   return onRequest(context);
 }
