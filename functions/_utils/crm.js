@@ -1,13 +1,17 @@
 /**
- * Forwards a lead submission to the CRM API endpoint
- * Supports standard JSON REST formats (Zoho, HubSpot) and Sell.Do URL-encoded capture.
+ * Forwards a lead submission to the CRM API endpoint.
+ * Supports Sell.Do CRM JSON API and generic JSON REST webhooks.
  * @param {Object} lead - Sanitized lead data
  * @param {Object} env - Cloudflare Environment secrets
  * @returns {Promise<{success: boolean, responseText?: string, error?: string}>}
  */
 export async function submitToCrm(lead, env) {
-  const crmUrl = env.CRM_API_URL;
-  const crmKey = env.CRM_API_KEY; // Can hold API Key or Sell.Do SRD Code
+  // Use Sell.Do JSON API URL from environment, or fallback to the standard endpoint
+  const crmUrl = env.CRM_API_URL || 'https://app.sell.do/api/leads/create.json';
+  
+  // Read key and SRD securely from variables. No hardcoded credentials.
+  const sellDoApiKey = env.SELL_DO_API_KEY || env.CRM_API_KEY;
+  const srdCode = env.SELL_DO_SRD;
 
   if (!crmUrl) {
     console.warn('[CRM Helper] CRM_API_URL is not set. Skipping CRM forward.');
@@ -15,47 +19,64 @@ export async function submitToCrm(lead, env) {
   }
 
   // ==========================================
-  // NATIVE SELL.DO PUBLIC CAPTURE ROUTING
+  // NATIVE SELL.DO JSON API INTEGRATION
   // ==========================================
   if (crmUrl.includes('sell.do') || crmUrl.includes('selldo')) {
-    console.log('[CRM Helper] Formatting payload for Sell.Do URL-encoded API.');
-    
-    // Retrieve SRD and Form ID from environment variables, fallback to defaults
-    const srdCode = env.SELL_DO_SRD || crmKey || '6a4f77fe58f1e71b0c00dcde';
-    const formId = env.SELL_DO_FORM_ID || '686cff415d8defa24ca06323';
+    console.log('[CRM Helper] Formatting payload for Sell.Do leads/create.json API.');
 
-    const payload = new URLSearchParams();
-    payload.append('srd', srdCode);
-    payload.append('form_id', formId);
-    payload.append('sell_do[form][lead][name]', lead.name);
-    payload.append('sell_do[form][lead][email]', lead.email === 'N/A' ? '' : lead.email);
-    payload.append('sell_do[form][lead][phone]', lead.phone);
-
-    // Optional project assignment if configured
-    if (env.SELL_DO_PROJECT_ID) {
-      payload.append('sell_do[form][lead][project_id]', env.SELL_DO_PROJECT_ID);
+    if (!sellDoApiKey) {
+      console.error('[CRM Helper] SELL_DO_API_KEY/CRM_API_KEY environment variable is missing.');
+      return { success: false, error: 'Sell.Do API Key is not configured on the server.' };
     }
 
-    // Build the consolidated lead note details (comments parameter is sell_do[form][note][content])
-    const note = `Project: ${lead.project_name || 'Hero Homes Greater Noida'}
+    if (!srdCode) {
+      console.error('[CRM Helper] SELL_DO_SRD environment variable is missing.');
+      return { success: false, error: 'Sell.Do SRD Code is not configured on the server.' };
+    }
+
+    // Build the exact nested payload structure required by Sell.Do
+    const payload = {
+      sell_do: {
+        analytics: {
+          utm_source: lead.utm_source || '',
+          utm_medium: lead.utm_medium || '',
+          utm_campaign: lead.utm_campaign || '',
+          utm_term: lead.utm_term || '',
+          utm_content: lead.utm_content || ''
+        },
+        campaign: {
+          srd: srdCode
+        },
+        form: {
+          requirement: {
+            property_type: 'flat'
+          },
+          custom: {},
+          note: {
+            content: `Project Preference: ${lead.project_name || 'Hero Homes Greater Noida'}
 Configuration: ${lead.config || 'All Sizes'}
-Message: ${lead.message || 'N/A'}
+User Comments: ${lead.message || 'No additional comments.'}
 Form Source: ${lead.source || 'Website Form'}
-Source URL: ${lead.source_url || ''}
-UTM Source: ${lead.utm_source || ''}
-UTM Medium: ${lead.utm_medium || ''}
-UTM Campaign: ${lead.utm_campaign || ''}
-Submitted: ${lead.timestamp || new Date().toISOString()}`;
-    
-    payload.append('sell_do[form][note][content]', note);
+Source URL: ${lead.source_url || ''}`
+          },
+          lead: {
+            name: lead.name,
+            phone: lead.phone,
+            email: lead.email === 'N/A' ? '' : lead.email
+          }
+        }
+      },
+      api_key: sellDoApiKey
+    };
 
     try {
       const response = await fetch(crmUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: payload.toString()
+        body: JSON.stringify(payload)
       });
 
       const responseText = await response.text();
@@ -64,15 +85,27 @@ Submitted: ${lead.timestamp || new Date().toISOString()}`;
         throw new Error(`Sell.Do API HTTP error ${response.status}: ${responseText}`);
       }
 
+      // Check if response contains Sell.Do success status
+      let responseJson;
+      try {
+        responseJson = JSON.parse(responseText);
+      } catch (e) {
+        console.warn('[CRM Helper] Failed to parse Sell.Do response as JSON:', responseText);
+      }
+
+      if (responseJson && responseJson.error) {
+        throw new Error(`Sell.Do Error: ${responseJson.error}`);
+      }
+
       return { success: true, responseText };
     } catch (err) {
-      console.error('[CRM Helper] Sell.Do capture failed:', err);
-      return { success: false, error: err.message || 'Unknown Sell.Do error.' };
+      console.error('[CRM Helper] Sell.Do integration failed:', err);
+      return { success: false, error: err.message || 'Unknown Sell.Do API error.' };
     }
   }
 
   // ==========================================
-  // STANDARD JSON API CAPTURE (Zoho / HubSpot / Webhooks)
+  // STANDARD JSON WEBHOOK CAPTURE (Zoho / HubSpot / Webhooks)
   // ==========================================
   const payload = {
     first_name: lead.name,
@@ -106,12 +139,13 @@ Submitted: ${lead.timestamp || new Date().toISOString()}`;
     'Content-Type': 'application/json'
   };
 
-  if (crmKey) {
-    if (crmKey.startsWith('Bearer ') || crmKey.startsWith('Token ')) {
-      headers['Authorization'] = crmKey;
+  const genericApiKey = env.CRM_API_KEY;
+  if (genericApiKey) {
+    if (genericApiKey.startsWith('Bearer ') || genericApiKey.startsWith('Token ')) {
+      headers['Authorization'] = genericApiKey;
     } else {
-      headers['Authorization'] = `Bearer ${crmKey}`;
-      headers['X-API-KEY'] = crmKey;
+      headers['Authorization'] = `Bearer ${genericApiKey}`;
+      headers['X-API-KEY'] = genericApiKey;
     }
   }
 

@@ -48,47 +48,55 @@ export async function onRequest(context) {
       }), { status: 400, headers: corsHeaders });
     }
 
-    // Prepare lead dataset
+    // Prepare lead dataset with IP and UTMs
     const lead = {
       name: data.name,
       phone: data.phone,
       email: data.email || 'N/A',
-      project_name: data.project_name || 'Hero Homes Greater Noida',
+      project_name: context.env.PROJECT_NAME || data.project_name || 'Hero Homes Greater Noida',
       config: data.config || 'All Sizes',
       message: data.message || 'N/A',
       source: data.source || 'Website Form',
       source_url: data.source_url || context.request.headers.get('Referer') || 'https://herohomenoida.com',
+      ip: ip,
       utm_source: data.utm_source || '',
       utm_medium: data.utm_medium || '',
       utm_campaign: data.utm_campaign || '',
-      timestamp: new Date().toISOString()
+      utm_term: data.utm_term || '',
+      utm_content: data.utm_content || '',
+      timestamp: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })
     };
 
-    // 4. Synchronously execute CRM post to capture API responses/errors for debugging
+    // 4. Synchronously execute Sell.Do CRM lead creation (required for workflow success)
+    console.log(`[Lead Worker] Initiating Sell.Do CRM lead push for: ${lead.name}`);
     const crmResult = await submitToCrm(lead, context.env);
     
-    // 5. Background task for Email notification (so email lags don't delay user)
+    console.log(`[Lead Worker] Sell.Do CRM sync result: success=${crmResult.success}`);
+
+    // If Sell.Do creation fails, stop and return the error
+    if (!crmResult.success) {
+      return new Response(JSON.stringify({
+        success: false,
+        message: `CRM Sync Error: ${crmResult.error || 'Failed to register lead.'}`
+      }), { status: 400, headers: corsHeaders });
+    }
+
+    // 5. Send Brevo notification email in the background (succeeds or fails independently)
     context.waitUntil((async () => {
+      console.log(`[Lead Worker] Dispatching Brevo email notification for: ${lead.name}`);
       const emailResult = await sendLeadEmail(lead, context.env);
       if (emailResult.success) {
-        console.log(`[Lead Worker] Email notification sent: ${emailResult.messageId}`);
+        console.log(`[Lead Worker] Brevo notification email sent successfully: ${emailResult.messageId}`);
       } else {
-        console.error(`[Lead Worker] Email delivery failed:`, emailResult.error);
+        console.error(`[Lead Worker] Brevo email delivery failed:`, emailResult.error);
       }
     })());
 
-    // 6. Return response based on CRM success
-    if (crmResult.success) {
-      return new Response(JSON.stringify({
-        success: true,
-        message: 'Thank you! Your enquiry has been received. Our sales team will call you shortly.'
-      }), { status: 200, headers: corsHeaders });
-    } else {
-      return new Response(JSON.stringify({
-        success: false,
-        message: `CRM Integration Error: ${crmResult.error || 'Failed to sync lead details.'}`
-      }), { status: 400, headers: corsHeaders });
-    }
+    // 6. Return success feedback to trigger client redirect
+    return new Response(JSON.stringify({
+      success: true,
+      message: 'Thank you! Your enquiry has been received. Our sales team will call you shortly.'
+    }), { status: 200, headers: corsHeaders });
 
   } catch (error) {
     console.error('[API Error] Main controller exception:', error);
