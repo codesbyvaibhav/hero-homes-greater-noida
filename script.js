@@ -400,7 +400,7 @@ function getStoredUtmData() {
 }
 
 // Google Sheets Integration Endpoint (Optional Backup)
-const GOOGLE_SHEETS_URL = '';
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzUrGLsDOgboZfC95a9JwNlqQJ55K7eQZ7cF6EdjtUgpx5Ti_9OPhSp7PayzFY-W3EIxw/exec';
 
 async function sendToGoogleSheets(leadData) {
   if (!GOOGLE_SHEETS_URL) return;
