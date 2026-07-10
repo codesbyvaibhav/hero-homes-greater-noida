@@ -93,8 +93,26 @@ Source URL: ${lead.source_url || ''}`
         console.warn('[CRM Helper] Failed to parse Sell.Do response as JSON:', responseText);
       }
 
+      // Check for actual populated errors (ignoring empty arrays or objects)
       if (responseJson && responseJson.error) {
-        throw new Error(`Sell.Do Error: ${responseJson.error}`);
+        const err = responseJson.error;
+        let hasError = false;
+        let errorMessage = '';
+
+        if (typeof err === 'string' && err.trim() !== '') {
+          hasError = true;
+          errorMessage = err;
+        } else if (Array.isArray(err) && err.length > 0) {
+          hasError = true;
+          errorMessage = JSON.stringify(err);
+        } else if (typeof err === 'object' && err !== null && Object.keys(err).length > 0) {
+          hasError = true;
+          errorMessage = JSON.stringify(err);
+        }
+
+        if (hasError) {
+          throw new Error(`Sell.Do Error: ${errorMessage}`);
+        }
       }
 
       return { success: true, responseText };
