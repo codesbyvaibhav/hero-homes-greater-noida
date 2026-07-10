@@ -399,6 +399,27 @@ function getStoredUtmData() {
   };
 }
 
+// Google Sheets Integration Endpoint (Optional Backup)
+const GOOGLE_SHEETS_URL = '';
+
+async function sendToGoogleSheets(leadData) {
+  if (!GOOGLE_SHEETS_URL) return;
+
+  try {
+    await fetch(GOOGLE_SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Essential for Google Apps Script Web App redirects
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(leadData)
+    });
+    console.log('[Google Sheets] Lead backup recorded successfully.');
+  } catch (err) {
+    console.error('[Google Sheets] Backup failed:', err);
+  }
+}
+
 // ==========================================
 // FORM SUBMISSION & VALIDATION
 // ==========================================
@@ -529,6 +550,17 @@ function handleFormSubmit(event, formName) {
     sessionStorage.setItem('last_enquiry_submitted', Date.now().toString());
     showToast(data.message || 'Details submitted successfully.', 'success');
     form.reset();
+    
+    // Dispatch asynchronous Google Sheet backup (runs in background, non-blocking)
+    sendToGoogleSheets({
+      name: name,
+      phone: phone,
+      email: email,
+      project: config,
+      message: message,
+      source: formName,
+      timestamp: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })
+    });
     
     setTimeout(() => {
       closeEnquiryModal();
