@@ -247,6 +247,20 @@ function openEnquiryModal(source) {
   
   modalSourceInput.value = source;
   
+  // Auto-select the configuration dropdown option
+  const configSelect = document.getElementById('modal-config');
+  if (configSelect) {
+    if (source.includes('2 BHK')) {
+      configSelect.value = '2 BHK';
+    } else if (source.includes('3 BHK')) {
+      configSelect.value = '3 BHK';
+    } else if (source.includes('4 BHK')) {
+      configSelect.value = '4 BHK';
+    } else {
+      configSelect.value = 'All Sizes';
+    }
+  }
+  
   if (source.includes('2 BHK')) {
     modalTitle.innerText = 'Enquire: Premium 2 BHK';
     modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Premium 2 BHK.';
@@ -600,6 +614,20 @@ function openBottomSheetForm(source) {
     form.reset();
     const sourceInput = form.querySelector('input[name="source"]');
     if (sourceInput) sourceInput.value = source;
+    
+    // Auto-select the configuration dropdown option
+    const sheetConfigSelect = document.getElementById('sheet-config');
+    if (sheetConfigSelect) {
+      if (source && source.includes('2 BHK')) {
+        sheetConfigSelect.value = '2 BHK';
+      } else if (source && source.includes('3 BHK')) {
+        sheetConfigSelect.value = '3 BHK';
+      } else if (source && source.includes('4 BHK')) {
+        sheetConfigSelect.value = '4 BHK';
+      } else {
+        sheetConfigSelect.value = 'All Sizes';
+      }
+    }
   }
   
   currentSheetStep = 1;
