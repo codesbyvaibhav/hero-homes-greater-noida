@@ -52,14 +52,14 @@
 
    :root {
   /* Color Palette */
-  --color-primary: #2F2A27;       /* Dark Charcoal */
-  --color-primary-light: #5C5752; /* Body Charcoal */
+  --color-primary: #0A0908;       /* Rich Charcoal Black */
+  --color-primary-light: #1F1D1B; /* Dark Black-Gray for High Legibility Body Text */
   --color-accent: #C22229;        /* Primary CTA Red */
   --color-accent-light: #A81E1E;  /* CTA Hover Red */
-  --color-secondary: #2F2A27;     /* Solid charcoal placeholder for green */
-  --color-text-dark: #2F2A27;     /* Headings */
+  --color-secondary: #0A0908;     /* Solid black placeholder for green */
+  --color-text-dark: #0A0908;     /* Heading Black */
   --color-text-light: #F5F1E8;    /* Soft Ivory */
-  --color-text-muted: #8B847B;    /* Caption */
+  --color-text-muted: #4D4742;    /* Dark Muted Gray for Captions & Legal text */
   --color-bg-page: #F5F1E8;       /* Primary Page Background */
   --color-bg-light: #EFE7DA;      /* Alternate Sections */
   --color-bg-white: #FCF9F4;      /* Cards Background */
