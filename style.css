@@ -3099,9 +3099,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .quick-facts-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 15px;
   margin: 35px 0;
-  padding: 25px;
+  padding: 20px 15px;
   background-color: var(--color-bg-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-medium);
@@ -3117,7 +3117,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 .fact-icon {
   width: 24px;
@@ -3135,11 +3135,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
   color: var(--color-text-muted);
   letter-spacing: 0.8px;
   margin-bottom: 6px;
+  white-space: nowrap; /* Prevent label wrapping */
 }
 .fact-value {
-  font-size: 16px;
+  font-size: 15px; /* Slightly smaller for better fit */
   font-weight: 800;
   color: var(--color-text-dark);
+  white-space: nowrap; /* Prevent value wrapping */
 }
 @media (max-width: 768px) {
   .quick-facts-grid {
