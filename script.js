@@ -250,26 +250,26 @@ function openEnquiryModal(source) {
   // Auto-select the configuration dropdown option
   const configSelect = document.getElementById('modal-config');
   if (configSelect) {
-    if (source.includes('2 BHK')) {
-      configSelect.value = '2 BHK';
-    } else if (source.includes('3 BHK')) {
-      configSelect.value = '3 BHK';
-    } else if (source.includes('4 BHK')) {
-      configSelect.value = '4 BHK';
+    if (source.includes('3 BHK + 2T') || source.includes('2 BHK')) {
+      configSelect.value = '3 BHK + 2T';
+    } else if (source.includes('3 BHK + 3T') || source.includes('3 BHK')) {
+      configSelect.value = '3 BHK + 3T';
+    } else if (source.includes('3 BHK + Servant') || source.includes('4 BHK')) {
+      configSelect.value = '3 BHK + Servant';
     } else {
       configSelect.value = 'All Sizes';
     }
   }
   
-  if (source.includes('2 BHK')) {
-    modalTitle.innerText = 'Enquire: Premium 2 BHK';
-    modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Premium 2 BHK.';
-  } else if (source.includes('3 BHK')) {
-    modalTitle.innerText = 'Enquire: Spacious 3 BHK';
-    modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Spacious 3 BHK.';
-  } else if (source.includes('4 BHK')) {
-    modalTitle.innerText = 'Enquire: Elite 4 BHK';
-    modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Elite 4 BHK.';
+  if (source.includes('3 BHK + 2T') || source.includes('2 BHK')) {
+    modalTitle.innerText = 'Enquire: 3 BHK + 2 Toilets';
+    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 2 Toilets (1650 sq ft).';
+  } else if (source.includes('3 BHK + 3T') || source.includes('3 BHK')) {
+    modalTitle.innerText = 'Enquire: 3 BHK + 3 Toilets';
+    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 3 Toilets (1900 sq ft).';
+  } else if (source.includes('3 BHK + Servant') || source.includes('4 BHK')) {
+    modalTitle.innerText = 'Enquire: 3 BHK + Servant';
+    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + Servant Room (2200 sq ft).';
   } else {
     modalTitle.innerText = 'Enquire Now';
     modalDesc.innerText = 'Fill the form below to receive brochure, pricing lists, and site visit schedules.';
@@ -618,12 +618,12 @@ function openBottomSheetForm(source) {
     // Auto-select the configuration dropdown option
     const sheetConfigSelect = document.getElementById('sheet-config');
     if (sheetConfigSelect) {
-      if (source && source.includes('2 BHK')) {
-        sheetConfigSelect.value = '2 BHK';
-      } else if (source && source.includes('3 BHK')) {
-        sheetConfigSelect.value = '3 BHK';
-      } else if (source && source.includes('4 BHK')) {
-        sheetConfigSelect.value = '4 BHK';
+      if (source && (source.includes('3 BHK + 2T') || source.includes('2 BHK'))) {
+        sheetConfigSelect.value = '3 BHK + 2T';
+      } else if (source && (source.includes('3 BHK + 3T') || source.includes('3 BHK'))) {
+        sheetConfigSelect.value = '3 BHK + 3T';
+      } else if (source && (source.includes('3 BHK + Servant') || source.includes('4 BHK'))) {
+        sheetConfigSelect.value = '3 BHK + Servant';
       } else {
         sheetConfigSelect.value = 'All Sizes';
       }
