@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65ZBE4QDE4"></script>
+  <!-- Google tag (gtag.js) - Optimized Lazy Loader -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-65ZBE4QDE4');
+    window.gtag = function() { dataLayer.push(arguments); };
+    
+    (function() {
+      var initialized = false;
+      function initGA() {
+        if (initialized) return;
+        initialized = true;
+        
+        window.removeEventListener('scroll', initGA);
+        window.removeEventListener('mousemove', initGA);
+        window.removeEventListener('touchstart', initGA);
+        window.removeEventListener('keydown', initGA);
+        
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65ZBE4QDE4';
+        document.head.appendChild(script);
+        
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-65ZBE4QDE4');
+      }
+      
+      window.addEventListener('scroll', initGA, { passive: true });
+      window.addEventListener('mousemove', initGA, { passive: true });
+      window.addEventListener('touchstart', initGA, { passive: true });
+      window.addEventListener('keydown', initGA, { passive: true });
+      
+      setTimeout(initGA, 4000);
+    })();
   </script>
 
   <meta charset="UTF-8">
