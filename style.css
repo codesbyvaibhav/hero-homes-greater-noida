@@ -862,7 +862,7 @@ img {
   .overview-text h3,
   .floorplans-intro-text h3 {
     font-size: 1.45rem !important;
-    white-space: nowrap;
+    white-space: normal !important;
   }
 }
 .floorplans-intro-visual {
