@@ -740,26 +740,29 @@ img {
    ========================================== */
 .overview-content-wrapper,
 .developer-content-wrapper {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
-  align-items: start;
+  display: block;
   width: 100%;
-  margin-bottom: 40px;
+  position: relative;
+}
+.overview-content-wrapper::after,
+.developer-content-wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .overview-text,
 .developer-text {
-  grid-column: 1;
-  grid-row: 1;
+  display: block;
   width: 100%;
 }
 
 .overview-visual,
 .developer-visual {
-  grid-column: 2;
-  grid-row: 1;
-  width: 100%;
+  float: right;
+  width: 38%;
   height: 520px;
+  margin-left: 36px;
+  margin-bottom: 20px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
@@ -1354,6 +1357,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  overflow: hidden;
 }
 .stat-card {
   background-color: var(--color-bg-light);
@@ -1851,6 +1855,17 @@ input[type="range"]::-webkit-slider-thumb:hover {
   }
 }
 
+@media (max-width: 992px) {
+  .overview-visual,
+  .developer-visual {
+    float: none !important;
+    width: 100% !important;
+    height: 400px !important;
+    margin-left: 0 !important;
+    margin-bottom: 24px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     padding-top: 92px !important;
@@ -1917,18 +1932,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
     box-shadow: none !important;
     border-radius: var(--radius-large) !important;
     padding: 24px 16px !important;
-  }
-  .overview-content-wrapper,
-  .developer-content-wrapper {
-    grid-template-columns: 1fr !important;
-    gap: 30px !important;
-  }
-  .overview-text,
-  .developer-text,
-  .overview-visual,
-  .developer-visual {
-    grid-column: auto !important;
-    grid-row: auto !important;
   }
   .overview-visual, 
   .developer-visual,
@@ -3115,6 +3118,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   margin: 35px 0;
+  overflow: hidden;
   padding: 20px 15px;
   background-color: var(--color-bg-white);
   border: 1px solid var(--color-border);
