@@ -715,11 +715,11 @@ img {
   margin-bottom: 8px;
 }
 .section-title {
-  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
   color: var(--color-primary);
   line-height: 1.2;
 }
-@media (min-width: 992px) {
+@media (min-width: 769px) {
   .section-title {
     white-space: nowrap;
   }
