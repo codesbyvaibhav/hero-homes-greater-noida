@@ -3115,7 +3115,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
    ========================================== */
 .quick-facts-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 15px;
   margin: 35px 0;
   overflow: hidden;
@@ -3153,13 +3153,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
   color: var(--color-text-muted);
   letter-spacing: 0.8px;
   margin-bottom: 6px;
-  white-space: nowrap; /* Prevent label wrapping */
+  white-space: normal; /* Allow label wrapping on narrow containers */
 }
 .fact-value {
   font-size: 15px; /* Slightly smaller for better fit */
   font-weight: 800;
   color: var(--color-text-dark);
-  white-space: nowrap; /* Prevent value wrapping */
+  white-space: normal; /* Allow value wrapping on narrow containers */
 }
 @media (max-width: 768px) {
   .quick-facts-grid {
