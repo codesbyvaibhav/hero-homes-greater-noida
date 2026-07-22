@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Lazy Loader -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function() { dataLayer.push(arguments); };
+    
+    (function() {
+      var initialized = false;
+      function initGA() {
+        if (initialized) return;
+        initialized = true;
+        
+        window.removeEventListener('scroll', initGA);
+        window.removeEventListener('mousemove', initGA);
+        window.removeEventListener('touchstart', initGA);
+        window.removeEventListener('keydown', initGA);
+        
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65ZBE4QDE4';
+        document.head.appendChild(script);
+        
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-65ZBE4QDE4');
+      }
+      
+      window.addEventListener('scroll', initGA, { passive: true });
+      window.addEventListener('mousemove', initGA, { passive: true });
+      window.addEventListener('touchstart', initGA, { passive: true });
+      window.addEventListener('keydown', initGA, { passive: true });
+      
+      setTimeout(initGA, 4000);
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Hero Homes DMIC Greater Noida</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://dmic.herohomenoida.com/thankyou.html">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  
+  <style>
+    :root {
+      --color-primary: #2F2A27;
+      --color-accent: #E6332A;
+      --color-bg-white: #F5F1E8;
+      --color-card: #FCF9F4;
+      --color-text-dark: #2F2A27;
+      --color-text-muted: #6E6864;
+      --radius-large: 18px;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: var(--color-bg-white);
+      background-image: 
+        linear-gradient(to right, rgba(228, 219, 207, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(228, 219, 207, 0.25) 1px, transparent 1px);
+      background-size: 40px 40px;
+      color: var(--color-text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    
+    .thankyou-card {
+      background-color: var(--color-card);
+      border: 1px solid rgba(47, 42, 39, 0.08);
+      border-radius: var(--radius-large);
+      max-width: 550px;
+      width: 100%;
+      padding: 48px 36px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+    
+    .logo-container {
+      margin-bottom: 32px;
+    }
+    
+    .logo-img {
+      max-height: 50px;
+    }
+    
+    .success-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background-color: rgba(52, 168, 83, 0.1);
+      color: #34A853;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    
+    .success-icon-wrapper svg {
+      width: 40px;
+      height: 40px;
+    }
+    
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--color-primary);
+    }
+    
+    p {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: var(--color-accent);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(230, 51, 42, 0.2);
+    }
+    
+    .btn-primary:hover {
+      background-color: #c92720;
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+      background-color: transparent;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--color-primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-card">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Hero Realty Logo" class="logo-img">
+    </div>
+    
+    <div class="success-icon-wrapper">
+      <i data-lucide="check-circle-2"></i>
+    </div>
+    
+    <h1>Enquiry Submitted!</h1>
+    <p>Thank you for showing interest in Hero Homes DMIC Greater Noida. Our certified investment representative will call you back within 5 minutes to share the project brochure and custom payment plans.</p>
+    
+    <div class="button-group">
+      <a href="tel:+919686897597" class="btn btn-primary">
+        <i data-lucide="phone"></i> Call Advisor: +91 96868 97597
+      </a>
+      <a href="index.html" class="btn btn-outline">
+        <i data-lucide="arrow-left"></i> Back to Homepage
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
