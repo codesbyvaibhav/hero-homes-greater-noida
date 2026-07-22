@@ -70,7 +70,7 @@
   <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Preload Stylesheet for instant parallel download -->
-  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="style.css?v=1.2" as="style">
 
   <!-- LCP Performance Image Preload -->
   <link rel="preload" href="images/exterior_sunset.webp" as="image" type="image/webp" fetchpriority="high">
@@ -80,7 +80,7 @@
     (function() {
       var link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'style.css';
+      link.href = 'style.css?v=1.2';
       link.onload = function() {
         document.body.classList.add('css-loaded');
       };
@@ -88,7 +88,7 @@
     })();
   </script>
   <noscript>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.2">
   </noscript>
 
   <style>
@@ -673,6 +673,14 @@
       </div>
 
       <div class="overview-content-wrapper">
+        <div class="overview-visual">
+          <img src="images/interior_living.webp" alt="Hero Homes Greater Noida Living Room Interior" class="img-responsive rounded-large shadow-large" loading="lazy">
+          <div class="visual-badge">
+            <span class="badge-number">80%</span>
+            <span class="badge-text">Open Landscapes &amp; Gardens</span>
+          </div>
+        </div>
+
         <div class="overview-text">
           <h3>Nurturing a Healthier &amp; Smarter Tomorrow</h3>
           <p>Hero Homes Greater Noida is an upcoming premium residential development that combines thoughtfully planned homes, contemporary architecture, and lifestyle-driven amenities in one of NCR's fastest-growing destinations. Developed by Hero Homes, the project is envisioned as a modern residential community where comfort, connectivity, and convenience come together to create an elevated living experience. Designed for families, professionals, and investors alike, the development focuses on providing spacious residences surrounded by landscaped greens, wellness spaces, and social infrastructure that supports a balanced urban lifestyle.</p>
@@ -728,14 +736,6 @@
           </div>
           
           <p>Hero Homes Greater Noida represents more than just a residential address—it is designed to become a well-connected, thoughtfully planned community that supports modern living while offering the confidence of investing in a trusted real estate brand.</p>
-        </div>
-        
-        <div class="overview-visual">
-          <img src="images/interior_living.webp" alt="Hero Homes Greater Noida Living Room Interior" class="img-responsive rounded-large shadow-large" loading="lazy">
-          <div class="visual-badge">
-            <span class="badge-number">80%</span>
-            <span class="badge-text">Open Landscapes &amp; Gardens</span>
-          </div>
         </div>
       </div>
     </div>
@@ -1358,6 +1358,10 @@
       </div>
 
       <div class="developer-content-wrapper">
+        <div class="developer-visual">
+          <img src="images/clubhouse_pool.webp" alt="Hero Realty Construction Legacy" class="img-responsive rounded-large shadow" loading="lazy">
+        </div>
+
         <div class="developer-text">
           <h3>A Legacy of Integrity &amp; Innovation</h3>
           <p>Hero Realty is the real estate division of Hero Enterprise, a legendary business conglomerate representing trust, quality, and commitment. Harnessing decades of industrial experience, Hero Realty develops homes designed around green sustainability, smart utilities, and physical wellness.</p>
@@ -1380,10 +1384,6 @@
               <span class="stat-lbl">Major Cities Presence</span>
             </div>
           </div>
-        </div>
-
-        <div class="developer-visual">
-          <img src="images/clubhouse_pool.webp" alt="Hero Realty Construction Legacy" class="img-responsive rounded-large shadow" loading="lazy">
         </div>
       </div>
     </div>
