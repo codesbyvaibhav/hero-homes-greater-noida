@@ -212,7 +212,7 @@ def generate_child_page(
       margin: 14px 0 6px 0;
     }}
 
-    /* DOMAIN THEME STYLED TABLES (Matches style-v19.css design tokens) */
+    /* DOMAIN THEME STYLED TABLES (COMPACT ZERO-WASTAGE PADDING) */
     .table-domain-theme,
     .seo-data-table {{
       width: 100%;
@@ -222,8 +222,8 @@ def generate_child_page(
       border: 1px solid var(--color-border);
       border-radius: var(--radius-large);
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-      margin: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      margin: 10px 0 !important;
     }}
     .table-domain-theme th,
     .seo-data-table th {{
@@ -231,18 +231,18 @@ def generate_child_page(
       color: #ffffff;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 0.88rem;
-      padding: 14px 16px;
+      font-size: 0.82rem;
+      padding: 8px 12px !important;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       border-bottom: 3px solid var(--color-accent);
       text-align: left;
     }}
     .table-domain-theme td,
     .seo-data-table td {{
-      padding: 14px 16px;
+      padding: 8px 12px !important;
       border-bottom: 1px solid #e2e8f0;
-      font-size: 0.94rem;
+      font-size: 0.88rem;
       color: var(--color-text-dark);
       vertical-align: middle;
     }}
@@ -264,8 +264,8 @@ def generate_child_page(
       background: rgba(227, 24, 55, 0.1);
       color: var(--color-accent);
       font-weight: 800;
-      font-size: 0.9rem;
-      padding: 4px 12px;
+      font-size: 0.82rem;
+      padding: 2px 8px;
       border-radius: 50px;
       border: 1px solid rgba(227, 24, 55, 0.2);
     }}
@@ -407,18 +407,18 @@ def generate_child_page(
         background: #ffffff !important;
         border: 1px solid var(--color-border) !important;
         border-radius: 10px !important;
-        margin-bottom: 12px !important;
-        padding: 10px 14px !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+        margin-bottom: 10px !important;
+        padding: 6px 12px !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
       }}
       .table-domain-theme td,
       .seo-data-table td {{
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 8px 0 !important;
+        padding: 5px 0 !important;
         border-bottom: 1px dashed #e2e8f0 !important;
-        font-size: 0.88rem !important;
+        font-size: 0.84rem !important;
         text-align: right !important;
         word-break: break-word !important;
       }}
@@ -432,7 +432,7 @@ def generate_child_page(
         font-weight: 700 !important;
         color: var(--color-primary) !important;
         text-align: left !important;
-        padding-right: 12px !important;
+        padding-right: 10px !important;
         flex-shrink: 0;
       }}
     }}
@@ -664,4 +664,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with complete desktop AND mobile table styles for .table-domain-theme and .seo-data-table!")
+print("build_child_pages.py updated with compact 8px padding table cells and zero-wastage margins.")
