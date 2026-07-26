@@ -88,24 +88,28 @@
       border-bottom-right-radius: 12px;
     }
 
-    /* Ultra-tight H1 block styling */
+    /* PROPERLY VISIBLE, BOLD & BIGGER H1 HEADER BLOCK */
     .page-h1-header-block {
-      margin: 4px 0 16px 0 !important;
-      padding-bottom: 6px !important;
+      margin: 10px 0 18px 0 !important;
+      padding-bottom: 8px !important;
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
     .page-h1-header-block .page-title {
-      font-size: 1.45rem !important;
-      font-weight: 800;
-      color: var(--color-primary);
-      line-height: 1.2;
-      margin-bottom: 4px !important;
-      font-family: var(--font-heading);
+      font-size: 1.75rem !important;
+      font-weight: 800 !important;
+      color: var(--color-primary) !important;
+      line-height: 1.25 !important;
+      margin-bottom: 6px !important;
+      font-family: var(--font-heading) !important;
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: clip !important;
+      word-break: break-word !important;
     }
     .page-h1-header-block .page-subtitle {
-      font-size: 0.86rem !important;
-      color: var(--color-text-muted);
-      line-height: 1.35;
+      font-size: 0.92rem !important;
+      color: var(--color-text-muted) !important;
+      line-height: 1.4 !important;
       margin-bottom: 0 !important;
     }
 
@@ -115,26 +119,31 @@
       margin-top: 0 !important;
     }
 
-    /* Quick Answer Box */
+    /* COMPACT, LOW-HEIGHT QUICK ANSWER BOX */
     .aeo-direct-answer-box {
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
       border-left: 4px solid var(--color-accent);
-      border-radius: 10px;
-      padding: 14px 18px !important;
-      margin: 8px 0 28px 0 !important;
+      border-radius: 8px;
+      padding: 10px 14px !important;
+      margin: 12px 0 20px 0 !important;
     }
     .aeo-box-title {
-      font-size: 0.98rem !important;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 6px !important;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+      margin-bottom: 4px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+    .aeo-box-title i {
+      width: 15px !important;
+      height: 15px !important;
     }
     .aeo-direct-answer-box p {
-      font-size: 0.92rem !important;
-      line-height: 1.55 !important;
+      font-size: 0.84rem !important;
+      line-height: 1.45 !important;
+      color: var(--color-text-dark) !important;
     }
 
     .geo-context-card {
@@ -192,7 +201,7 @@
       margin: 0 !important;
     }
 
-    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED) */
+    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED) */
     .table-domain-theme th,
     .seo-data-table th {
       background-color: var(--color-primary);
@@ -200,25 +209,25 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.84rem;
-      padding: 14px 20px !important;
+      padding: 14px 24px !important;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-bottom: 3px solid var(--color-accent);
-      text-align: left !important;
+      text-align: left;
       vertical-align: middle !important;
       height: 52px;
       box-sizing: border-box;
     }
 
-    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED DESCRIPTIONS) */
+    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED) */
     .table-domain-theme td,
     .seo-data-table td {
-      padding: 14px 20px !important;
+      padding: 14px 24px !important;
       border-bottom: 1px solid #e2e8f0;
       font-size: 0.92rem;
       color: var(--color-text-dark);
       vertical-align: middle !important;
-      text-align: left !important;
+      text-align: left;
       box-sizing: border-box;
     }
     .table-domain-theme tr:last-child td,
@@ -250,38 +259,43 @@
       color: var(--color-accent) !important;
     }
 
-    /* AMENITIES 2-COLUMN TABLE SPECIFIC RATIOS (32% LEFT / 68% RIGHT) */
-    .table-amenities-2col th:first-child,
-    .table-amenities-2col td:first-child {
-      width: 32% !important;
-      white-space: nowrap !important;
-    }
-    .table-amenities-2col th:last-child,
-    .table-amenities-2col td:last-child {
-      width: 68% !important;
-      text-align: left !important;
-    }
-
-    /* AMENITIES 3-COLUMN TABLE RATIOS */
-    .table-amenities-3col th:first-child,
-    .table-amenities-3col td:first-child {
-      width: 28% !important;
-    }
-    .table-amenities-3col th:nth-child(2),
-    .table-amenities-3col td:nth-child(2),
-    .table-amenities-3col th:last-child,
-    .table-amenities-3col td:last-child {
-      text-align: left !important;
-    }
-
-    /* 2-COLUMN FLOOR PLAN SPECIFIC RATIOS (55% LEFT / 45% RIGHT ALIGNED) */
+    /* 2-COLUMN KEY-VALUE TABLES (Landmarks, Floor Plan Dimensions, Pricing Specs) */
     .table-compact-2col th:first-child,
     .table-compact-2col td:first-child {
       width: 55% !important;
+      text-align: left !important;
     }
     .table-compact-2col th:last-child,
     .table-compact-2col td:last-child {
       width: 45% !important;
+      text-align: right !important;
+    }
+
+    /* 2-COLUMN TEXT DESCRIPTION TABLES (Amenities List, Social Infra) */
+    .table-text-2col th:first-child,
+    .table-text-2col td:first-child {
+      width: 32% !important;
+      text-align: left !important;
+      white-space: nowrap !important;
+    }
+    .table-text-2col th:last-child,
+    .table-text-2col td:last-child {
+      width: 68% !important;
+      text-align: left !important;
+    }
+
+    /* 3-COLUMN TABLE RATIOS */
+    .table-amenities-3col th:first-child,
+    .table-amenities-3col td:first-child {
+      width: 28% !important;
+      text-align: left !important;
+    }
+    .table-amenities-3col th:nth-child(2),
+    .table-amenities-3col td:nth-child(2) {
+      text-align: left !important;
+    }
+    .table-amenities-3col th:last-child,
+    .table-amenities-3col td:last-child {
       text-align: right !important;
     }
 
@@ -385,27 +399,43 @@
         line-height: 1.2 !important;
       }
 
-      /* Force H1 onto a single line without wrapping */
+      /* PROPERLY VISIBLE & BOLD H1 ON MOBILE (NO TRUNCATION, WRAPS NATURALLY) */
       .page-h1-header-block {
-        margin: 4px 0 12px 0 !important;
-        padding-bottom: 2px !important;
+        margin: 6px 0 12px 0 !important;
+        padding-bottom: 4px !important;
       }
       .page-h1-header-block .page-title {
-        font-size: clamp(0.78rem, 3.8vw, 1.1rem) !important;
+        font-size: 1.30rem !important;
         font-weight: 800 !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        line-height: 1.2 !important;
-        margin-bottom: 2px !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        line-height: 1.3 !important;
+        margin-bottom: 4px !important;
+        color: var(--color-primary) !important;
       }
       .page-h1-header-block .page-subtitle {
-        font-size: 0.78rem !important;
-        line-height: 1.25 !important;
+        font-size: 0.80rem !important;
+        line-height: 1.3 !important;
       }
 
       .content-block {
         padding: 16px 14px !important;
+      }
+
+      /* COMPACT, LOW-HEIGHT QUICK ANSWER BOX ON MOBILE */
+      .aeo-direct-answer-box {
+        padding: 8px 12px !important;
+        margin: 10px 0 14px 0 !important;
+        border-radius: 6px !important;
+      }
+      .aeo-box-title {
+        font-size: 0.82rem !important;
+        margin-bottom: 2px !important;
+      }
+      .aeo-direct-answer-box p {
+        font-size: 0.80rem !important;
+        line-height: 1.38 !important;
       }
 
       .content-subheading-lg {
@@ -650,7 +680,7 @@
   <p class="seo-rich-paragraph">The table below summarizes the core amenities currently listed for Hero Homes Sector MU, grouped by category:</p>
 
   <div class="table-responsive">
-    <table class="table-domain-theme table-amenities-2col">
+    <table class="table-domain-theme table-text-2col">
       <thead>
         <tr>
           <th>Category</th>
@@ -712,7 +742,7 @@
   <p class="seo-rich-paragraph">Wellness positioning is a recurring theme across Hero Homes Sector MU's marketing, and the amenities reflect that:</p>
 
   <div class="table-responsive">
-    <table class="table-domain-theme table-amenities-2col">
+    <table class="table-domain-theme table-text-2col">
       <thead>
         <tr>
           <th>Amenity</th>
@@ -761,7 +791,7 @@
   <p class="seo-rich-paragraph">Security is listed as a "5-tier" system at Hero Homes Greater Noida, with the following components described:</p>
 
   <div class="table-responsive">
-    <table class="table-domain-theme table-amenities-2col">
+    <table class="table-domain-theme table-text-2col">
       <thead>
         <tr>
           <th>Security Layer</th>
