@@ -1,21 +1,68 @@
-<!DOCTYPE html>
+import os
+
+# Helper template to build consistent, theme-matching child pages
+def generate_child_page(
+    filename,
+    page_title,
+    meta_desc,
+    canonical_url,
+    h1_title,
+    subtitle,
+    hero_img,
+    hero_img_alt,
+    hero_img_caption,
+    nav_active_key,
+    main_content_html,
+    sidebar_title,
+    sidebar_desc,
+    sidebar_btn_text,
+    faq_schema_json
+):
+    nav_keys = {
+        'overview': 'index.html',
+        'pricing': 'pricing.html',
+        'floorplans': 'floor-plans.html',
+        'amenities': 'amenities.html',
+        'location': 'location.html',
+        'developer': 'developer.html',
+        'faqs': 'faqs.html'
+    }
+
+    nav_menu_items = []
+    labels = {
+        'overview': 'Overview',
+        'pricing': 'Pricing',
+        'floorplans': 'Floor Plans',
+        'amenities': 'Amenities',
+        'location': 'Location',
+        'developer': 'Developer',
+        'faqs': 'FAQs'
+    }
+
+    for k, v in nav_keys.items():
+        active_cls = ' class="nav-link active"' if k == nav_active_key else ' class="nav-link"'
+        nav_menu_items.append(f'<li><a href="{v}"{active_cls}>{labels[k]}</a></li>')
+
+    nav_menu_html = "\n          ".join(nav_menu_items)
+
+    html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- SEO Meta Tags -->
-  <title>Hero Homes Greater Noida FAQs – Booking, RERA, Price & Possession</title>
-  <meta name="description" content="Get answers to all frequently asked questions about Hero Homes Greater Noida, including RERA status, location, pricing, payment plans, and possession timeline.">
+  <title>{page_title}</title>
+  <meta name="description" content="{meta_desc}">
   <meta name="keywords" content="Hero Homes Greater Noida, Hero Realty Greater Noida, DMIC Integrated Industrial Township, Jewar Airport Real Estate, Greater Noida 3 BHK Price, Hero Homes Floor Plans">
-  <link rel="canonical" href="https://herohomenoida.com/faqs.html">
+  <link rel="canonical" href="{canonical_url}">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://herohomenoida.com/faqs.html">
-  <meta property="og:title" content="Hero Homes Greater Noida FAQs – Booking, RERA, Price & Possession">
-  <meta property="og:description" content="Get answers to all frequently asked questions about Hero Homes Greater Noida, including RERA status, location, pricing, payment plans, and possession timeline.">
-  <meta property="og:image" content="https://herohomenoida.com/images/hero_homes_overview_poster.webp">
+  <meta property="og:url" content="{canonical_url}">
+  <meta property="og:title" content="{page_title}">
+  <meta property="og:description" content="{meta_desc}">
+  <meta property="og:image" content="https://herohomenoida.com/{hero_img}">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -26,37 +73,37 @@
   <link rel="preload" href="style-v19.css" as="style">
 
   <script>
-    (function() {
+    (function() {{
       var link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = 'style-v19.css';
-      link.onload = function() {
+      link.onload = function() {{
         document.body.classList.add('css-loaded');
-      };
+      }};
       document.head.appendChild(link);
-    })();
+    }})();
   </script>
   <noscript>
     <link rel="stylesheet" href="style-v19.css">
   </noscript>
 
   <style>
-    body { opacity: 0; }
-    body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
-    .single-hero-image-wrapper {
+    body {{ opacity: 0; }}
+    body.css-loaded {{ opacity: 1; transition: opacity 0.15s ease-in; }}
+    .single-hero-image-wrapper {{
       margin: 24px 0 32px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
       position: relative;
-    }
-    .single-hero-image-wrapper img {
+    }}
+    .single-hero-image-wrapper img {{
       width: 100%;
       max-height: 480px;
       object-fit: cover;
       display: block;
-    }
-    .single-hero-caption {
+    }}
+    .single-hero-caption {{
       background: rgba(12, 25, 43, 0.95);
       color: #ffffff;
       padding: 10px 18px;
@@ -65,15 +112,15 @@
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
-    }
-    .aeo-direct-answer-box {
+    }}
+    .aeo-direct-answer-box {{
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
       border-left: 4px solid var(--color-accent);
       border-radius: 12px;
       padding: 20px 24px;
       margin: 24px 0;
-    }
-    .aeo-box-title {
+    }}
+    .aeo-box-title {{
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--color-primary);
@@ -81,92 +128,59 @@
       display: flex;
       align-items: center;
       gap: 8px;
-    }
-    .geo-context-card {
+    }}
+    .geo-context-card {{
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 20px;
       margin: 20px 0;
-    }
-    .seo-rich-paragraph {
+    }}
+    .seo-rich-paragraph {{
       font-size: 1.02rem;
       line-height: 1.8;
       color: #334155;
       margin-bottom: 20px;
-    }
-    .content-subheading-lg {
+    }}
+    .content-subheading-lg {{
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
       padding-bottom: 8px;
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
-    }
-    .content-subheading-md {
+    }}
+    .content-subheading-md {{
       font-size: 1.25rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
-    }
-    .seo-data-table {
+    }}
+    .seo-data-table {{
       width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
-    }
-    .seo-data-table th {
+    }}
+    .seo-data-table th {{
       background: var(--color-primary);
       color: #ffffff;
       padding: 12px 16px;
       text-align: left;
       font-size: 0.95rem;
-    }
-    .seo-data-table td {
+    }}
+    .seo-data-table td {{
       padding: 12px 16px;
       border-bottom: 1px solid #e2e8f0;
       font-size: 0.92rem;
       color: #334155;
-    }
-    .seo-data-table tr:nth-child(even) {
+    }}
+    .seo-data-table tr:nth-child(even) {{
       background: #f8fafc;
-    }
+    }}
   </style>
 
   <!-- Schema.org JSON-LD Structured Data -->
-  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is Hero Homes Greater Noida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hero Homes Greater Noida is a landmark 17.3-acre premium residential development by Hero Realty inside DMIC Township."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the starting price for 3 BHK apartments?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The starting pre-launch price for a 3 BHK luxury residence is ₹2.22 Cr*."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How far is Jewar International Airport from the site?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Noida International Airport at Jewar is located approximately 25 minutes away via Yamuna Expressway."
-      }
-    }
-  ]
-}
-</script>
-
+  {faq_schema_json}
 </head>
 <body>
 
@@ -191,13 +205,7 @@
       
       <nav id="navbar" class="site-navigation">
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Overview</a></li>
-          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="floor-plans.html" class="nav-link">Floor Plans</a></li>
-          <li><a href="amenities.html" class="nav-link">Amenities</a></li>
-          <li><a href="location.html" class="nav-link">Location</a></li>
-          <li><a href="developer.html" class="nav-link">Developer</a></li>
-          <li><a href="faqs.html" class="nav-link active">FAQs</a></li>
+          {nav_menu_html}
         </ul>
       </nav>
       
@@ -205,7 +213,7 @@
         <a href="tel:+919686897597" class="btn btn-phone btn-outline">
           <i data-lucide="phone"></i> <span>+91 96868 97597</span>
         </a>
-        <button class="btn btn-primary" onclick="openEnquiryModal('Ask a Custom Question')">
+        <button class="btn btn-primary" onclick="openEnquiryModal('{sidebar_title}')">
           <i data-lucide="download"></i> Download Brochure
         </button>
       </div>
@@ -222,10 +230,10 @@
   <section class="page-hero-banner">
     <div class="container">
       <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>FAQs</span>
+        <a href="index.html">Home</a> &gt; <span>{labels[nav_active_key]}</span>
       </div>
-      <h1 class="page-title">Frequently Asked Questions (FAQs) & Help Center</h1>
-      <p class="page-subtitle">Get instant, transparent answers regarding pricing, RERA status, location advantages, payment plans, and booking procedures.</p>
+      <h1 class="page-title">{h1_title}</h1>
+      <p class="page-subtitle">{subtitle}</p>
     </div>
   </section>
 
@@ -236,102 +244,26 @@
 
         <!-- Single Hero Image Section -->
         <div class="single-hero-image-wrapper">
-          <img src="images/hero_homes_overview_poster.webp" alt="Hero Homes Greater Noida Comprehensive Project Infographic Poster" loading="eager" fetchpriority="high">
-          <span class="single-hero-caption">Hero Homes Greater Noida – Complete 17.3-Acre Development Overview & Blueprint Stats</span>
+          <img src="{hero_img}" alt="{hero_img_alt}" loading="eager" fetchpriority="high">
+          <span class="single-hero-caption">{hero_img_caption}</span>
         </div>
 
-        
-<article class="content-block shadow-card rounded-large p-4 bg-white">
-  <div class="aeo-direct-answer-box">
-    <div class="aeo-box-title"><i data-lucide="zap" class="text-accent"></i> Quick Help Center Summary</div>
-    <p class="mb-0">Hero Homes Greater Noida is a 17.3-acre premium pre-launch residential development inside Sector MU, DMIC Township. Pre-launch prices start at <strong>₹2.22 Cr*</strong> for 3 BHK luxury residences (1650 sq ft). Located ~25 mins from Jewar International Airport and ~5 mins from Yamuna Expressway, the project offers 30+ resort amenities and pre-approved home loans from SBI, HDFC, ICICI, and Axis Bank.</p>
-  </div>
-
-  <h2 class="content-subheading-lg">Comprehensive Homebuyer FAQ Repository</h2>
-  <p class="seo-rich-paragraph">Welcome to the official <strong>Hero Homes Greater Noida Help Center & FAQ Repository</strong>. Whether you are a first-time homebuyer or an experienced real estate investor, this knowledge base provides immediate, transparent answers to all essential questions regarding pricing, floor plans, RERA approvals, location advantages, payment schedules, and developer track record.</p>
-
-  <h2 class="content-subheading-lg">1. Project Overview & General Questions</h2>
-
-  <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is Hero Homes Greater Noida?</h3>
-      <p>Hero Homes Greater Noida is a landmark 17.3-acre premium residential development by Hero Realty inside the DMIC Integrated Industrial Township in Sector MU, Greater Noida. The project features nearly 6 million sq. ft. of development potential with luxury 2, 3, and 4 BHK high-rise apartments.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Where is the exact project location?</h3>
-      <p>The project is located in Sector MU within the master-planned DMIC Integrated Industrial Township, Greater Noida, Uttar Pradesh (Pincode: 201308).</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What apartment configurations are available?</h3>
-      <p>The development offers 2 BHK Smart Luxury (1250-1350 sq ft), 3 BHK Premium (1650 sq ft), 3 BHK + Servant (1900-2200 sq ft), and 4 BHK Royal Pent-Residences (2600+ sq ft).</p>
-    </div>
-  </div>
-
-  <h2 class="content-subheading-lg">2. Pricing, Costing & Payment Plans</h2>
-
-  <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the starting price for 3 BHK apartments?</h3>
-      <p>The starting pre-launch price for a 3 BHK luxury residence (1650 sq ft) is <strong>₹2.22 Cr*</strong>. Early-bird registration tokens qualify for pre-launch price lock guarantees.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What payment plans are offered?</h3>
-      <p>Hero Realty offers Construction-Linked Plans (CLP 10:80:10) as well as flexible milestone subvention options (30:70 and 20:80) for real estate investors.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Which banks have pre-approved home loans for Hero Homes?</h3>
-      <p>Pre-approved home loan facilities are available from State Bank of India (SBI), HDFC Bank, ICICI Bank, Axis Bank, and PNB Housing with up to 80% funding eligibility.</p>
-    </div>
-  </div>
-
-  <h2 class="content-subheading-lg">3. RERA Approval, Legal Status & Possession</h2>
-
-  <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Is Hero Homes Greater Noida RERA registered?</h3>
-      <p>RERA registration for Hero Homes Greater Noida is under formal application process. Official RERA numbers will be published immediately upon issuance by UP-RERA.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the expected possession timeline?</h3>
-      <p>Possession is targeted for 2031 onwards, executed in phased tower handovers following Mivan structural completion and municipal compliance audits.</p>
-    </div>
-  </div>
-
-  <h2 class="content-subheading-lg">4. Location, Airport & Commute Distance</h2>
-
-  <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> How far is Jewar International Airport from the site?</h3>
-      <p>Noida International Airport at Jewar is located approximately 25 minutes (~28 km) away via the Yamuna Expressway corridor.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What public transport and metro connections exist?</h3>
-      <p>The Aqua Line Metro is approximately 5 minutes away, complemented by direct 60-meter sector roads connecting to Yamuna Expressway and Noida Expressway.</p>
-    </div>
-  </div>
-</article>
-
+        {main_content_html}
 
       </main>
 
       <!-- Sticky Sidebar Lead Form Widget -->
       <aside class="sidebar-column">
         <div class="sticky-sidebar-widget glass-card p-4 rounded-large shadow-card">
-          <h3 class="widget-title">Ask a Custom Question</h3>
-          <p class="widget-desc">Speak directly with our official investment team for detailed project consultation.</p>
+          <h3 class="widget-title">{sidebar_title}</h3>
+          <p class="widget-desc">{sidebar_desc}</p>
           
-          <form class="enquiry-form" onsubmit="handleFormSubmit(event, 'Ask a Custom Question')">
+          <form class="enquiry-form" onsubmit="handleFormSubmit(event, '{sidebar_title}')">
             <div class="form-group">
               <input type="text" name="name" placeholder="Full Name" required minlength="3" class="form-control">
             </div>
             <div class="form-group">
-              <input type="tel" name="phone" placeholder="10-Digit Mobile Number" required pattern="[0-9]{10}" class="form-control">
+              <input type="tel" name="phone" placeholder="10-Digit Mobile Number" required pattern="[0-9]{{10}}" class="form-control">
             </div>
             <div class="form-group">
               <input type="email" name="email" placeholder="Email Address" required class="form-control">
@@ -346,7 +278,7 @@
               </select>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
-              <i data-lucide="file-text"></i> Submit Question
+              <i data-lucide="file-text"></i> {sidebar_btn_text}
             </button>
           </form>
         </div>
@@ -414,7 +346,7 @@
       <p class="modal-subtitle">Leave your phone number to receive instant brochure &amp; price list on WhatsApp.</p>
       <form onsubmit="handleFormSubmit(event, 'Page Modal Form')">
         <div class="form-group"><input type="text" name="name" placeholder="Your Name" required class="form-control"></div>
-        <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" class="form-control"></div>
+        <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{{10}}" class="form-control"></div>
         <div class="form-group"><input type="email" name="email" placeholder="Email Address" required class="form-control"></div>
         <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
       </form>
@@ -424,17 +356,23 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
-    function openEnquiryModal(title) {
+    function openEnquiryModal(title) {{
       document.getElementById('modal-title').innerText = title || 'Request Information';
       document.getElementById('enquiry-modal').style.display = 'flex';
-    }
-    function closeEnquiryModal() {
+    }}
+    function closeEnquiryModal() {{
       document.getElementById('enquiry-modal').style.display = 'none';
-    }
-    function handleFormSubmit(e, source) {
+    }}
+    function handleFormSubmit(e, source) {{
       e.preventDefault();
       window.location.href = 'thankyou.html';
-    }
+    }}
   </script>
 </body>
 </html>
+"""
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(html)
+    print(f"Generated {filename} ({len(html)} chars)")
+
+print("Helper defined.")
