@@ -239,7 +239,7 @@ def generate_child_page(
       margin: 0 !important;
     }}
 
-    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED) */
+    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED) */
     .table-domain-theme th,
     .seo-data-table th {{
       background-color: var(--color-primary);
@@ -247,25 +247,25 @@ def generate_child_page(
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.84rem;
-      padding: 14px 20px !important;
+      padding: 14px 24px !important;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-bottom: 3px solid var(--color-accent);
-      text-align: left !important;
+      text-align: left;
       vertical-align: middle !important;
       height: 52px;
       box-sizing: border-box;
     }}
 
-    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED DESCRIPTIONS) */
+    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED) */
     .table-domain-theme td,
     .seo-data-table td {{
-      padding: 14px 20px !important;
+      padding: 14px 24px !important;
       border-bottom: 1px solid #e2e8f0;
       font-size: 0.92rem;
       color: var(--color-text-dark);
       vertical-align: middle !important;
-      text-align: left !important;
+      text-align: left;
       box-sizing: border-box;
     }}
     .table-domain-theme tr:last-child td,
@@ -297,38 +297,43 @@ def generate_child_page(
       color: var(--color-accent) !important;
     }}
 
-    /* AMENITIES 2-COLUMN TABLE SPECIFIC RATIOS (32% LEFT / 68% RIGHT) */
-    .table-amenities-2col th:first-child,
-    .table-amenities-2col td:first-child {{
-      width: 32% !important;
-      white-space: nowrap !important;
-    }}
-    .table-amenities-2col th:last-child,
-    .table-amenities-2col td:last-child {{
-      width: 68% !important;
-      text-align: left !important;
-    }}
-
-    /* AMENITIES 3-COLUMN TABLE RATIOS */
-    .table-amenities-3col th:first-child,
-    .table-amenities-3col td:first-child {{
-      width: 28% !important;
-    }}
-    .table-amenities-3col th:nth-child(2),
-    .table-amenities-3col td:nth-child(2),
-    .table-amenities-3col th:last-child,
-    .table-amenities-3col td:last-child {{
-      text-align: left !important;
-    }}
-
-    /* 2-COLUMN FLOOR PLAN SPECIFIC RATIOS (55% LEFT / 45% RIGHT ALIGNED) */
+    /* 2-COLUMN KEY-VALUE TABLES (Landmarks, Floor Plan Dimensions, Pricing Specs) */
     .table-compact-2col th:first-child,
     .table-compact-2col td:first-child {{
       width: 55% !important;
+      text-align: left !important;
     }}
     .table-compact-2col th:last-child,
     .table-compact-2col td:last-child {{
       width: 45% !important;
+      text-align: right !important;
+    }}
+
+    /* 2-COLUMN TEXT DESCRIPTION TABLES (Amenities List, Social Infra) */
+    .table-text-2col th:first-child,
+    .table-text-2col td:first-child {{
+      width: 32% !important;
+      text-align: left !important;
+      white-space: nowrap !important;
+    }}
+    .table-text-2col th:last-child,
+    .table-text-2col td:last-child {{
+      width: 68% !important;
+      text-align: left !important;
+    }}
+
+    /* 3-COLUMN TABLE RATIOS */
+    .table-amenities-3col th:first-child,
+    .table-amenities-3col td:first-child {{
+      width: 28% !important;
+      text-align: left !important;
+    }}
+    .table-amenities-3col th:nth-child(2),
+    .table-amenities-3col td:nth-child(2) {{
+      text-align: left !important;
+    }}
+    .table-amenities-3col th:last-child,
+    .table-amenities-3col td:last-child {{
       text-align: right !important;
     }}
 
@@ -747,4 +752,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with .table-cell-title flex wrapper and 32%/68% amenities column widths.")
+print("build_child_pages.py updated with .table-compact-2col (55% left / 45% right-aligned) and .table-text-2col (32% left / 68% left).")
