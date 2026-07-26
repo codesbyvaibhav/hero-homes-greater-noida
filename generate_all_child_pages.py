@@ -89,20 +89,26 @@ floor_main = """
   <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Floor Plans</h2>
 
   <div class="faq-accordion-list my-4">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the carpet area efficiency ratio of Hero Homes floor plans?</h3>
-      <p>Hero Homes layouts deliver an industry-leading carpet area efficiency ratio of ~80% to 85%, ensuring zero dead space in corridors or unnecessary passage walls.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the carpet area efficiency ratio of Hero Homes floor plans?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes layouts deliver an industry-leading carpet area efficiency ratio of ~80% to 85%, ensuring zero dead space in corridors or unnecessary passage walls.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Are all apartments Vastu compliant?</h3>
-      <p>Yes. All apartment entry doors, kitchen placements, and master bedroom locations strictly follow authentic Vastu Shastra orientation principles.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are all apartments Vastu compliant?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. All apartment entry doors, kitchen placements, and master bedroom locations strictly follow authentic Vastu Shastra orientation principles.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Are floor plan PDF blueprints available for download?</h3>
-      <p>Yes. High-resolution 2D and 3D architectural floor plan blueprints for 2, 3, and 4 BHK layouts can be requested instantly in PDF format via our lead form.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are floor plan PDF blueprints available for download?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. High-resolution 2D and 3D architectural floor plan blueprints for 2, 3, and 4 BHK layouts can be requested instantly in PDF format via our lead form.</p>
+      </div>
+    </details>
   </div>
 </article>
 """
@@ -229,20 +235,26 @@ amenities_main = """
   <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Greater Noida Amenities</h2>
 
   <div class="faq-accordion-list my-4">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Is clubhouse membership included in the apartment purchase price?</h3>
-      <p>Yes. Every apartment purchase at Hero Homes Greater Noida includes perpetual family membership access to the 25,000 sq. ft. luxury clubhouse and sports facilities.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is clubhouse membership included in the apartment purchase price?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. Every apartment purchase at Hero Homes Greater Noida includes perpetual family membership access to the 25,000 sq. ft. luxury clubhouse and sports facilities.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Is the swimming pool operational year-round?</h3>
-      <p>Yes. In addition to the main outdoor resort pool, the complex features a climate-controlled indoor pool usable during winter months.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is the swimming pool operational year-round?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. In addition to the main outdoor resort pool, the complex features a climate-controlled indoor pool usable during winter months.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Are there EV charging stations inside the complex?</h3>
-      <p>Yes. Dedicated Electric Vehicle (EV) fast-charging ports are installed across basement parking levels for residents and visitors.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are there EV charging stations inside the complex?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. Dedicated Electric Vehicle (EV) fast-charging ports are installed across basement parking levels for residents and visitors.</p>
+      </div>
+    </details>
   </div>
 </article>
 """
@@ -366,20 +378,26 @@ location_main = """
   <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Greater Noida Location</h2>
 
   <div class="faq-accordion-list my-4">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Exactly which sector is Hero Homes Greater Noida located in?</h3>
-      <p>Hero Homes Greater Noida is located in Sector MU within the DMIC Integrated Industrial Township, Greater Noida, Uttar Pradesh (Pincode: 201308).</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Exactly which sector is Hero Homes Greater Noida located in?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Greater Noida is located in Sector MU within the DMIC Integrated Industrial Township, Greater Noida, Uttar Pradesh (Pincode: 201308).</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> How far is Jewar Airport from the project site?</h3>
-      <p>Noida International Airport at Jewar is approximately 25 minutes (~28 km) away via the signal-free Yamuna Expressway corridor.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How far is Jewar Airport from the project site?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Noida International Airport at Jewar is approximately 25 minutes (~28 km) away via the signal-free Yamuna Expressway corridor.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the nearest metro station to Hero Homes?</h3>
-      <p>The nearest operational Aqua Line Metro Station is approximately 5 minutes away, with proposed metro expansions planned closer to the DMIC Township gate.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the nearest metro station to Hero Homes?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The nearest operational Aqua Line Metro Station is approximately 5 minutes away, with proposed metro expansions planned closer to the DMIC Township gate.</p>
+      </div>
+    </details>
   </div>
 </article>
 """
@@ -504,20 +522,26 @@ developer_main = """
   <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Realty Developer Track Record</h2>
 
   <div class="faq-accordion-list my-4">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Who is the parent company behind Hero Realty?</h3>
-      <p>Hero Realty Private Limited is part of Hero Enterprise, chaired by Mr. Sunil Kant Munjal, belonging to the renowned Hero Group conglomerate.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Who is the parent company behind Hero Realty?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Realty Private Limited is part of Hero Enterprise, chaired by Mr. Sunil Kant Munjal, belonging to the renowned Hero Group conglomerate.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Has Hero Realty delivered previous residential projects on time?</h3>
-      <p>Yes. Hero Realty has a proven track record of timely delivery across flagship projects in Gurgaon (Sector 104), Mohali (Sector 88), and Ludhiana.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Has Hero Realty delivered previous residential projects on time?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. Hero Realty has a proven track record of timely delivery across flagship projects in Gurgaon (Sector 104), Mohali (Sector 88), and Ludhiana.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What construction technology is used in Hero Homes projects?</h3>
-      <p>Hero Homes utilizes advanced Mivan aluminum formwork monolithic concrete casting technology, ensuring superior structural durability, earthquake resistance, and flawless wall finishes.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What construction technology is used in Hero Homes projects?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes utilizes advanced Mivan aluminum formwork monolithic concrete casting technology, ensuring superior structural durability, earthquake resistance, and flawless wall finishes.</p>
+      </div>
+    </details>
   </div>
 </article>
 """
@@ -583,62 +607,80 @@ faqs_main = """
   <h2 class="content-subheading-lg">Hero Homes Greater Noida Price &amp; Cost FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the starting price of Hero Homes Greater Noida?</h3>
-      <p>The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the starting price of Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price for the largest configuration?</h3>
-      <p>The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price for the largest configuration?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price per square foot?</h3>
-      <p>Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price per square foot?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
+      </div>
+    </details>
   </div>
 
   <h2 class="content-subheading-lg">Hero Homes Greater Noida Floor Plan &amp; Layout FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What configurations does Hero Homes Sector MU offer?</h3>
-      <p>Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What configurations does Hero Homes Sector MU offer?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Are all floor plans Vastu compliant?</h3>
-      <p>Yes. All entry doors, kitchen positions, and master bedroom suites follow Vastu Shastra orientation principles.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are all floor plans Vastu compliant?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. All entry doors, kitchen positions, and master bedroom suites follow Vastu Shastra orientation principles.</p>
+      </div>
+    </details>
   </div>
 
   <h2 class="content-subheading-lg">Hero Homes Greater Noida RERA &amp; Possession FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Is Hero Homes Greater Noida RERA registered?</h3>
-      <p>RERA registration for Hero Homes Greater Noida is currently under process and listed as "Coming Soon".</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Greater Noida RERA registered?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">RERA registration for Hero Homes Greater Noida is currently under process and listed as "Coming Soon".</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the possession timeline?</h3>
-      <p>Possession is currently indicated as 2031 onwards, executed in phased tower handovers.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the possession timeline?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Possession is currently indicated as 2031 onwards, executed in phased tower handovers.</p>
+      </div>
+    </details>
   </div>
 
   <h2 class="content-subheading-lg">Hero Homes Greater Noida Location &amp; Connectivity FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> How far is Jewar International Airport from the site?</h3>
-      <p>Noida International Airport at Jewar is located approximately 25 to 35 minutes away via the Yamuna Expressway corridor.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How far is Jewar International Airport from the site?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Noida International Airport at Jewar is located approximately 25 to 35 minutes away via the Yamuna Expressway corridor.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Which sector is the project situated in?</h3>
-      <p>Hero Homes Greater Noida is located in Sector MU inside the DMIC Integrated Industrial Township.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Which sector is the project situated in?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Greater Noida is located in Sector MU inside the DMIC Integrated Industrial Township.</p>
+      </div>
+    </details>
   </div>
 </article>
 """

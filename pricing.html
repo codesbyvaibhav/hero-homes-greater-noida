@@ -161,26 +161,64 @@
       color: #1e293b;
       margin: 14px 0 6px 0;
     }
-    .seo-data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0;
+
+    /* BULLETPROOF INTERACTIVE FAQ ACCORDION STYLES */
+    details.faq-accordion-item {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .seo-data-table th {
-      background: var(--color-primary);
-      color: #ffffff;
-      padding: 9px 12px;
-      text-align: left;
-      font-size: 0.88rem;
+    details.faq-accordion-item[open] {
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 16px rgba(194, 34, 41, 0.1);
     }
-    .seo-data-table td {
-      padding: 9px 12px;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 0.86rem;
-      color: #334155;
+    details.faq-accordion-item summary {
+      padding: 14px 18px !important;
+      font-size: 0.98rem !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+      cursor: pointer !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      list-style: none !important;
+      user-select: none !important;
     }
-    .seo-data-table tr:nth-child(even) {
-      background: #f8fafc;
+    details.faq-accordion-item summary::-webkit-details-marker,
+    details.faq-accordion-item summary::marker {
+      display: none !important;
+    }
+    details.faq-accordion-item summary * {
+      pointer-events: none !important;
+    }
+    details.faq-accordion-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      transition: transform 0.2s ease;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+    details.faq-accordion-item[open] summary::after {
+      content: '−';
+    }
+    details.faq-accordion-item .faq-answer {
+      padding: 12px 18px 16px 18px !important;
+      font-size: 0.94rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-dark) !important;
+      border-top: 1px solid var(--color-border) !important;
+      background: #FCF9F4;
+    }
+    .faq-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--color-accent);
+      margin-right: 8px;
     }
   </style>
 

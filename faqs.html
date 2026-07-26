@@ -161,26 +161,64 @@
       color: #1e293b;
       margin: 14px 0 6px 0;
     }
-    .seo-data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0;
+
+    /* BULLETPROOF INTERACTIVE FAQ ACCORDION STYLES */
+    details.faq-accordion-item {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .seo-data-table th {
-      background: var(--color-primary);
-      color: #ffffff;
-      padding: 9px 12px;
-      text-align: left;
-      font-size: 0.88rem;
+    details.faq-accordion-item[open] {
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 16px rgba(194, 34, 41, 0.1);
     }
-    .seo-data-table td {
-      padding: 9px 12px;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 0.86rem;
-      color: #334155;
+    details.faq-accordion-item summary {
+      padding: 14px 18px !important;
+      font-size: 0.98rem !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+      cursor: pointer !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      list-style: none !important;
+      user-select: none !important;
     }
-    .seo-data-table tr:nth-child(even) {
-      background: #f8fafc;
+    details.faq-accordion-item summary::-webkit-details-marker,
+    details.faq-accordion-item summary::marker {
+      display: none !important;
+    }
+    details.faq-accordion-item summary * {
+      pointer-events: none !important;
+    }
+    details.faq-accordion-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      transition: transform 0.2s ease;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+    details.faq-accordion-item[open] summary::after {
+      content: '−';
+    }
+    details.faq-accordion-item .faq-answer {
+      padding: 12px 18px 16px 18px !important;
+      font-size: 0.94rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-dark) !important;
+      border-top: 1px solid var(--color-border) !important;
+      background: #FCF9F4;
+    }
+    .faq-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--color-accent);
+      margin-right: 8px;
     }
   </style>
 
@@ -319,62 +357,80 @@
   <h2 class="content-subheading-lg">Hero Homes Greater Noida Price &amp; Cost FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the starting price of Hero Homes Greater Noida?</h3>
-      <p>The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the starting price of Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price for the largest configuration?</h3>
-      <p>The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price for the largest configuration?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price per square foot?</h3>
-      <p>Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price per square foot?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
+      </div>
+    </details>
   </div>
 
   <h2 class="content-subheading-lg">Hero Homes Greater Noida Floor Plan &amp; Layout FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What configurations does Hero Homes Sector MU offer?</h3>
-      <p>Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What configurations does Hero Homes Sector MU offer?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Are all floor plans Vastu compliant?</h3>
-      <p>Yes. All entry doors, kitchen positions, and master bedroom suites follow Vastu Shastra orientation principles.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are all floor plans Vastu compliant?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. All entry doors, kitchen positions, and master bedroom suites follow Vastu Shastra orientation principles.</p>
+      </div>
+    </details>
   </div>
 
   <h2 class="content-subheading-lg">Hero Homes Greater Noida RERA &amp; Possession FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Is Hero Homes Greater Noida RERA registered?</h3>
-      <p>RERA registration for Hero Homes Greater Noida is currently under process and listed as "Coming Soon".</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Greater Noida RERA registered?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">RERA registration for Hero Homes Greater Noida is currently under process and listed as "Coming Soon".</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the possession timeline?</h3>
-      <p>Possession is currently indicated as 2031 onwards, executed in phased tower handovers.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the possession timeline?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Possession is currently indicated as 2031 onwards, executed in phased tower handovers.</p>
+      </div>
+    </details>
   </div>
 
   <h2 class="content-subheading-lg">Hero Homes Greater Noida Location &amp; Connectivity FAQs</h2>
 
   <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> How far is Jewar International Airport from the site?</h3>
-      <p>Noida International Airport at Jewar is located approximately 25 to 35 minutes away via the Yamuna Expressway corridor.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How far is Jewar International Airport from the site?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Noida International Airport at Jewar is located approximately 25 to 35 minutes away via the Yamuna Expressway corridor.</p>
+      </div>
+    </details>
 
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Which sector is the project situated in?</h3>
-      <p>Hero Homes Greater Noida is located in Sector MU inside the DMIC Integrated Industrial Township.</p>
-    </div>
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Which sector is the project situated in?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Greater Noida is located in Sector MU inside the DMIC Integrated Industrial Township.</p>
+      </div>
+    </details>
   </div>
 </article>
 
