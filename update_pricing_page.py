@@ -33,22 +33,22 @@ pricing_main_content = """
       </thead>
       <tbody>
         <tr>
-          <td><strong>3 BHK + 2 Toilets</strong></td>
-          <td>1,650 sq. ft.</td>
-          <td>1,180 sq. ft.</td>
-          <td><span class="price-highlight-pill">₹2.22 Cr*</span></td>
+          <td data-label="Configuration"><strong>3 BHK + 2 Toilets</strong></td>
+          <td data-label="Super Built-up Area">1,650 sq. ft.</td>
+          <td data-label="Carpet Area">1,180 sq. ft.</td>
+          <td data-label="Starting Price*"><span class="price-highlight-pill">₹2.22 Cr*</span></td>
         </tr>
         <tr>
-          <td><strong>3 BHK + 3 Toilets</strong></td>
-          <td>1,900 sq. ft.</td>
-          <td>1,360 sq. ft.</td>
-          <td><span class="price-highlight-pill">₹2.56 Cr*</span></td>
+          <td data-label="Configuration"><strong>3 BHK + 3 Toilets</strong></td>
+          <td data-label="Super Built-up Area">1,900 sq. ft.</td>
+          <td data-label="Carpet Area">1,360 sq. ft.</td>
+          <td data-label="Starting Price*"><span class="price-highlight-pill">₹2.56 Cr*</span></td>
         </tr>
         <tr>
-          <td><strong>3 BHK + Servant Room</strong></td>
-          <td>2,200 sq. ft.</td>
-          <td>1,580 sq. ft.</td>
-          <td><span class="price-highlight-pill">₹2.97 Cr*</span></td>
+          <td data-label="Configuration"><strong>3 BHK + Servant Room</strong></td>
+          <td data-label="Super Built-up Area">2,200 sq. ft.</td>
+          <td data-label="Carpet Area">1,580 sq. ft.</td>
+          <td data-label="Starting Price*"><span class="price-highlight-pill">₹2.97 Cr*</span></td>
         </tr>
       </tbody>
     </table>
@@ -92,7 +92,7 @@ pricing_main_content = """
       </thead>
       <tbody>
         <tr>
-          <td><strong>3 BHK + 2 Toilets</strong></td>
+          <td data-label="Configuration"><strong>3 BHK + 2 Toilets</strong></td>
           <td>3</td>
           <td>3</td>
           <td>12' x 18'</td>
@@ -100,7 +100,7 @@ pricing_main_content = """
           <td>G+31 storey layout</td>
         </tr>
         <tr>
-          <td><strong>3 BHK + 3 Toilets</strong></td>
+          <td data-label="Configuration"><strong>3 BHK + 3 Toilets</strong></td>
           <td>3</td>
           <td>3</td>
           <td>14' x 22'</td>
@@ -108,7 +108,7 @@ pricing_main_content = """
           <td>Optimized floor density</td>
         </tr>
         <tr>
-          <td><strong>3 BHK + Servant Room</strong></td>
+          <td data-label="Configuration"><strong>3 BHK + Servant Room</strong></td>
           <td>3 + servant</td>
           <td>4</td>
           <td>16' x 24'</td>
@@ -133,32 +133,32 @@ pricing_main_content = """
       </thead>
       <tbody>
         <tr>
-          <td><strong>Base unit cost (per configuration)</strong></td>
-          <td><span class="status-badge status-included"><i data-lucide="check" style="width:12px;height:12px;"></i> Included (Yes)</span></td>
+          <td data-label="Cost Component"><strong>Base unit cost (per configuration)</strong></td>
+          <td data-label="Included in Base Price?"><span class="status-badge status-included"><i data-lucide="check" style="width:12px;height:12px;"></i> Included (Yes)</span></td>
         </tr>
         <tr>
-          <td><strong>Standard specifications/fittings</strong></td>
-          <td><span class="status-badge status-included"><i data-lucide="check" style="width:12px;height:12px;"></i> Included (Yes)</span></td>
+          <td data-label="Cost Component"><strong>Standard specifications/fittings</strong></td>
+          <td data-label="Included in Base Price?"><span class="status-badge status-included"><i data-lucide="check" style="width:12px;height:12px;"></i> Included (Yes)</span></td>
         </tr>
         <tr>
-          <td><strong>Preferential Location Charges (PLC)</strong></td>
-          <td><span class="status-badge status-excluded">No — charged separately</span></td>
+          <td data-label="Cost Component"><strong>Preferential Location Charges (PLC)</strong></td>
+          <td data-label="Included in Base Price?"><span class="status-badge status-excluded">No — charged separately</span></td>
         </tr>
         <tr>
-          <td><strong>GST (as applicable)</strong></td>
-          <td><span class="status-badge status-excluded">No — charged separately</span></td>
+          <td data-label="Cost Component"><strong>GST (as applicable)</strong></td>
+          <td data-label="Included in Base Price?"><span class="status-badge status-excluded">No — charged separately</span></td>
         </tr>
         <tr>
-          <td><strong>Registration &amp; stamp duty</strong></td>
-          <td><span class="status-badge status-excluded">No — charged separately</span></td>
+          <td data-label="Cost Component"><strong>Registration &amp; stamp duty</strong></td>
+          <td data-label="Included in Base Price?"><span class="status-badge status-excluded">No — charged separately</span></td>
         </tr>
         <tr>
-          <td><strong>Club membership / maintenance deposit</strong></td>
-          <td><span class="status-badge status-excluded">No — charged separately</span></td>
+          <td data-label="Cost Component"><strong>Club membership / maintenance deposit</strong></td>
+          <td data-label="Included in Base Price?"><span class="status-badge status-excluded">No — charged separately</span></td>
         </tr>
         <tr>
-          <td><strong>Parking allocation</strong></td>
-          <td><span class="status-badge status-varies">Varies — confirm with sales team</span></td>
+          <td data-label="Cost Component"><strong>Parking allocation</strong></td>
+          <td data-label="Included in Base Price?"><span class="status-badge status-varies">Varies — confirm with sales team</span></td>
         </tr>
       </tbody>
     </table>

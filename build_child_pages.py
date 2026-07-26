@@ -132,7 +132,7 @@ def generate_child_page(
       border-bottom-right-radius: 12px;
     }}
 
-    /* Ultra-tight H1 block styling for exact first view fit */
+    /* Ultra-tight H1 block styling */
     .page-h1-header-block {{
       margin: 4px 0 4px 0 !important;
       padding-bottom: 4px !important;
@@ -159,7 +159,7 @@ def generate_child_page(
       margin-top: 0 !important;
     }}
 
-    /* Quick Answer Box (Fits 100% in First View) */
+    /* Quick Answer Box */
     .aeo-direct-answer-box {{
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
       border-left: 4px solid var(--color-accent);
@@ -268,40 +268,106 @@ def generate_child_page(
       margin-right: 8px;
     }}
 
-    /* MOBILE SPECIFIC OVERRIDES: Remove large top space & preserve full hero banner visibility */
+    /* MOBILE OPTIMIZATIONS: ZERO TOP SPACE, SINGLE-LINE H1 & NO HORIZONTAL SCROLL TABLES */
     @media (max-width: 768px) {{
       .main-layout-container {{
-        padding-top: calc(var(--nav-offset) + 6px) !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-top: var(--nav-offset) !important; /* ZERO extra space above hero image */
+        padding-left: 8px !important;
+        padding-right: 8px !important;
         margin-top: 0 !important;
       }}
       .single-hero-image-wrapper {{
-        margin: 0 0 6px 0 !important;
+        margin: 0 !important;
         border-radius: 8px !important;
         background-color: #0c192b !important;
       }}
       .single-hero-image-wrapper img {{
         height: auto !important;
-        max-height: 180px !important;
+        max-height: 165px !important;
         object-fit: contain !important;
         background-color: #0c192b !important;
       }}
       .single-hero-caption {{
-        padding: 4px 8px !important;
-        font-size: 0.68rem !important;
-        line-height: 1.3 !important;
+        padding: 3px 6px !important;
+        font-size: 0.65rem !important;
+        line-height: 1.2 !important;
+      }}
+
+      /* Force H1 onto a single line without wrapping */
+      .page-h1-header-block {{
+        margin: 4px 0 !important;
+        padding-bottom: 2px !important;
       }}
       .page-h1-header-block .page-title {{
-        font-size: 1.22rem !important;
-        line-height: 1.25 !important;
+        font-size: clamp(0.78rem, 3.8vw, 1.1rem) !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        line-height: 1.2 !important;
+        margin-bottom: 2px !important;
       }}
       .page-h1-header-block .page-subtitle {{
-        font-size: 0.8rem !important;
-        line-height: 1.3 !important;
+        font-size: 0.78rem !important;
+        line-height: 1.25 !important;
       }}
+
       .content-block {{
-        padding: 12px 14px !important;
+        padding: 10px 12px !important;
+      }}
+
+      /* RESPONSIVE MOBILE TABLES (NO HORIZONTAL SCROLL) */
+      .table-responsive {{
+        overflow-x: visible !important;
+      }}
+      .table-domain-theme,
+      .table-domain-theme tbody,
+      .table-domain-theme tr,
+      .table-domain-theme td,
+      .seo-data-table,
+      .seo-data-table tbody,
+      .seo-data-table tr,
+      .seo-data-table td {{
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .table-domain-theme thead,
+      .seo-data-table thead {{
+        display: none !important;
+      }}
+      .table-domain-theme tr,
+      .seo-data-table tr {{
+        background: #ffffff !important;
+        border: 1px solid var(--color-border) !important;
+        border-radius: 8px !important;
+        margin-bottom: 10px !important;
+        padding: 8px 12px !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+      }}
+      .table-domain-theme td,
+      .seo-data-table td {{
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 5px 0 !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        font-size: 0.82rem !important;
+        text-align: right !important;
+        word-break: break-word !important;
+      }}
+      .table-domain-theme td:last-child,
+      .seo-data-table td:last-child {{
+        border-bottom: none !important;
+      }}
+      .table-domain-theme td[data-label]::before,
+      .seo-data-table td[data-label]::before {{
+        content: attr(data-label) !important;
+        font-weight: 700 !important;
+        color: var(--color-primary) !important;
+        text-align: left !important;
+        padding-right: 8px !important;
+        flex-shrink: 0;
       }}
     }}
   </style>
@@ -516,4 +582,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with mobile top spacing and hero image object-fit contain rules.")
+print("build_child_pages.py updated with mobile single-line H1, zero space above hero, and card-style mobile tables.")
