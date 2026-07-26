@@ -206,13 +206,17 @@
     details.faq-accordion-item[open] summary::after {
       content: '−';
     }
-    details.faq-accordion-item .faq-answer {
+    details.faq-accordion-item:not([open]) .faq-answer {
+      display: none !important;
+    }
+    details.faq-accordion-item[open] .faq-answer {
+      display: block !important;
       padding: 12px 18px 16px 18px !important;
       font-size: 0.94rem !important;
       line-height: 1.6 !important;
       color: var(--color-text-dark) !important;
       border-top: 1px solid var(--color-border) !important;
-      background: #FCF9F4;
+      background: #FCF9F4 !important;
     }
     .faq-icon {
       width: 16px;
@@ -224,10 +228,11 @@
     /* MOBILE OPTIMIZATIONS: ZERO TOP SPACE, SINGLE-LINE H1 & NO HORIZONTAL SCROLL TABLES */
     @media (max-width: 768px) {
       .main-layout-container {
-        padding-top: var(--nav-offset) !important; /* ZERO extra space above hero image */
+        padding-top: calc(var(--nav-offset) - 50px) !important; /* ZERO extra space above hero image */
         padding-left: 8px !important;
         padding-right: 8px !important;
         margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
       .single-hero-image-wrapper {
         margin: 0 !important;
@@ -269,7 +274,7 @@
         padding: 10px 12px !important;
       }
 
-      /* RESPONSIVE MOBILE TABLES (NO HORIZONTAL SCROLL) */
+      /* RESPONSIVE MOBILE TABLES (NO HORIZONTAL SCROLL + DATA LABELS) */
       .table-responsive {
         overflow-x: visible !important;
       }
@@ -296,16 +301,16 @@
         border-radius: 8px !important;
         margin-bottom: 10px !important;
         padding: 8px 12px !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
       }
       .table-domain-theme td,
       .seo-data-table td {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 5px 0 !important;
+        padding: 6px 0 !important;
         border-bottom: 1px dashed #e2e8f0 !important;
-        font-size: 0.82rem !important;
+        font-size: 0.84rem !important;
         text-align: right !important;
         word-break: break-word !important;
       }
@@ -652,6 +657,21 @@
       e.preventDefault();
       window.location.href = 'thankyou.html';
     }
+
+    /* Bulletproof Accordion Toggle Handler for Mobile & Desktop */
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('details.faq-accordion-item summary').forEach(function(summary) {
+        summary.addEventListener('click', function(e) {
+          const details = summary.parentElement;
+          if (details.hasAttribute('open')) {
+            details.removeAttribute('open');
+          } else {
+            details.setAttribute('open', '');
+          }
+          e.preventDefault();
+        });
+      });
+    });
   </script>
 </body>
 </html>

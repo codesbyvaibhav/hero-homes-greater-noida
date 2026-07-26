@@ -93,27 +93,27 @@ pricing_main_content = """
       <tbody>
         <tr>
           <td data-label="Configuration"><strong>3 BHK + 2 Toilets</strong></td>
-          <td>3</td>
-          <td>3</td>
-          <td>12' x 18'</td>
-          <td>11' x 14'</td>
-          <td>G+31 storey layout</td>
+          <td data-label="Bedrooms">3</td>
+          <td data-label="Balconies">3</td>
+          <td data-label="Living/Dining">12' x 18'</td>
+          <td data-label="Master Bed">11' x 14'</td>
+          <td data-label="Key Feature">G+31 storey layout</td>
         </tr>
         <tr>
           <td data-label="Configuration"><strong>3 BHK + 3 Toilets</strong></td>
-          <td>3</td>
-          <td>3</td>
-          <td>14' x 22'</td>
-          <td>12' x 16'</td>
-          <td>Optimized floor density</td>
+          <td data-label="Bedrooms">3</td>
+          <td data-label="Balconies">3</td>
+          <td data-label="Living/Dining">14' x 22'</td>
+          <td data-label="Master Bed">12' x 16'</td>
+          <td data-label="Key Feature">Optimized floor density</td>
         </tr>
         <tr>
           <td data-label="Configuration"><strong>3 BHK + Servant Room</strong></td>
-          <td>3 + servant</td>
-          <td>4</td>
-          <td>16' x 24'</td>
-          <td>14' x 18'</td>
-          <td>VRV AC &amp; private foyer</td>
+          <td data-label="Bedrooms">3 + servant</td>
+          <td data-label="Balconies">4</td>
+          <td data-label="Living/Dining">16' x 24'</td>
+          <td data-label="Master Bed">14' x 18'</td>
+          <td data-label="Key Feature">VRV AC &amp; private foyer</td>
         </tr>
       </tbody>
     </table>
@@ -231,28 +231,28 @@ pricing_main_content = """
       </thead>
       <tbody>
         <tr>
-          <td><strong>Noida–Greater Noida Expressway</strong></td>
-          <td>~5 minutes</td>
+          <td data-label="Landmark"><strong>Noida–Greater Noida Expressway</strong></td>
+          <td data-label="Distance/Time">~5 minutes</td>
         </tr>
         <tr>
-          <td><strong>Pari Chowk / Depot Metro Station</strong></td>
-          <td>~8 minutes</td>
+          <td data-label="Landmark"><strong>Pari Chowk / Depot Metro Station</strong></td>
+          <td data-label="Distance/Time">~8 minutes</td>
         </tr>
         <tr>
-          <td><strong>Noida International Airport (Jewar)</strong></td>
-          <td>~35 minutes</td>
+          <td data-label="Landmark"><strong>Noida International Airport (Jewar)</strong></td>
+          <td data-label="Distance/Time">~35 minutes</td>
         </tr>
         <tr>
-          <td><strong>Top-tier schools (DPS, Ryan, Shri Ram)</strong></td>
-          <td>~10 minutes</td>
+          <td data-label="Landmark"><strong>Top-tier schools (DPS, Ryan, Shri Ram)</strong></td>
+          <td data-label="Distance/Time">~10 minutes</td>
         </tr>
         <tr>
-          <td><strong>Kailash / Fortis Medical Center</strong></td>
-          <td>~12 minutes</td>
+          <td data-label="Landmark"><strong>Kailash / Fortis Medical Center</strong></td>
+          <td data-label="Distance/Time">~12 minutes</td>
         </tr>
         <tr>
-          <td><strong>Yamuna Expressway &amp; retail malls</strong></td>
-          <td>~15 minutes</td>
+          <td data-label="Landmark"><strong>Yamuna Expressway &amp; retail malls</strong></td>
+          <td data-label="Distance/Time">~15 minutes</td>
         </tr>
       </tbody>
     </table>
@@ -286,29 +286,29 @@ pricing_main_content = """
       </thead>
       <tbody>
         <tr>
-          <td><strong>Configuration focus</strong></td>
-          <td class="col-hero-brand">3 BHK only (3 sizes)</td>
-          <td>Often wider range (1–4 BHK)</td>
+          <td data-label="Factor"><strong>Configuration focus</strong></td>
+          <td class="col-hero-brand" data-label="Hero Homes Sector MU">3 BHK only (3 sizes)</td>
+          <td data-label="Typical Competing Projects">Often wider range (1–4 BHK)</td>
         </tr>
         <tr>
-          <td><strong>Density</strong></td>
-          <td class="col-hero-brand">6 units/floor</td>
-          <td>Often 8–12 units/floor</td>
+          <td data-label="Factor"><strong>Density</strong></td>
+          <td class="col-hero-brand" data-label="Hero Homes Sector MU">6 units/floor</td>
+          <td data-label="Typical Competing Projects">Often 8–12 units/floor</td>
         </tr>
         <tr>
-          <td><strong>Starting price</strong></td>
-          <td class="col-hero-brand"><strong>₹2.22 Cr*</strong></td>
-          <td>Varies widely by developer/location</td>
+          <td data-label="Factor"><strong>Starting price</strong></td>
+          <td class="col-hero-brand" data-label="Hero Homes Sector MU"><strong>₹2.22 Cr*</strong></td>
+          <td data-label="Typical Competing Projects">Varies widely by developer/location</td>
         </tr>
         <tr>
-          <td><strong>Price per sq. ft.</strong></td>
-          <td class="col-hero-brand"><strong>~₹13,500*</strong></td>
-          <td>Varies by project positioning</td>
+          <td data-label="Factor"><strong>Price per sq. ft.</strong></td>
+          <td class="col-hero-brand" data-label="Hero Homes Sector MU"><strong>~₹13,500*</strong></td>
+          <td data-label="Typical Competing Projects">Varies by project positioning</td>
         </tr>
         <tr>
-          <td><strong>RERA status</strong></td>
-          <td class="col-hero-brand">Coming Soon</td>
-          <td>Varies — always verify individually</td>
+          <td data-label="Factor"><strong>RERA status</strong></td>
+          <td class="col-hero-brand" data-label="Hero Homes Sector MU">Coming Soon</td>
+          <td data-label="Typical Competing Projects">Varies — always verify individually</td>
         </tr>
       </tbody>
     </table>
