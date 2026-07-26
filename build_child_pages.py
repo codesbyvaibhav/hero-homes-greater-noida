@@ -137,8 +137,8 @@ def generate_child_page(
 
     /* Ultra-tight H1 block styling */
     .page-h1-header-block {{
-      margin: 4px 0 4px 0 !important;
-      padding-bottom: 4px !important;
+      margin: 4px 0 16px 0 !important;
+      padding-bottom: 6px !important;
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }}
     .page-h1-header-block .page-title {{
@@ -146,19 +146,19 @@ def generate_child_page(
       font-weight: 800;
       color: var(--color-primary);
       line-height: 1.2;
-      margin-bottom: 2px !important;
+      margin-bottom: 4px !important;
       font-family: var(--font-heading);
     }}
     .page-h1-header-block .page-subtitle {{
       font-size: 0.86rem !important;
       color: var(--color-text-muted);
-      line-height: 1.3;
+      line-height: 1.35;
       margin-bottom: 0 !important;
     }}
 
     /* Article Card Padding Fix */
     .content-block {{
-      padding: 20px 24px !important;
+      padding: 28px 32px !important;
       margin-top: 0 !important;
     }}
 
@@ -167,84 +167,114 @@ def generate_child_page(
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
       border-left: 4px solid var(--color-accent);
       border-radius: 10px;
-      padding: 10px 14px !important;
-      margin: 4px 0 8px 0 !important;
+      padding: 14px 18px !important;
+      margin: 8px 0 28px 0 !important;
     }}
     .aeo-box-title {{
-      font-size: 0.96rem !important;
+      font-size: 0.98rem !important;
       font-weight: 700;
       color: var(--color-primary);
-      margin-bottom: 4px !important;
+      margin-bottom: 6px !important;
       display: flex;
       align-items: center;
       gap: 6px;
     }}
     .aeo-direct-answer-box p {{
-      font-size: 0.9rem !important;
-      line-height: 1.45 !important;
+      font-size: 0.92rem !important;
+      line-height: 1.55 !important;
     }}
 
     .geo-context-card {{
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 14px;
-      margin: 14px 0;
+      padding: 18px 20px;
+      margin: 32px 0 !important;
     }}
     .seo-rich-paragraph {{
       font-size: 0.96rem;
-      line-height: 1.65;
+      line-height: 1.7;
       color: #334155;
-      margin-bottom: 12px;
+      margin-bottom: 24px !important;
     }}
+
+    /* CONSISTENT SECTION HEADING SPACING (24-40px Gaps) */
     .content-subheading-lg {{
       font-size: 1.28rem;
       font-weight: 700;
       color: var(--color-primary);
-      margin: 18px 0 8px 0;
-      padding-bottom: 4px;
+      margin: 36px 0 16px 0 !important;
+      padding-bottom: 6px;
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }}
+    .content-subheading-lg:first-of-type {{
+      margin-top: 16px !important;
     }}
     .content-subheading-md {{
       font-size: 1.1rem;
       font-weight: 700;
       color: #1e293b;
-      margin: 14px 0 6px 0;
+      margin: 28px 0 12px 0 !important;
     }}
 
-    /* DOMAIN THEME STYLED TABLES (COMPACT ZERO-WASTAGE PADDING) */
+    /* TABLE CONTAINER WRAPPER SPACING */
+    .table-responsive {{
+      width: 100% !important;
+      margin: 28px 0 32px 0 !important;
+      overflow-x: auto;
+    }}
+
+    /* BROCHURE-QUALITY TABLE LAYOUT (FULL WIDTH ALIGNMENT & 50-60px ROW HEIGHTS) */
     .table-domain-theme,
     .seo-data-table {{
-      width: 100%;
+      width: 100% !important;
+      max-width: 100% !important;
       border-collapse: separate;
       border-spacing: 0;
       background-color: var(--color-bg-white);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-large);
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-      margin: 10px 0 !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      margin: 0 !important;
     }}
+
+    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED, EQUAL EDGE PADDING) */
     .table-domain-theme th,
     .seo-data-table th {{
       background-color: var(--color-primary);
       color: #ffffff;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 0.82rem;
-      padding: 8px 12px !important;
+      font-size: 0.84rem;
+      padding: 14px 24px !important;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
       border-bottom: 3px solid var(--color-accent);
       text-align: left;
+      vertical-align: middle !important;
+      height: 52px;
+      box-sizing: border-box;
     }}
+    .table-domain-theme th:last-child,
+    .seo-data-table th:last-child {{
+      text-align: right !important;
+    }}
+
+    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED, RIGHT-ALIGNED LAST COLUMN) */
     .table-domain-theme td,
     .seo-data-table td {{
-      padding: 8px 12px !important;
+      padding: 14px 24px !important;
       border-bottom: 1px solid #e2e8f0;
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       color: var(--color-text-dark);
-      vertical-align: middle;
+      vertical-align: middle !important;
+      height: 54px;
+      box-sizing: border-box;
+    }}
+    .table-domain-theme td:last-child,
+    .seo-data-table td:last-child {{
+      text-align: right !important;
     }}
     .table-domain-theme tr:last-child td,
     .seo-data-table tr:last-child td {{
@@ -259,11 +289,7 @@ def generate_child_page(
       background-color: rgba(227, 24, 55, 0.03);
     }}
 
-    /* COMPACT 2-COLUMN DIMENSION TABLES (Eliminates empty horizontal right-side space) */
-    .table-compact-2col {{
-      max-width: 540px !important;
-      margin: 12px 0 !important;
-    }}
+    /* 2-COLUMN TABLE COLUMN WIDTH BALANCING (55% LEFT / 45% RIGHT) */
     .table-compact-2col th:first-child,
     .table-compact-2col td:first-child {{
       width: 55% !important;
@@ -279,8 +305,8 @@ def generate_child_page(
       background: rgba(227, 24, 55, 0.1);
       color: var(--color-accent);
       font-weight: 800;
-      font-size: 0.82rem;
-      padding: 2px 8px;
+      font-size: 0.86rem;
+      padding: 4px 12px;
       border-radius: 50px;
       border: 1px solid rgba(227, 24, 55, 0.2);
     }}
@@ -290,7 +316,7 @@ def generate_child_page(
       background: #ffffff;
       border: 1px solid var(--color-border);
       border-radius: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       overflow: hidden;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }}
@@ -299,7 +325,7 @@ def generate_child_page(
       box-shadow: 0 4px 16px rgba(194, 34, 41, 0.1);
     }}
     details.faq-accordion-item summary {{
-      padding: 14px 18px !important;
+      padding: 16px 20px !important;
       font-size: 0.98rem !important;
       font-weight: 700 !important;
       color: var(--color-primary) !important;
@@ -334,9 +360,9 @@ def generate_child_page(
     }}
     details.faq-accordion-item[open] .faq-answer {{
       display: block !important;
-      padding: 12px 18px 16px 18px !important;
+      padding: 14px 20px 18px 20px !important;
       font-size: 0.94rem !important;
-      line-height: 1.6 !important;
+      line-height: 1.65 !important;
       color: var(--color-text-dark) !important;
       border-top: 1px solid var(--color-border) !important;
       background: #FCF9F4 !important;
@@ -348,10 +374,10 @@ def generate_child_page(
       margin-right: 8px;
     }}
 
-    /* MOBILE OPTIMIZATIONS: ZERO TOP SPACE, SINGLE-LINE H1 & RESPONSIVE CARD TABLES */
+    /* RESPONSIVE LAYOUT BALANCING (DESKTOP, TABLET & MOBILE) */
     @media (max-width: 768px) {{
       .main-layout-container {{
-        padding-top: calc(var(--nav-offset) - 50px) !important; /* ZERO extra space above hero image */
+        padding-top: calc(var(--nav-offset) - 50px) !important;
         padding-left: 8px !important;
         padding-right: 8px !important;
         margin-top: 0 !important;
@@ -376,7 +402,7 @@ def generate_child_page(
 
       /* Force H1 onto a single line without wrapping */
       .page-h1-header-block {{
-        margin: 4px 0 !important;
+        margin: 4px 0 12px 0 !important;
         padding-bottom: 2px !important;
       }}
       .page-h1-header-block .page-title {{
@@ -394,24 +420,22 @@ def generate_child_page(
       }}
 
       .content-block {{
-        padding: 10px 12px !important;
+        padding: 16px 14px !important;
       }}
 
-      .table-compact-2col {{
-        max-width: 100% !important;
-      }}
-      .table-compact-2col th:first-child,
-      .table-compact-2col td:first-child,
-      .table-compact-2col th:last-child,
-      .table-compact-2col td:last-child {{
-        width: 100% !important;
-        text-align: left !important;
+      .content-subheading-lg {{
+        margin: 28px 0 12px 0 !important;
       }}
 
-      /* RESPONSIVE MOBILE TABLES (NO HORIZONTAL SCROLL + DATA LABELS) */
+      .seo-rich-paragraph {{
+        margin-bottom: 16px !important;
+      }}
+
       .table-responsive {{
-        overflow-x: visible !important;
+        margin: 20px 0 24px 0 !important;
       }}
+
+      /* RESPONSIVE MOBILE CARD TABLES (EQUAL EDGE PADDING & 50px ROW HEIGHT) */
       .table-domain-theme,
       .table-domain-theme tbody,
       .table-domain-theme tr,
@@ -433,8 +457,8 @@ def generate_child_page(
         background: #ffffff !important;
         border: 1px solid var(--color-border) !important;
         border-radius: 10px !important;
-        margin-bottom: 10px !important;
-        padding: 6px 12px !important;
+        margin-bottom: 12px !important;
+        padding: 8px 14px !important;
         box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
       }}
       .table-domain-theme td,
@@ -442,9 +466,10 @@ def generate_child_page(
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 5px 0 !important;
+        padding: 8px 0 !important;
+        min-height: 48px !important;
         border-bottom: 1px dashed #e2e8f0 !important;
-        font-size: 0.84rem !important;
+        font-size: 0.86rem !important;
         text-align: right !important;
         word-break: break-word !important;
       }}
@@ -458,7 +483,7 @@ def generate_child_page(
         font-weight: 700 !important;
         color: var(--color-primary) !important;
         text-align: left !important;
-        padding-right: 10px !important;
+        padding-right: 12px !important;
         flex-shrink: 0;
       }}
     }}
@@ -690,4 +715,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with .table-compact-2col styling.")
+print("build_child_pages.py updated with premium brochure layout spacing!")
