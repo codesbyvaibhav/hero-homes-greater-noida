@@ -1,290 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO Meta Tags -->
-  <title>Hero Homes Greater Noida Pricing, Cost & Price List Sector MU</title>
-  <meta name="description" content="Complete guide to Hero Homes Greater Noida pricing, Sector MU price list, cost breakdown, payment plans & per sq ft rates for 3 BHK luxury residences.">
-  <meta name="keywords" content="Hero Homes Greater Noida, Hero Realty Greater Noida, DMIC Integrated Industrial Township, Jewar Airport Real Estate, Greater Noida 3 BHK Price, Hero Homes Floor Plans">
-  <link rel="canonical" href="https://herohomenoida.com/pricing.html">
-  <meta name="robots" content="index, follow">
+import os
+from build_child_pages import generate_child_page
 
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://herohomenoida.com/pricing.html">
-  <meta property="og:title" content="Hero Homes Greater Noida Pricing, Cost & Price List Sector MU">
-  <meta property="og:description" content="Complete guide to Hero Homes Greater Noida pricing, Sector MU price list, cost breakdown, payment plans & per sq ft rates for 3 BHK luxury residences.">
-  <meta property="og:image" content="https://herohomenoida.com/images/exterior_daytime.webp">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-  <!-- Preload Fonts & Styles -->
-  <link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="style-v19.css" as="style">
-
-  <script>
-    (function() {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'style-v19.css';
-      link.onload = function() {
-        document.body.classList.add('css-loaded');
-      };
-      document.head.appendChild(link);
-    })();
-  </script>
-  <noscript>
-    <link rel="stylesheet" href="style-v19.css">
-  </noscript>
-
-  <style>
-    :root {
-      --nav-offset: 120px;
-    }
-    body { opacity: 0; }
-    body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
-
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
-    }
-    .single-hero-image-wrapper {
-      margin: 0 0 32px 0;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-      position: relative;
-    }
-    .single-hero-image-wrapper img {
-      width: 100%;
-      max-height: 480px;
-      object-fit: cover;
-      display: block;
-    }
-    .single-hero-caption {
-      background: rgba(12, 25, 43, 0.95);
-      color: #ffffff;
-      padding: 10px 18px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      display: block;
-      border-bottom-left-radius: 16px;
-      border-bottom-right-radius: 16px;
-    }
-    .aeo-direct-answer-box {
-      background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
-      border-left: 4px solid var(--color-accent);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 24px 0;
-    }
-    .aeo-box-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .geo-context-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-    .seo-rich-paragraph {
-      font-size: 1.02rem;
-      line-height: 1.8;
-      color: #334155;
-      margin-bottom: 20px;
-    }
-    .content-subheading-lg {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin: 32px 0 16px 0;
-      padding-bottom: 8px;
-      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
-    }
-    .content-subheading-md {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 24px 0 12px 0;
-    }
-    .seo-data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-    .seo-data-table th {
-      background: var(--color-primary);
-      color: #ffffff;
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 0.95rem;
-    }
-    .seo-data-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 0.92rem;
-      color: #334155;
-    }
-    .seo-data-table tr:nth-child(even) {
-      background: #f8fafc;
-    }
-  </style>
-
-  <!-- Dynamic Header Offset Calculation Script -->
-  <script>
-    function updateNavOffset() {
-      const header = document.querySelector('.site-header');
-      const topBar = document.querySelector('.top-announcement');
-      let offset = 0;
-      if (header) {
-        offset += header.offsetHeight;
-      }
-      if (topBar && window.getComputedStyle(topBar).display !== 'none') {
-        offset += topBar.offsetHeight;
-      }
-      document.documentElement.style.setProperty('--nav-offset', offset + 'px');
-    }
-    window.addEventListener('DOMContentLoaded', updateNavOffset);
-    window.addEventListener('load', updateNavOffset);
-    window.addEventListener('resize', updateNavOffset);
-  </script>
-
-  <!-- Schema.org JSON-LD Structured Data -->
-  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the starting price of Hero Homes Greater Noida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the price of Hero Homes Sector MU for the largest configuration?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the Hero Homes Sector MU price per square foot?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Hero Homes Greater Noida pricing final or subject to change?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "All current figures are pre-launch, indicative prices marked with an asterisk. They are subject to change based on floor, tower, and final rates set at RERA registration."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Hero Homes Sector MU RERA registered?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not yet — RERA registration is currently listed as 'Coming Soon.' Buyers should verify registration status directly on the UP RERA portal before booking."
-      }
-    }
-  ]
-}
-</script>
-
-</head>
-<body>
-
-  <!-- Top Announcement Bar -->
-  <div class="top-announcement">
-    <div class="container announcement-content">
-      <span class="badge badge-accent">Pre-Launch Advantage</span>
-      <span class="announcement-text">Book Early &amp; Secure Pre-Launch Pricing at Hero Homes Greater Noida!</span>
-      <a href="tel:+919686897597" class="announcement-phone"><i data-lucide="phone"></i> +91 96868 97597</a>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="site-header sticky-header">
-    <div class="container header-container">
-      <div class="logo-wrapper">
-        <a href="index.html" class="brand-logo">
-          <img src="images/logo.png" alt="Hero Homes Greater Noida Logo" class="logo-img" width="170" height="63">
-        </a>
-        <span class="location-badge">Greater Noida</span>
-      </div>
-      
-      <nav id="navbar" class="site-navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Overview</a></li>
-          <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
-          <li><a href="floor-plans.html" class="nav-link">Floor Plans</a></li>
-          <li><a href="amenities.html" class="nav-link">Amenities</a></li>
-          <li><a href="location.html" class="nav-link">Location</a></li>
-          <li><a href="developer.html" class="nav-link">Developer</a></li>
-          <li><a href="faqs.html" class="nav-link">FAQs</a></li>
-        </ul>
-      </nav>
-      
-      <div class="header-actions">
-        <a href="tel:+919686897597" class="btn btn-phone btn-outline">
-          <i data-lucide="phone"></i> <span>+91 96868 97597</span>
-        </a>
-        <button class="btn btn-primary" onclick="openEnquiryModal('Get Official Cost Sheet')">
-          <i data-lucide="download"></i> Download Brochure
-        </button>
-      </div>
-
-      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>Pricing</span>
-      </div>
-      <h1 class="page-title">Hero Homes Greater Noida Pricing, Cost & Price List</h1>
-      <p class="page-subtitle">Transparent pre-launch pricing guide, per-sq-ft rates, payment plans & comprehensive cost breakdown for Hero Homes Sector MU.</p>
-    </div>
-  </section>
-
-  <!-- Main Body Content -->
-  <div class="container main-layout-container">
-    <div class="page-layout-grid">
-      <main class="main-content-column">
-
-        <!-- Single Hero Image Section -->
-        <div class="single-hero-image-wrapper">
-          <img src="images/exterior_daytime.webp" alt="Hero Homes Greater Noida Architectural High Rise Buildings" loading="eager" fetchpriority="high">
-          <span class="single-hero-caption">Hero Homes Greater Noida – Modern Luxury High-Rise Architecture in Sector MU</span>
-        </div>
-
-        
+pricing_main_content = """
 <article class="content-block shadow-card rounded-large p-4 bg-white">
   
   <!-- AEO Quick Answer Box -->
@@ -642,125 +359,75 @@
   
   <p class="seo-rich-paragraph">If Hero Homes Greater Noida pricing fits your budget and the Sector MU location works for your connectivity needs, the next step is requesting an official, itemized cost sheet from Hero Realty's sales team, confirming RERA status, and getting the possession timeline in writing before making any commitment.</p>
 </article>
+"""
 
-
-      </main>
-
-      <!-- Sticky Sidebar Lead Form Widget -->
-      <aside class="sidebar-column">
-        <div class="sticky-sidebar-widget glass-card p-4 rounded-large shadow-card">
-          <h3 class="widget-title">Get Official Cost Sheet</h3>
-          <p class="widget-desc">Fill out the quick form to receive detailed pricing breakdown, cost sheet & payment schedules on WhatsApp.</p>
-          
-          <form class="enquiry-form" onsubmit="handleFormSubmit(event, 'Get Official Cost Sheet')">
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Full Name" required minlength="3" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="tel" name="phone" placeholder="10-Digit Mobile Number" required pattern="[0-9]{10}" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Email Address" required class="form-control">
-            </div>
-            <div class="form-group">
-              <select name="configuration" class="form-control">
-                <option value="" disabled selected>Interested Configuration</option>
-                <option value="2 BHK">2 BHK Luxury</option>
-                <option value="3 BHK 1650 sq ft">3 BHK (1650 Sq. Ft.)</option>
-                <option value="3 BHK + Servant">3 BHK + Servant (2200 Sq. Ft.)</option>
-                <option value="4 BHK">4 BHK Ultra Luxury</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">
-              <i data-lucide="file-text"></i> Unlock Price List
-            </button>
-          </form>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="Hero Homes Logo" class="footer-logo" width="160">
-        <p>Hero Homes Greater Noida is a landmark 17.3-acre premium residential development inside the DMIC Integrated Industrial Township by Hero Realty.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Overview</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="floor-plans.html">Floor Plans</a></li>
-          <li><a href="amenities.html">Amenities</a></li>
-          <li><a href="location.html">Location</a></li>
-          <li><a href="developer.html">Developer</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact Us</h4>
-        <p><i data-lucide="map-pin"></i> Sector MU, DMIC Township, Greater Noida, UP</p>
-        <p><i data-lucide="phone"></i> +91 96868 97597</p>
-        <p><i data-lucide="mail"></i> sales@herohomenoida.com</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container text-center">
-        <p class="copyright">&copy; 2026 Hero Homes Greater Noida. Authorized Channel Partner. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Mobile Drawer -->
-  <div id="mobile-menu-drawer" class="mobile-drawer">
-    <div class="mobile-drawer-header">
-      <div class="logo"><span class="logo-accent">HERO</span> HOMES</div>
-      <button id="mobile-menu-close" class="menu-close-btn" aria-label="Close menu">&times;</button>
-    </div>
-    <nav class="overlay-navigation">
-      <ul class="overlay-nav-menu">
-        <li><a href="index.html" class="overlay-nav-link">Overview</a></li>
-        <li><a href="pricing.html" class="overlay-nav-link">Pricing</a></li>
-        <li><a href="floor-plans.html" class="overlay-nav-link">Floor Plans</a></li>
-        <li><a href="amenities.html" class="overlay-nav-link">Amenities</a></li>
-        <li><a href="location.html" class="overlay-nav-link">Location</a></li>
-        <li><a href="developer.html" class="overlay-nav-link">Developer</a></li>
-        <li><a href="faqs.html" class="overlay-nav-link">FAQs</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <!-- Modal Lead Form -->
-  <div id="enquiry-modal" class="modal-overlay">
-    <div class="modal-card glass-card">
-      <button class="modal-close" onclick="closeEnquiryModal()">&times;</button>
-      <h3 id="modal-title">Request Official Information</h3>
-      <p class="modal-subtitle">Leave your phone number to receive instant brochure &amp; price list on WhatsApp.</p>
-      <form onsubmit="handleFormSubmit(event, 'Page Modal Form')">
-        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required class="form-control"></div>
-        <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" class="form-control"></div>
-        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required class="form-control"></div>
-        <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons();
-    function openEnquiryModal(title) {
-      document.getElementById('modal-title').innerText = title || 'Request Information';
-      document.getElementById('enquiry-modal').style.display = 'flex';
+pricing_faq_schema = """
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the starting price of Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the price of Hero Homes Sector MU for the largest configuration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Hero Homes Sector MU price per square foot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Hero Homes Greater Noida pricing final or subject to change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All current figures are pre-launch, indicative prices marked with an asterisk. They are subject to change based on floor, tower, and final rates set at RERA registration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Hero Homes Sector MU RERA registered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet — RERA registration is currently listed as 'Coming Soon.' Buyers should verify registration status directly on the UP RERA portal before booking."
+      }
     }
-    function closeEnquiryModal() {
-      document.getElementById('enquiry-modal').style.display = 'none';
-    }
-    function handleFormSubmit(e, source) {
-      e.preventDefault();
-      window.location.href = 'thankyou.html';
-    }
-  </script>
-</body>
-</html>
+  ]
+}
+</script>
+"""
+
+generate_child_page(
+    filename='pricing.html',
+    page_title='Hero Homes Greater Noida Pricing, Cost & Price List Sector MU',
+    meta_desc='Complete guide to Hero Homes Greater Noida pricing, Sector MU price list, cost breakdown, payment plans & per sq ft rates for 3 BHK luxury residences.',
+    canonical_url='https://herohomenoida.com/pricing.html',
+    h1_title='Hero Homes Greater Noida Pricing, Cost & Price List',
+    subtitle='Transparent pre-launch pricing guide, per-sq-ft rates, payment plans & comprehensive cost breakdown for Hero Homes Sector MU.',
+    hero_img='images/exterior_daytime.webp',
+    hero_img_alt='Hero Homes Greater Noida Architectural High Rise Buildings',
+    hero_img_caption='Hero Homes Greater Noida – Modern Luxury High-Rise Architecture in Sector MU',
+    nav_active_key='pricing',
+    main_content_html=pricing_main_content,
+    sidebar_title='Get Official Cost Sheet',
+    sidebar_desc='Fill out the quick form to receive detailed pricing breakdown, cost sheet & payment schedules on WhatsApp.',
+    sidebar_btn_text='Unlock Price List',
+    faq_schema_json=pricing_faq_schema
+)
+
+print("pricing.html successfully updated with user supplied content.")
