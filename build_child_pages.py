@@ -212,6 +212,64 @@ def generate_child_page(
       margin: 14px 0 6px 0;
     }}
 
+    /* DOMAIN THEME STYLED TABLES (Matches style-v19.css design tokens) */
+    .table-domain-theme,
+    .seo-data-table {{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background-color: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-large);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      margin: 20px 0;
+    }}
+    .table-domain-theme th,
+    .seo-data-table th {{
+      background-color: var(--color-primary);
+      color: #ffffff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 14px 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 3px solid var(--color-accent);
+      text-align: left;
+    }}
+    .table-domain-theme td,
+    .seo-data-table td {{
+      padding: 14px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.94rem;
+      color: var(--color-text-dark);
+      vertical-align: middle;
+    }}
+    .table-domain-theme tr:last-child td,
+    .seo-data-table tr:last-child td {{
+      border-bottom: none;
+    }}
+    .table-domain-theme tr:nth-child(even) td,
+    .seo-data-table tr:nth-child(even) td {{
+      background-color: #f8fafc;
+    }}
+    .table-domain-theme tr:hover td,
+    .seo-data-table tr:hover td {{
+      background-color: rgba(227, 24, 55, 0.03);
+    }}
+
+    .price-highlight-pill {{
+      display: inline-block;
+      background: rgba(227, 24, 55, 0.1);
+      color: var(--color-accent);
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 4px 12px;
+      border-radius: 50px;
+      border: 1px solid rgba(227, 24, 55, 0.2);
+    }}
+
     /* BULLETPROOF INTERACTIVE FAQ ACCORDION STYLES */
     details.faq-accordion-item {{
       background: #ffffff;
@@ -275,7 +333,7 @@ def generate_child_page(
       margin-right: 8px;
     }}
 
-    /* MOBILE OPTIMIZATIONS: ZERO TOP SPACE, SINGLE-LINE H1 & NO HORIZONTAL SCROLL TABLES */
+    /* MOBILE OPTIMIZATIONS: ZERO TOP SPACE, SINGLE-LINE H1 & RESPONSIVE CARD TABLES */
     @media (max-width: 768px) {{
       .main-layout-container {{
         padding-top: calc(var(--nav-offset) - 50px) !important; /* ZERO extra space above hero image */
@@ -348,19 +406,19 @@ def generate_child_page(
       .seo-data-table tr {{
         background: #ffffff !important;
         border: 1px solid var(--color-border) !important;
-        border-radius: 8px !important;
-        margin-bottom: 10px !important;
-        padding: 8px 12px !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+        border-radius: 10px !important;
+        margin-bottom: 12px !important;
+        padding: 10px 14px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
       }}
       .table-domain-theme td,
       .seo-data-table td {{
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 6px 0 !important;
+        padding: 8px 0 !important;
         border-bottom: 1px dashed #e2e8f0 !important;
-        font-size: 0.84rem !important;
+        font-size: 0.88rem !important;
         text-align: right !important;
         word-break: break-word !important;
       }}
@@ -374,7 +432,7 @@ def generate_child_page(
         font-weight: 700 !important;
         color: var(--color-primary) !important;
         text-align: left !important;
-        padding-right: 8px !important;
+        padding-right: 12px !important;
         flex-shrink: 0;
       }}
     }}
@@ -606,4 +664,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with SEO canonicals, max-image-preview robots, X-Robots-Tag, and publisher tag in footer.")
+print("build_child_pages.py updated with complete desktop AND mobile table styles for .table-domain-theme and .seo-data-table!")
