@@ -192,7 +192,7 @@
       margin: 0 !important;
     }
 
-    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED, EQUAL EDGE PADDING) */
+    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED) */
     .table-domain-theme th,
     .seo-data-table th {
       background-color: var(--color-primary);
@@ -200,34 +200,26 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.84rem;
-      padding: 14px 24px !important;
+      padding: 14px 20px !important;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-bottom: 3px solid var(--color-accent);
-      text-align: left;
+      text-align: left !important;
       vertical-align: middle !important;
       height: 52px;
       box-sizing: border-box;
     }
-    .table-domain-theme th:last-child,
-    .seo-data-table th:last-child {
-      text-align: right !important;
-    }
 
-    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED, RIGHT-ALIGNED LAST COLUMN) */
+    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED DESCRIPTIONS) */
     .table-domain-theme td,
     .seo-data-table td {
-      padding: 14px 24px !important;
+      padding: 14px 20px !important;
       border-bottom: 1px solid #e2e8f0;
       font-size: 0.92rem;
       color: var(--color-text-dark);
       vertical-align: middle !important;
-      height: 54px;
+      text-align: left !important;
       box-sizing: border-box;
-    }
-    .table-domain-theme td:last-child,
-    .seo-data-table td:last-child {
-      text-align: right !important;
     }
     .table-domain-theme tr:last-child td,
     .seo-data-table tr:last-child td {
@@ -242,7 +234,47 @@
       background-color: rgba(227, 24, 55, 0.03);
     }
 
-    /* 2-COLUMN TABLE COLUMN WIDTH BALANCING (55% LEFT / 45% RIGHT) */
+    /* FLEX TITLE CELL (INLINE ICON + TITLE ON ONE SINGLE LINE) */
+    .table-cell-title {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      white-space: nowrap !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+    }
+    .table-cell-title i {
+      flex-shrink: 0 !important;
+      width: 18px !important;
+      height: 18px !important;
+      color: var(--color-accent) !important;
+    }
+
+    /* AMENITIES 2-COLUMN TABLE SPECIFIC RATIOS (32% LEFT / 68% RIGHT) */
+    .table-amenities-2col th:first-child,
+    .table-amenities-2col td:first-child {
+      width: 32% !important;
+      white-space: nowrap !important;
+    }
+    .table-amenities-2col th:last-child,
+    .table-amenities-2col td:last-child {
+      width: 68% !important;
+      text-align: left !important;
+    }
+
+    /* AMENITIES 3-COLUMN TABLE RATIOS */
+    .table-amenities-3col th:first-child,
+    .table-amenities-3col td:first-child {
+      width: 28% !important;
+    }
+    .table-amenities-3col th:nth-child(2),
+    .table-amenities-3col td:nth-child(2),
+    .table-amenities-3col th:last-child,
+    .table-amenities-3col td:last-child {
+      text-align: left !important;
+    }
+
+    /* 2-COLUMN FLOOR PLAN SPECIFIC RATIOS (55% LEFT / 45% RIGHT ALIGNED) */
     .table-compact-2col th:first-child,
     .table-compact-2col td:first-child {
       width: 55% !important;
@@ -618,7 +650,7 @@
   <p class="seo-rich-paragraph">The table below summarizes the core amenities currently listed for Hero Homes Sector MU, grouped by category:</p>
 
   <div class="table-responsive">
-    <table class="table-domain-theme">
+    <table class="table-domain-theme table-amenities-2col">
       <thead>
         <tr>
           <th>Category</th>
@@ -627,27 +659,39 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="Category"><strong><i data-lucide="heart-pulse" class="text-accent me-2"></i> Wellness &amp; Fitness</strong></td>
+          <td data-label="Category">
+            <div class="table-cell-title"><i data-lucide="heart-pulse"></i> <span>Wellness &amp; Fitness</span></div>
+          </td>
           <td data-label="Amenities & Facilities">Fully equipped gym with smart cardio machines, yoga &amp; fitness advisors, aromatherapy gardens, wellness zones</td>
         </tr>
         <tr>
-          <td data-label="Category"><strong><i data-lucide="waves" class="text-accent me-2"></i> Recreation</strong></td>
+          <td data-label="Category">
+            <div class="table-cell-title"><i data-lucide="waves"></i> <span>Recreation</span></div>
+          </td>
           <td data-label="Amenities & Facilities">Infinity swimming pool with children's splash pool, kids sandbox arena, indoor games</td>
         </tr>
         <tr>
-          <td data-label="Category"><strong><i data-lucide="users" class="text-accent me-2"></i> Social &amp; Community</strong></td>
+          <td data-label="Category">
+            <div class="table-cell-title"><i data-lucide="users"></i> <span>Social &amp; Community</span></div>
+          </td>
           <td data-label="Amenities & Facilities">25,000+ sq. ft. grand clubhouse with dining halls, cafés, card rooms, mini-theatre</td>
         </tr>
         <tr>
-          <td data-label="Category"><strong><i data-lucide="laptop" class="text-accent me-2"></i> Work-From-Home</strong></td>
+          <td data-label="Category">
+            <div class="table-cell-title"><i data-lucide="laptop"></i> <span>Work-From-Home</span></div>
+          </td>
           <td data-label="Amenities & Facilities">Coworking lounge with high-speed Wi-Fi, coffee bar, private video call rooms</td>
         </tr>
         <tr>
-          <td data-label="Category"><strong><i data-lucide="shield-check" class="text-accent me-2"></i> Security</strong></td>
+          <td data-label="Category">
+            <div class="table-cell-title"><i data-lucide="shield-check"></i> <span>Security</span></div>
+          </td>
           <td data-label="Amenities & Facilities">5-tier smart security, biometric entrance doors, boundary lasers, 24/7 video monitoring</td>
         </tr>
         <tr>
-          <td data-label="Category"><strong><i data-lucide="leaf" class="text-accent me-2"></i> Sustainability &amp; Convenience</strong></td>
+          <td data-label="Category">
+            <div class="table-cell-title"><i data-lucide="leaf"></i> <span>Sustainability &amp; Convenience</span></div>
+          </td>
           <td data-label="Amenities & Facilities">EV charging hubs, landscaped gardens, 80% open green cover</td>
         </tr>
       </tbody>
@@ -668,7 +712,7 @@
   <p class="seo-rich-paragraph">Wellness positioning is a recurring theme across Hero Homes Sector MU's marketing, and the amenities reflect that:</p>
 
   <div class="table-responsive">
-    <table class="table-domain-theme">
+    <table class="table-domain-theme table-amenities-2col">
       <thead>
         <tr>
           <th>Amenity</th>
@@ -677,19 +721,27 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="Amenity"><strong><i data-lucide="dumbbell" class="text-accent me-2"></i> Fully Loaded Gym</strong></td>
+          <td data-label="Amenity">
+            <div class="table-cell-title"><i data-lucide="dumbbell"></i> <span>Fully Loaded Gym</span></div>
+          </td>
           <td data-label="Description & Features">Smart cardio machines, premium free weights, on-call yoga &amp; fitness advisors</td>
         </tr>
         <tr>
-          <td data-label="Amenity"><strong><i data-lucide="waves" class="text-accent me-2"></i> Infinity Swimming Pool</strong></td>
+          <td data-label="Amenity">
+            <div class="table-cell-title"><i data-lucide="waves"></i> <span>Infinity Swimming Pool</span></div>
+          </td>
           <td data-label="Description & Features">Olympic-grade outdoor pool with LED lighting and a dedicated children's splash pool</td>
         </tr>
         <tr>
-          <td data-label="Amenity"><strong><i data-lucide="flower-2" class="text-accent me-2"></i> Aromatherapy Gardens</strong></td>
+          <td data-label="Amenity">
+            <div class="table-cell-title"><i data-lucide="flower-2"></i> <span>Aromatherapy Gardens</span></div>
+          </td>
           <td data-label="Description & Features">Curated flora layouts designed for therapeutic walks and zen-garden style spaces</td>
         </tr>
         <tr>
-          <td data-label="Amenity"><strong><i data-lucide="sun" class="text-accent me-2"></i> Yoga &amp; Meditation Zones</strong></td>
+          <td data-label="Amenity">
+            <div class="table-cell-title"><i data-lucide="sun"></i> <span>Yoga &amp; Meditation Zones</span></div>
+          </td>
           <td data-label="Description & Features">Dedicated outdoor spaces for wellness routines, referenced across the project's "wellness-centric" positioning</td>
         </tr>
       </tbody>
@@ -709,7 +761,7 @@
   <p class="seo-rich-paragraph">Security is listed as a "5-tier" system at Hero Homes Greater Noida, with the following components described:</p>
 
   <div class="table-responsive">
-    <table class="table-domain-theme">
+    <table class="table-domain-theme table-amenities-2col">
       <thead>
         <tr>
           <th>Security Layer</th>
@@ -718,23 +770,33 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="Security Layer"><strong><i data-lucide="fingerprint" class="text-accent me-2"></i> Entry Control</strong></td>
+          <td data-label="Security Layer">
+            <div class="table-cell-title"><i data-lucide="fingerprint"></i> <span>Entry Control</span></div>
+          </td>
           <td data-label="Technology / Feature">Biometric entrance doors</td>
         </tr>
         <tr>
-          <td data-label="Security Layer"><strong><i data-lucide="target" class="text-accent me-2"></i> Perimeter Protection</strong></td>
+          <td data-label="Security Layer">
+            <div class="table-cell-title"><i data-lucide="target"></i> <span>Perimeter Protection</span></div>
+          </td>
           <td data-label="Technology / Feature">Boundary lasers</td>
         </tr>
         <tr>
-          <td data-label="Security Layer"><strong><i data-lucide="qr-code" class="text-accent me-2"></i> Visitor Management</strong></td>
+          <td data-label="Security Layer">
+            <div class="table-cell-title"><i data-lucide="qr-code"></i> <span>Visitor Management</span></div>
+          </td>
           <td data-label="Technology / Feature">Smart visitor queue system</td>
         </tr>
         <tr>
-          <td data-label="Security Layer"><strong><i data-lucide="video" class="text-accent me-2"></i> Surveillance</strong></td>
+          <td data-label="Security Layer">
+            <div class="table-cell-title"><i data-lucide="video"></i> <span>Surveillance</span></div>
+          </td>
           <td data-label="Technology / Feature">24/7 video security monitors</td>
         </tr>
         <tr>
-          <td data-label="Security Layer"><strong><i data-lucide="key-round" class="text-accent me-2"></i> Access Management</strong></td>
+          <td data-label="Security Layer">
+            <div class="table-cell-title"><i data-lucide="key-round"></i> <span>Access Management</span></div>
+          </td>
           <td data-label="Technology / Feature">Controlled entry points across the community</td>
         </tr>
       </tbody>
@@ -755,7 +817,7 @@
   <p class="seo-rich-paragraph">To put the amenities package in context, here's how Hero Homes Sector MU's listed offerings compare to what's typical for premium Greater Noida launches:</p>
 
   <div class="table-responsive">
-    <table class="table-domain-theme">
+    <table class="table-domain-theme table-amenities-3col">
       <thead>
         <tr>
           <th>Amenity Category</th>

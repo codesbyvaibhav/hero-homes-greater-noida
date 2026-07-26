@@ -239,7 +239,7 @@ def generate_child_page(
       margin: 0 !important;
     }}
 
-    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED, EQUAL EDGE PADDING) */
+    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED) */
     .table-domain-theme th,
     .seo-data-table th {{
       background-color: var(--color-primary);
@@ -247,34 +247,26 @@ def generate_child_page(
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.84rem;
-      padding: 14px 24px !important;
+      padding: 14px 20px !important;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-bottom: 3px solid var(--color-accent);
-      text-align: left;
+      text-align: left !important;
       vertical-align: middle !important;
       height: 52px;
       box-sizing: border-box;
     }}
-    .table-domain-theme th:last-child,
-    .seo-data-table th:last-child {{
-      text-align: right !important;
-    }}
 
-    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED, RIGHT-ALIGNED LAST COLUMN) */
+    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED, LEFT ALIGNED DESCRIPTIONS) */
     .table-domain-theme td,
     .seo-data-table td {{
-      padding: 14px 24px !important;
+      padding: 14px 20px !important;
       border-bottom: 1px solid #e2e8f0;
       font-size: 0.92rem;
       color: var(--color-text-dark);
       vertical-align: middle !important;
-      height: 54px;
+      text-align: left !important;
       box-sizing: border-box;
-    }}
-    .table-domain-theme td:last-child,
-    .seo-data-table td:last-child {{
-      text-align: right !important;
     }}
     .table-domain-theme tr:last-child td,
     .seo-data-table tr:last-child td {{
@@ -289,7 +281,47 @@ def generate_child_page(
       background-color: rgba(227, 24, 55, 0.03);
     }}
 
-    /* 2-COLUMN TABLE COLUMN WIDTH BALANCING (55% LEFT / 45% RIGHT) */
+    /* FLEX TITLE CELL (INLINE ICON + TITLE ON ONE SINGLE LINE) */
+    .table-cell-title {{
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      white-space: nowrap !important;
+      font-weight: 700 !important;
+      color: var(--color-primary) !important;
+    }}
+    .table-cell-title i {{
+      flex-shrink: 0 !important;
+      width: 18px !important;
+      height: 18px !important;
+      color: var(--color-accent) !important;
+    }}
+
+    /* AMENITIES 2-COLUMN TABLE SPECIFIC RATIOS (32% LEFT / 68% RIGHT) */
+    .table-amenities-2col th:first-child,
+    .table-amenities-2col td:first-child {{
+      width: 32% !important;
+      white-space: nowrap !important;
+    }}
+    .table-amenities-2col th:last-child,
+    .table-amenities-2col td:last-child {{
+      width: 68% !important;
+      text-align: left !important;
+    }}
+
+    /* AMENITIES 3-COLUMN TABLE RATIOS */
+    .table-amenities-3col th:first-child,
+    .table-amenities-3col td:first-child {{
+      width: 28% !important;
+    }}
+    .table-amenities-3col th:nth-child(2),
+    .table-amenities-3col td:nth-child(2),
+    .table-amenities-3col th:last-child,
+    .table-amenities-3col td:last-child {{
+      text-align: left !important;
+    }}
+
+    /* 2-COLUMN FLOOR PLAN SPECIFIC RATIOS (55% LEFT / 45% RIGHT ALIGNED) */
     .table-compact-2col th:first-child,
     .table-compact-2col td:first-child {{
       width: 55% !important;
@@ -715,4 +747,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with premium brochure layout spacing!")
+print("build_child_pages.py updated with .table-cell-title flex wrapper and 32%/68% amenities column widths.")
