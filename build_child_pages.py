@@ -247,9 +247,9 @@ def generate_child_page(
   <!-- Header -->
   <header class="site-header sticky-header">
     <div class="container header-container">
-      <div class="logo-wrapper">
-        <a href="index.html" class="brand-logo">
-          <img src="images/logo.png" alt="Hero Homes Greater Noida Logo" class="logo-img" width="170" height="63">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.webp" alt="Hero Homes Logo" class="logo-img" width="170" height="63">
         </a>
         <span class="location-badge">Greater Noida</span>
       </div>
@@ -421,4 +421,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with 360px hero height & zero unwanted top space.")
+print("build_child_pages.py updated with correct logo.webp tag and logo classes.")
