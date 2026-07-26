@@ -50,12 +50,15 @@ def generate_child_page(
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO Meta Tags -->
+  
+  <!-- SEO Canonical, Robots, X-Robots & Publisher Tags -->
   <title>{page_title}</title>
   <meta name="description" content="{meta_desc}">
   <meta name="keywords" content="Hero Homes Greater Noida, Hero Realty Greater Noida, DMIC Integrated Industrial Township, Jewar Airport Real Estate, Greater Noida 3 BHK Price, Hero Homes Floor Plans">
   <link rel="canonical" href="{canonical_url}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta http-equiv="X-Robots-Tag" content="index, follow">
+  <link rel="publisher" href="https://www.herohomenoida.com/">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
@@ -396,7 +399,7 @@ def generate_child_page(
     window.addEventListener('resize', updateNavOffset);
   </script>
 
-  <!-- Schema.org JSON-LD Structured Data -->
+  <!-- Schema.org JSON-LD Structured Data with Publisher -->
   {faq_schema_json}
 </head>
 <body>
@@ -527,6 +530,7 @@ def generate_child_page(
     <div class="footer-bottom">
       <div class="container text-center">
         <p class="copyright">&copy; 2026 Hero Homes Greater Noida. Authorized Channel Partner. All Rights Reserved.</p>
+        <p class="publisher-info" style="font-size: 0.72rem; color: #94A3B8; margin-top: 4px;">Published by Hero Homes Greater Noida | Official Partner Portal (Hero Realty)</p>
       </div>
     </div>
   </footer>
@@ -602,4 +606,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with bulletproof mobile layout, zero space above hero, data labels, and FAQ toggle listener.")
+print("build_child_pages.py updated with SEO canonicals, max-image-preview robots, X-Robots-Tag, and publisher tag in footer.")
