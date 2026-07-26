@@ -704,9 +704,9 @@ generate_child_page(
     canonical_url='https://herohomenoida.com/pricing.html',
     h1_title='Hero Homes Greater Noida Pricing, Cost & Price List',
     subtitle='Transparent pre-launch pricing guide, per-sq-ft rates, payment plans & comprehensive cost breakdown for Hero Homes Sector MU.',
-    hero_img='images/exterior_daytime.webp',
-    hero_img_alt='Hero Homes Greater Noida Architectural High Rise Buildings',
-    hero_img_caption='Hero Homes Greater Noida – Modern Luxury High-Rise Architecture in Sector MU',
+    hero_img='images/hero_homes_pricing_banner.webp',
+    hero_img_alt='Hero Homes Greater Noida Premium Living Prime Location Banner',
+    hero_img_caption='Hero Homes Greater Noida – Premium Living & Prime Location in Sector MU',
     nav_active_key='pricing',
     main_content_html=pricing_main_content,
     sidebar_title='Get Official Cost Sheet',
@@ -715,4 +715,4 @@ generate_child_page(
     faq_schema_json=pricing_faq_schema
 )
 
-print("pricing.html updated: 100% full grid width, sticky right sidebar form restored, and domain-themed tables.")
+print("pricing.html successfully updated with new hero banner images/hero_homes_pricing_banner.webp!")
