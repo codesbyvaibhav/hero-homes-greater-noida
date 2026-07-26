@@ -47,13 +47,13 @@
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
+    /* Layout Spacing Fix: Top padding directly on main container below fixed navbar */
+    .main-layout-container {
+      padding-top: calc(var(--nav-offset) + 16px) !important;
+      margin-top: 0 !important;
     }
     .single-hero-image-wrapper {
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -74,6 +74,24 @@
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
+    }
+    .page-h1-header-block {
+      margin: 24px 0 28px 0;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }
+    .page-h1-header-block .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: var(--font-heading);
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }
     .aeo-direct-answer-box {
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
@@ -105,7 +123,7 @@
       margin-bottom: 20px;
     }
     .content-subheading-lg {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
@@ -113,7 +131,7 @@
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
     .content-subheading-md {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
@@ -238,17 +256,6 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>Amenities</span>
-      </div>
-      <h1 class="page-title">30+ World-Class Lifestyle Amenities & Resort Clubhouse</h1>
-      <p class="page-subtitle">A 25,000 sq. ft. central luxury clubhouse, resort swimming pool, oxygen parks, and sports arenas designed for elevated family living.</p>
-    </div>
-  </section>
-
   <!-- Main Body Content -->
   <div class="container main-layout-container">
     <div class="page-layout-grid">
@@ -260,6 +267,12 @@
           <span class="single-hero-caption">Resort-Style Swimming Pool & Sun Deck Area at Hero Homes Greater Noida</span>
         </div>
 
+        <!-- H1 Header Block Below Hero Image -->
+        <div class="page-h1-header-block">
+          <h1 class="page-title">30+ World-Class Lifestyle Amenities & Resort Clubhouse</h1>
+          <p class="page-subtitle">A 25,000 sq. ft. central luxury clubhouse, resort swimming pool, oxygen parks, and sports arenas designed for elevated family living.</p>
+        </div>
+
         
 <article class="content-block shadow-card rounded-large p-4 bg-white">
   <div class="aeo-direct-answer-box">
@@ -267,12 +280,12 @@
     <p class="mb-0">Hero Homes Greater Noida features over 30 world-class resort amenities spread across 17.3 acres, anchored by a magnificent 25,000 sq. ft. central luxury clubhouse. Highlights include an Olympic-size swimming pool, temperature-controlled indoor pool, fully equipped fitness center, tennis & squash courts, oxygen-rich gardens (85%+ green cover), solar power integration, and 3-tier RFID smart security.</p>
   </div>
 
-  <h2 class="content-subheading-lg">The Philosophy of Wellness & Active Living</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Amenities &amp; Active Living Philosophy</h2>
   <p class="seo-rich-paragraph">At <strong>Hero Homes Greater Noida</strong>, amenities are not merely decorative additions—they form the core foundation of daily living. Grounded in Hero Realty's four core design pillars—Fitness, Sustainability, Community, and Security—the development is engineered to promote physical health, mental rejuvenation, and active social interaction for every age group.</p>
   
   <p class="seo-rich-paragraph">Spanning 17.3 acres inside the master-planned DMIC Integrated Industrial Township in Sector MU, Greater Noida, the community dedicates over 85% of its total land area to open landscapes, manicured lawns, botanical gardens, and sports arenas. Residents enjoy clean, oxygen-enriched micro-climates created by dense tree plantations and zero-emission vehicle-free central pods.</p>
 
-  <h2 class="content-subheading-lg">The Grand 25,000 Sq. Ft. Resort Clubhouse</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Clubhouse &amp; Resort Facilities</h2>
   <p class="seo-rich-paragraph">The flagship attraction of Hero Homes is its multi-level 25,000 sq. ft. resort clubhouse. Designed with double-height glass facades, plush lounge seating, and indoor climate control, it serves as an exclusive hub for recreation, health, and family celebrations:</p>
 
   <table class="seo-data-table">
@@ -286,61 +299,52 @@
     <tbody>
       <tr>
         <td><strong>Aquatic Complex</strong></td>
-        <td>Olympic-length main pool, kids' splash pool, heated indoor pool & sun deck</td>
-        <td>Year-round swimming, aqua aerobics & poolside relaxation</td>
+        <td>Olympic-length main pool, kids' splash pool, heated indoor pool &amp; sun deck</td>
+        <td>Year-round swimming, aqua aerobics &amp; poolside relaxation</td>
       </tr>
       <tr>
-        <td><strong>Fitness & Gym Center</strong></td>
-        <td>Imported TechnoGym cardio gear, free weights, crossfit station & steam/sauna</td>
+        <td><strong>Fitness &amp; Gym Center</strong></td>
+        <td>Imported TechnoGym cardio gear, free weights, crossfit station &amp; steam/sauna</td>
         <td>Professional fitness training without leaving the complex</td>
       </tr>
       <tr>
         <td><strong>Indoor Sports Lounge</strong></td>
-        <td>Air-conditioned squash courts, badminton courts, billiards & table tennis</td>
+        <td>Air-conditioned squash courts, badminton courts, billiards &amp; table tennis</td>
         <td>All-weather sports and competitive indoor gaming</td>
       </tr>
       <tr>
-        <td><strong>Banquet & Event Halls</strong></td>
-        <td>Double-height celebratory hall with catering kitchen & outdoor party lawn</td>
-        <td>Seamless hosting of birthday parties, anniversaries & community events</td>
+        <td><strong>Banquet &amp; Event Halls</strong></td>
+        <td>Double-height celebratory hall with catering kitchen &amp; outdoor party lawn</td>
+        <td>Seamless hosting of birthday parties, anniversaries &amp; community events</td>
       </tr>
       <tr>
-        <td><strong>Wellness & Yoga Deck</strong></td>
-        <td>Tranquil outdoor wooden deck surrounded by lily ponds & aromatic flora</td>
-        <td>Morning yoga sessions, meditation & stress relief</td>
+        <td><strong>Wellness &amp; Yoga Deck</strong></td>
+        <td>Tranquil outdoor wooden deck surrounded by lily ponds &amp; aromatic flora</td>
+        <td>Morning yoga sessions, meditation &amp; stress relief</td>
       </tr>
     </tbody>
   </table>
 
-  <h2 class="content-subheading-lg">Categorized Breakdown of 30+ World-Class Amenities</h2>
+  <h2 class="content-subheading-lg">Categorized Breakdown of 30+ Hero Homes Greater Noida Amenities</h2>
 
-  <h3 class="content-subheading-md">1. Health, Fitness & Outdoor Wellness</h3>
+  <h3 class="content-subheading-md">1. Health, Fitness &amp; Outdoor Wellness</h3>
   <ul class="seo-rich-paragraph">
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Oxygen Parks & Healing Gardens:</strong> Specially curated air-purifying plant species (Neem, Tulsi, Snake Plant) providing high oxygen concentration.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Rubberized Jogging & Cycling Tracks:</strong> 1.5 km continuous perimeter track with shock-absorbing surfaces to protect joints.</li>
+    <li><i data-lucide="check" class="text-accent"></i> <strong>Oxygen Parks &amp; Healing Gardens:</strong> Specially curated air-purifying plant species (Neem, Tulsi, Snake Plant) providing high oxygen concentration.</li>
+    <li><i data-lucide="check" class="text-accent"></i> <strong>Rubberized Jogging &amp; Cycling Tracks:</strong> 1.5 km continuous perimeter track with shock-absorbing surfaces to protect joints.</li>
     <li><i data-lucide="check" class="text-accent"></i> <strong>Outdoor Fitness Station:</strong> Calisthenics equipment installed inside green courtyards.</li>
   </ul>
 
-  <h3 class="content-subheading-md">2. Sports Arenas & Active Games</h3>
+  <h3 class="content-subheading-md">2. Sports Arenas &amp; Active Games</h3>
   <ul class="seo-rich-paragraph">
     <li><i data-lucide="check" class="text-accent"></i> <strong>Lawn Tennis Court:</strong> Professional synthetic hard court with night floodlighting.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Half-Court Basketball & Volleyball:</strong> Dedicated multi-sport court for youth and adults.</li>
+    <li><i data-lucide="check" class="text-accent"></i> <strong>Half-Court Basketball &amp; Volleyball:</strong> Dedicated multi-sport court for youth and adults.</li>
     <li><i data-lucide="check" class="text-accent"></i> <strong>Cricket Practice Nets:</strong> Enclosed nets with automated bowling machines.</li>
   </ul>
 
-  <h3 class="content-subheading-md">3. Family, Kids & Senior Citizen Spaces</h3>
-  <ul class="seo-rich-paragraph">
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Kids' Adventure Play Zone:</strong> Multi-activity play towers, swings, and sandpits with soft EPDM safety flooring.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Senior Citizen Reflexology Park:</strong> Gentle walking paths, shaded seating pavilions, and herb gardens.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Open-Air Amphitheater:</strong> Cultural performance arena for festival gatherings and movie screenings.</li>
-  </ul>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida 3-Tier Security &amp; Smart Eco Amenities</h2>
+  <p class="seo-rich-paragraph">Safety is paramount. Hero Homes integrates 24/7 HD CCTV coverage, RFID boom barriers for automated vehicle entry, smart mobile app visitor approvals, EV charging stations across all parking levels, solar-powered common area lighting, and rainwater harvesting structures.</p>
 
-  <div class="geo-context-card">
-    <h4><i data-lucide="shield-check" class="text-accent"></i> 3-Tier Security & Smart Eco Infrastructure</h4>
-    <p class="mb-0">Safety is paramount. Hero Homes integrates 24/7 HD CCTV coverage, RFID boom barriers for automated vehicle entry, smart mobile app visitor approvals, EV charging stations across all parking levels, solar-powered common area lighting, and rainwater harvesting structures.</p>
-  </div>
-
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Amenities)</h2>
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Greater Noida Amenities</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">

@@ -47,13 +47,13 @@
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
+    /* Layout Spacing Fix: Top padding directly on main container below fixed navbar */
+    .main-layout-container {
+      padding-top: calc(var(--nav-offset) + 16px) !important;
+      margin-top: 0 !important;
     }
     .single-hero-image-wrapper {
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -74,6 +74,24 @@
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
+    }
+    .page-h1-header-block {
+      margin: 24px 0 28px 0;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }
+    .page-h1-header-block .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: var(--font-heading);
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }
     .aeo-direct-answer-box {
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
@@ -105,7 +123,7 @@
       margin-bottom: 20px;
     }
     .content-subheading-lg {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
@@ -113,7 +131,7 @@
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
     .content-subheading-md {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
@@ -188,7 +206,7 @@
       "name": "How far is Jewar International Airport from the site?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Noida International Airport at Jewar is located approximately 25 minutes away via Yamuna Expressway."
+        "text": "Noida International Airport at Jewar is located approximately 25 to 35 minutes away via Yamuna Expressway."
       }
     }
   ]
@@ -246,17 +264,6 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>FAQs</span>
-      </div>
-      <h1 class="page-title">Frequently Asked Questions (FAQs) & Help Center</h1>
-      <p class="page-subtitle">Get instant, transparent answers regarding pricing, RERA status, location advantages, payment plans, and booking procedures.</p>
-    </div>
-  </section>
-
   <!-- Main Body Content -->
   <div class="container main-layout-container">
     <div class="page-layout-grid">
@@ -268,6 +275,12 @@
           <span class="single-hero-caption">Hero Homes Greater Noida – Complete 17.3-Acre Development Overview & Blueprint Stats</span>
         </div>
 
+        <!-- H1 Header Block Below Hero Image -->
+        <div class="page-h1-header-block">
+          <h1 class="page-title">Frequently Asked Questions (FAQs) & Help Center</h1>
+          <p class="page-subtitle">Get instant, transparent answers regarding pricing, RERA status, location advantages, payment plans, and booking procedures.</p>
+        </div>
+
         
 <article class="content-block shadow-card rounded-large p-4 bg-white">
   <div class="aeo-direct-answer-box">
@@ -275,72 +288,67 @@
     <p class="mb-0">Hero Homes Greater Noida is a 17.3-acre premium pre-launch residential development inside Sector MU, DMIC Township. Pre-launch prices start at <strong>₹2.22 Cr*</strong> for 3 BHK luxury residences (1650 sq ft). Located ~25 mins from Jewar International Airport and ~5 mins from Yamuna Expressway, the project offers 30+ resort amenities and pre-approved home loans from SBI, HDFC, ICICI, and Axis Bank.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Comprehensive Homebuyer FAQ Repository</h2>
-  <p class="seo-rich-paragraph">Welcome to the official <strong>Hero Homes Greater Noida Help Center & FAQ Repository</strong>. Whether you are a first-time homebuyer or an experienced real estate investor, this knowledge base provides immediate, transparent answers to all essential questions regarding pricing, floor plans, RERA approvals, location advantages, payment schedules, and developer track record.</p>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida FAQs &amp; Comprehensive Buyer Help Center</h2>
+  <p class="seo-rich-paragraph">Welcome to the official <strong>Hero Homes Greater Noida Help Center &amp; FAQ Repository</strong>. Whether you are a first-time homebuyer or an experienced real estate investor, this knowledge base provides immediate, transparent answers to all essential questions regarding pricing, floor plans, RERA approvals, location advantages, payment schedules, and developer track record.</p>
 
-  <h2 class="content-subheading-lg">1. Project Overview & General Questions</h2>
-
-  <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is Hero Homes Greater Noida?</h3>
-      <p>Hero Homes Greater Noida is a landmark 17.3-acre premium residential development by Hero Realty inside the DMIC Integrated Industrial Township in Sector MU, Greater Noida. The project features nearly 6 million sq. ft. of development potential with luxury 2, 3, and 4 BHK high-rise apartments.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Where is the exact project location?</h3>
-      <p>The project is located in Sector MU within the master-planned DMIC Integrated Industrial Township, Greater Noida, Uttar Pradesh (Pincode: 201308).</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What apartment configurations are available?</h3>
-      <p>The development offers 2 BHK Smart Luxury (1250-1350 sq ft), 3 BHK Premium (1650 sq ft), 3 BHK + Servant (1900-2200 sq ft), and 4 BHK Royal Pent-Residences (2600+ sq ft).</p>
-    </div>
-  </div>
-
-  <h2 class="content-subheading-lg">2. Pricing, Costing & Payment Plans</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Price &amp; Cost FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the starting price for 3 BHK apartments?</h3>
-      <p>The starting pre-launch price for a 3 BHK luxury residence (1650 sq ft) is <strong>₹2.22 Cr*</strong>. Early-bird registration tokens qualify for pre-launch price lock guarantees.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the starting price of Hero Homes Greater Noida?</h3>
+      <p>The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What payment plans are offered?</h3>
-      <p>Hero Realty offers Construction-Linked Plans (CLP 10:80:10) as well as flexible milestone subvention options (30:70 and 20:80) for real estate investors.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price for the largest configuration?</h3>
+      <p>The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Which banks have pre-approved home loans for Hero Homes?</h3>
-      <p>Pre-approved home loan facilities are available from State Bank of India (SBI), HDFC Bank, ICICI Bank, Axis Bank, and PNB Housing with up to 80% funding eligibility.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price per square foot?</h3>
+      <p>Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
     </div>
   </div>
 
-  <h2 class="content-subheading-lg">3. RERA Approval, Legal Status & Possession</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Floor Plan &amp; Layout FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <div class="faq-item-card glass-card p-3 my-3">
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What configurations does Hero Homes Sector MU offer?</h3>
+      <p>Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
+    </div>
+
+    <div class="faq-item-card glass-card p-3 my-3">
+      <h3><i data-lucide="help-circle" class="text-accent"></i> Are all floor plans Vastu compliant?</h3>
+      <p>Yes. All entry doors, kitchen positions, and master bedroom suites follow Vastu Shastra orientation principles.</p>
+    </div>
+  </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida RERA &amp; Possession FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <div class="faq-item-card glass-card p-3 my-3">
       <h3><i data-lucide="help-circle" class="text-accent"></i> Is Hero Homes Greater Noida RERA registered?</h3>
-      <p>RERA registration for Hero Homes Greater Noida is under formal application process. Official RERA numbers will be published immediately upon issuance by UP-RERA.</p>
+      <p>RERA registration for Hero Homes Greater Noida is currently under process and listed as "Coming Soon".</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the expected possession timeline?</h3>
-      <p>Possession is targeted for 2031 onwards, executed in phased tower handovers following Mivan structural completion and municipal compliance audits.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the possession timeline?</h3>
+      <p>Possession is currently indicated as 2031 onwards, executed in phased tower handovers.</p>
     </div>
   </div>
 
-  <h2 class="content-subheading-lg">4. Location, Airport & Commute Distance</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location &amp; Connectivity FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <div class="faq-item-card glass-card p-3 my-3">
       <h3><i data-lucide="help-circle" class="text-accent"></i> How far is Jewar International Airport from the site?</h3>
-      <p>Noida International Airport at Jewar is located approximately 25 minutes (~28 km) away via the Yamuna Expressway corridor.</p>
+      <p>Noida International Airport at Jewar is located approximately 25 to 35 minutes away via the Yamuna Expressway corridor.</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What public transport and metro connections exist?</h3>
-      <p>The Aqua Line Metro is approximately 5 minutes away, complemented by direct 60-meter sector roads connecting to Yamuna Expressway and Noida Expressway.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> Which sector is the project situated in?</h3>
+      <p>Hero Homes Greater Noida is located in Sector MU inside the DMIC Integrated Industrial Township.</p>
     </div>
   </div>
 </article>

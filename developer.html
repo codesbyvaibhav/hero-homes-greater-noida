@@ -47,13 +47,13 @@
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
+    /* Layout Spacing Fix: Top padding directly on main container below fixed navbar */
+    .main-layout-container {
+      padding-top: calc(var(--nav-offset) + 16px) !important;
+      margin-top: 0 !important;
     }
     .single-hero-image-wrapper {
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -74,6 +74,24 @@
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
+    }
+    .page-h1-header-block {
+      margin: 24px 0 28px 0;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }
+    .page-h1-header-block .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: var(--font-heading);
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }
     .aeo-direct-answer-box {
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
@@ -105,7 +123,7 @@
       margin-bottom: 20px;
     }
     .content-subheading-lg {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
@@ -113,7 +131,7 @@
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
     .content-subheading-md {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
@@ -238,17 +256,6 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>Developer</span>
-      </div>
-      <h1 class="page-title">Hero Realty – Corporate Heritage, Trust & Track Record</h1>
-      <p class="page-subtitle">Building sustainable, modern, and wellness-focused residential communities backed by the $50 Billion+ Hero Group conglomerate.</p>
-    </div>
-  </section>
-
   <!-- Main Body Content -->
   <div class="container main-layout-container">
     <div class="page-layout-grid">
@@ -260,6 +267,12 @@
           <span class="single-hero-caption">Hero Homes – High-Rise Architectural Excellence & Quality Construction</span>
         </div>
 
+        <!-- H1 Header Block Below Hero Image -->
+        <div class="page-h1-header-block">
+          <h1 class="page-title">Hero Realty – Corporate Heritage, Trust & Track Record</h1>
+          <p class="page-subtitle">Building sustainable, modern, and wellness-focused residential communities backed by the $50 Billion+ Hero Group conglomerate.</p>
+        </div>
+
         
 <article class="content-block shadow-card rounded-large p-4 bg-white">
   <div class="aeo-direct-answer-box">
@@ -267,12 +280,10 @@
     <p class="mb-0">Hero Realty Private Limited is the flagship real estate development arm of Hero Enterprise, chaired by Mr. Sunil Kant Munjal. Backed by the multi-billion dollar Hero Group legacy of over 40+ years, Hero Realty has successfully delivered millions of square feet of landmark residential communities across Gurgaon, Mohali, Ludhiana, and Greater Noida with 100% legal compliances and financial transparency.</p>
   </div>
 
-  <h2 class="content-subheading-lg">The $50 Billion+ Hero Group Legacy</h2>
+  <h2 class="content-subheading-lg">Hero Realty – Hero Homes Developer Profile &amp; Hero Group Legacy</h2>
   <p class="seo-rich-paragraph">The name 'Hero' is synonymous with Indian manufacturing excellence, consumer trust, and industrial leadership. For over four decades, the Hero Group conglomerate has pioneered world-class engineering, building an iconic global brand valued at over $50 Billion. <strong>Hero Realty Private Limited</strong> carries this prestigious heritage into Indian real estate, setting new standards for construction quality, timely delivery, and customer-first governance.</p>
-  
-  <p class="seo-rich-paragraph">Under the visionary guidance of Chairman Mr. Sunil Kant Munjal, Hero Realty focuses on creating sustainable, modern, and wellness-oriented residential townships. Every Hero Homes project is engineered with a commitment to zero-compromise building materials, advanced Mivan monolithic casting technology, and transparent RERA-compliant operations.</p>
 
-  <h2 class="content-subheading-lg">Core Development Pillars of Hero Realty</h2>
+  <h2 class="content-subheading-lg">Hero Realty Developer Pillars &amp; Construction Excellence</h2>
 
   <div class="developer-pillars-grid my-4">
     <div class="pillar-card glass-card p-3 my-2">
@@ -291,7 +302,7 @@
     </div>
   </div>
 
-  <h2 class="content-subheading-lg">Portfolio of Delivered Flagship Developments</h2>
+  <h2 class="content-subheading-lg">Hero Realty Portfolio of Delivered Hero Homes Projects</h2>
   <p class="seo-rich-paragraph">Hero Realty has built an impressive track record across major real estate growth corridors in North India:</p>
 
   <table class="seo-data-table">
@@ -299,8 +310,8 @@
       <tr>
         <th>Project Name</th>
         <th>Location</th>
-        <th>Land Area & Scale</th>
-        <th>Key Highlights & Status</th>
+        <th>Land Area &amp; Scale</th>
+        <th>Key Highlights &amp; Status</th>
       </tr>
     </thead>
     <tbody>
@@ -331,7 +342,7 @@
     </tbody>
   </table>
 
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Developer Track Record)</h2>
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Realty Developer Track Record</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">

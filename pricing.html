@@ -47,13 +47,13 @@
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
+    /* Layout Spacing Fix: Top padding directly on main container below fixed navbar */
+    .main-layout-container {
+      padding-top: calc(var(--nav-offset) + 16px) !important;
+      margin-top: 0 !important;
     }
     .single-hero-image-wrapper {
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -74,6 +74,24 @@
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
+    }
+    .page-h1-header-block {
+      margin: 24px 0 28px 0;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }
+    .page-h1-header-block .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: var(--font-heading);
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }
     .aeo-direct-answer-box {
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
@@ -105,7 +123,7 @@
       margin-bottom: 20px;
     }
     .content-subheading-lg {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
@@ -113,7 +131,7 @@
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
     .content-subheading-md {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
@@ -262,17 +280,6 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>Pricing</span>
-      </div>
-      <h1 class="page-title">Hero Homes Greater Noida Pricing, Cost & Price List</h1>
-      <p class="page-subtitle">Transparent pre-launch pricing guide, per-sq-ft rates, payment plans & comprehensive cost breakdown for Hero Homes Sector MU.</p>
-    </div>
-  </section>
-
   <!-- Main Body Content -->
   <div class="container main-layout-container">
     <div class="page-layout-grid">
@@ -282,6 +289,12 @@
         <div class="single-hero-image-wrapper">
           <img src="images/exterior_daytime.webp" alt="Hero Homes Greater Noida Architectural High Rise Buildings" loading="eager" fetchpriority="high">
           <span class="single-hero-caption">Hero Homes Greater Noida – Modern Luxury High-Rise Architecture in Sector MU</span>
+        </div>
+
+        <!-- H1 Header Block Below Hero Image -->
+        <div class="page-h1-header-block">
+          <h1 class="page-title">Hero Homes Greater Noida Pricing, Cost & Price List</h1>
+          <p class="page-subtitle">Transparent pre-launch pricing guide, per-sq-ft rates, payment plans & comprehensive cost breakdown for Hero Homes Sector MU.</p>
         </div>
 
         

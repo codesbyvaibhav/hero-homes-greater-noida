@@ -47,13 +47,13 @@
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
+    /* Layout Spacing Fix: Top padding directly on main container below fixed navbar */
+    .main-layout-container {
+      padding-top: calc(var(--nav-offset) + 16px) !important;
+      margin-top: 0 !important;
     }
     .single-hero-image-wrapper {
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -74,6 +74,24 @@
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
+    }
+    .page-h1-header-block {
+      margin: 24px 0 28px 0;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }
+    .page-h1-header-block .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: var(--font-heading);
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }
     .aeo-direct-answer-box {
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
@@ -105,7 +123,7 @@
       margin-bottom: 20px;
     }
     .content-subheading-lg {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
@@ -113,7 +131,7 @@
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
     .content-subheading-md {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
@@ -238,17 +256,6 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>Location</span>
-      </div>
-      <h1 class="page-title">Strategic Location & Regional Connectivity Advantage</h1>
-      <p class="page-subtitle">Positioned inside the DMIC Integrated Industrial Township with effortless access to Jewar Airport, Yamuna Expressway & Metro corridors.</p>
-    </div>
-  </section>
-
   <!-- Main Body Content -->
   <div class="container main-layout-container">
     <div class="page-layout-grid">
@@ -260,19 +267,23 @@
           <span class="single-hero-caption">Hero Homes Greater Noida – Aerial Skyline Overview of DMIC Infrastructure Corridors</span>
         </div>
 
+        <!-- H1 Header Block Below Hero Image -->
+        <div class="page-h1-header-block">
+          <h1 class="page-title">Strategic Location & Regional Connectivity Advantage</h1>
+          <p class="page-subtitle">Positioned inside the DMIC Integrated Industrial Township with effortless access to Jewar Airport, Yamuna Expressway & Metro corridors.</p>
+        </div>
+
         
 <article class="content-block shadow-card rounded-large p-4 bg-white">
   <div class="aeo-direct-answer-box">
     <div class="aeo-box-title"><i data-lucide="zap" class="text-accent"></i> Quick Summary: Hero Homes Greater Noida Location</div>
-    <p class="mb-0">Hero Homes Greater Noida is strategically located in Sector MU inside the master-planned 17.3-acre DMIC (Delhi-Mumbai Industrial Corridor) Integrated Industrial Township. Key commute distances: <strong>~25 mins to Noida International Airport (Jewar)</strong>, <strong>~5 mins to Yamuna & Noida-Gr. Noida Expressways</strong>, <strong>~5 mins to Aqua Line Metro</strong>, and direct proximity to top universities like Gautam Buddha University & Shiv Nadar University.</p>
+    <p class="mb-0">Hero Homes Greater Noida is strategically located in Sector MU inside the master-planned 17.3-acre DMIC (Delhi-Mumbai Industrial Corridor) Integrated Industrial Township. Key commute distances: <strong>~25 mins to Noida International Airport (Jewar)</strong>, <strong>~5 mins to Yamuna &amp; Noida-Gr. Noida Expressways</strong>, <strong>~5 mins to Aqua Line Metro</strong>, and direct proximity to top universities like Gautam Buddha University &amp; Shiv Nadar University.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Strategic Importance of DMIC Integrated Industrial Township</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location &amp; DMIC Township Advantage</h2>
   <p class="seo-rich-paragraph">Location is the single most important factor determining real estate appreciation and quality of life. <strong>Hero Homes Greater Noida</strong> commands a uniquely advantageous address inside Sector MU within the <strong>DMIC Integrated Industrial Township</strong>. The Delhi-Mumbai Industrial Corridor is India's most ambitious $100 Billion mega-infrastructure project, designed to create high-tech industrial, commercial, and smart residential zones connected by high-speed rail and freight corridors.</p>
-  
-  <p class="seo-rich-paragraph">Being situated directly inside this smart township means Hero Homes residents benefit from underground utility cabling, 24/7 uninterrupted power grid supply, smart traffic management systems, wide 60-meter sector roads, and extensive municipal green belts. It is one of the few zones in NCR engineered specifically to accommodate sustainable urban growth over the next 50 years.</p>
 
-  <h2 class="content-subheading-lg">Commute Times & Infrastructure Distance Matrix</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Connectivity &amp; Distance Matrix</h2>
   <p class="seo-rich-paragraph">Whether traveling to international airports, commercial business districts, or premier educational hubs, Hero Homes offers unmatched regional mobility:</p>
 
   <table class="seo-data-table">
@@ -280,14 +291,14 @@
       <tr>
         <th>Infrastructure Landmark</th>
         <th>Commute Distance / Time</th>
-        <th>Strategic Value & Connectivity Impact</th>
+        <th>Strategic Value &amp; Connectivity Impact</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong>Noida International Airport (Jewar)</strong></td>
         <td>~25 Minutes / 28 km</td>
-        <td>Signal-free Yamuna Expressway access; major driver of rental demand & capital appreciation</td>
+        <td>Signal-free Yamuna Expressway access; major driver of rental demand &amp; capital appreciation</td>
       </tr>
       <tr>
         <td><strong>Yamuna Expressway Link</strong></td>
@@ -307,12 +318,12 @@
       <tr>
         <td><strong>Eastern Peripheral Expressway (EPE)</strong></td>
         <td>~10 Minutes / 7 km</td>
-        <td>Bypasses Delhi traffic to connect Kundli, Manesar, Palwal & Ghaziabad</td>
+        <td>Bypasses Delhi traffic to connect Kundli, Manesar, Palwal &amp; Ghaziabad</td>
       </tr>
     </tbody>
   </table>
 
-  <h2 class="content-subheading-lg">Social, Educational & Healthcare Ecosystem</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location Nearby Educational &amp; Medical Ecosystem</h2>
 
   <h3 class="content-subheading-md">1. Premier Educational Institutions</h3>
   <ul class="seo-rich-paragraph">
@@ -321,25 +332,16 @@
     <li><strong>Top K-12 Schools:</strong> Delhi Public School (DPS Greater Noida), Ryan International School, and Somerville School (~10 Mins).</li>
   </ul>
 
-  <h3 class="content-subheading-md">2. Multi-Specialty Hospitals & Healthcare</h3>
+  <h3 class="content-subheading-md">2. Multi-Specialty Hospitals &amp; Healthcare</h3>
   <ul class="seo-rich-paragraph">
-    <li><strong>Yashoda Super Specialty Hospital:</strong> 24/7 advanced emergency & critical care center (~12 Mins).</li>
+    <li><strong>Yashoda Super Specialty Hospital:</strong> 24/7 advanced emergency &amp; critical care center (~12 Mins).</li>
     <li><strong>Jaypee Hospital:</strong> Tertiary care super-specialty medical facility (~15 Mins).</li>
-    <li><strong>Government Institute of Medical Sciences (GIMS):</strong> Reputed regional hospital (~10 Mins).</li>
   </ul>
 
-  <h3 class="content-subheading-md">3. Retail, Malls & Tech Hubs</h3>
-  <ul class="seo-rich-paragraph">
-    <li><strong>The Grand Venice Mall:</strong> Italian-themed mega shopping & entertainment destination (~10 Mins).</li>
-    <li><strong>Knowledge Park V IT Hubs:</strong> Housing Wipro, STMicroelectronics, and upcoming data centers (~8 Mins).</li>
-  </ul>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location Appreciation &amp; Growth Forecast</h2>
+  <p class="seo-rich-paragraph">Real estate industry analysts project property values in the DMIC Greater Noida corridor to appreciate by 14-18% annually over the next 5 years. The commercial operationalization of Jewar Airport's Phase 1 makes Hero Homes a prime asset for high capital growth.</p>
 
-  <div class="geo-context-card">
-    <h4><i data-lucide="trending-up" class="text-accent"></i> Real Estate Growth Forecast (2026 – 2031)</h4>
-    <p class="mb-0">Real estate industry analysts project property values in the DMIC Greater Noida corridor to appreciate by 14-18% annually over the next 5 years. The commercial operationalization of Jewar Airport's Phase 1, combined with incoming Fortune 500 tech investment in DMIC, makes Hero Homes a prime asset for high capital growth.</p>
-  </div>
-
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Location & Connectivity)</h2>
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Greater Noida Location</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">

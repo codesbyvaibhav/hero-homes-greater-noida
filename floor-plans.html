@@ -47,13 +47,13 @@
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
+    /* Layout Spacing Fix: Top padding directly on main container below fixed navbar */
+    .main-layout-container {
+      padding-top: calc(var(--nav-offset) + 16px) !important;
+      margin-top: 0 !important;
     }
     .single-hero-image-wrapper {
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -74,6 +74,24 @@
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
+    }
+    .page-h1-header-block {
+      margin: 24px 0 28px 0;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }
+    .page-h1-header-block .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: var(--font-heading);
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }
     .aeo-direct-answer-box {
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
@@ -105,7 +123,7 @@
       margin-bottom: 20px;
     }
     .content-subheading-lg {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
@@ -113,7 +131,7 @@
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
     .content-subheading-md {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
@@ -238,17 +256,6 @@
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>Floor Plans</span>
-      </div>
-      <h1 class="page-title">Hero Homes Greater Noida Floor Plans & Layout Drawings</h1>
-      <p class="page-subtitle">Architectural excellence, Vastu compliance, and zero space wastage across 2, 3 & 4 BHK luxury layouts.</p>
-    </div>
-  </section>
-
   <!-- Main Body Content -->
   <div class="container main-layout-container">
     <div class="page-layout-grid">
@@ -260,6 +267,12 @@
           <span class="single-hero-caption">Hero Homes 3 BHK Master Layout Blueprint – Optimized Spatial Flow & Wide Balcony Access</span>
         </div>
 
+        <!-- H1 Header Block Below Hero Image -->
+        <div class="page-h1-header-block">
+          <h1 class="page-title">Hero Homes Greater Noida Floor Plans & Unit Layout Drawings</h1>
+          <p class="page-subtitle">Architectural excellence, Vastu compliance, and zero space wastage across 2, 3 & 4 BHK luxury layouts.</p>
+        </div>
+
         
 <article class="content-block shadow-card rounded-large p-4 bg-white">
   <div class="aeo-direct-answer-box">
@@ -267,17 +280,17 @@
     <p class="mb-0">Hero Homes Greater Noida features thoughtfully engineered 2, 3, and 4 BHK luxury floor plans ranging from 1,250 sq. ft. to 2,600+ sq. ft. Built around Vastu-compliant principles, every unit delivers ~80-85% carpet efficiency, zero dead-space corridors, 3-sided open ventilation, and panoramic double-height balconies overlooking 85%+ green landscapes.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Master Layout Philosophy & Architectural Engineering</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Master Layout Philosophy &amp; Architectural Engineering</h2>
   <p class="seo-rich-paragraph">The floor plans at <strong>Hero Homes Greater Noida</strong> are the result of rigorous human-centric architectural design. Developed across 17.3 acres in the DMIC Integrated Industrial Township, Sector MU, Greater Noida, the master layout balances privacy, natural light, and green views. Unlike typical high-density developments where window views face adjacent concrete walls, Hero Homes towers are positioned along curvilinear axes that preserve 270-degree unhindered views of the surrounding manicured parks.</p>
   
   <p class="seo-rich-paragraph">Every residence is planned with dedicated functional zoning: distinct private sleeping quarters, expansive central living and dining areas, and extended balconies that act as outdoor living rooms. With high ceiling heights (3.1 meters floor-to-floor), floor-to-ceiling double-glazed windows, and premium vitrified tile flooring, the indoor environment offers unmatched spatial grandeur.</p>
 
-  <h2 class="content-subheading-lg">Deep-Dive Unit Typologies & Layout Specifications</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Floor Plans &amp; Unit Layout Specifications</h2>
 
   <h3 class="content-subheading-md">1. 2 BHK Smart Luxury Apartments (1,250 – 1,350 Sq. Ft.)</h3>
   <p class="seo-rich-paragraph">Designed specifically for nuclear families, corporate executives, and smart investors, the 2 BHK floor plan prioritizes functional utility without compromising on luxury feel:</p>
   <ul class="seo-rich-paragraph">
-    <li><strong>Living & Dining Foyer:</strong> Expansive 14ft x 22ft open-plan living and dining area opening directly to a wide green-facing balcony.</li>
+    <li><strong>Living &amp; Dining Foyer:</strong> Expansive 14ft x 22ft open-plan living and dining area opening directly to a wide green-facing balcony.</li>
     <li><strong>Master Bedroom Suite:</strong> Includes attached wooden-floored master bathroom, space for king-size bedding, and built-in wardrobe recesses.</li>
     <li><strong>Guest Bedroom:</strong> Spacious secondary bedroom with adjacent powder/guest bathroom.</li>
     <li><strong>Modular Kitchen Nook:</strong> Parallel counter layout with attached dry utility balcony for washing machine and storage.</li>
@@ -304,7 +317,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>Living & Dining Hall</td>
+        <td>Living &amp; Dining Hall</td>
         <td>18' 0" x 26' 6"</td>
         <td>Double-glass sliding doors, Italian marble flooring option</td>
       </tr>
@@ -314,12 +327,12 @@
         <td>Laminated wooden flooring, walk-in closet space, attached bath</td>
       </tr>
       <tr>
-        <td>Bedroom 2 & 3</td>
+        <td>Bedroom 2 &amp; 3</td>
         <td>12' 0" x 14' 6"</td>
         <td>En-suite bathrooms, wide glass windows, AC ducting provision</td>
       </tr>
       <tr>
-        <td>Servant Room & Bath</td>
+        <td>Servant Room &amp; Bath</td>
         <td>7' 6" x 9' 0"</td>
         <td>Separate service elevator corridor entrance</td>
       </tr>
@@ -335,11 +348,14 @@
   <p class="seo-rich-paragraph">Representing the pinnacle of luxury living in Greater Noida, the 4 BHK penthouse layout features private elevator entry lobbies, 4 master suites, family lounges, and 270-degree wrap-around sun decks.</p>
 
   <div class="geo-context-card">
-    <h4><i data-lucide="compass" class="text-accent"></i> Vastu Shastra & Environmental Orientation</h4>
+    <h4><i data-lucide="compass" class="text-accent"></i> Vastu Shastra &amp; Environmental Orientation</h4>
     <p class="mb-0">All apartment entries at Hero Homes Greater Noida are aligned along North, East, and North-East cardinal directions to maximize positive energy flow. Kitchens are situated in the Agni (South-East) zone, while master bedrooms occupy the Nairrutya (South-West) corner for maximum stability and restful sleep.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Floor Plans & Layouts)</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Master Plan &amp; Tower Structure</h2>
+  <p class="seo-rich-paragraph">Hero Homes Greater Noida features high-rise residential towers surrounded by over 85% open landscaped greens. The master layout isolates vehicular traffic to perimeter roads, creating a completely safe, pedestrian-friendly central green zone.</p>
+
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Floor Plans</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">
@@ -350,11 +366,6 @@
     <div class="faq-item-card glass-card p-3 my-3">
       <h3><i data-lucide="help-circle" class="text-accent"></i> Are all apartments Vastu compliant?</h3>
       <p>Yes. All apartment entry doors, kitchen placements, and master bedroom locations strictly follow authentic Vastu Shastra orientation principles.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Can I customize wall partitions inside my apartment?</h3>
-      <p>Hero Homes towers utilize advanced Mivan monolithic concrete construction for maximum seismic safety. Internal non-load bearing lightweight walls can be customized during early construction stages upon request.</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">

@@ -2,230 +2,7 @@ import os
 from build_child_pages import generate_child_page
 
 # --------------------------------------------------------------------------
-# 1. PRICING.HTML
-# --------------------------------------------------------------------------
-pricing_main = """
-<article class="content-block shadow-card rounded-large p-4 bg-white">
-  <div class="aeo-direct-answer-box">
-    <div class="aeo-box-title"><i data-lucide="zap" class="text-accent"></i> Quick Summary: Hero Homes Greater Noida Pricing</div>
-    <p class="mb-0">Hero Homes Greater Noida offers premium 2, 3 & 4 BHK luxury residences inside the 17.3-acre DMIC Integrated Industrial Township. Pre-launch prices start at <strong>₹2.22 Cr*</strong> for a 3 BHK luxury apartment (1650 sq ft). Flexible payment options include Construction-Linked Plans (CLP 10:80:10) and 30:70 subvention milestones, backed by pre-approved loans from SBI, HDFC, ICICI, and Axis Bank.</p>
-  </div>
-
-  <h2 class="content-subheading-lg">Comprehensive Pricing & Cost Breakdown Analysis</h2>
-  <p class="seo-rich-paragraph">Understanding the pricing architecture of a major residential development like <strong>Hero Homes Greater Noida</strong> is essential for making a sound real estate investment. Located inside the flagship 17.3-acre DMIC (Delhi-Mumbai Industrial Corridor) Integrated Industrial Township in Sector MU, Greater Noida, Hero Homes represents one of NCR's highest-potential residential launches. Spanning nearly 6 million sq. ft. of total development potential, this project is positioned to capture substantial capital appreciation as regional infrastructure milestones—such as the Noida International Airport at Jewar and the Aqua Line metro extension—near completion.</p>
-  
-  <p class="seo-rich-paragraph">Real estate buyers in Greater Noida are increasingly seeking transparent, developer-backed pricing that balances luxury finishes with long-term asset value. Hero Realty Private Limited, the real estate flagship arm of the multi-billion dollar Hero Enterprise group, brings decades of consumer trust, financial governance, and construction integrity to this project. In this comprehensive guide, we provide an exhaustive breakdown of the official unit prices, cost components, payment schedule options, bank home loan pre-approvals, and investment yield projections for Hero Homes Greater Noida.</p>
-
-  <h3 class="content-subheading-md">Official Pre-Launch Unit Price Matrix</h3>
-  <p class="seo-rich-paragraph">The following pricing structure reflects the initial pre-launch bracket established for early-stage investors and homebuyers. Early registration unlocks preferred unit selection, floor rise waivers, and early-bird price guarantees.</p>
-
-  <table class="seo-data-table">
-    <thead>
-      <tr>
-        <th>Unit Typology</th>
-        <th>Super Area (Sq. Ft.)</th>
-        <th>Carpet Area Ratio</th>
-        <th>Pre-Launch Starting Price</th>
-        <th>Booking Token Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>2 BHK Smart Luxury</strong></td>
-        <td>1,250 – 1,350 Sq. Ft.</td>
-        <td>~78% Carpet Efficiency</td>
-        <td><strong>Price on Request</strong></td>
-        <td>₹ 5.00 Lakhs</td>
-      </tr>
-      <tr>
-        <td><strong>3 BHK Premium Suite</strong></td>
-        <td>1,650 Sq. Ft.</td>
-        <td>~80% Carpet Efficiency</td>
-        <td><strong>₹ 2.22 Cr* Onwards</strong></td>
-        <td>₹ 10.00 Lakhs</td>
-      </tr>
-      <tr>
-        <td><strong>3 BHK + Servant Quarter</strong></td>
-        <td>1,900 – 2,200 Sq. Ft.</td>
-        <td>~81% Carpet Efficiency</td>
-        <td><strong>On Request (Pre-Launch)</strong></td>
-        <td>₹ 10.00 Lakhs</td>
-      </tr>
-      <tr>
-        <td><strong>4 BHK Royal Pent-Residence</strong></td>
-        <td>2,600+ Sq. Ft.</td>
-        <td>~83% Carpet Efficiency</td>
-        <td><strong>On Request (Exclusive)</strong></td>
-        <td>₹ 15.00 Lakhs</td>
-      </tr>
-    </tbody>
-  </table>
-  <p class="text-muted small">*Disclaimer: Base sales prices are indicative pre-launch figures. Statutory government taxes, GST (5%), stamp duty (7%), registration fees, Preferential Location Charges (PLC), Interest-Free Maintenance Security (IFMS), and car parking charges are extra as applicable.</p>
-
-  <h2 class="content-subheading-lg">Detailed Breakdown of Additional Charges & Financial Components</h2>
-  <p class="seo-rich-paragraph">To maintain complete financial clarity, every buyer at Hero Homes Greater Noida receives an itemized cost sheet prior to booking token execution. Below is a detailed breakdown of how total unit acquisition costs are calculated:</p>
-  
-  <ul class="seo-rich-paragraph">
-    <li><strong>Base Selling Price (BSP):</strong> Calculated per square foot of super area, covering the core structural shell, high-speed elevator access, and primary apartment finishes.</li>
-    <li><strong>Preferential Location Charges (PLC):</strong> Applied to specific high-demand inventory, such as park-facing units, pool-view residences, corner layouts, or higher floor elevations. PLC generally ranges between ₹150 to ₹400 per sq. ft.</li>
-    <li><strong>Car Parking Rights:</strong> Covered basement parking space allocation ensuring secure, weather-protected vehicle storage with dedicated EV charging provision.</li>
-    <li><strong>Clubhouse Membership Fee:</strong> One-time entry membership giving perpetual family access to the grand 25,000 sq. ft. resort clubhouse, swimming pool, and sports arenas.</li>
-    <li><strong>Interest-Free Maintenance Security (IFMS):</strong> A refundable security deposit held by the resident welfare association (RWA) for long-term complex upkeep.</li>
-    <li><strong>Statutory Taxes & Duties:</strong> Goods and Services Tax (GST) charged at 5% for under-construction residential properties without completion certificates, along with 7% Uttar Pradesh state stamp duty upon registration.</li>
-  </ul>
-
-  <div class="geo-context-card">
-    <h4><i data-lucide="map-pin" class="text-accent"></i> Geographical Price Driver: DMIC Integrated Industrial Township Zone</h4>
-    <p class="mb-0">Property values in Sector MU inside the DMIC Township are projected to outpace standard Greater Noida sectors due to direct government backing. With over $10 Billion earmarked for industrial, tech, and logistics infrastructure across the corridor, residential developments inside the DMIC boundary benefit from superior rental yields and capital growth trajectory.</p>
-  </div>
-
-  <h2 class="content-subheading-lg">Payment Schedule Structures & Milestone Options</h2>
-  <p class="seo-rich-paragraph">Hero Realty offers multiple flexible payment plan structures designed to cater to both self-use end-users and strategic real estate investors:</p>
-
-  <h3 class="content-subheading-md">1. Construction-Linked Payment Plan (CLP 10:80:10)</h3>
-  <p class="seo-rich-paragraph">The Construction-Linked Plan distributes financial commitments evenly over the 4-year development timeline. Payments are strictly triggered upon verified structural engineering achievements signed off by project architects:</p>
-
-  <table class="seo-data-table">
-    <thead>
-      <tr>
-        <th>Construction Milestone</th>
-        <th>Percentage Payable</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>At the time of booking / Application Token</td>
-        <td>10% of Total Cost</td>
-      </tr>
-      <tr>
-        <td>Upon Excavation & Foundation Commencement</td>
-        <td>10% of Total Cost</td>
-      </tr>
-      <tr>
-        <td>Completion of Basement & Ground Floor Slab</td>
-        <td>10% of Total Cost</td>
-      </tr>
-      <tr>
-        <td>Completion of 10th Floor Superstructure Slab</td>
-        <td>15% of Total Cost</td>
-      </tr>
-      <tr>
-        <td>Completion of 20th Floor Superstructure Slab</td>
-        <td>15% of Total Cost</td>
-      </tr>
-      <tr>
-        <td>Completion of Top Floor Structure & Brickwork</td>
-        <td>15% of Total Cost</td>
-      </tr>
-      <tr>
-        <td>Completion of Internal MEP Plumbing & Electricals</td>
-        <td>15% of Total Cost</td>
-      </tr>
-      <tr>
-        <td>At the time of Offer of Possession & Final Registration</td>
-        <td>10% + Statutory Charges</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 class="content-subheading-md">2. Pre-Approved Bank Home Loans & Financing Partners</h3>
-  <p class="seo-rich-paragraph">Hero Homes Greater Noida has undergone rigorous legal, technical, and financial due diligence by India's major banking institutions. Approved home loan facilities with subvention support, maximum loan-to-value (LTV) ratios of up to 80%, and flexible tenure options up to 30 years are available from:</p>
-
-  <div class="bank-partners-list my-3">
-    <span class="bank-chip"><i data-lucide="shield-check"></i> State Bank of India (SBI)</span>
-    <span class="bank-chip"><i data-lucide="shield-check"></i> HDFC Bank</span>
-    <span class="bank-chip"><i data-lucide="shield-check"></i> ICICI Bank</span>
-    <span class="bank-chip"><i data-lucide="shield-check"></i> Axis Bank</span>
-    <span class="bank-chip"><i data-lucide="shield-check"></i> Punjab National Bank (PNB)</span>
-    <span class="bank-chip"><i data-lucide="shield-check"></i> Bank of Baroda</span>
-  </div>
-
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Pricing & Payment Plans)</h2>
-
-  <div class="faq-accordion-list my-4">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the exact starting price for 3 BHK apartments at Hero Homes Greater Noida?</h3>
-      <p>The pre-launch starting price for a 3 BHK premium apartment (1650 sq ft) at Hero Homes Greater Noida starts at <strong>₹2.22 Cr*</strong>. Special early-bird registration discounts apply for initial booking tokens.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the booking token amount required to hold a unit?</h3>
-      <p>The booking token is ₹5.00 Lakhs for 2 BHK units, ₹10.00 Lakhs for 3 BHK units, and ₹15.00 Lakhs for 4 BHK luxury residences. Tokens are fully customizable upon formal allotment agreement.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Are subvention and flexible payment plans available for investors?</h3>
-      <p>Yes, Hero Realty offers customized 30:70 and 20:80 flexible milestone payment plans allowing buyers to pay a low initial deposit and defer remaining payments until major superstructure milestones.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Are there any hidden charges in the cost sheet?</h3>
-      <p>No. Hero Realty follows complete transparency. All charges—including BSP, PLC, car parking, IFMS, club membership, GST, and stamp duty—are explicitly detailed in the official cost breakdown before booking.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Can NRIs apply for home loans on Hero Homes Greater Noida?</h3>
-      <p>Yes. NRI buyers can secure up to 80% home loan financing through approved bank partners like SBI, HDFC, and ICICI with streamlined digital documentation and NRE/NRO account processing.</p>
-    </div>
-  </div>
-</article>
-"""
-
-pricing_schema = """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the exact starting price for 3 BHK apartments at Hero Homes Greater Noida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The pre-launch starting price for a 3 BHK premium apartment (1650 sq ft) at Hero Homes Greater Noida starts at ₹2.22 Cr*."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the booking token amount required to hold a unit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The booking token is ₹5.00 Lakhs for 2 BHK units, ₹10.00 Lakhs for 3 BHK units, and ₹15.00 Lakhs for 4 BHK luxury residences."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are subvention and flexible payment plans available for investors?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, Hero Realty offers customized 30:70 and 20:80 flexible milestone payment plans allowing buyers to pay a low initial deposit."
-      }
-    }
-  ]
-}
-</script>
-"""
-
-generate_child_page(
-    filename='pricing.html',
-    page_title='Hero Homes Greater Noida Pricing, Cost & Payment Plans',
-    meta_desc='Check official starting prices, cost breakdown, booking token details, and flexible payment plans for 2, 3 & 4 BHK luxury apartments at Hero Homes Greater Noida.',
-    canonical_url='https://herohomenoida.com/pricing.html',
-    h1_title='Hero Homes Greater Noida Pricing, Cost & Payment Plans',
-    subtitle='Transparent pre-launch pricing, cost breakdowns, and construction-linked milestone payment schedules.',
-    hero_img='images/exterior_daytime.webp',
-    hero_img_alt='Hero Homes Greater Noida Architectural High Rise Buildings',
-    hero_img_caption='Hero Homes Greater Noida – Modern Luxury High-Rise Architecture in Sector MU DMIC Township',
-    nav_active_key='pricing',
-    main_content_html=pricing_main,
-    sidebar_title='Get Official Cost Sheet',
-    sidebar_desc='Fill out the quick form to receive detailed pricing breakdown, cost sheet & payment schedules on WhatsApp.',
-    sidebar_btn_text='Unlock Price List',
-    faq_schema_json=pricing_schema
-)
-
-# --------------------------------------------------------------------------
-# 2. FLOOR-PLANS.HTML
+# 1. FLOOR-PLANS.HTML
 # --------------------------------------------------------------------------
 floor_main = """
 <article class="content-block shadow-card rounded-large p-4 bg-white">
@@ -234,17 +11,17 @@ floor_main = """
     <p class="mb-0">Hero Homes Greater Noida features thoughtfully engineered 2, 3, and 4 BHK luxury floor plans ranging from 1,250 sq. ft. to 2,600+ sq. ft. Built around Vastu-compliant principles, every unit delivers ~80-85% carpet efficiency, zero dead-space corridors, 3-sided open ventilation, and panoramic double-height balconies overlooking 85%+ green landscapes.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Master Layout Philosophy & Architectural Engineering</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Master Layout Philosophy &amp; Architectural Engineering</h2>
   <p class="seo-rich-paragraph">The floor plans at <strong>Hero Homes Greater Noida</strong> are the result of rigorous human-centric architectural design. Developed across 17.3 acres in the DMIC Integrated Industrial Township, Sector MU, Greater Noida, the master layout balances privacy, natural light, and green views. Unlike typical high-density developments where window views face adjacent concrete walls, Hero Homes towers are positioned along curvilinear axes that preserve 270-degree unhindered views of the surrounding manicured parks.</p>
   
   <p class="seo-rich-paragraph">Every residence is planned with dedicated functional zoning: distinct private sleeping quarters, expansive central living and dining areas, and extended balconies that act as outdoor living rooms. With high ceiling heights (3.1 meters floor-to-floor), floor-to-ceiling double-glazed windows, and premium vitrified tile flooring, the indoor environment offers unmatched spatial grandeur.</p>
 
-  <h2 class="content-subheading-lg">Deep-Dive Unit Typologies & Layout Specifications</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Floor Plans &amp; Unit Layout Specifications</h2>
 
   <h3 class="content-subheading-md">1. 2 BHK Smart Luxury Apartments (1,250 – 1,350 Sq. Ft.)</h3>
   <p class="seo-rich-paragraph">Designed specifically for nuclear families, corporate executives, and smart investors, the 2 BHK floor plan prioritizes functional utility without compromising on luxury feel:</p>
   <ul class="seo-rich-paragraph">
-    <li><strong>Living & Dining Foyer:</strong> Expansive 14ft x 22ft open-plan living and dining area opening directly to a wide green-facing balcony.</li>
+    <li><strong>Living &amp; Dining Foyer:</strong> Expansive 14ft x 22ft open-plan living and dining area opening directly to a wide green-facing balcony.</li>
     <li><strong>Master Bedroom Suite:</strong> Includes attached wooden-floored master bathroom, space for king-size bedding, and built-in wardrobe recesses.</li>
     <li><strong>Guest Bedroom:</strong> Spacious secondary bedroom with adjacent powder/guest bathroom.</li>
     <li><strong>Modular Kitchen Nook:</strong> Parallel counter layout with attached dry utility balcony for washing machine and storage.</li>
@@ -271,7 +48,7 @@ floor_main = """
     </thead>
     <tbody>
       <tr>
-        <td>Living & Dining Hall</td>
+        <td>Living &amp; Dining Hall</td>
         <td>18' 0" x 26' 6"</td>
         <td>Double-glass sliding doors, Italian marble flooring option</td>
       </tr>
@@ -281,12 +58,12 @@ floor_main = """
         <td>Laminated wooden flooring, walk-in closet space, attached bath</td>
       </tr>
       <tr>
-        <td>Bedroom 2 & 3</td>
+        <td>Bedroom 2 &amp; 3</td>
         <td>12' 0" x 14' 6"</td>
         <td>En-suite bathrooms, wide glass windows, AC ducting provision</td>
       </tr>
       <tr>
-        <td>Servant Room & Bath</td>
+        <td>Servant Room &amp; Bath</td>
         <td>7' 6" x 9' 0"</td>
         <td>Separate service elevator corridor entrance</td>
       </tr>
@@ -302,11 +79,14 @@ floor_main = """
   <p class="seo-rich-paragraph">Representing the pinnacle of luxury living in Greater Noida, the 4 BHK penthouse layout features private elevator entry lobbies, 4 master suites, family lounges, and 270-degree wrap-around sun decks.</p>
 
   <div class="geo-context-card">
-    <h4><i data-lucide="compass" class="text-accent"></i> Vastu Shastra & Environmental Orientation</h4>
+    <h4><i data-lucide="compass" class="text-accent"></i> Vastu Shastra &amp; Environmental Orientation</h4>
     <p class="mb-0">All apartment entries at Hero Homes Greater Noida are aligned along North, East, and North-East cardinal directions to maximize positive energy flow. Kitchens are situated in the Agni (South-East) zone, while master bedrooms occupy the Nairrutya (South-West) corner for maximum stability and restful sleep.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Floor Plans & Layouts)</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Master Plan &amp; Tower Structure</h2>
+  <p class="seo-rich-paragraph">Hero Homes Greater Noida features high-rise residential towers surrounded by over 85% open landscaped greens. The master layout isolates vehicular traffic to perimeter roads, creating a completely safe, pedestrian-friendly central green zone.</p>
+
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Floor Plans</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">
@@ -317,11 +97,6 @@ floor_main = """
     <div class="faq-item-card glass-card p-3 my-3">
       <h3><i data-lucide="help-circle" class="text-accent"></i> Are all apartments Vastu compliant?</h3>
       <p>Yes. All apartment entry doors, kitchen placements, and master bedroom locations strictly follow authentic Vastu Shastra orientation principles.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Can I customize wall partitions inside my apartment?</h3>
-      <p>Hero Homes towers utilize advanced Mivan monolithic concrete construction for maximum seismic safety. Internal non-load bearing lightweight walls can be customized during early construction stages upon request.</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
@@ -364,7 +139,7 @@ generate_child_page(
     page_title='Hero Homes Greater Noida Floor Plans, Layouts & Master Plan',
     meta_desc='Explore detailed 2 BHK, 3 BHK & 4 BHK floor plans, master plan layout, unit dimensions, and architectural design at Hero Homes Greater Noida.',
     canonical_url='https://herohomenoida.com/floor-plans.html',
-    h1_title='Hero Homes Greater Noida Floor Plans & Layout Drawings',
+    h1_title='Hero Homes Greater Noida Floor Plans & Unit Layout Drawings',
     subtitle='Architectural excellence, Vastu compliance, and zero space wastage across 2, 3 & 4 BHK luxury layouts.',
     hero_img='images/floorplan_3bhk.webp',
     hero_img_alt='Hero Homes Greater Noida 3 BHK Luxury Apartment Floor Plan Blueprint',
@@ -378,7 +153,7 @@ generate_child_page(
 )
 
 # --------------------------------------------------------------------------
-# 3. AMENITIES.HTML
+# 2. AMENITIES.HTML
 # --------------------------------------------------------------------------
 amenities_main = """
 <article class="content-block shadow-card rounded-large p-4 bg-white">
@@ -387,12 +162,12 @@ amenities_main = """
     <p class="mb-0">Hero Homes Greater Noida features over 30 world-class resort amenities spread across 17.3 acres, anchored by a magnificent 25,000 sq. ft. central luxury clubhouse. Highlights include an Olympic-size swimming pool, temperature-controlled indoor pool, fully equipped fitness center, tennis & squash courts, oxygen-rich gardens (85%+ green cover), solar power integration, and 3-tier RFID smart security.</p>
   </div>
 
-  <h2 class="content-subheading-lg">The Philosophy of Wellness & Active Living</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Amenities &amp; Active Living Philosophy</h2>
   <p class="seo-rich-paragraph">At <strong>Hero Homes Greater Noida</strong>, amenities are not merely decorative additions—they form the core foundation of daily living. Grounded in Hero Realty's four core design pillars—Fitness, Sustainability, Community, and Security—the development is engineered to promote physical health, mental rejuvenation, and active social interaction for every age group.</p>
   
   <p class="seo-rich-paragraph">Spanning 17.3 acres inside the master-planned DMIC Integrated Industrial Township in Sector MU, Greater Noida, the community dedicates over 85% of its total land area to open landscapes, manicured lawns, botanical gardens, and sports arenas. Residents enjoy clean, oxygen-enriched micro-climates created by dense tree plantations and zero-emission vehicle-free central pods.</p>
 
-  <h2 class="content-subheading-lg">The Grand 25,000 Sq. Ft. Resort Clubhouse</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Clubhouse &amp; Resort Facilities</h2>
   <p class="seo-rich-paragraph">The flagship attraction of Hero Homes is its multi-level 25,000 sq. ft. resort clubhouse. Designed with double-height glass facades, plush lounge seating, and indoor climate control, it serves as an exclusive hub for recreation, health, and family celebrations:</p>
 
   <table class="seo-data-table">
@@ -406,61 +181,52 @@ amenities_main = """
     <tbody>
       <tr>
         <td><strong>Aquatic Complex</strong></td>
-        <td>Olympic-length main pool, kids' splash pool, heated indoor pool & sun deck</td>
-        <td>Year-round swimming, aqua aerobics & poolside relaxation</td>
+        <td>Olympic-length main pool, kids' splash pool, heated indoor pool &amp; sun deck</td>
+        <td>Year-round swimming, aqua aerobics &amp; poolside relaxation</td>
       </tr>
       <tr>
-        <td><strong>Fitness & Gym Center</strong></td>
-        <td>Imported TechnoGym cardio gear, free weights, crossfit station & steam/sauna</td>
+        <td><strong>Fitness &amp; Gym Center</strong></td>
+        <td>Imported TechnoGym cardio gear, free weights, crossfit station &amp; steam/sauna</td>
         <td>Professional fitness training without leaving the complex</td>
       </tr>
       <tr>
         <td><strong>Indoor Sports Lounge</strong></td>
-        <td>Air-conditioned squash courts, badminton courts, billiards & table tennis</td>
+        <td>Air-conditioned squash courts, badminton courts, billiards &amp; table tennis</td>
         <td>All-weather sports and competitive indoor gaming</td>
       </tr>
       <tr>
-        <td><strong>Banquet & Event Halls</strong></td>
-        <td>Double-height celebratory hall with catering kitchen & outdoor party lawn</td>
-        <td>Seamless hosting of birthday parties, anniversaries & community events</td>
+        <td><strong>Banquet &amp; Event Halls</strong></td>
+        <td>Double-height celebratory hall with catering kitchen &amp; outdoor party lawn</td>
+        <td>Seamless hosting of birthday parties, anniversaries &amp; community events</td>
       </tr>
       <tr>
-        <td><strong>Wellness & Yoga Deck</strong></td>
-        <td>Tranquil outdoor wooden deck surrounded by lily ponds & aromatic flora</td>
-        <td>Morning yoga sessions, meditation & stress relief</td>
+        <td><strong>Wellness &amp; Yoga Deck</strong></td>
+        <td>Tranquil outdoor wooden deck surrounded by lily ponds &amp; aromatic flora</td>
+        <td>Morning yoga sessions, meditation &amp; stress relief</td>
       </tr>
     </tbody>
   </table>
 
-  <h2 class="content-subheading-lg">Categorized Breakdown of 30+ World-Class Amenities</h2>
+  <h2 class="content-subheading-lg">Categorized Breakdown of 30+ Hero Homes Greater Noida Amenities</h2>
 
-  <h3 class="content-subheading-md">1. Health, Fitness & Outdoor Wellness</h3>
+  <h3 class="content-subheading-md">1. Health, Fitness &amp; Outdoor Wellness</h3>
   <ul class="seo-rich-paragraph">
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Oxygen Parks & Healing Gardens:</strong> Specially curated air-purifying plant species (Neem, Tulsi, Snake Plant) providing high oxygen concentration.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Rubberized Jogging & Cycling Tracks:</strong> 1.5 km continuous perimeter track with shock-absorbing surfaces to protect joints.</li>
+    <li><i data-lucide="check" class="text-accent"></i> <strong>Oxygen Parks &amp; Healing Gardens:</strong> Specially curated air-purifying plant species (Neem, Tulsi, Snake Plant) providing high oxygen concentration.</li>
+    <li><i data-lucide="check" class="text-accent"></i> <strong>Rubberized Jogging &amp; Cycling Tracks:</strong> 1.5 km continuous perimeter track with shock-absorbing surfaces to protect joints.</li>
     <li><i data-lucide="check" class="text-accent"></i> <strong>Outdoor Fitness Station:</strong> Calisthenics equipment installed inside green courtyards.</li>
   </ul>
 
-  <h3 class="content-subheading-md">2. Sports Arenas & Active Games</h3>
+  <h3 class="content-subheading-md">2. Sports Arenas &amp; Active Games</h3>
   <ul class="seo-rich-paragraph">
     <li><i data-lucide="check" class="text-accent"></i> <strong>Lawn Tennis Court:</strong> Professional synthetic hard court with night floodlighting.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Half-Court Basketball & Volleyball:</strong> Dedicated multi-sport court for youth and adults.</li>
+    <li><i data-lucide="check" class="text-accent"></i> <strong>Half-Court Basketball &amp; Volleyball:</strong> Dedicated multi-sport court for youth and adults.</li>
     <li><i data-lucide="check" class="text-accent"></i> <strong>Cricket Practice Nets:</strong> Enclosed nets with automated bowling machines.</li>
   </ul>
 
-  <h3 class="content-subheading-md">3. Family, Kids & Senior Citizen Spaces</h3>
-  <ul class="seo-rich-paragraph">
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Kids' Adventure Play Zone:</strong> Multi-activity play towers, swings, and sandpits with soft EPDM safety flooring.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Senior Citizen Reflexology Park:</strong> Gentle walking paths, shaded seating pavilions, and herb gardens.</li>
-    <li><i data-lucide="check" class="text-accent"></i> <strong>Open-Air Amphitheater:</strong> Cultural performance arena for festival gatherings and movie screenings.</li>
-  </ul>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida 3-Tier Security &amp; Smart Eco Amenities</h2>
+  <p class="seo-rich-paragraph">Safety is paramount. Hero Homes integrates 24/7 HD CCTV coverage, RFID boom barriers for automated vehicle entry, smart mobile app visitor approvals, EV charging stations across all parking levels, solar-powered common area lighting, and rainwater harvesting structures.</p>
 
-  <div class="geo-context-card">
-    <h4><i data-lucide="shield-check" class="text-accent"></i> 3-Tier Security & Smart Eco Infrastructure</h4>
-    <p class="mb-0">Safety is paramount. Hero Homes integrates 24/7 HD CCTV coverage, RFID boom barriers for automated vehicle entry, smart mobile app visitor approvals, EV charging stations across all parking levels, solar-powered common area lighting, and rainwater harvesting structures.</p>
-  </div>
-
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Amenities)</h2>
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Greater Noida Amenities</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">
@@ -527,21 +293,19 @@ generate_child_page(
 )
 
 # --------------------------------------------------------------------------
-# 4. LOCATION.HTML
+# 3. LOCATION.HTML
 # --------------------------------------------------------------------------
 location_main = """
 <article class="content-block shadow-card rounded-large p-4 bg-white">
   <div class="aeo-direct-answer-box">
     <div class="aeo-box-title"><i data-lucide="zap" class="text-accent"></i> Quick Summary: Hero Homes Greater Noida Location</div>
-    <p class="mb-0">Hero Homes Greater Noida is strategically located in Sector MU inside the master-planned 17.3-acre DMIC (Delhi-Mumbai Industrial Corridor) Integrated Industrial Township. Key commute distances: <strong>~25 mins to Noida International Airport (Jewar)</strong>, <strong>~5 mins to Yamuna & Noida-Gr. Noida Expressways</strong>, <strong>~5 mins to Aqua Line Metro</strong>, and direct proximity to top universities like Gautam Buddha University & Shiv Nadar University.</p>
+    <p class="mb-0">Hero Homes Greater Noida is strategically located in Sector MU inside the master-planned 17.3-acre DMIC (Delhi-Mumbai Industrial Corridor) Integrated Industrial Township. Key commute distances: <strong>~25 mins to Noida International Airport (Jewar)</strong>, <strong>~5 mins to Yamuna &amp; Noida-Gr. Noida Expressways</strong>, <strong>~5 mins to Aqua Line Metro</strong>, and direct proximity to top universities like Gautam Buddha University &amp; Shiv Nadar University.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Strategic Importance of DMIC Integrated Industrial Township</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location &amp; DMIC Township Advantage</h2>
   <p class="seo-rich-paragraph">Location is the single most important factor determining real estate appreciation and quality of life. <strong>Hero Homes Greater Noida</strong> commands a uniquely advantageous address inside Sector MU within the <strong>DMIC Integrated Industrial Township</strong>. The Delhi-Mumbai Industrial Corridor is India's most ambitious $100 Billion mega-infrastructure project, designed to create high-tech industrial, commercial, and smart residential zones connected by high-speed rail and freight corridors.</p>
-  
-  <p class="seo-rich-paragraph">Being situated directly inside this smart township means Hero Homes residents benefit from underground utility cabling, 24/7 uninterrupted power grid supply, smart traffic management systems, wide 60-meter sector roads, and extensive municipal green belts. It is one of the few zones in NCR engineered specifically to accommodate sustainable urban growth over the next 50 years.</p>
 
-  <h2 class="content-subheading-lg">Commute Times & Infrastructure Distance Matrix</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Connectivity &amp; Distance Matrix</h2>
   <p class="seo-rich-paragraph">Whether traveling to international airports, commercial business districts, or premier educational hubs, Hero Homes offers unmatched regional mobility:</p>
 
   <table class="seo-data-table">
@@ -549,14 +313,14 @@ location_main = """
       <tr>
         <th>Infrastructure Landmark</th>
         <th>Commute Distance / Time</th>
-        <th>Strategic Value & Connectivity Impact</th>
+        <th>Strategic Value &amp; Connectivity Impact</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong>Noida International Airport (Jewar)</strong></td>
         <td>~25 Minutes / 28 km</td>
-        <td>Signal-free Yamuna Expressway access; major driver of rental demand & capital appreciation</td>
+        <td>Signal-free Yamuna Expressway access; major driver of rental demand &amp; capital appreciation</td>
       </tr>
       <tr>
         <td><strong>Yamuna Expressway Link</strong></td>
@@ -576,12 +340,12 @@ location_main = """
       <tr>
         <td><strong>Eastern Peripheral Expressway (EPE)</strong></td>
         <td>~10 Minutes / 7 km</td>
-        <td>Bypasses Delhi traffic to connect Kundli, Manesar, Palwal & Ghaziabad</td>
+        <td>Bypasses Delhi traffic to connect Kundli, Manesar, Palwal &amp; Ghaziabad</td>
       </tr>
     </tbody>
   </table>
 
-  <h2 class="content-subheading-lg">Social, Educational & Healthcare Ecosystem</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location Nearby Educational &amp; Medical Ecosystem</h2>
 
   <h3 class="content-subheading-md">1. Premier Educational Institutions</h3>
   <ul class="seo-rich-paragraph">
@@ -590,25 +354,16 @@ location_main = """
     <li><strong>Top K-12 Schools:</strong> Delhi Public School (DPS Greater Noida), Ryan International School, and Somerville School (~10 Mins).</li>
   </ul>
 
-  <h3 class="content-subheading-md">2. Multi-Specialty Hospitals & Healthcare</h3>
+  <h3 class="content-subheading-md">2. Multi-Specialty Hospitals &amp; Healthcare</h3>
   <ul class="seo-rich-paragraph">
-    <li><strong>Yashoda Super Specialty Hospital:</strong> 24/7 advanced emergency & critical care center (~12 Mins).</li>
+    <li><strong>Yashoda Super Specialty Hospital:</strong> 24/7 advanced emergency &amp; critical care center (~12 Mins).</li>
     <li><strong>Jaypee Hospital:</strong> Tertiary care super-specialty medical facility (~15 Mins).</li>
-    <li><strong>Government Institute of Medical Sciences (GIMS):</strong> Reputed regional hospital (~10 Mins).</li>
   </ul>
 
-  <h3 class="content-subheading-md">3. Retail, Malls & Tech Hubs</h3>
-  <ul class="seo-rich-paragraph">
-    <li><strong>The Grand Venice Mall:</strong> Italian-themed mega shopping & entertainment destination (~10 Mins).</li>
-    <li><strong>Knowledge Park V IT Hubs:</strong> Housing Wipro, STMicroelectronics, and upcoming data centers (~8 Mins).</li>
-  </ul>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location Appreciation &amp; Growth Forecast</h2>
+  <p class="seo-rich-paragraph">Real estate industry analysts project property values in the DMIC Greater Noida corridor to appreciate by 14-18% annually over the next 5 years. The commercial operationalization of Jewar Airport's Phase 1 makes Hero Homes a prime asset for high capital growth.</p>
 
-  <div class="geo-context-card">
-    <h4><i data-lucide="trending-up" class="text-accent"></i> Real Estate Growth Forecast (2026 – 2031)</h4>
-    <p class="mb-0">Real estate industry analysts project property values in the DMIC Greater Noida corridor to appreciate by 14-18% annually over the next 5 years. The commercial operationalization of Jewar Airport's Phase 1, combined with incoming Fortune 500 tech investment in DMIC, makes Hero Homes a prime asset for high capital growth.</p>
-  </div>
-
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Location & Connectivity)</h2>
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Greater Noida Location</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">
@@ -675,7 +430,7 @@ generate_child_page(
 )
 
 # --------------------------------------------------------------------------
-# 5. DEVELOPER.HTML
+# 4. DEVELOPER.HTML
 # --------------------------------------------------------------------------
 developer_main = """
 <article class="content-block shadow-card rounded-large p-4 bg-white">
@@ -684,12 +439,10 @@ developer_main = """
     <p class="mb-0">Hero Realty Private Limited is the flagship real estate development arm of Hero Enterprise, chaired by Mr. Sunil Kant Munjal. Backed by the multi-billion dollar Hero Group legacy of over 40+ years, Hero Realty has successfully delivered millions of square feet of landmark residential communities across Gurgaon, Mohali, Ludhiana, and Greater Noida with 100% legal compliances and financial transparency.</p>
   </div>
 
-  <h2 class="content-subheading-lg">The $50 Billion+ Hero Group Legacy</h2>
+  <h2 class="content-subheading-lg">Hero Realty – Hero Homes Developer Profile &amp; Hero Group Legacy</h2>
   <p class="seo-rich-paragraph">The name 'Hero' is synonymous with Indian manufacturing excellence, consumer trust, and industrial leadership. For over four decades, the Hero Group conglomerate has pioneered world-class engineering, building an iconic global brand valued at over $50 Billion. <strong>Hero Realty Private Limited</strong> carries this prestigious heritage into Indian real estate, setting new standards for construction quality, timely delivery, and customer-first governance.</p>
-  
-  <p class="seo-rich-paragraph">Under the visionary guidance of Chairman Mr. Sunil Kant Munjal, Hero Realty focuses on creating sustainable, modern, and wellness-oriented residential townships. Every Hero Homes project is engineered with a commitment to zero-compromise building materials, advanced Mivan monolithic casting technology, and transparent RERA-compliant operations.</p>
 
-  <h2 class="content-subheading-lg">Core Development Pillars of Hero Realty</h2>
+  <h2 class="content-subheading-lg">Hero Realty Developer Pillars &amp; Construction Excellence</h2>
 
   <div class="developer-pillars-grid my-4">
     <div class="pillar-card glass-card p-3 my-2">
@@ -708,7 +461,7 @@ developer_main = """
     </div>
   </div>
 
-  <h2 class="content-subheading-lg">Portfolio of Delivered Flagship Developments</h2>
+  <h2 class="content-subheading-lg">Hero Realty Portfolio of Delivered Hero Homes Projects</h2>
   <p class="seo-rich-paragraph">Hero Realty has built an impressive track record across major real estate growth corridors in North India:</p>
 
   <table class="seo-data-table">
@@ -716,8 +469,8 @@ developer_main = """
       <tr>
         <th>Project Name</th>
         <th>Location</th>
-        <th>Land Area & Scale</th>
-        <th>Key Highlights & Status</th>
+        <th>Land Area &amp; Scale</th>
+        <th>Key Highlights &amp; Status</th>
       </tr>
     </thead>
     <tbody>
@@ -748,7 +501,7 @@ developer_main = """
     </tbody>
   </table>
 
-  <h2 class="content-subheading-lg">Frequently Asked Questions (Developer Track Record)</h2>
+  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Realty Developer Track Record</h2>
 
   <div class="faq-accordion-list my-4">
     <div class="faq-item-card glass-card p-3 my-3">
@@ -815,7 +568,7 @@ generate_child_page(
 )
 
 # --------------------------------------------------------------------------
-# 6. FAQS.HTML
+# 5. FAQS.HTML
 # --------------------------------------------------------------------------
 faqs_main = """
 <article class="content-block shadow-card rounded-large p-4 bg-white">
@@ -824,72 +577,67 @@ faqs_main = """
     <p class="mb-0">Hero Homes Greater Noida is a 17.3-acre premium pre-launch residential development inside Sector MU, DMIC Township. Pre-launch prices start at <strong>₹2.22 Cr*</strong> for 3 BHK luxury residences (1650 sq ft). Located ~25 mins from Jewar International Airport and ~5 mins from Yamuna Expressway, the project offers 30+ resort amenities and pre-approved home loans from SBI, HDFC, ICICI, and Axis Bank.</p>
   </div>
 
-  <h2 class="content-subheading-lg">Comprehensive Homebuyer FAQ Repository</h2>
-  <p class="seo-rich-paragraph">Welcome to the official <strong>Hero Homes Greater Noida Help Center & FAQ Repository</strong>. Whether you are a first-time homebuyer or an experienced real estate investor, this knowledge base provides immediate, transparent answers to all essential questions regarding pricing, floor plans, RERA approvals, location advantages, payment schedules, and developer track record.</p>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida FAQs &amp; Comprehensive Buyer Help Center</h2>
+  <p class="seo-rich-paragraph">Welcome to the official <strong>Hero Homes Greater Noida Help Center &amp; FAQ Repository</strong>. Whether you are a first-time homebuyer or an experienced real estate investor, this knowledge base provides immediate, transparent answers to all essential questions regarding pricing, floor plans, RERA approvals, location advantages, payment schedules, and developer track record.</p>
 
-  <h2 class="content-subheading-lg">1. Project Overview & General Questions</h2>
-
-  <div class="faq-accordion-list my-3">
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is Hero Homes Greater Noida?</h3>
-      <p>Hero Homes Greater Noida is a landmark 17.3-acre premium residential development by Hero Realty inside the DMIC Integrated Industrial Township in Sector MU, Greater Noida. The project features nearly 6 million sq. ft. of development potential with luxury 2, 3, and 4 BHK high-rise apartments.</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Where is the exact project location?</h3>
-      <p>The project is located in Sector MU within the master-planned DMIC Integrated Industrial Township, Greater Noida, Uttar Pradesh (Pincode: 201308).</p>
-    </div>
-
-    <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What apartment configurations are available?</h3>
-      <p>The development offers 2 BHK Smart Luxury (1250-1350 sq ft), 3 BHK Premium (1650 sq ft), 3 BHK + Servant (1900-2200 sq ft), and 4 BHK Royal Pent-Residences (2600+ sq ft).</p>
-    </div>
-  </div>
-
-  <h2 class="content-subheading-lg">2. Pricing, Costing & Payment Plans</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Price &amp; Cost FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the starting price for 3 BHK apartments?</h3>
-      <p>The starting pre-launch price for a 3 BHK luxury residence (1650 sq ft) is <strong>₹2.22 Cr*</strong>. Early-bird registration tokens qualify for pre-launch price lock guarantees.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the starting price of Hero Homes Greater Noida?</h3>
+      <p>The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What payment plans are offered?</h3>
-      <p>Hero Realty offers Construction-Linked Plans (CLP 10:80:10) as well as flexible milestone subvention options (30:70 and 20:80) for real estate investors.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price for the largest configuration?</h3>
+      <p>The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> Which banks have pre-approved home loans for Hero Homes?</h3>
-      <p>Pre-approved home loan facilities are available from State Bank of India (SBI), HDFC Bank, ICICI Bank, Axis Bank, and PNB Housing with up to 80% funding eligibility.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the price per square foot?</h3>
+      <p>Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
     </div>
   </div>
 
-  <h2 class="content-subheading-lg">3. RERA Approval, Legal Status & Possession</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Floor Plan &amp; Layout FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <div class="faq-item-card glass-card p-3 my-3">
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What configurations does Hero Homes Sector MU offer?</h3>
+      <p>Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
+    </div>
+
+    <div class="faq-item-card glass-card p-3 my-3">
+      <h3><i data-lucide="help-circle" class="text-accent"></i> Are all floor plans Vastu compliant?</h3>
+      <p>Yes. All entry doors, kitchen positions, and master bedroom suites follow Vastu Shastra orientation principles.</p>
+    </div>
+  </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida RERA &amp; Possession FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <div class="faq-item-card glass-card p-3 my-3">
       <h3><i data-lucide="help-circle" class="text-accent"></i> Is Hero Homes Greater Noida RERA registered?</h3>
-      <p>RERA registration for Hero Homes Greater Noida is under formal application process. Official RERA numbers will be published immediately upon issuance by UP-RERA.</p>
+      <p>RERA registration for Hero Homes Greater Noida is currently under process and listed as "Coming Soon".</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the expected possession timeline?</h3>
-      <p>Possession is targeted for 2031 onwards, executed in phased tower handovers following Mivan structural completion and municipal compliance audits.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> What is the possession timeline?</h3>
+      <p>Possession is currently indicated as 2031 onwards, executed in phased tower handovers.</p>
     </div>
   </div>
 
-  <h2 class="content-subheading-lg">4. Location, Airport & Commute Distance</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location &amp; Connectivity FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <div class="faq-item-card glass-card p-3 my-3">
       <h3><i data-lucide="help-circle" class="text-accent"></i> How far is Jewar International Airport from the site?</h3>
-      <p>Noida International Airport at Jewar is located approximately 25 minutes (~28 km) away via the Yamuna Expressway corridor.</p>
+      <p>Noida International Airport at Jewar is located approximately 25 to 35 minutes away via the Yamuna Expressway corridor.</p>
     </div>
 
     <div class="faq-item-card glass-card p-3 my-3">
-      <h3><i data-lucide="help-circle" class="text-accent"></i> What public transport and metro connections exist?</h3>
-      <p>The Aqua Line Metro is approximately 5 minutes away, complemented by direct 60-meter sector roads connecting to Yamuna Expressway and Noida Expressway.</p>
+      <h3><i data-lucide="help-circle" class="text-accent"></i> Which sector is the project situated in?</h3>
+      <p>Hero Homes Greater Noida is located in Sector MU inside the DMIC Integrated Industrial Township.</p>
     </div>
   </div>
 </article>
@@ -922,7 +670,7 @@ faqs_schema = """
       "name": "How far is Jewar International Airport from the site?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Noida International Airport at Jewar is located approximately 25 minutes away via Yamuna Expressway."
+        "text": "Noida International Airport at Jewar is located approximately 25 to 35 minutes away via Yamuna Expressway."
       }
     }
   ]
@@ -948,4 +696,4 @@ generate_child_page(
     faq_schema_json=faqs_schema
 )
 
-print("All 6 child pages successfully generated with 2000+ words SEO/AEO/GEO content, single hero image, and ZERO trust bar!")
+print("Other 5 pages updated.")

@@ -94,13 +94,13 @@ def generate_child_page(
     body {{ opacity: 0; }}
     body.css-loaded {{ opacity: 1; transition: opacity 0.15s ease-in; }}
 
-    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
-    .page-hero-banner {{
-      padding-top: calc(var(--nav-offset) + 12px) !important;
-      padding-bottom: 16px !important;
+    /* Layout Spacing Fix: Top padding directly on main container below fixed navbar */
+    .main-layout-container {{
+      padding-top: calc(var(--nav-offset) + 16px) !important;
+      margin-top: 0 !important;
     }}
     .single-hero-image-wrapper {{
-      margin: 0 0 32px 0;
+      margin: 0 0 24px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -121,6 +121,24 @@ def generate_child_page(
       display: block;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
+    }}
+    .page-h1-header-block {{
+      margin: 24px 0 28px 0;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
+    }}
+    .page-h1-header-block .page-title {{
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: var(--font-heading);
+    }}
+    .page-h1-header-block .page-subtitle {{
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
     }}
     .aeo-direct-answer-box {{
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
@@ -152,7 +170,7 @@ def generate_child_page(
       margin-bottom: 20px;
     }}
     .content-subheading-lg {{
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--color-primary);
       margin: 32px 0 16px 0;
@@ -160,7 +178,7 @@ def generate_child_page(
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }}
     .content-subheading-md {{
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 700;
       color: #1e293b;
       margin: 24px 0 12px 0;
@@ -254,17 +272,6 @@ def generate_child_page(
     </div>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-hero-banner">
-    <div class="container">
-      <div class="breadcrumb-trail">
-        <a href="index.html">Home</a> &gt; <span>{labels[nav_active_key]}</span>
-      </div>
-      <h1 class="page-title">{h1_title}</h1>
-      <p class="page-subtitle">{subtitle}</p>
-    </div>
-  </section>
-
   <!-- Main Body Content -->
   <div class="container main-layout-container">
     <div class="page-layout-grid">
@@ -274,6 +281,12 @@ def generate_child_page(
         <div class="single-hero-image-wrapper">
           <img src="{hero_img}" alt="{hero_img_alt}" loading="eager" fetchpriority="high">
           <span class="single-hero-caption">{hero_img_caption}</span>
+        </div>
+
+        <!-- H1 Header Block Below Hero Image -->
+        <div class="page-h1-header-block">
+          <h1 class="page-title">{h1_title}</h1>
+          <p class="page-subtitle">{subtitle}</p>
         </div>
 
         {main_content_html}
@@ -403,4 +416,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("Helper updated.")
+print("build_child_pages.py template updated.")
