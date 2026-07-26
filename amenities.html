@@ -41,10 +41,19 @@
   </noscript>
 
   <style>
+    :root {
+      --nav-offset: 120px;
+    }
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
+
+    /* Layout Spacing Fix: Calculate offset dynamically below fixed navbar */
+    .page-hero-banner {
+      padding-top: calc(var(--nav-offset) + 12px) !important;
+      padding-bottom: 16px !important;
+    }
     .single-hero-image-wrapper {
-      margin: 24px 0 32px 0;
+      margin: 0 0 32px 0;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
@@ -131,6 +140,25 @@
       background: #f8fafc;
     }
   </style>
+
+  <!-- Dynamic Header Offset Calculation Script -->
+  <script>
+    function updateNavOffset() {
+      const header = document.querySelector('.site-header');
+      const topBar = document.querySelector('.top-announcement');
+      let offset = 0;
+      if (header) {
+        offset += header.offsetHeight;
+      }
+      if (topBar && window.getComputedStyle(topBar).display !== 'none') {
+        offset += topBar.offsetHeight;
+      }
+      document.documentElement.style.setProperty('--nav-offset', offset + 'px');
+    }
+    window.addEventListener('DOMContentLoaded', updateNavOffset);
+    window.addEventListener('load', updateNavOffset);
+    window.addEventListener('resize', updateNavOffset);
+  </script>
 
   <!-- Schema.org JSON-LD Structured Data -->
   

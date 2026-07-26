@@ -246,6 +246,15 @@ img {
   box-shadow: var(--shadow-card);
 }
 
+:root {
+  --nav-offset: 120px;
+}
+
+.page-hero-banner {
+  padding-top: calc(var(--nav-offset) + 12px) !important;
+  padding-bottom: 16px !important;
+}
+
 .site-header {
   position: fixed;
   top: 0;
