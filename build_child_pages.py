@@ -94,17 +94,21 @@ def generate_child_page(
     body {{ opacity: 0; }}
     body.css-loaded {{ opacity: 1; transition: opacity 0.15s ease-in; }}
 
-    /* Layout Spacing Fix: Remove unwanted top space, make image 360px tall, keep H1 visible on load */
+    /* Layout Spacing Fix: Remove unwanted top & bottom space around H1 block */
     .main-layout-container {{
       padding-top: calc(var(--nav-offset) - 20px) !important;
       margin-top: 0 !important;
       margin-bottom: 0 !important;
     }}
+    .main-content-column {{
+      gap: 10px !important;
+    }}
     .page-layout-grid {{
       align-items: flex-start;
+      gap: 32px !important;
     }}
     .single-hero-image-wrapper {{
-      margin: 0 0 8px 0;
+      margin: 0 0 4px 0 !important;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
@@ -127,9 +131,11 @@ def generate_child_page(
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;
     }}
+
+    /* Ultra-tight H1 block styling */
     .page-h1-header-block {{
-      margin: 8px 0 12px 0;
-      padding-bottom: 8px;
+      margin: 4px 0 6px 0 !important;
+      padding-bottom: 6px !important;
       border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }}
     .page-h1-header-block .page-title {{
@@ -137,20 +143,28 @@ def generate_child_page(
       font-weight: 800;
       color: var(--color-primary);
       line-height: 1.2;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       font-family: var(--font-heading);
     }}
     .page-h1-header-block .page-subtitle {{
       font-size: 0.9rem;
       color: var(--color-text-muted);
       line-height: 1.35;
+      margin-bottom: 0;
     }}
+
+    /* Article Card Padding Fix */
+    .content-block {{
+      padding: 24px 28px !important;
+      margin-top: 0 !important;
+    }}
+
     .aeo-direct-answer-box {{
       background: linear-gradient(135deg, rgba(227, 24, 55, 0.05) 0%, rgba(223, 178, 71, 0.08) 100%);
       border-left: 4px solid var(--color-accent);
       border-radius: 12px;
       padding: 14px 18px;
-      margin: 14px 0;
+      margin: 6px 0 16px 0 !important;
     }}
     .aeo-box-title {{
       font-size: 1.02rem;
@@ -421,4 +435,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with correct logo.webp tag and logo classes.")
+print("build_child_pages.py updated with zero gap below H1 block.")
