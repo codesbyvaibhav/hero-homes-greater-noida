@@ -43,28 +43,33 @@
     <link rel="stylesheet" href="style-v19.css">
   </noscript>
 
-  <style>
+    <style>
     :root {
-      --nav-offset: 120px;
+      --nav-offset: 0px;
     }
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: EXACT FIRST VIEW FIT */
+    /* ABSOLUTE ZERO GAP - HERO IMAGE TOUCHES HEADER FLUSH ON DESKTOP & MOBILE */
     .main-layout-container {
-      padding-top: calc(var(--nav-offset) - 24px) !important;
+      padding-top: 0 !important;
       margin-top: 0 !important;
       margin-bottom: 0 !important;
-    }
-    .main-content-column {
-      gap: 4px !important;
     }
     .page-layout-grid {
       align-items: flex-start;
       gap: 28px !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    .main-content-column {
+      gap: 4px !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
     .single-hero-image-wrapper {
       margin: 0 0 4px 0 !important;
+      padding-top: 0 !important;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -373,17 +378,27 @@
       margin-right: 8px;
     }
 
-    /* RESPONSIVE LAYOUT BALANCING (DESKTOP, TABLET & MOBILE) */
+    /* RESPONSIVE MOBILE LAYOUT BALANCING - FLUSH HERO IMAGE WITH ZERO TOP GAP */
     @media (max-width: 768px) {
       .main-layout-container {
-        padding-top: calc(var(--nav-offset) - 50px) !important;
-        padding-left: 8px !important;
-        padding-right: 8px !important;
+        padding-top: 0 !important;
         margin-top: 0 !important;
         margin-bottom: 0 !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+      .page-layout-grid {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+      .main-content-column {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
       }
       .single-hero-image-wrapper {
-        margin: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
         border-radius: 8px !important;
         background-color: #0c192b !important;
       }
