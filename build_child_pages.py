@@ -94,7 +94,7 @@ def generate_child_page(
     body {{ opacity: 0; }}
     body.css-loaded {{ opacity: 1; transition: opacity 0.15s ease-in; }}
 
-    /* Layout Spacing Fix: EXACT FIRST VIEW FIT matching user screenshot */
+    /* Layout Spacing Fix: EXACT FIRST VIEW FIT */
     .main-layout-container {{
       padding-top: calc(var(--nav-offset) - 24px) !important;
       margin-top: 0 !important;
@@ -266,6 +266,43 @@ def generate_child_page(
       height: 16px;
       color: var(--color-accent);
       margin-right: 8px;
+    }}
+
+    /* MOBILE SPECIFIC OVERRIDES: Remove large top space & preserve full hero banner visibility */
+    @media (max-width: 768px) {{
+      .main-layout-container {{
+        padding-top: calc(var(--nav-offset) + 6px) !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin-top: 0 !important;
+      }}
+      .single-hero-image-wrapper {{
+        margin: 0 0 6px 0 !important;
+        border-radius: 8px !important;
+        background-color: #0c192b !important;
+      }}
+      .single-hero-image-wrapper img {{
+        height: auto !important;
+        max-height: 180px !important;
+        object-fit: contain !important;
+        background-color: #0c192b !important;
+      }}
+      .single-hero-caption {{
+        padding: 4px 8px !important;
+        font-size: 0.68rem !important;
+        line-height: 1.3 !important;
+      }}
+      .page-h1-header-block .page-title {{
+        font-size: 1.22rem !important;
+        line-height: 1.25 !important;
+      }}
+      .page-h1-header-block .page-subtitle {{
+        font-size: 0.8rem !important;
+        line-height: 1.3 !important;
+      }}
+      .content-block {{
+        padding: 12px 14px !important;
+      }}
     }}
   </style>
 
@@ -479,4 +516,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with bulletproof accordion CSS.")
+print("build_child_pages.py updated with mobile top spacing and hero image object-fit contain rules.")
