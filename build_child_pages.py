@@ -259,6 +259,21 @@ def generate_child_page(
       background-color: rgba(227, 24, 55, 0.03);
     }}
 
+    /* COMPACT 2-COLUMN DIMENSION TABLES (Eliminates empty horizontal right-side space) */
+    .table-compact-2col {{
+      max-width: 540px !important;
+      margin: 12px 0 !important;
+    }}
+    .table-compact-2col th:first-child,
+    .table-compact-2col td:first-child {{
+      width: 55% !important;
+    }}
+    .table-compact-2col th:last-child,
+    .table-compact-2col td:last-child {{
+      width: 45% !important;
+      text-align: right !important;
+    }}
+
     .price-highlight-pill {{
       display: inline-block;
       background: rgba(227, 24, 55, 0.1);
@@ -380,6 +395,17 @@ def generate_child_page(
 
       .content-block {{
         padding: 10px 12px !important;
+      }}
+
+      .table-compact-2col {{
+        max-width: 100% !important;
+      }}
+      .table-compact-2col th:first-child,
+      .table-compact-2col td:first-child,
+      .table-compact-2col th:last-child,
+      .table-compact-2col td:last-child {{
+        width: 100% !important;
+        text-align: left !important;
       }}
 
       /* RESPONSIVE MOBILE TABLES (NO HORIZONTAL SCROLL + DATA LABELS) */
@@ -664,4 +690,4 @@ def generate_child_page(
         f.write(html)
     print(f"Generated {filename} ({len(html)} chars)")
 
-print("build_child_pages.py updated with compact 8px padding table cells and zero-wastage margins.")
+print("build_child_pages.py updated with .table-compact-2col styling.")
