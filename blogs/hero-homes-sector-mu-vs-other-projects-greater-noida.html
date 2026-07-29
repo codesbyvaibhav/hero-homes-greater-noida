@@ -337,7 +337,7 @@
         <ul class="nav-menu">
           <li><a href="../index.html" class="nav-link">Overview</a></li>
           <li><a href="../pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="../floor-plans.html" class="nav-link">Floor Plans</a></li>
+          <li><a href="../floor-plan.html" class="nav-link">Floor Plan</a></li>
           <li><a href="../amenities.html" class="nav-link">Amenities</a></li>
           <li><a href="../location.html" class="nav-link">Location</a></li>
           <li><a href="../blogs.html" class="nav-link active">Blogs</a></li>
@@ -370,7 +370,7 @@
         <article>
 
           <div class="blog-hero-image subpage-hero-banner">
-            <img class="image-cover" src="images/hero-homes-greater-noida-vs-other-projects.webp" alt="Hero Homes Sector MU vs Other Projects in Greater Noida">
+            <img class="image-cover" src="../blogs/images/hero-homes-greater-noida-vs-other-projects.webp" alt="Hero Homes Sector MU vs Other Projects in Greater Noida">
           </div>
 
           <div class="blog-author-section">
@@ -687,6 +687,33 @@
       e.preventDefault();
       window.location.href = '../thankyou.html';
     }
+
+    // Blog FAQ Accordion
+    document.addEventListener('DOMContentLoaded', function() {
+      var accordion = document.getElementById('hero-homes-comparison-faq-accordion');
+      if (!accordion) return;
+      accordion.addEventListener('click', function(e) {
+        var question = e.target.closest('.faq-question');
+        if (!question) return;
+        var item = question.parentElement;
+        var answer = item.querySelector('.faq-answer');
+        var icon = question.querySelector('i[data-lucide]');
+        var isOpen = answer.style.display !== 'none';
+        // Close all
+        accordion.querySelectorAll('.faq-item').forEach(function(fi) {
+          fi.querySelector('.faq-answer').style.display = 'none';
+          fi.classList.remove('active');
+          var ic = fi.querySelector('.faq-question i[data-lucide]');
+          if (ic) ic.style.transform = '';
+        });
+        // Open clicked (unless it was already open)
+        if (!isOpen) {
+          answer.style.display = 'block';
+          item.classList.add('active');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
   </script>
 </body>
 </html>
