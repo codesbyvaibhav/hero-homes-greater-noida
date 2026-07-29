@@ -3810,26 +3810,36 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* ===================================================
-   STICKY BOTTOM CTA BAR (SUBPAGES ONLY)
+   STICKY BOTTOM CTA BAR (MOBILE ONLY - 320px to 768px)
 =================================================== */
 .sticky-bottom-cta-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 99999;
-  background: rgba(12, 25, 43, 0.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 10px 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .sticky-bottom-cta-bar {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    background: rgba(12, 25, 43, 0.96) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 10px 16px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.25) !important;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    padding-bottom: 68px !important;
+  }
 }
 
 .sticky-bottom-cta-bar .btn-cta-bar {
@@ -3881,17 +3891,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
   stroke: currentColor;
 }
 
-body.has-sticky-cta {
-  padding-bottom: 68px !important;
-}
-
 @media (max-width: 480px) {
   .sticky-bottom-cta-bar {
-    padding: 8px 10px;
-    gap: 8px;
+    padding: 8px 10px !important;
+    gap: 8px !important;
   }
   .sticky-bottom-cta-bar .btn-cta-bar {
-    padding: 10px 12px;
-    font-size: 0.85rem;
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
   }
 }
