@@ -877,6 +877,16 @@ def generate_child_page(
         <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
       </form>
     </div>
+  <!-- Sticky Bottom CTA Bar -->
+  <div class="sticky-bottom-cta-bar">
+    <button class="btn-cta-bar btn-enquire" onclick="openEnquiryModal('Sticky Bar Enquire Now')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      Enquire Now
+    </button>
+    <a href="https://wa.me/919686897597?text=Hi%2C%20I%20am%20interested%20in%20Hero%20Homes%20Greater%20Noida" target="_blank" rel="noopener" class="btn-cta-bar btn-whatsapp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      WhatsApp
+    </a>
   </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
