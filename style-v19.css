@@ -3764,6 +3764,17 @@ input[type="range"]::-webkit-slider-thumb:hover {
     object-position: center center !important;
 }
 
+/* Round Compact Author Avatar */
+.blog-author-avatar {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    flex-shrink: 0 !important;
+    border: 2px solid var(--color-border) !important;
+}
+
 /* ===================================================
    HEADER OFFSET & SPACING SYSTEM (BREATHING ROOM BELOW NAVBAR)
 =================================================== */
