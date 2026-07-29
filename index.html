@@ -78,30 +78,12 @@
   <link rel="preload" href="images/exterior_sunset.webp" as="image" type="image/webp" fetchpriority="high">
 
   <!-- Stylesheet (Dynamically injected to completely eliminate render-blocking flags) -->
-  <script>
-    (function() {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'style-v19.css';
-      link.onload = function() {
-        document.body.classList.add('css-loaded');
-      };
-      document.head.appendChild(link);
-    })();
-  </script>
-  <noscript>
-    <link rel="stylesheet" href="style-v19.css">
-  </noscript>
+  <link rel="stylesheet" href="style-v19.css">
 
   <style>
     /* Critical CSS to prevent Flash of Unstyled Content (FOUC) */
-    body {
-      opacity: 0;
-    }
-    body.css-loaded {
-      opacity: 1;
-      transition: opacity 0.15s ease-in;
-    }
+    
+    
   </style>
   <noscript>
     <style>

@@ -28,27 +28,14 @@
   <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="style-v19.css" as="style">
 
-  <script>
-    (function() {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'style-v19.css';
-      link.onload = function() {
-        document.body.classList.add('css-loaded');
-      };
-      document.head.appendChild(link);
-    })();
-  </script>
-  <noscript>
-    <link rel="stylesheet" href="style-v19.css">
-  </noscript>
+  <link rel="stylesheet" href="style-v19.css">
 
   <style>
     :root {
       --nav-offset: 120px;
     }
-    body { opacity: 0; }
-    body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
+    
+    
 
     /* Layout Spacing Fix: EXACT FIRST VIEW FIT */
     .main-layout-container {
@@ -477,7 +464,6 @@
         padding-right: 12px !important;
         flex-shrink: 0;
       }
-    }
   </style>
 
   <!-- Dynamic Header Offset Calculation Script -->

@@ -73,29 +73,9 @@ def generate_child_page(
   <!-- Preload Fonts & Styles -->
   <link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="style-v19.css" as="style">
+  <link rel="stylesheet" href="style-v19.css">
 
-  <script>
-    (function() {{
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'style-v19.css';
-      link.onload = function() {{
-        document.body.classList.add('css-loaded');
-      }};
-      document.head.appendChild(link);
-    }})();
-  </script>
-  <noscript>
-    <link rel="stylesheet" href="style-v19.css">
-  </noscript>
-
-    <style>
-    :root {{
-      --nav-offset: 0px;
-    }}
-    body {{ opacity: 0; }}
-    body.css-loaded {{ opacity: 1; transition: opacity 0.15s ease-in; }}
+  <style>
 
     /* HEADER OFFSET INHERITED FROM STYLE-V19.CSS (104px PADDING-TOP FOR 24px BREATHING ROOM BELOW NAVBAR) */
     .page-layout-grid {{

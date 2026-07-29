@@ -34,20 +34,7 @@
 
   <!-- Styles (relative path: this file is one folder deep, hence ../) -->
   <link rel="preload" href="../style-v19.css" as="style">
-  <script>
-    (function() {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = '../style-v19.css';
-      link.onload = function() {
-        document.body.classList.add('css-loaded');
-      };
-      document.head.appendChild(link);
-    })();
-  </script>
-  <noscript>
-    <link rel="stylesheet" href="../style-v19.css">
-  </noscript>
+  <link rel="stylesheet" href="style-v19.css">
 
   <!-- JSON-LD Article schema -->
   <script type="application/ld+json">
@@ -94,9 +81,9 @@
   </script>
 
   <style>
-    :root { --nav-offset: 0px; }
-    body { opacity: 0; }
-    body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
+    
+    
+    
 
     .blog-tag {
       font-size: 0.72rem;
@@ -636,7 +623,7 @@
         <ul>
           <li><a href="../index.html">Overview</a></li>
           <li><a href="../pricing.html">Pricing</a></li>
-          <li><a href="../floor-plans.html">Floor Plans</a></li>
+          <li><a href="floor-plan.html">Floor Plan</a></li>
           <li><a href="../amenities.html">Amenities</a></li>
           <li><a href="../location.html">Location</a></li>
           <li><a href="../developer.html">Developer</a></li>
