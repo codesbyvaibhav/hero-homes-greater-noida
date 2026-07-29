@@ -4282,7 +4282,7 @@ table.project-table tr:hover {
 }
 
 /* ===================================================
-   FLOOR PLAN SPECS TABLE (.specs-table) - ELEGANT CLEAN DESIGN
+   FLOOR PLAN SPECS TABLE (.specs-table) - MATCH IMAGE 2 (NO RED, CLEAN 2-COL)
 =================================================== */
 html body table.specs-table {
     display: table !important;
@@ -4296,7 +4296,7 @@ html body table.specs-table {
 }
 
 html body table.specs-table thead {
-    display: none !important;
+    display: table-header-group !important;
 }
 
 html body table.specs-table tbody {
@@ -4317,9 +4317,10 @@ html body table.specs-table tr:last-child {
     border-bottom: none !important;
 }
 
+html body table.specs-table th,
 html body table.specs-table td {
     display: table-cell !important;
-    padding: 14px 4px !important;
+    padding: 12px 0 !important;
     font-size: 0.95rem !important;
     line-height: 1.4 !important;
     border: none !important;
@@ -4329,11 +4330,13 @@ html body table.specs-table td {
     box-sizing: border-box !important;
 }
 
+html body table.specs-table tr:last-child th,
 html body table.specs-table tr:last-child td {
     border-bottom: none !important;
 }
 
-/* Left Column: Bold Dark Text (Super Area, Carpet Area, etc.) */
+/* Left Column (th): Bold Dark Text (Super Area, Carpet Area, etc.) - NO RED BACKGROUND */
+html body table.specs-table th,
 html body table.specs-table td:first-child {
     width: 50% !important;
     font-weight: 700 !important;
@@ -4342,19 +4345,23 @@ html body table.specs-table td:first-child {
     text-align: left !important;
     text-transform: none !important;
     letter-spacing: normal !important;
-    padding-left: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
 }
 
-/* Right Column: Clean Dark Value Text (1,650 Sq. Ft., etc.) */
+/* Right Column (td): Clean Dark Value Text (1,650 Sq. Ft., etc.) */
+html body table.specs-table td,
 html body table.specs-table td:last-child {
     width: 50% !important;
     font-weight: 400 !important;
     color: #0c192b !important;
     font-size: 0.95rem !important;
     text-align: right !important;
-    padding-right: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
 }
 
+html body table.specs-table th::before,
 html body table.specs-table td::before {
     display: none !important;
     content: "" !important;
