@@ -3754,15 +3754,80 @@ input[type="range"]::-webkit-slider-thumb:hover {
     position: relative !important;
 }
 
-/* Compact Blog Card Listing Images (Max Height 180px) */
+/* Compact Blog Card Listing Images (Max Height 160px) */
 .blog-card-image {
     width: 100% !important;
-    height: 180px !important;
-    max-height: 180px !important;
+    height: 160px !important;
+    max-height: 160px !important;
     aspect-ratio: 16 / 9 !important;
     overflow: hidden !important;
     border-radius: 14px 14px 0 0 !important;
     position: relative !important;
+}
+
+/* ===================================================
+   COMPACT SQUARE-ISH BLOG CARDS (FIXED MAX-WIDTH 320px)
+=================================================== */
+.blog-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px)) !important;
+    justify-content: center !important;
+    gap: 24px !important;
+    max-width: 1100px !important;
+    margin: 20px auto 0 auto !important;
+}
+
+.blog-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 320px !important;
+    max-width: 320px !important;
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid var(--color-border, #e2e8f0) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14) !important;
+}
+
+.blog-card-body {
+    padding: 14px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    box-sizing: border-box !important;
+}
+
+.blog-card-body h3 {
+    margin: 0 !important;
+    font-size: 0.98rem !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    color: var(--color-primary, #0c192b) !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.blog-card-body p {
+    margin: 0 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    color: #64748b !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
 }
 
 .blog-hero-image img,
