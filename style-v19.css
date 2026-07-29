@@ -4148,7 +4148,6 @@ table.project-table tr:hover {
     html body table.table-domain-theme,
     html body table.seo-data-table,
     html body table.blog-data-table,
-    html body table.specs-table,
     html body table.project-table,
     html body table.table-compact-2col,
     html body table thead,
@@ -4156,28 +4155,24 @@ table.project-table tr:hover {
     html body table.table-domain-theme thead,
     html body table.seo-data-table thead,
     html body table.blog-data-table thead,
-    html body table.specs-table thead,
     html body table.project-table thead,
     html body table tbody,
     html body table.table-mobile-card tbody,
     html body table.table-domain-theme tbody,
     html body table.seo-data-table tbody,
     html body table.blog-data-table tbody,
-    html body table.specs-table tbody,
     html body table.project-table tbody,
     html body table tr,
     html body table.table-mobile-card tr,
     html body table.table-domain-theme tr,
     html body table.seo-data-table tr,
     html body table.blog-data-table tr,
-    html body table.specs-table tr,
     html body table.project-table tr,
     html body table td,
     html body table.table-mobile-card td,
     html body table.table-domain-theme td,
     html body table.seo-data-table td,
     html body table.blog-data-table td,
-    html body table.specs-table td,
     html body table.project-table td {
         display: block !important;
         width: 100% !important;
@@ -4196,7 +4191,6 @@ table.project-table tr:hover {
     html body table.table-domain-theme thead,
     html body table.seo-data-table thead,
     html body table.blog-data-table thead,
-    html body table.specs-table thead,
     html body table.project-table thead {
         display: none !important;
     }
@@ -4207,7 +4201,6 @@ table.project-table tr:hover {
     html body table.table-domain-theme tr,
     html body table.seo-data-table tr,
     html body table.blog-data-table tr,
-    html body table.specs-table tr,
     html body table.project-table tr {
         background: #ffffff !important;
         border: 1.5px solid #fca5a5 !important;
@@ -4225,7 +4218,6 @@ table.project-table tr:hover {
     html body table.table-domain-theme td,
     html body table.seo-data-table td,
     html body table.blog-data-table td,
-    html body table.specs-table td,
     html body table.project-table td {
         display: block !important;
         width: 100% !important;
@@ -4243,7 +4235,6 @@ table.project-table tr:hover {
     html body table.table-domain-theme td:last-child,
     html body table.seo-data-table td:last-child,
     html body table.blog-data-table td:last-child,
-    html body table.specs-table td:last-child,
     html body table.project-table td:last-child {
         border-bottom: none !important;
         padding-bottom: 0 !important;
@@ -4254,7 +4245,6 @@ table.project-table tr:hover {
     html body table.table-domain-theme td:first-child,
     html body table.seo-data-table td:first-child,
     html body table.blog-data-table td:first-child,
-    html body table.specs-table td:first-child,
     html body table.project-table td:first-child {
         font-weight: 800 !important;
         font-size: 1rem !important;
@@ -4269,7 +4259,6 @@ table.project-table tr:hover {
     html body table.table-domain-theme td:first-child::before,
     html body table.seo-data-table td:first-child::before,
     html body table.blog-data-table td:first-child::before,
-    html body table.specs-table td:first-child::before,
     html body table.project-table td:first-child::before {
         display: none !important;
         content: "" !important;
@@ -4279,7 +4268,6 @@ table.project-table tr:hover {
     html body table td[data-label]:not(:first-child)::before,
     html body table.table-domain-theme td[data-label]:not(:first-child)::before,
     html body table.seo-data-table td[data-label]:not(:first-child)::before,
-    html body table.specs-table td[data-label]:not(:first-child)::before,
     html body table.project-table td[data-label]:not(:first-child)::before {
         content: attr(data-label) !important;
         display: block !important;
@@ -4290,5 +4278,81 @@ table.project-table tr:hover {
         letter-spacing: 0.4px !important;
         margin-bottom: 3px !important;
         text-align: left !important;
+    }
+}
+
+/* ===================================================
+   FLOOR PLAN SPECS TABLE (.specs-table) - PREVIOUS 2-COL LAYOUT
+=================================================== */
+@media (max-width: 768px) {
+    html body table.specs-table {
+        display: table !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 14px 0 !important;
+        border-collapse: collapse !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    html body table.specs-table thead {
+        display: none !important;
+    }
+
+    html body table.specs-table tbody {
+        display: table-row-group !important;
+    }
+
+    html body table.specs-table tr {
+        display: table-row !important;
+        background: #ffffff !important;
+        border: none !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    html body table.specs-table tr:nth-child(even) {
+        background: #f8fafc !important;
+    }
+
+    html body table.specs-table td {
+        display: table-cell !important;
+        padding: 11px 14px !important;
+        font-size: 0.88rem !important;
+        line-height: 1.4 !important;
+        border: none !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        vertical-align: middle !important;
+        background: transparent !important;
+    }
+
+    html body table.specs-table td:first-child {
+        width: 52% !important;
+        text-align: left !important;
+        font-weight: 700 !important;
+        color: #e31837 !important;
+        font-size: 0.88rem !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 11px !important;
+    }
+
+    html body table.specs-table td:last-child {
+        width: 48% !important;
+        text-align: right !important;
+        font-weight: 700 !important;
+        color: #0c192b !important;
+        font-size: 0.88rem !important;
+    }
+
+    html body table.specs-table td::before {
+        display: none !important;
+        content: "" !important;
     }
 }
