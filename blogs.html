@@ -53,13 +53,13 @@
       }
     }
 
-    /* ===== BLOG GRID (2 BLOGS PER ROW) ===== */
+    /* ===== BLOG GRID (3 CARDS PER ROW) ===== */
 
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 960px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1180px;
       margin: 24px auto 0 auto;
     }
 
@@ -164,9 +164,16 @@
       height: 14px;
     }
 
-    /* MOBILE */
+    /* RESPONSIVE BREAKPOINTS FOR 3-CARD GRID */
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
       .blog-grid {
         grid-template-columns: 1fr;
         gap: 16px;
