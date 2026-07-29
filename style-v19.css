@@ -3742,9 +3742,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
     border-radius: var(--radius-medium) !important;
 }
 
-/* Blog Cover & Card Images (Standard 16:10 Aspect Ratio) */
+/* Blog Cover Images (Standard 16:10 Aspect Ratio) */
 .blog-hero-image,
-.blog-card-image,
 .blog-card-image-wrapper,
 .blog-cover-wrapper {
     width: 100% !important;
@@ -3752,6 +3751,17 @@ input[type="range"]::-webkit-slider-thumb:hover {
     aspect-ratio: 16 / 10 !important;
     overflow: hidden !important;
     border-radius: var(--radius-medium) var(--radius-medium) 0 0 !important;
+    position: relative !important;
+}
+
+/* Compact Blog Card Listing Images (Max Height 180px) */
+.blog-card-image {
+    width: 100% !important;
+    height: 180px !important;
+    max-height: 180px !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
+    border-radius: 14px 14px 0 0 !important;
     position: relative !important;
 }
 
