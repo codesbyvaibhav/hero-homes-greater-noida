@@ -4362,7 +4362,9 @@ html body table.specs-table td:last-child {
 }
 
 html body table.specs-table th::before,
-html body table.specs-table td::before {
+html body table.specs-table td::before,
+html body table.specs-table td[data-label]::before,
+html body table.specs-table td[data-label]:not(:first-child)::before {
     display: none !important;
     content: "" !important;
 }
