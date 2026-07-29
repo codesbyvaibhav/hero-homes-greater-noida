@@ -241,6 +241,63 @@
         box-sizing: border-box !important;
       }
 
+      /* 3-COLUMN LOCATION TABLE → STACKED MOBILE CARDS (NO SIDE SCROLL) */
+      table.table-domain-theme {
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      table.table-domain-theme thead {
+        display: none !important;
+      }
+      table.table-domain-theme tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+      table.table-domain-theme tr {
+        display: block !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        margin-bottom: 12px !important;
+        padding: 12px 14px !important;
+        box-sizing: border-box !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+      }
+      table.table-domain-theme td {
+        display: block !important;
+        width: 100% !important;
+        padding: 6px 0 !important;
+        border: none !important;
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        color: #1e293b !important;
+        background: transparent !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+      }
+      table.table-domain-theme td::before {
+        content: attr(data-label) !important;
+        display: block !important;
+        font-weight: 700 !important;
+        color: #e31837 !important;
+        font-size: 0.72rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.4px !important;
+        margin-bottom: 3px !important;
+      }
+      table.table-domain-theme td:first-child {
+        border-bottom: 1px solid #f1f5f9 !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 4px !important;
+      }
+      table.table-domain-theme td:last-child {
+        padding-top: 6px !important;
+      }
+
       /* 100% GUARANTEED MOBILE NAVIGATION DROPDOWN MENU FIX */
     @media (max-width: 1200px) {
       .site-header {
