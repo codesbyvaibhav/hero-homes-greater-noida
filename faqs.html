@@ -43,39 +43,26 @@
     <link rel="stylesheet" href="style-v19.css">
   </noscript>
 
-  <style>
+    <style>
     :root {
-      --nav-offset: 120px;
+      --nav-offset: 0px;
     }
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* Layout Spacing Fix: EXACT FIRST VIEW FIT */
-    .main-layout-container {
-      padding-top: calc(var(--nav-offset) - 24px) !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-    }
-    .main-content-column {
-      gap: 4px !important;
     }
     .page-layout-grid {
       align-items: flex-start;
       gap: 28px !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
-    .single-hero-image-wrapper {
-      margin: 0 0 4px 0 !important;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      position: relative;
+    .main-content-column {
+      gap: 4px !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
-    .single-hero-image-wrapper img {
-      width: 100%;
-      height: 330px !important;
-      max-height: 330px !important;
-      object-fit: cover;
-      display: block;
+    }
     }
     .single-hero-caption {
       background: rgba(12, 25, 43, 0.95);
@@ -89,28 +76,8 @@
     }
 
     /* PROPERLY VISIBLE, BOLD & BIGGER H1 HEADER BLOCK */
-    .page-h1-header-block {
-      margin: 10px 0 18px 0 !important;
-      padding-bottom: 8px !important;
-      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
-    .page-h1-header-block .page-title {
-      font-size: 1.75rem !important;
-      font-weight: 800 !important;
-      color: var(--color-primary) !important;
-      line-height: 1.25 !important;
-      margin-bottom: 6px !important;
-      font-family: var(--font-heading) !important;
-      white-space: normal !important;
-      overflow: visible !important;
-      text-overflow: clip !important;
-      word-break: break-word !important;
     }
-    .page-h1-header-block .page-subtitle {
-      font-size: 0.92rem !important;
-      color: var(--color-text-muted) !important;
-      line-height: 1.4 !important;
-      margin-bottom: 0 !important;
     }
 
     /* Article Card Padding Fix */
@@ -146,6 +113,28 @@
       color: var(--color-text-dark) !important;
     }
 
+    
+    .geo-context-card h4 {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      margin-top: 0 !important;
+      margin-bottom: 10px !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      color: var(--color-primary, #0c192b) !important;
+      line-height: 1.2 !important;
+    }
+    .geo-context-card h4 i,
+    .geo-context-card h4 svg {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      width: 22px !important;
+      height: 22px !important;
+      color: var(--color-accent, #e31837) !important;
+    }
     .geo-context-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -186,322 +175,1315 @@
       overflow-x: auto;
     }
 
-    /* BROCHURE-QUALITY TABLE LAYOUT (FULL WIDTH ALIGNMENT & 50-60px ROW HEIGHTS) */
-    .table-domain-theme,
-    .seo-data-table {
-      width: 100% !important;
-      max-width: 100% !important;
-      border-collapse: separate;
-      border-spacing: 0;
-      background-color: var(--color-bg-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-large);
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-      margin: 0 !important;
-    }
+    
 
-    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED) */
-    .table-domain-theme th,
-    .seo-data-table th {
-      background-color: var(--color-primary);
-      color: #ffffff;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 0.84rem;
-      padding: 14px 24px !important;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 3px solid var(--color-accent);
-      text-align: left;
-      vertical-align: middle !important;
-      height: 52px;
-      box-sizing: border-box;
-    }
+    
 
-    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED) */
-    .table-domain-theme td,
-    .seo-data-table td {
-      padding: 14px 24px !important;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 0.92rem;
-      color: var(--color-text-dark);
-      vertical-align: middle !important;
-      text-align: left;
-      box-sizing: border-box;
-    }
-    .table-domain-theme tr:last-child td,
-    .seo-data-table tr:last-child td {
-      border-bottom: none;
-    }
-    .table-domain-theme tr:nth-child(even) td,
-    .seo-data-table tr:nth-child(even) td {
-      background-color: #f8fafc;
-    }
-    .table-domain-theme tr:hover td,
-    .seo-data-table tr:hover td {
-      background-color: rgba(227, 24, 55, 0.03);
-    }
-
-    /* FLEX TITLE CELL (INLINE ICON + TITLE ON ONE SINGLE LINE) */
-    .table-cell-title {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      white-space: nowrap !important;
-      font-weight: 700 !important;
-      color: var(--color-primary) !important;
-    }
-    .table-cell-title i {
-      flex-shrink: 0 !important;
-      width: 18px !important;
-      height: 18px !important;
-      color: var(--color-accent) !important;
-    }
-
-    /* 2-COLUMN KEY-VALUE TABLES (Landmarks, Floor Plan Dimensions, Pricing Specs) */
-    .table-compact-2col th:first-child,
-    .table-compact-2col td:first-child {
-      width: 55% !important;
-      text-align: left !important;
-    }
-    .table-compact-2col th:last-child,
-    .table-compact-2col td:last-child {
-      width: 45% !important;
-      text-align: right !important;
-    }
-
-    /* 2-COLUMN TEXT DESCRIPTION TABLES (Amenities List, Social Infra) */
-    .table-text-2col th:first-child,
-    .table-text-2col td:first-child {
-      width: 32% !important;
-      text-align: left !important;
-      white-space: nowrap !important;
-    }
-    .table-text-2col th:last-child,
-    .table-text-2col td:last-child {
-      width: 68% !important;
-      text-align: left !important;
-    }
-
-    /* 3-COLUMN TABLE RATIOS */
-    .table-amenities-3col th:first-child,
-    .table-amenities-3col td:first-child {
-      width: 28% !important;
-      text-align: left !important;
-    }
-    .table-amenities-3col th:nth-child(2),
-    .table-amenities-3col td:nth-child(2) {
-      text-align: left !important;
-    }
-    .table-amenities-3col th:last-child,
-    .table-amenities-3col td:last-child {
-      text-align: right !important;
-    }
-
-    .price-highlight-pill {
-      display: inline-block;
-      background: rgba(227, 24, 55, 0.1);
-      color: var(--color-accent);
-      font-weight: 800;
-      font-size: 0.86rem;
-      padding: 4px 12px;
-      border-radius: 50px;
-      border: 1px solid rgba(227, 24, 55, 0.2);
-    }
-
-    /* BULLETPROOF INTERACTIVE FAQ ACCORDION STYLES */
-    details.faq-accordion-item {
-      background: #ffffff;
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    details.faq-accordion-item[open] {
-      border-color: var(--color-accent);
-      box-shadow: 0 4px 16px rgba(194, 34, 41, 0.1);
-    }
-    details.faq-accordion-item summary {
-      padding: 16px 20px !important;
-      font-size: 0.98rem !important;
-      font-weight: 700 !important;
-      color: var(--color-primary) !important;
-      cursor: pointer !important;
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      list-style: none !important;
-      user-select: none !important;
-    }
-    details.faq-accordion-item summary::-webkit-details-marker,
-    details.faq-accordion-item summary::marker {
-      display: none !important;
-    }
-    details.faq-accordion-item summary * {
-      pointer-events: none !important;
-    }
-    details.faq-accordion-item summary::after {
-      content: '+';
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--color-accent);
-      transition: transform 0.2s ease;
-      margin-left: 12px;
-      flex-shrink: 0;
-    }
-    details.faq-accordion-item[open] summary::after {
-      content: '−';
-    }
-    details.faq-accordion-item:not([open]) .faq-answer {
-      display: none !important;
-    }
-    details.faq-accordion-item[open] .faq-answer {
-      display: block !important;
-      padding: 14px 20px 18px 20px !important;
-      font-size: 0.94rem !important;
-      line-height: 1.65 !important;
-      color: var(--color-text-dark) !important;
-      border-top: 1px solid var(--color-border) !important;
-      background: #FCF9F4 !important;
-    }
-    .faq-icon {
-      width: 16px;
-      height: 16px;
-      color: var(--color-accent);
-      margin-right: 8px;
-    }
-
-    /* RESPONSIVE LAYOUT BALANCING (DESKTOP, TABLET & MOBILE) */
+    /* DUAL-MODE MOBILE TABLE SYSTEM: PERFECT LANDMARK 2-COL TABLE (NO TRUNCATION) & STACKED CARDS */
     @media (max-width: 768px) {
-      .main-layout-container {
-        padding-top: calc(var(--nav-offset) - 50px) !important;
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-      }
-      .single-hero-image-wrapper {
-        margin: 0 !important;
-        border-radius: 8px !important;
-        background-color: #0c192b !important;
-      }
-      .single-hero-image-wrapper img {
-        height: auto !important;
-        max-height: 165px !important;
-        object-fit: contain !important;
-        background-color: #0c192b !important;
-      }
-      .single-hero-caption {
-        padding: 3px 6px !important;
-        font-size: 0.65rem !important;
-        line-height: 1.2 !important;
-      }
-
-      /* PROPERLY VISIBLE & BOLD H1 ON MOBILE (NO TRUNCATION, WRAPS NATURALLY) */
-      .page-h1-header-block {
-        margin: 6px 0 12px 0 !important;
-        padding-bottom: 4px !important;
-      }
-      .page-h1-header-block .page-title {
-        font-size: 1.30rem !important;
-        font-weight: 800 !important;
-        white-space: normal !important;
-        overflow: visible !important;
-        text-overflow: clip !important;
-        line-height: 1.3 !important;
-        margin-bottom: 4px !important;
-        color: var(--color-primary) !important;
-      }
-      .page-h1-header-block .page-subtitle {
-        font-size: 0.80rem !important;
-        line-height: 1.3 !important;
-      }
-
-      .content-block {
-        padding: 16px 14px !important;
-      }
-
-      /* COMPACT, LOW-HEIGHT QUICK ANSWER BOX ON MOBILE */
-      .aeo-direct-answer-box {
-        padding: 8px 12px !important;
-        margin: 10px 0 14px 0 !important;
-        border-radius: 6px !important;
-      }
-      .aeo-box-title {
-        font-size: 0.82rem !important;
-        margin-bottom: 2px !important;
-      }
-      .aeo-direct-answer-box p {
-        font-size: 0.80rem !important;
-        line-height: 1.38 !important;
-      }
-
-      .content-subheading-lg {
-        margin: 28px 0 12px 0 !important;
-      }
-
-      .seo-rich-paragraph {
-        margin-bottom: 16px !important;
-      }
-
       .table-responsive {
-        margin: 20px 0 24px 0 !important;
+        width: 100% !important;
+        margin: 16px 0 24px 0 !important;
+        overflow-x: hidden !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
       }
 
-      /* RESPONSIVE MOBILE CARD TABLES (EQUAL EDGE PADDING & 50px ROW HEIGHT) */
-      .table-domain-theme,
-      .table-domain-theme tbody,
-      .table-domain-theme tr,
-      .table-domain-theme td,
-      .seo-data-table,
-      .seo-data-table tbody,
-      .seo-data-table tr,
-      .seo-data-table td {
-        display: block !important;
+      /* 1. 2-COLUMN KEY-VALUE TABLES (Landmarks, Dimensions, Specs) */
+      .table-compact-2col {
+        display: table !important;
         width: 100% !important;
+        max-width: 100% !important;
+        table-layout: fixed !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        background: #ffffff !important;
+        border: 1px solid var(--color-border, #e2e8f0) !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
         box-sizing: border-box !important;
       }
-      .table-domain-theme thead,
-      .seo-data-table thead {
+      .table-compact-2col thead { display: table-header-group !important; }
+      .table-compact-2col tbody { display: table-row-group !important; }
+      .table-compact-2col tr { display: table-row !important; background: #ffffff !important; }
+      .table-compact-2col tr:nth-child(even) { background: #f8fafc !important; }
+      
+      .table-compact-2col th {
+        display: table-cell !important;
+        background: var(--color-primary, #0c192b) !important;
+        color: #ffffff !important;
+        font-family: var(--font-heading, inherit) !important;
+        font-weight: 700 !important;
+        font-size: 0.70rem !important;
+        padding: 10px 6px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.2px !important;
+        vertical-align: middle !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+      }
+      .table-compact-2col td {
+        display: table-cell !important;
+        padding: 10px 6px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        font-size: 0.82rem !important;
+        line-height: 1.35 !important;
+        vertical-align: middle !important;
+        background: transparent !important;
+        box-sizing: border-box !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .table-compact-2col th:first-child,
+      .table-compact-2col td:first-child {
+        width: 56% !important;
+        text-align: left !important;
+        font-weight: 600 !important;
+        padding-right: 4px !important;
+      }
+      .table-compact-2col th:last-child,
+      .table-compact-2col td:last-child {
+        width: 44% !important;
+        text-align: right !important;
+        font-weight: 700 !important;
+        padding-left: 2px !important;
+      }
+      .table-compact-2col td::before {
+        display: none !important;
+        content: none !important;
+      }
+      .table-compact-2col .price-highlight-pill {
+        font-size: 0.72rem !important;
+        padding: 3px 6px !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* 100% GUARANTEED MOBILE NAVIGATION DROPDOWN MENU FIX */
+    @media (max-width: 1200px) {
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 99999 !important;
+      }
+      .header-container {
+        position: relative !important;
+      }
+      .mobile-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 100001 !important;
+        padding: 0 !important;
+      }
+      .mobile-toggle .bar {
+        width: 24px !important;
+        height: 2.5px !important;
+        background-color: #0c192b !important;
+        transition: all 0.3s ease !important;
+        display: block !important;
+      }
+      
+      #navbar:not(.active),
+      .site-navigation:not(.active) {
         display: none !important;
       }
-      .table-domain-theme tr,
-      .seo-data-table tr {
-        background: #ffffff !important;
-        border: 1px solid var(--color-border) !important;
-        border-radius: 10px !important;
-        margin-bottom: 12px !important;
-        padding: 8px 14px !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+
+      #navbar.active,
+      .site-navigation.active {
+        display: block !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background-color: #FCF9F4 !important;
+        border-top: 1px solid #e2e8f0 !important;
+        border-bottom: 3px solid #e31837 !important;
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3) !important;
+        padding: 16px 24px !important;
+        z-index: 100000 !important;
+        box-sizing: border-box !important;
       }
-      .table-domain-theme td,
-      .seo-data-table td {
+
+      #navbar.active .nav-menu,
+      .site-navigation.active .nav-menu {
         display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 8px 0 !important;
-        min-height: 48px !important;
-        border-bottom: 1px dashed #e2e8f0 !important;
-        font-size: 0.86rem !important;
-        text-align: right !important;
-        word-break: break-word !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
       }
-      .table-domain-theme td:last-child,
-      .seo-data-table td:last-child {
+
+      #navbar.active .nav-link,
+      .site-navigation.active .nav-link {
+        display: block !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        color: #0c192b !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+        text-decoration: none !important;
+      }
+
+      #navbar.active li:last-child .nav-link,
+      .site-navigation.active li:last-child .nav-link {
         border-bottom: none !important;
       }
-      .table-domain-theme td[data-label]::before,
-      .seo-data-table td[data-label]::before {
-        content: attr(data-label) !important;
+
+      #navbar.active .nav-link.active,
+      .site-navigation.active .nav-link.active {
+        color: #e31837 !important;
         font-weight: 700 !important;
-        color: var(--color-primary) !important;
-        text-align: left !important;
-        padding-right: 12px !important;
-        flex-shrink: 0;
       }
     }
+  
+    /* PROPER SOLID RED HEADER CALL BUTTON WITH NUMBER DISPLAY */
+    .header-mobile-call-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      background-color: #e31837 !important;
+      color: #ffffff !important;
+      padding: 7px 16px !important;
+      border-radius: 50px !important;
+      font-weight: 700 !important;
+      font-size: 0.88rem !important;
+      border: none !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      box-shadow: 0 4px 12px rgba(227, 24, 55, 0.35) !important;
+      transition: all 0.2s ease !important;
+      margin-left: 6px !important;
+    }
+    .header-mobile-call-btn:hover {
+      background-color: #c4122c !important;
+      color: #ffffff !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 6px 16px rgba(227, 24, 55, 0.45) !important;
+    }
+    .header-mobile-call-btn svg,
+    .header-mobile-call-btn i {
+      width: 15px !important;
+      height: 15px !important;
+      color: #ffffff !important;
+      stroke: #ffffff !important;
+      flex-shrink: 0 !important;
+    }
+    
+  
+    /* HEADER CALL BUTTON VISIBILITY RULE: HIDE ON DESKTOP, SHOW ON MOBILE ONLY */
+    @media (min-width: 1200px) {
+      .header-mobile-call-btn {
+        display: none !important;
+      }
+    }
+    @media (max-width: 1199px) {
+      .header-mobile-call-btn {
+        display: inline-flex !important;
+      }
+      .header-actions {
+        display: none !important;
+      }
+    }
+
+    /* DESKTOP & MOBILE HERO IMAGE PROPER VIEW & FRAMING */
+    }
+    
+    }
+    
+    }
+
+    /* TIGHT SPACING BETWEEN H1 BLOCK & QUICK ANSWER BOX */
+    }
+    .content-block {
+      padding: 16px 20px !important;
+      margin-top: 0 !important;
+    }
+    .aeo-direct-answer-box {
+      margin: 2px 0 14px 0 !important;
+      padding: 10px 14px !important;
+    }
+
+    /* H1 TITLE 2-LINE FIT ON MOBILE */
+    }
+    
+    }
+
+    /* UNIFORM SUBPAGE H1 TITLE SIZE ACROSS ALL PAGES */
+    .page-h1-header-block {
+      margin: 4px 0 8px 0 !important;
+      padding-bottom: 4px !important;
+      border-bottom: 1px solid rgba(227, 24, 55, 0.12) !important;
+    }
+    .page-h1-header-block .page-title,
+    .page-title {
+      font-size: 1.55rem !important;
+      line-height: 1.3 !important;
+      font-weight: 800 !important;
+      color: var(--color-primary, #0c192b) !important;
+      font-family: var(--font-heading, inherit) !important;
+      margin-bottom: 4px !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 0.88rem !important;
+      line-height: 1.35 !important;
+      color: var(--color-text-muted, #64748b) !important;
+      margin-bottom: 0 !important;
+    }
+    @media (max-width: 768px) {
+      .page-h1-header-block .page-title,
+      .page-title {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 4px !important;
+      }
+      .page-h1-header-block .page-subtitle {
+        font-size: 0.82rem !important;
+        line-height: 1.35 !important;
+      }
+    }
+    
+  
+    /* REAL PROPER TABLE STYLING FOR ALL SUBPAGES */
+    .table-responsive {
+      width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      margin: 20px 0 !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+
+    table.table-domain-theme {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      background: #ffffff !important;
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      border: none !important;
+      margin: 0 !important;
+      display: table !important;
+    }
+
+    table.table-domain-theme thead {
+      display: table-header-group !important;
+      background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+    }
+
+    table.table-domain-theme thead tr {
+      display: table-row !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    table.table-domain-theme thead th {
+      display: table-cell !important;
+      padding: 12px 16px !important;
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      text-align: left !important;
+      border-bottom: 2px solid var(--color-accent, #e31837) !important;
+      white-space: nowrap !important;
+      letter-spacing: 0.3px !important;
+      background: transparent !important;
+    }
+
+    table.table-domain-theme tbody {
+      display: table-row-group !important;
+      width: 100% !important;
+    }
+
+    table.table-domain-theme tbody tr {
+      display: table-row !important;
+      width: 100% !important;
+      background: #ffffff !important;
+      border: none !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      transition: background-color 0.15s ease !important;
+    }
+
+    table.table-domain-theme tbody tr:nth-child(even) {
+      background-color: #f8fafc !important;
+    }
+
+    table.table-domain-theme tbody tr:hover {
+      background-color: #f1f5f9 !important;
+    }
+
+    table.table-domain-theme tbody td {
+      display: table-cell !important;
+      padding: 12px 16px !important;
+      font-size: 0.9rem !important;
+      line-height: 1.5 !important;
+      color: var(--color-text-dark, #334155) !important;
+      vertical-align: middle !important;
+      border: none !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      text-align: left !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
+      background: transparent !important;
+    }
+
+    table.table-domain-theme tbody td:last-child {
+      border-bottom: 1px solid #e2e8f0 !important;
+    }
+
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.85rem !important;
+    }
+    
+  
+    /* 1. DESKTOP VIEW (>= 769px): REAL GRID TABLES WITH DARK HEADER */
+    @media (min-width: 769px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important;
+        margin: 20px 0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+        border: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background: #ffffff !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        border: none !important;
+        margin: 0 !important;
+        display: table !important;
+      }
+
+      table.table-domain-theme thead {
+        display: table-header-group !important;
+        background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+      }
+
+      table.table-domain-theme thead tr {
+        display: table-row !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      table.table-domain-theme thead th {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        text-align: left !important;
+        border-bottom: 2px solid var(--color-accent, #e31837) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.3px !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: table-row-group !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: table-row !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme tbody tr:nth-child(even) {
+        background-color: #f8fafc !important;
+      }
+
+      table.table-domain-theme tbody tr:hover {
+        background-color: #f1f5f9 !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--color-text-dark, #334155) !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+      }
+    }
+
+    /* 2. MOBILE VIEW (<= 768px): 100% VISIBLE ZERO-SIDE-SCROLL STACKED CARDS */
+    @media (max-width: 768px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow: visible !important;
+        margin: 16px 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      table.table-domain-theme {
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      table.table-domain-theme thead {
+        display: none !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: block !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 14px !important;
+        padding: 12px 14px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.88rem !important;
+        line-height: 1.4 !important;
+        color: var(--color-text-dark, #334155) !important;
+        text-align: right !important;
+      }
+
+      table.table-domain-theme tbody tr td:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* First cell acts as Card Title Header */
+      table.table-domain-theme tbody tr td:first-child {
+        font-weight: 800 !important;
+        font-size: 0.95rem !important;
+        color: var(--color-primary, #0c192b) !important;
+        border-bottom: 2px solid rgba(227, 24, 55, 0.15) !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 6px !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+      }
+
+      /* Mobile Data Label Headers */
+      table.table-domain-theme tbody td[data-label]:not(:first-child)::before {
+        content: attr(data-label) !important;
+        font-weight: 700 !important;
+        color: #475569 !important;
+        font-size: 0.76rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        margin-right: 8px !important;
+        text-align: left !important;
+        flex-shrink: 0 !important;
+      }
+    }
+
+    /* COMMON PRICE HIGHLIGHT PILLS */
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.85rem !important;
+    }
+    
+  
+    /* UNIFIED SINGLE-CONTAINER TABLE CARDS FOR DESKTOP & MOBILE */
+    .table-responsive {
+      width: 100% !important;
+      overflow: hidden !important;
+      margin: 18px 0 !important;
+      border-radius: 12px !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+      background: #ffffff !important;
+      box-sizing: border-box !important;
+    }
+
+    table.table-domain-theme {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      background: #ffffff !important;
+      border: none !important;
+      margin: 0 !important;
+      display: table !important;
+      table-layout: auto !important;
+    }
+
+    table.table-domain-theme thead {
+      display: table-header-group !important;
+      background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+    }
+
+    table.table-domain-theme thead tr {
+      display: table-row !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    table.table-domain-theme thead th {
+      display: table-cell !important;
+      padding: 12px 14px !important;
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      text-align: left !important;
+      border-bottom: 2px solid var(--color-accent, #e31837) !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      letter-spacing: 0.2px !important;
+    }
+
+    table.table-domain-theme tbody {
+      display: table-row-group !important;
+    }
+
+    table.table-domain-theme tbody tr {
+      display: table-row !important;
+      background: #ffffff !important;
+      border-bottom: 1px solid #f1f5f9 !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    table.table-domain-theme tbody tr:nth-child(even) {
+      background-color: #f8fafc !important;
+    }
+
+    table.table-domain-theme tbody tr:hover {
+      background-color: #f1f5f9 !important;
+    }
+
+    table.table-domain-theme tbody tr:last-child {
+      border-bottom: none !important;
+    }
+
+    table.table-domain-theme tbody td {
+      display: table-cell !important;
+      padding: 11px 14px !important;
+      font-size: 0.88rem !important;
+      line-height: 1.45 !important;
+      color: var(--color-text-dark, #334155) !important;
+      vertical-align: middle !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      text-align: left !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
+      background: transparent !important;
+    }
+
+    table.table-domain-theme tbody tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 3px 8px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.84rem !important;
+    }
+
+    @media (max-width: 768px) {
+      .table-responsive {
+        margin: 14px 0 !important;
+        border-radius: 10px !important;
+        overflow-x: auto !important;
+      }
+
+      table.table-domain-theme thead th {
+        padding: 9px 10px !important;
+        font-size: 0.80rem !important;
+      }
+
+      table.table-domain-theme tbody td {
+        padding: 9px 10px !important;
+        font-size: 0.82rem !important;
+      }
+    }
+    
+  
+    /* PERFECT MOBILE & DESKTOP TABLE VIEWING EXPERIENCE */
+    
+    /* 1. DESKTOP VIEW (>= 769px): REAL ELEGANT GRID TABLES */
+    @media (min-width: 769px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important;
+        margin: 20px 0 !important;
+        border-radius: 12px !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+        background: #ffffff !important;
+      }
+
+      table.table-domain-theme {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background: #ffffff !important;
+        border: none !important;
+        margin: 0 !important;
+        display: table !important;
+      }
+
+      table.table-domain-theme thead {
+        display: table-header-group !important;
+        background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+      }
+
+      table.table-domain-theme thead tr {
+        display: table-row !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme thead th {
+        display: table-cell !important;
+        padding: 13px 16px !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        text-align: left !important;
+        border-bottom: 2px solid var(--color-accent, #e31837) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.3px !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: table-row-group !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: table-row !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme tbody tr:nth-child(even) {
+        background-color: #f8fafc !important;
+      }
+
+      table.table-domain-theme tbody tr:hover {
+        background-color: #f1f5f9 !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--color-text-dark, #334155) !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* 2. MOBILE VIEW (<= 768px): ZERO SCROLL, SINGLE-LINE TEXT CELL CARDS */
+    @media (max-width: 768px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow: visible !important;
+        margin: 16px 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme {
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+
+      table.table-domain-theme thead {
+        display: none !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: block !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 14px !important;
+        padding: 10px 14px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.86rem !important;
+        line-height: 1.35 !important;
+        color: var(--color-text-dark, #334155) !important;
+        text-align: right !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+
+      table.table-domain-theme tbody tr td:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* First cell acts as Card Title Header on Mobile */
+      table.table-domain-theme tbody tr td:first-child {
+        font-weight: 800 !important;
+        font-size: 0.94rem !important;
+        color: var(--color-primary, #0c192b) !important;
+        border-bottom: 2px solid rgba(227, 24, 55, 0.15) !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 6px !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+        white-space: nowrap !important;
+      }
+
+      /* Mobile Data Label Headers */
+      table.table-domain-theme tbody td[data-label]:not(:first-child)::before {
+        content: attr(data-label) !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        font-size: 0.74rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        margin-right: 12px !important;
+        text-align: left !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* COMMON PRICE HIGHLIGHT PILLS */
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 3px 8px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.84rem !important;
+      white-space: nowrap !important;
+    }
+    
+  
+    /* PERFECT NO-TRUNCATION MOBILE & DESKTOP TABLE VIEWING EXPERIENCE */
+    
+    /* 1. DESKTOP VIEW (>= 769px): REAL ELEGANT GRID TABLES WITH DARK HEADER */
+    @media (min-width: 769px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important;
+        margin: 20px 0 !important;
+        border-radius: 12px !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+        background: #ffffff !important;
+      }
+
+      table.table-domain-theme {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background: #ffffff !important;
+        border: none !important;
+        margin: 0 !important;
+        display: table !important;
+      }
+
+      table.table-domain-theme thead {
+        display: table-header-group !important;
+        background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+      }
+
+      table.table-domain-theme thead tr {
+        display: table-row !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme thead th {
+        display: table-cell !important;
+        padding: 13px 16px !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        text-align: left !important;
+        border-bottom: 2px solid var(--color-accent, #e31837) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.3px !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: table-row-group !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: table-row !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme tbody tr:nth-child(even) {
+        background-color: #f8fafc !important;
+      }
+
+      table.table-domain-theme tbody tr:hover {
+        background-color: #f1f5f9 !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--color-text-dark, #334155) !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+    }
+
+    /* 2. MOBILE VIEW (<= 768px): ZERO TRUNCATION, FULL-TEXT RESPONSIVE CARDS */
+    @media (max-width: 768px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow: visible !important;
+        margin: 16px 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme {
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+
+      table.table-domain-theme thead {
+        display: none !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: block !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 14px !important;
+        padding: 12px 14px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        color: var(--color-text-dark, #334155) !important;
+        text-align: left !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+      }
+
+      table.table-domain-theme tbody tr td:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* First cell acts as Card Title Header on Mobile */
+      table.table-domain-theme tbody tr td:first-child {
+        font-weight: 800 !important;
+        font-size: 0.96rem !important;
+        color: var(--color-primary, #0c192b) !important;
+        border-bottom: 2px solid rgba(227, 24, 55, 0.15) !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 6px !important;
+        text-align: left !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        white-space: normal !important;
+      }
+
+      /* Hide label on first cell title */
+      table.table-domain-theme tbody tr td:first-child::before {
+        display: none !important;
+      }
+
+      /* Mobile Data Label Headers above content */
+      table.table-domain-theme tbody td[data-label]:not(:first-child)::before {
+        content: attr(data-label) !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        font-size: 0.74rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        margin-bottom: 4px !important;
+        text-align: left !important;
+        display: block !important;
+        width: 100% !important;
+      }
+    }
+
+    /* COMMON PRICE HIGHLIGHT PILLS */
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.84rem !important;
+      white-space: normal !important;
+      word-break: normal !important;
+    }
+
+      .single-hero-image-wrapper img,
+      .subpage-hero-banner img,
+      .page-hero-banner-box img,
+      .page-header-banner img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        display: block !important;
+      }
+    }
+    
+  
+    
+    .single-hero-image-wrapper img,
+    .subpage-hero-banner img,
+    .page-hero-banner-box img,
+    .page-header-banner img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      display: block !important;
+    }
+    
+  
+    
+    .single-hero-image-wrapper,
+    .subpage-hero-banner,
+    .page-hero-banner-box {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      max-height: none !important;
+      overflow: hidden !important;
+      border-radius: 12px !important;
+      position: relative !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      margin: 0 0 16px 0 !important;
+      padding: 8px !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+      box-sizing: border-box !important;
+    }
+
+    .single-hero-image-wrapper img,
+    .subpage-hero-banner img,
+    .page-hero-banner-box img,
+    .page-header-banner img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      display: block !important;
+      border-radius: 8px !important;
+    }
+
+    .single-hero-image-wrapper,
+    .subpage-hero-banner,
+    .page-hero-banner-box {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      max-height: none !important;
+      overflow: hidden !important;
+      border-radius: 12px !important;
+      position: relative !important;
+      background: transparent !important;
+      margin: 0 0 14px 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .single-hero-image-wrapper img,
+    .subpage-hero-banner img,
+    .page-hero-banner-box img,
+    .page-header-banner img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      display: block !important;
+      border-radius: 12px !important;
+    }
+
+    
+    .single-hero-image-wrapper img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+    }
+    
+  
+    /* ===== HEADER OFFSET — SINGLE SOURCE OF TRUTH (identical on every subpage) ===== */
+    @media (min-width: 769px) {
+      .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 10000 !important;
+      }
+      .main-layout-container {
+        padding-top: 72px !important;
+        margin-top: 0 !important;
+      }
+      .single-hero-image-wrapper {
+        margin-top: 0 !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 10000 !important;
+      }
+      .main-layout-container {
+        padding-top: 16px !important;
+        margin-top: 0 !important;
+      }
+    }
+
+    .single-hero-image-wrapper {
+      width: 100% !important;
+      margin: 0 0 14px 0 !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+      position: relative !important;
+      background: transparent !important;
+    }
+
+    .single-hero-image-wrapper img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+    }
+    
+  
+    /* DESKTOP PANORAMIC HERO BANNER MATCHING PRICING PAGE (~340px MAX HEIGHT) */
+    @media (min-width: 769px) {
+      .single-hero-image-wrapper,
+      .subpage-hero-banner,
+      .page-hero-banner-box {
+        width: 100% !important;
+        max-height: 340px !important;
+        aspect-ratio: 1024 / 340 !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+        margin: 26px 0 14px 0 !important;
+        position: relative !important;
+      }
+
+      .single-hero-image-wrapper img,
+      .subpage-hero-banner img,
+      .page-hero-banner-box img,
+      .page-header-banner img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        display: block !important;
+      }
+    }
+    
+  
+    /* MOBILE HERO HEIGHT — SINGLE SOURCE OF TRUTH (same box shape on every subpage) */
+    @media (max-width: 768px) {
+      .single-hero-image-wrapper,
+      .subpage-hero-banner,
+      .page-hero-banner-box {
+        aspect-ratio: 375 / 210 !important;
+        height: auto !important;
+      }
+      .single-hero-image-wrapper img,
+      .subpage-hero-banner img,
+      .page-hero-banner-box img,
+      .page-header-banner img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+      }
+    }
+
+    /* SUBPAGE BULLET LIST TEXT ALIGNMENT FIX */
+    article ul,
+    .content-block ul,
+    ul.seo-rich-paragraph,
+    ul.seo-bullet-list,
+    .seo-feature-list {
+      padding-left: 1.5rem !important;
+      margin-left: 0 !important;
+      margin-bottom: 1.25rem !important;
+      list-style-position: outside !important;
+    }
+
+    article ul li,
+    .content-block ul li,
+    ul.seo-rich-paragraph li,
+    ul.seo-bullet-list li {
+      margin-bottom: 10px !important;
+      line-height: 1.65 !important;
+      color: var(--color-text-dark, #334155) !important;
+      padding-left: 4px !important;
+    }
+    
+  
+    /* NUMBERED ORDERED LIST (OL) ALIGNMENT FIX */
+    article ol,
+    .content-block ol,
+    ol.seo-rich-paragraph,
+    ol.seo-step-list,
+    .seo-step-list {
+      padding-left: 1.5rem !important;
+      margin-left: 0 !important;
+      margin-bottom: 1.25rem !important;
+      list-style-position: outside !important;
+    }
+
+    article ol li,
+    .content-block ol li,
+    ol.seo-rich-paragraph li,
+    ol.seo-step-list li {
+      margin-bottom: 10px !important;
+      line-height: 1.65 !important;
+      color: var(--color-text-dark, #334155) !important;
+      padding-left: 4px !important;
+    }
+    
+  
+    /* CLEAN FAQ ACCORDION STYLING - HIDE BROWSER DETAILS MARKERS */
+    details summary::-webkit-details-marker,
+    summary::-webkit-details-marker {
+      display: none !important;
+    }
+
+    details summary::marker,
+    summary::marker {
+      display: none !important;
+      font-size: 0 !important;
+      content: "" !important;
+    }
+
   </style>
 
   <!-- Dynamic Header Offset Calculation Script -->
@@ -524,8 +1506,7 @@
   </script>
 
   <!-- Schema.org JSON-LD Structured Data with Publisher -->
-  
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -535,49 +1516,513 @@
       "name": "What is Hero Homes Greater Noida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hero Homes Greater Noida is a landmark 17.3-acre premium residential development by Hero Realty inside DMIC Township."
+        "text": "Hero Homes Greater Noida is a premium pre-launch residential project by Hero Realty, spread across a 4.5-acre parcel inside the larger 17.3-acre DMIC Integrated Industrial Township in Sector MU, Greater Noida, offering low-density 3 BHK luxury residences across three towers."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the starting price for 3 BHK apartments?",
+      "name": "Who is the developer of Hero Homes Greater Noida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The starting pre-launch price for a 3 BHK luxury residence is ₹2.22 Cr*."
+        "text": "Hero Homes Greater Noida is developed by Hero Realty, the real estate arm of the Hero Group, one of India's established business conglomerates known for its manufacturing and engineering heritage."
       }
     },
     {
       "@type": "Question",
-      "name": "How far is Jewar International Airport from the site?",
+      "name": "Where exactly is Hero Homes Sector MU located?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Noida International Airport at Jewar is located approximately 25 to 35 minutes away via Yamuna Expressway."
+        "text": "The project is located in Sector MU, Greater Noida, inside the master-planned DMIC (Delhi-Mumbai Industrial Corridor) Integrated Industrial Township, close to the Yamuna Expressway and Noida International Airport corridor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How big is the Hero Homes Greater Noida project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Homes Sector MU is built on a 4.5-acre site within the larger 17.3-acre DMIC township, comprising three residential towers built to a G+31 storey format with only six apartments per floor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What configurations are available at Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Homes offers three 3 BHK configurations: 1,650 sq. ft. (3 BHK + 2 Toilets), 1,900 sq. ft. (3 BHK + 3 Toilets), and 2,200 sq. ft. (3 BHK + Servant Room)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Hero Homes Greater Noida a ready-to-move or under-construction project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Homes Greater Noida is currently in the pre-launch stage. RERA registration is listed as 'Coming Soon' and possession is indicated as 2031 onwards in phased tower handovers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the starting price of Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area), based on current pre-launch indicative rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the price of the largest 3 BHK configuration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The largest configuration — 3 BHK + Servant Room at 2,200 sq. ft. — is priced starting from ₹2.97 Cr*, while the mid-size 1,900 sq. ft. 3 BHK + 3 Toilets unit starts at ₹2.56 Cr*."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the price per square foot at Hero Homes Sector MU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The indicative pre-launch base rate works out to approximately ₹13,500 per sq. ft.* on super built-up area, uniform across all three configurations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GST included in the quoted price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Goods and Services Tax (GST) is applicable separately at 5% without Input Tax Credit (ITC) for under-construction residential units in this segment, and is added on top of the base price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are stamp duty and registration charges included in the price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Stamp duty (typically around 5–7% of property value) and government registration charges are extra, payable at the time of final registry execution upon possession."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are PLC (Preferential Location Charges) at Hero Homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Units facing central green parks, the clubhouse, or higher floors attract Preferential Location Charges of roughly ₹150 to ₹400 per sq. ft., depending on tower position and orientation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the token/booking amount to reserve a unit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The expression of interest (EOI) or token booking amount typically starts from ₹5 Lakhs to ₹10 Lakhs, payable via bank cheque or digital transfer to secure unit allotment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the estimated monthly maintenance cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly maintenance is projected at approximately ₹3.00 to ₹4.50 per sq. ft., covering 24/7 security, clubhouse upkeep, common-area power backup, and landscaping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the carpet area for each configuration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Carpet areas are approximately 1,180 sq. ft. for the 1,650 sq. ft. unit, 1,360 sq. ft. for the 1,900 sq. ft. unit, and 1,580 sq. ft. for the 2,200 sq. ft. unit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the carpet area efficiency at Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Homes floor plans deliver a carpet area efficiency of roughly 71% to 75%, which is typical for premium low-density residential developments in the NCR region."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ceiling height is provided in the apartments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apartments feature a floor-to-floor ceiling height of about 3.1 meters (~10.2 feet), offering enhanced spatial volume, natural light, and ventilation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many apartments are there per floor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each floor across the three towers has only six apartments, served by dedicated high-speed passenger and service elevators — a deliberately low-density layout compared to typical 8–12 units per floor elsewhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the floor plans Vastu-compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, floor plans are designed with Vastu Shastra principles in mind — North, East, or North-East facing entry doors, South-East kitchens, and South-West master bedrooms — though buyers should confirm exact orientation for their specific unit and tower."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What flooring is used in the apartments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Living and dining areas feature premium vitrified floor tiles, while master bedrooms are finished with wooden laminate flooring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the 3 BHK + Servant Room unit have a separate service entry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The 2,200 sq. ft. configuration includes an independent servant room with its own service entry door accessible from the elevator lobby."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is Hero Homes Greater Noida from Noida International Airport (Jewar)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Noida International Airport at Jewar is approximately 25 to 35 minutes away via the Yamuna Expressway, making it one of the project's key location advantages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is the project from the Yamuna Expressway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Homes Sector MU is about 5 minutes from both the Yamuna Expressway and the Noida-Greater Noida Expressway, offering quick access to Noida, Greater Noida, and Agra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Hero Homes Greater Noida connected to the metro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Aqua Line Metro corridor is roughly 5 minutes from the project site, providing convenient connectivity to Noida and Greater Noida's metro network."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is DMIC and how is Hero Homes connected to it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DMIC stands for the Delhi-Mumbai Industrial Corridor. Hero Homes Sector MU sits inside a 17.3-acre master-planned DMIC Integrated Industrial Township, positioning it to benefit from the region's planned industrial and infrastructure growth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which schools and universities are near Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The project is in close proximity to established institutions such as Gautam Buddha University and Shiv Nadar University, supporting demand from both students and working professionals in the area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the distance from Hero Homes to Noida and Delhi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Via the Yamuna Expressway and Noida-Greater Noida Expressway, the project offers direct road connectivity to Noida, Greater Noida, and onward to Delhi, positioning it well for daily commuters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Sector MU a good location for long-term investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sector MU's location inside the DMIC township, combined with proximity to Jewar Airport and expressway corridors, is generally viewed as favorable for long-term appreciation, though buyers should independently assess infrastructure timelines before investing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What amenities does Hero Homes Greater Noida offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Homes offers 30+ resort-style amenities including a central clubhouse, swimming pool, wellness and fitness zones, landscaped gardens, and smart security systems. See the Amenities page for the complete list."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a clubhouse at Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the project features a large central resort-style clubhouse spanning approximately 25,000 sq. ft., with perpetual family access bundled into the unit pricing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the project have a swimming pool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, a swimming pool is included as part of the clubhouse and wellness amenity package at Hero Homes Greater Noida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What security features are provided?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The project is planned with smart security systems, CCTV surveillance, and 24/7 security personnel across common areas, entry points, and towers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there dedicated kids' play areas and senior citizen zones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the amenity plan includes dedicated kids' play areas and landscaped zones designed for senior citizens, in line with the project's family-oriented positioning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the project eco-friendly or IGBC certified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Green and sustainable design elements are part of the project's planning, but formal green-building certification status (such as IGBC) has not yet been confirmed publicly — buyers should verify this directly with Hero Realty's sales team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Hero Homes Greater Noida RERA registered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RERA registration for Hero Homes Greater Noida is currently under process and listed as 'Coming Soon.' Buyers should verify the current registration status on the official UP RERA portal before booking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the expected possession date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Possession is currently indicated as 2031 onwards, to be executed through phased tower handovers, subject to construction progress and final RERA-approved timelines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the project gets delayed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under RERA regulations, developers are required to compensate buyers for possession delays beyond the RERA-committed date, typically through interest payments as specified in the builder-buyer agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to book a unit before RERA registration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Booking before RERA registration carries additional risk since the project's registration number, approved plans, and legally binding possession date aren't yet finalized — buyers should treat pre-launch bookings as provisional and verify all documentation carefully."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What legal documents should I verify before booking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key documents to verify include the RERA registration certificate, approved building plans, title deed/land ownership records, and the builder-buyer agreement, ideally reviewed with legal assistance before making any payment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a refund if I cancel my booking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Refund terms depend on the specific booking agreement and the stage of cancellation; RERA rules generally require developers to refund amounts with interest for developer-side defaults, but buyer-initiated cancellations may attract deductions — confirm exact terms in your allotment letter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I book a unit at Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To book a unit, request the latest cost sheet from Hero Realty's sales team, select your preferred configuration and floor/tower, pay the booking amount as per the current payment plan, and obtain a formal receipt and provisional allotment letter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment plans are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Homes typically offers a construction-linked payment plan (CLP), where payments are released in stages as construction milestones are completed, and a down-payment plan with a larger upfront payment often paired with an additional discount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What documents are required to book a unit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic documentation includes a PAN card, Aadhaar card or passport, two passport-size photographs, address proof, and the booking amount cheque or digital payment reference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I choose my preferred floor and tower?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, floor and tower selection is generally available at booking, subject to unit availability, with floor-rise and Preferential Location Charges (PLC) applying to select positions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a price-lock guarantee during pre-launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Submitting a token/EOI booking generally locks in the base price against subsequent pre-launch price hikes until formal RERA launch, though exact terms should be confirmed with the sales team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I get the official price list and cost sheet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can request the current itemized cost sheet, floor availability, and any active pre-launch offers directly from Hero Realty's official sales team or an authorized channel partner via phone or WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which banks offer home loans for Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leading lenders including HDFC Bank, ICICI Bank, State Bank of India (SBI), Axis Bank, and Punjab National Bank provide pre-approved home loan facilities for eligible buyers at Hero Homes Greater Noida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What loan-to-value ratio can I expect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Banks typically finance 75–90% of a property's value (loan-to-value ratio), meaning buyers should plan for the remaining 10–25% as a down payment from personal funds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there tax benefits on the home loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Home loan interest may qualify for tax deductions under Section 24 and, for eligible first-time buyers, Section 80EEA of the Income Tax Act — consult a tax advisor to confirm eligibility based on your specific situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a loan for an under-construction property?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, banks disburse under-construction property loans in stages, tied to construction milestones, similar to the developer's own construction-linked payment plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What processing fees apply to the home loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most lenders charge a processing fee of approximately 0.25% to 1% of the loan amount, plus applicable taxes, in addition to standard interest and EMI obligations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Hero Realty a trusted developer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hero Realty is backed by the established Hero Group, which lends brand credibility to the project; however, since Hero Homes Greater Noida is a newer real estate venture, buyers should independently verify project-specific credentials, approvals, and RERA status before booking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What other projects has Hero Realty / Hero Group delivered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a verified, up-to-date list of Hero Realty's completed and ongoing real estate projects, buyers should refer to Hero Realty's official website or contact their sales team directly, as this information can change over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What construction quality standards does Hero Homes follow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The project is positioned as a premium, low-density development with RCC-framed structural design typical of NCR high-rise construction; buyers should request specific structural certifications and quality assurance documentation from the developer before booking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should I contact for official/verified information?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For the most accurate and current information on pricing, RERA status, and possession timelines, contact Hero Realty's official sales team or an authorized channel partner rather than relying solely on third-party listings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Hero Homes Greater Noida a good investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The project's location inside the DMIC township, proximity to Jewar Airport, and low-density design are positive factors for long-term investment, though as with any pre-launch project, returns depend on construction progress, RERA approval, and broader market conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the expected price appreciation in Sector MU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sector MU is expected to benefit from planned infrastructure such as Jewar Airport and DMIC industrial development, which historically supports price appreciation in NCR micro-markets, though specific figures cannot be guaranteed and should not be treated as investment advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can NRIs buy a property at Hero Homes Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, NRIs and OCI cardholders can legally purchase residential property in India through NRE/NRO banking channels and may access up to 80% home loan financing from participating Indian banks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I resell my unit before possession?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First-time transfer or resale before registry is generally permitted after a mandatory payment threshold (commonly 30–40% of the total unit cost), subject to the developer's administrative transfer fees and approval."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Hero Homes compare with other projects in Greater Noida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compared to typical competing projects with 8–12 units per floor, Hero Homes Sector MU offers a lower-density layout of just six units per floor across three towers, along with an extensive amenity package — factors that generally position it at a premium price point versus simpler nearby developments."
       }
     }
   ]
 }
 </script>
 
+  
+
+  <!-- Subpage Mobile Menu Toggle Function -->
+  <script>
+    function toggleSubpageMobileMenu(btn) {
+      var nav = document.getElementById('navbar');
+      if (nav) {
+        nav.classList.toggle('active');
+      }
+      if (btn) {
+        btn.classList.toggle('active');
+      }
+    }
+  </script>
+
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-announcement">
-    <div class="container announcement-content">
-      <span class="badge badge-accent">Pre-Launch Advantage</span>
-      <span class="announcement-text">Book Early &amp; Secure Pre-Launch Pricing at Hero Homes Greater Noida!</span>
-      <a href="tel:+919686897597" class="announcement-phone"><i data-lucide="phone"></i> +91 96868 97597</a>
-    </div>
-  </div>
+  
 
   <!-- Header -->
-  <header class="site-header sticky-header">
+  <header id="main-header" class="site-header sticky-header">
     <div class="container header-container">
       <div class="logo">
         <a href="index.html" class="logo-link">
           <img src="images/logo.webp" alt="Hero Homes Logo" class="logo-img" width="170" height="63">
         </a>
-        <span class="location-badge">Greater Noida</span>
+        
       </div>
       
       <nav id="navbar" class="site-navigation">
@@ -587,7 +2032,7 @@
           <li><a href="floor-plans.html" class="nav-link">Floor Plans</a></li>
           <li><a href="amenities.html" class="nav-link">Amenities</a></li>
           <li><a href="location.html" class="nav-link">Location</a></li>
-          <li><a href="developer.html" class="nav-link">Developer</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
           <li><a href="faqs.html" class="nav-link active">FAQs</a></li>
         </ul>
       </nav>
@@ -601,7 +2046,7 @@
         </button>
       </div>
 
-      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle menu">
+      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle menu" onclick="toggleSubpageMobileMenu(this)">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -616,7 +2061,7 @@
 
         <!-- Single Hero Image Section -->
         <div class="single-hero-image-wrapper">
-          <img src="images/hero_homes_overview_poster.webp" alt="Hero Homes Greater Noida Comprehensive Project Infographic Poster" loading="eager" fetchpriority="high">
+          <img class = "image-cover" src="images/hero-homes-greater-noida-faqs.webp" alt="Hero Homes Greater Noida Comprehensive Project Infographic Poster" loading="eager" fetchpriority="high">
           <span class="single-hero-caption">Hero Homes Greater Noida – Complete 17.3-Acre Development Overview & Blueprint Stats</span>
         </div>
 
@@ -634,86 +2079,478 @@
   </div>
 
   <h2 class="content-subheading-lg">Hero Homes Greater Noida FAQs &amp; Comprehensive Buyer Help Center</h2>
-  <p class="seo-rich-paragraph">Welcome to the official <strong>Hero Homes Greater Noida Help Center &amp; FAQ Repository</strong>. Whether you are a first-time homebuyer or an experienced real estate investor, this knowledge base provides immediate, transparent answers to all essential questions regarding pricing, floor plans, RERA approvals, location advantages, payment schedules, and developer track record.</p>
+  <p class="seo-rich-paragraph">Welcome to the official <strong>Hero Homes Greater Noida Help Center &amp; FAQ Repository</strong> — 60 detailed, regularly-updated answers covering pricing, floor plans, RERA status, location, amenities, booking, home loans, and investment potential. Whether you are a first-time homebuyer or an experienced investor, use the categories below to find transparent answers to every question buyers commonly search for about Hero Homes Sector MU.</p>
 
-  <h2 class="content-subheading-lg">Hero Homes Greater Noida Price &amp; Cost FAQs</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Project Overview & Basics FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Greater Noida is a premium pre-launch residential project by Hero Realty, spread across a 4.5-acre parcel inside the larger 17.3-acre DMIC Integrated Industrial Township in Sector MU, Greater Noida, offering low-density 3 BHK luxury residences across three towers.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Who is the developer of Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Greater Noida is developed by Hero Realty, the real estate arm of the Hero Group, one of India's established business conglomerates known for its manufacturing and engineering heritage.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Where exactly is Hero Homes Sector MU located?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The project is located in Sector MU, Greater Noida, inside the master-planned DMIC (Delhi-Mumbai Industrial Corridor) Integrated Industrial Township, close to the Yamuna Expressway and Noida International Airport corridor.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How big is the Hero Homes Greater Noida project?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Sector MU is built on a 4.5-acre site within the larger 17.3-acre DMIC township, comprising three residential towers built to a G+31 storey format with only six apartments per floor.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What configurations are available at Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes offers three 3 BHK configurations: 1,650 sq. ft. (3 BHK + 2 Toilets), 1,900 sq. ft. (3 BHK + 3 Toilets), and 2,200 sq. ft. (3 BHK + Servant Room).</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Greater Noida a ready-to-move or under-construction project?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Greater Noida is currently in the pre-launch stage. RERA registration is listed as 'Coming Soon' and possession is indicated as 2031 onwards in phased tower handovers.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Pricing & Cost FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <details class="faq-accordion-item">
       <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the starting price of Hero Homes Greater Noida?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
+        <p class="mb-0">The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area), based on current pre-launch indicative rates.</p>
       </div>
     </details>
 
     <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price for the largest configuration?</span></summary>
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price of the largest 3 BHK configuration?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
+        <p class="mb-0">The largest configuration — 3 BHK + Servant Room at 2,200 sq. ft. — is priced starting from ₹2.97 Cr*, while the mid-size 1,900 sq. ft. 3 BHK + 3 Toilets unit starts at ₹2.56 Cr*.</p>
       </div>
     </details>
 
     <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price per square foot?</span></summary>
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price per square foot at Hero Homes Sector MU?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
+        <p class="mb-0">The indicative pre-launch base rate works out to approximately ₹13,500 per sq. ft.* on super built-up area, uniform across all three configurations.</p>
       </div>
     </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is GST included in the quoted price?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">No. Goods and Services Tax (GST) is applicable separately at 5% without Input Tax Credit (ITC) for under-construction residential units in this segment, and is added on top of the base price.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are stamp duty and registration charges included in the price?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">No. Stamp duty (typically around 5–7% of property value) and government registration charges are extra, payable at the time of final registry execution upon possession.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What are PLC (Preferential Location Charges) at Hero Homes?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Units facing central green parks, the clubhouse, or higher floors attract Preferential Location Charges of roughly ₹150 to ₹400 per sq. ft., depending on tower position and orientation.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the token/booking amount to reserve a unit?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The expression of interest (EOI) or token booking amount typically starts from ₹5 Lakhs to ₹10 Lakhs, payable via bank cheque or digital transfer to secure unit allotment.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the estimated monthly maintenance cost?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Monthly maintenance is projected at approximately ₹3.00 to ₹4.50 per sq. ft., covering 24/7 security, clubhouse upkeep, common-area power backup, and landscaping.</p>
+      </div>
+    </details>
+
   </div>
 
-  <h2 class="content-subheading-lg">Hero Homes Greater Noida Floor Plan &amp; Layout FAQs</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Floor Plans & Specifications FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What configurations does Hero Homes Sector MU offer?</span></summary>
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the carpet area for each configuration?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
+        <p class="mb-0">Carpet areas are approximately 1,180 sq. ft. for the 1,650 sq. ft. unit, 1,360 sq. ft. for the 1,900 sq. ft. unit, and 1,580 sq. ft. for the 2,200 sq. ft. unit.</p>
       </div>
     </details>
 
     <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are all floor plans Vastu compliant?</span></summary>
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the carpet area efficiency at Hero Homes Greater Noida?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">Yes. All entry doors, kitchen positions, and master bedroom suites follow Vastu Shastra orientation principles.</p>
+        <p class="mb-0">Hero Homes floor plans deliver a carpet area efficiency of roughly 71% to 75%, which is typical for premium low-density residential developments in the NCR region.</p>
       </div>
     </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What ceiling height is provided in the apartments?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Apartments feature a floor-to-floor ceiling height of about 3.1 meters (~10.2 feet), offering enhanced spatial volume, natural light, and ventilation.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How many apartments are there per floor?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Each floor across the three towers has only six apartments, served by dedicated high-speed passenger and service elevators — a deliberately low-density layout compared to typical 8–12 units per floor elsewhere.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are the floor plans Vastu-compliant?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, floor plans are designed with Vastu Shastra principles in mind — North, East, or North-East facing entry doors, South-East kitchens, and South-West master bedrooms — though buyers should confirm exact orientation for their specific unit and tower.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What flooring is used in the apartments?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Living and dining areas feature premium vitrified floor tiles, while master bedrooms are finished with wooden laminate flooring.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Does the 3 BHK + Servant Room unit have a separate service entry?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes. The 2,200 sq. ft. configuration includes an independent servant room with its own service entry door accessible from the elevator lobby.</p>
+      </div>
+    </details>
+
   </div>
 
-  <h2 class="content-subheading-lg">Hero Homes Greater Noida RERA &amp; Possession FAQs</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Location & Connectivity FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How far is Hero Homes Greater Noida from Noida International Airport (Jewar)?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Noida International Airport at Jewar is approximately 25 to 35 minutes away via the Yamuna Expressway, making it one of the project's key location advantages.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How far is the project from the Yamuna Expressway?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes Sector MU is about 5 minutes from both the Yamuna Expressway and the Noida-Greater Noida Expressway, offering quick access to Noida, Greater Noida, and Agra.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Greater Noida connected to the metro?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, the Aqua Line Metro corridor is roughly 5 minutes from the project site, providing convenient connectivity to Noida and Greater Noida's metro network.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is DMIC and how is Hero Homes connected to it?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">DMIC stands for the Delhi-Mumbai Industrial Corridor. Hero Homes Sector MU sits inside a 17.3-acre master-planned DMIC Integrated Industrial Township, positioning it to benefit from the region's planned industrial and infrastructure growth.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Which schools and universities are near Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The project is in close proximity to established institutions such as Gautam Buddha University and Shiv Nadar University, supporting demand from both students and working professionals in the area.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the distance from Hero Homes to Noida and Delhi?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Via the Yamuna Expressway and Noida-Greater Noida Expressway, the project offers direct road connectivity to Noida, Greater Noida, and onward to Delhi, positioning it well for daily commuters.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Sector MU a good location for long-term investment?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Sector MU's location inside the DMIC township, combined with proximity to Jewar Airport and expressway corridors, is generally viewed as favorable for long-term appreciation, though buyers should independently assess infrastructure timelines before investing.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Amenities & Lifestyle FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What amenities does Hero Homes Greater Noida offer?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Homes offers 30+ resort-style amenities including a central clubhouse, swimming pool, wellness and fitness zones, landscaped gardens, and smart security systems. See the Amenities page for the complete list.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is there a clubhouse at Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, the project features a large central resort-style clubhouse spanning approximately 25,000 sq. ft., with perpetual family access bundled into the unit pricing.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Does the project have a swimming pool?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, a swimming pool is included as part of the clubhouse and wellness amenity package at Hero Homes Greater Noida.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What security features are provided?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The project is planned with smart security systems, CCTV surveillance, and 24/7 security personnel across common areas, entry points, and towers.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are there dedicated kids' play areas and senior citizen zones?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, the amenity plan includes dedicated kids' play areas and landscaped zones designed for senior citizens, in line with the project's family-oriented positioning.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is the project eco-friendly or IGBC certified?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Green and sustainable design elements are part of the project's planning, but formal green-building certification status (such as IGBC) has not yet been confirmed publicly — buyers should verify this directly with Hero Realty's sales team.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — RERA, Legal & Possession FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <details class="faq-accordion-item">
       <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Greater Noida RERA registered?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">RERA registration for Hero Homes Greater Noida is currently under process and listed as "Coming Soon".</p>
+        <p class="mb-0">RERA registration for Hero Homes Greater Noida is currently under process and listed as 'Coming Soon.' Buyers should verify the current registration status on the official UP RERA portal before booking.</p>
       </div>
     </details>
 
     <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the possession timeline?</span></summary>
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the expected possession date?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">Possession is currently indicated as 2031 onwards, executed in phased tower handovers.</p>
+        <p class="mb-0">Possession is currently indicated as 2031 onwards, to be executed through phased tower handovers, subject to construction progress and final RERA-approved timelines.</p>
       </div>
     </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What happens if the project gets delayed?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Under RERA regulations, developers are required to compensate buyers for possession delays beyond the RERA-committed date, typically through interest payments as specified in the builder-buyer agreement.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is it safe to book a unit before RERA registration?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Booking before RERA registration carries additional risk since the project's registration number, approved plans, and legally binding possession date aren't yet finalized — buyers should treat pre-launch bookings as provisional and verify all documentation carefully.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What legal documents should I verify before booking?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Key documents to verify include the RERA registration certificate, approved building plans, title deed/land ownership records, and the builder-buyer agreement, ideally reviewed with legal assistance before making any payment.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Can I get a refund if I cancel my booking?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Refund terms depend on the specific booking agreement and the stage of cancellation; RERA rules generally require developers to refund amounts with interest for developer-side defaults, but buyer-initiated cancellations may attract deductions — confirm exact terms in your allotment letter.</p>
+      </div>
+    </details>
+
   </div>
 
-  <h2 class="content-subheading-lg">Hero Homes Greater Noida Location &amp; Connectivity FAQs</h2>
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Booking Process & Payment Plans FAQs</h2>
 
   <div class="faq-accordion-list my-3">
     <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How far is Jewar International Airport from the site?</span></summary>
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How do I book a unit at Hero Homes Greater Noida?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">Noida International Airport at Jewar is located approximately 25 to 35 minutes away via the Yamuna Expressway corridor.</p>
+        <p class="mb-0">To book a unit, request the latest cost sheet from Hero Realty's sales team, select your preferred configuration and floor/tower, pay the booking amount as per the current payment plan, and obtain a formal receipt and provisional allotment letter.</p>
       </div>
     </details>
 
     <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Which sector is the project situated in?</span></summary>
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What payment plans are available?</span></summary>
       <div class="faq-answer">
-        <p class="mb-0">Hero Homes Greater Noida is located in Sector MU inside the DMIC Integrated Industrial Township.</p>
+        <p class="mb-0">Hero Homes typically offers a construction-linked payment plan (CLP), where payments are released in stages as construction milestones are completed, and a down-payment plan with a larger upfront payment often paired with an additional discount.</p>
       </div>
     </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What documents are required to book a unit?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Basic documentation includes a PAN card, Aadhaar card or passport, two passport-size photographs, address proof, and the booking amount cheque or digital payment reference.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Can I choose my preferred floor and tower?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, floor and tower selection is generally available at booking, subject to unit availability, with floor-rise and Preferential Location Charges (PLC) applying to select positions.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is there a price-lock guarantee during pre-launch?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Submitting a token/EOI booking generally locks in the base price against subsequent pre-launch price hikes until formal RERA launch, though exact terms should be confirmed with the sales team.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How can I get the official price list and cost sheet?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">You can request the current itemized cost sheet, floor availability, and any active pre-launch offers directly from Hero Realty's official sales team or an authorized channel partner via phone or WhatsApp.</p>
+      </div>
+    </details>
+
   </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Home Loan & Financing FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Which banks offer home loans for Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Leading lenders including HDFC Bank, ICICI Bank, State Bank of India (SBI), Axis Bank, and Punjab National Bank provide pre-approved home loan facilities for eligible buyers at Hero Homes Greater Noida.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What loan-to-value ratio can I expect?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Banks typically finance 75–90% of a property's value (loan-to-value ratio), meaning buyers should plan for the remaining 10–25% as a down payment from personal funds.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are there tax benefits on the home loan?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Home loan interest may qualify for tax deductions under Section 24 and, for eligible first-time buyers, Section 80EEA of the Income Tax Act — consult a tax advisor to confirm eligibility based on your specific situation.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Can I get a loan for an under-construction property?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, banks disburse under-construction property loans in stages, tied to construction milestones, similar to the developer's own construction-linked payment plan.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What processing fees apply to the home loan?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Most lenders charge a processing fee of approximately 0.25% to 1% of the loan amount, plus applicable taxes, in addition to standard interest and EMI obligations.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Developer & Track Record FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Realty a trusted developer?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Hero Realty is backed by the established Hero Group, which lends brand credibility to the project; however, since Hero Homes Greater Noida is a newer real estate venture, buyers should independently verify project-specific credentials, approvals, and RERA status before booking.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What other projects has Hero Realty / Hero Group delivered?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">For a verified, up-to-date list of Hero Realty's completed and ongoing real estate projects, buyers should refer to Hero Realty's official website or contact their sales team directly, as this information can change over time.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What construction quality standards does Hero Homes follow?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The project is positioned as a premium, low-density development with RCC-framed structural design typical of NCR high-rise construction; buyers should request specific structural certifications and quality assurance documentation from the developer before booking.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Who should I contact for official/verified information?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">For the most accurate and current information on pricing, RERA status, and possession timelines, contact Hero Realty's official sales team or an authorized channel partner rather than relying solely on third-party listings.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <h2 class="content-subheading-lg">Hero Homes Greater Noida — Investment & Resale Potential FAQs</h2>
+
+  <div class="faq-accordion-list my-3">
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Greater Noida a good investment?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">The project's location inside the DMIC township, proximity to Jewar Airport, and low-density design are positive factors for long-term investment, though as with any pre-launch project, returns depend on construction progress, RERA approval, and broader market conditions.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the expected price appreciation in Sector MU?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Sector MU is expected to benefit from planned infrastructure such as Jewar Airport and DMIC industrial development, which historically supports price appreciation in NCR micro-markets, though specific figures cannot be guaranteed and should not be treated as investment advice.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Can NRIs buy a property at Hero Homes Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Yes, NRIs and OCI cardholders can legally purchase residential property in India through NRE/NRO banking channels and may access up to 80% home loan financing from participating Indian banks.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Can I resell my unit before possession?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">First-time transfer or resale before registry is generally permitted after a mandatory payment threshold (commonly 30–40% of the total unit cost), subject to the developer's administrative transfer fees and approval.</p>
+      </div>
+    </details>
+
+    <details class="faq-accordion-item">
+      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How does Hero Homes compare with other projects in Greater Noida?</span></summary>
+      <div class="faq-answer">
+        <p class="mb-0">Compared to typical competing projects with 8–12 units per floor, Hero Homes Sector MU offers a lower-density layout of just six units per floor across three towers, along with an extensive amenity package — factors that generally position it at a premium price point versus simpler nearby developments.</p>
+      </div>
+    </details>
+
+  </div>
+
 </article>
 
 
@@ -738,11 +2575,9 @@
             <div class="form-group">
               <select name="configuration" class="form-control">
                 <option value="" disabled selected>Interested Configuration</option>
-                <option value="2 BHK">2 BHK Luxury</option>
-                <option value="3 BHK 1650 sq ft">3 BHK (1650 Sq. Ft.)</option>
+                                <option value="3 BHK 1650 sq ft">3 BHK (1650 Sq. Ft.)</option>
                 <option value="3 BHK + Servant">3 BHK + Servant (2200 Sq. Ft.)</option>
-                <option value="4 BHK">4 BHK Ultra Luxury</option>
-              </select>
+                              </select>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
               <i data-lucide="file-text"></i> Submit Question
@@ -775,51 +2610,41 @@
       <div class="footer-contact">
         <h4>Contact Us</h4>
         <p><i data-lucide="map-pin"></i> Sector MU, DMIC Township, Greater Noida, UP</p>
-        <p><i data-lucide="phone"></i> +91 96868 97597</p>
+        <p><a href="tel:+919686897597" class="footer-phone-link" style="color: #ffffff; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="color: #e31837;"></i> +91 96868 97597</a></p>
         <p><i data-lucide="mail"></i> sales@herohomenoida.com</p>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container text-center">
+        <div class="footer-call-action-wrapper" style="margin-bottom: 14px;">
+          <a href="tel:+919686897597" class="btn btn-primary footer-call-btn" style="background-color: var(--color-accent, #e31837); color: #ffffff; padding: 10px 24px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; text-decoration: none; box-shadow: 0 4px 14px rgba(227, 24, 55, 0.3);">
+            <i data-lucide="phone"></i> <span>Call Now: +91 96868 97597</span>
+          </a>
+        </div>
         <p class="copyright">&copy; 2026 Hero Homes Greater Noida. Authorized Channel Partner. All Rights Reserved.</p>
         <p class="publisher-info" style="font-size: 0.72rem; color: #94A3B8; margin-top: 4px;">Published by Hero Homes Greater Noida | Official Partner Portal (Hero Realty)</p>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-menu-drawer" class="mobile-drawer">
-    <div class="mobile-drawer-header">
-      <div class="logo"><span class="logo-accent">HERO</span> HOMES</div>
-      <button id="mobile-menu-close" class="menu-close-btn" aria-label="Close menu">&times;</button>
-    </div>
-    <nav class="overlay-navigation">
-      <ul class="overlay-nav-menu">
-        <li><a href="index.html" class="overlay-nav-link">Overview</a></li>
-        <li><a href="pricing.html" class="overlay-nav-link">Pricing</a></li>
-        <li><a href="floor-plans.html" class="overlay-nav-link">Floor Plans</a></li>
-        <li><a href="amenities.html" class="overlay-nav-link">Amenities</a></li>
-        <li><a href="location.html" class="overlay-nav-link">Location</a></li>
-        <li><a href="developer.html" class="overlay-nav-link">Developer</a></li>
-        <li><a href="faqs.html" class="overlay-nav-link">FAQs</a></li>
-      </ul>
-    </nav>
-  </div>
+  
 
-  <!-- Modal Lead Form -->
-  <div id="enquiry-modal" class="modal-overlay">
-    <div class="modal-card glass-card">
-      <button class="modal-close" onclick="closeEnquiryModal()">&times;</button>
-      <h3 id="modal-title">Request Official Information</h3>
-      <p class="modal-subtitle">Leave your phone number to receive instant brochure &amp; price list on WhatsApp.</p>
-      <form onsubmit="handleFormSubmit(event, 'Page Modal Form')">
-        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required class="form-control"></div>
-        <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" class="form-control"></div>
-        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required class="form-control"></div>
-        <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
-      </form>
-    </div>
-  </div>
+  
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggleBtn = document.getElementById('mobile-menu-toggle');
+      var navMenu = document.getElementById('navbar');
+      if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleBtn.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -836,20 +2661,60 @@
       window.location.href = 'thankyou.html';
     }
 
-    /* Bulletproof Accordion Toggle Handler for Mobile & Desktop */
+        /* Universal Subpage FAQ Accordion Toggle Handler */
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('details.faq-accordion-item summary').forEach(function(summary) {
-        summary.addEventListener('click', function(e) {
-          const details = summary.parentElement;
-          if (details.hasAttribute('open')) {
-            details.removeAttribute('open');
-          } else {
-            details.setAttribute('open', '');
+      function toggleSubpageFaq(questionBtn) {
+        if (!questionBtn) return;
+        const item = questionBtn.closest('.faq-item');
+        if (!item) return;
+
+        const container = item.closest('.faq-container, .faq-accordion-list, .subpage-faq-accordion');
+        const isCurrentlyActive = item.classList.contains('active');
+
+        if (container) {
+          container.querySelectorAll('.faq-item').forEach(function(otherItem) {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              const otherBtn = otherItem.querySelector('.faq-question');
+              if (otherBtn) {
+                otherBtn.setAttribute('aria-expanded', 'false');
+              }
+            }
+          });
+        }
+
+        if (isCurrentlyActive) {
+          item.classList.remove('active');
+          questionBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('active');
+          questionBtn.setAttribute('aria-expanded', 'true');
+        }
+      }
+
+      document.addEventListener('click', function(e) {
+        const questionBtn = e.target.closest('.faq-question');
+        if (questionBtn) {
+          toggleSubpageFaq(questionBtn);
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const questionBtn = e.target.closest('.faq-question');
+          if (questionBtn) {
+            e.preventDefault();
+            toggleSubpageFaq(questionBtn);
           }
-          e.preventDefault();
-        });
+        }
       });
     });
   </script>
+
+    
+    
+
+    
+    
 </body>
 </html>

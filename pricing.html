@@ -50,11 +50,6 @@
     body { opacity: 0; }
     body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
 
-    /* ABSOLUTE ZERO GAP - HERO IMAGE TOUCHES HEADER FLUSH ON DESKTOP & MOBILE */
-    .main-layout-container {
-      padding-top: 0 !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
     }
     .page-layout-grid {
       align-items: flex-start;
@@ -67,20 +62,7 @@
       margin-top: 0 !important;
       padding-top: 0 !important;
     }
-    .single-hero-image-wrapper {
-      margin: 0 0 4px 0 !important;
-      padding-top: 0 !important;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      position: relative;
     }
-    .single-hero-image-wrapper img {
-      width: 100%;
-      height: 330px !important;
-      max-height: 330px !important;
-      object-fit: cover;
-      display: block;
     }
     .single-hero-caption {
       background: rgba(12, 25, 43, 0.95);
@@ -94,28 +76,8 @@
     }
 
     /* PROPERLY VISIBLE, BOLD & BIGGER H1 HEADER BLOCK */
-    .page-h1-header-block {
-      margin: 10px 0 18px 0 !important;
-      padding-bottom: 8px !important;
-      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
     }
-    .page-h1-header-block .page-title {
-      font-size: 1.75rem !important;
-      font-weight: 800 !important;
-      color: var(--color-primary) !important;
-      line-height: 1.25 !important;
-      margin-bottom: 6px !important;
-      font-family: var(--font-heading) !important;
-      white-space: normal !important;
-      overflow: visible !important;
-      text-overflow: clip !important;
-      word-break: break-word !important;
     }
-    .page-h1-header-block .page-subtitle {
-      font-size: 0.92rem !important;
-      color: var(--color-text-muted) !important;
-      line-height: 1.4 !important;
-      margin-bottom: 0 !important;
     }
 
     /* Article Card Padding Fix */
@@ -151,6 +113,28 @@
       color: var(--color-text-dark) !important;
     }
 
+    
+    .geo-context-card h4 {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      margin-top: 0 !important;
+      margin-bottom: 10px !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      color: var(--color-primary, #0c192b) !important;
+      line-height: 1.2 !important;
+    }
+    .geo-context-card h4 i,
+    .geo-context-card h4 svg {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      width: 22px !important;
+      height: 22px !important;
+      color: var(--color-accent, #e31837) !important;
+    }
     .geo-context-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -191,489 +175,1968 @@
       overflow-x: auto;
     }
 
-    /* BROCHURE-QUALITY TABLE LAYOUT (FULL WIDTH ALIGNMENT & 50-60px ROW HEIGHTS) */
-    .table-domain-theme,
-    .seo-data-table {
-      width: 100% !important;
-      max-width: 100% !important;
-      border-collapse: separate;
-      border-spacing: 0;
-      background-color: var(--color-bg-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-large);
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-      margin: 0 !important;
-    }
+    
 
-    /* HEADER ROW (52px HEIGHT, VERTICALLY CENTERED) */
-    .table-domain-theme th,
-    .seo-data-table th {
-      background-color: var(--color-primary);
-      color: #ffffff;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 0.84rem;
-      padding: 14px 24px !important;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 3px solid var(--color-accent);
-      text-align: left;
-      vertical-align: middle !important;
-      height: 52px;
-      box-sizing: border-box;
-    }
+    
 
-    /* BODY ROWS (54px HEIGHT, VERTICALLY CENTERED) */
-    .table-domain-theme td,
-    .seo-data-table td {
-      padding: 14px 24px !important;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 0.92rem;
-      color: var(--color-text-dark);
-      vertical-align: middle !important;
-      text-align: left;
-      box-sizing: border-box;
-    }
-    .table-domain-theme tr:last-child td,
-    .seo-data-table tr:last-child td {
-      border-bottom: none;
-    }
-    .table-domain-theme tr:nth-child(even) td,
-    .seo-data-table tr:nth-child(even) td {
-      background-color: #f8fafc;
-    }
-    .table-domain-theme tr:hover td,
-    .seo-data-table tr:hover td {
-      background-color: rgba(227, 24, 55, 0.03);
-    }
-
-    /* FLEX TITLE CELL (INLINE ICON + TITLE ON ONE SINGLE LINE) */
-    .table-cell-title {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      white-space: nowrap !important;
-      font-weight: 700 !important;
-      color: var(--color-primary) !important;
-    }
-    .table-cell-title i {
-      flex-shrink: 0 !important;
-      width: 18px !important;
-      height: 18px !important;
-      color: var(--color-accent) !important;
-    }
-
-    /* 2-COLUMN KEY-VALUE TABLES (Landmarks, Floor Plan Dimensions, Pricing Specs) */
-    .table-compact-2col th:first-child,
-    .table-compact-2col td:first-child {
-      width: 55% !important;
-      text-align: left !important;
-    }
-    .table-compact-2col th:last-child,
-    .table-compact-2col td:last-child {
-      width: 45% !important;
-      text-align: right !important;
-    }
-
-    /* 2-COLUMN TEXT DESCRIPTION TABLES (Amenities List, Social Infra) */
-    .table-text-2col th:first-child,
-    .table-text-2col td:first-child {
-      width: 32% !important;
-      text-align: left !important;
-      white-space: nowrap !important;
-    }
-    .table-text-2col th:last-child,
-    .table-text-2col td:last-child {
-      width: 68% !important;
-      text-align: left !important;
-    }
-
-    /* 3-COLUMN TABLE RATIOS */
-    .table-amenities-3col th:first-child,
-    .table-amenities-3col td:first-child {
-      width: 28% !important;
-      text-align: left !important;
-    }
-    .table-amenities-3col th:nth-child(2),
-    .table-amenities-3col td:nth-child(2) {
-      text-align: left !important;
-    }
-    .table-amenities-3col th:last-child,
-    .table-amenities-3col td:last-child {
-      text-align: right !important;
-    }
-
-    .price-highlight-pill {
-      display: inline-block;
-      background: rgba(227, 24, 55, 0.1);
-      color: var(--color-accent);
-      font-weight: 800;
-      font-size: 0.86rem;
-      padding: 4px 12px;
-      border-radius: 50px;
-      border: 1px solid rgba(227, 24, 55, 0.2);
-    }
-
-    /* BULLETPROOF INTERACTIVE FAQ ACCORDION STYLES */
-    details.faq-accordion-item {
-      background: #ffffff;
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    details.faq-accordion-item[open] {
-      border-color: var(--color-accent);
-      box-shadow: 0 4px 16px rgba(194, 34, 41, 0.1);
-    }
-    details.faq-accordion-item summary {
-      padding: 16px 20px !important;
-      font-size: 0.98rem !important;
-      font-weight: 700 !important;
-      color: var(--color-primary) !important;
-      cursor: pointer !important;
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      list-style: none !important;
-      user-select: none !important;
-    }
-    details.faq-accordion-item summary::-webkit-details-marker,
-    details.faq-accordion-item summary::marker {
-      display: none !important;
-    }
-    details.faq-accordion-item summary * {
-      pointer-events: none !important;
-    }
-    details.faq-accordion-item summary::after {
-      content: '+';
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--color-accent);
-      transition: transform 0.2s ease;
-      margin-left: 12px;
-      flex-shrink: 0;
-    }
-    details.faq-accordion-item[open] summary::after {
-      content: '−';
-    }
-    details.faq-accordion-item:not([open]) .faq-answer {
-      display: none !important;
-    }
-    details.faq-accordion-item[open] .faq-answer {
-      display: block !important;
-      padding: 14px 20px 18px 20px !important;
-      font-size: 0.94rem !important;
-      line-height: 1.65 !important;
-      color: var(--color-text-dark) !important;
-      border-top: 1px solid var(--color-border) !important;
-      background: #FCF9F4 !important;
-    }
-    .faq-icon {
-      width: 16px;
-      height: 16px;
-      color: var(--color-accent);
-      margin-right: 8px;
-    }
-
-    /* RESPONSIVE MOBILE LAYOUT BALANCING - FLUSH HERO IMAGE WITH ZERO TOP GAP */
-    @media (max-width: 768px) {
-      .main-layout-container {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-      }
-      .page-layout-grid {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-      }
-      .main-content-column {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-      }
-      .single-hero-image-wrapper {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-        padding-top: 0 !important;
-        border-radius: 8px !important;
-        background-color: #0c192b !important;
-      }
-      .single-hero-image-wrapper img {
-        height: auto !important;
-        max-height: 165px !important;
-        object-fit: contain !important;
-        background-color: #0c192b !important;
-      }
-      .single-hero-caption {
-        padding: 3px 6px !important;
-        font-size: 0.65rem !important;
-        line-height: 1.2 !important;
-      }
-
-      /* PROPERLY VISIBLE & BOLD H1 ON MOBILE (NO TRUNCATION, WRAPS NATURALLY) */
-      .page-h1-header-block {
-        margin: 6px 0 12px 0 !important;
-        padding-bottom: 4px !important;
-      }
-      .page-h1-header-block .page-title {
-        font-size: 1.30rem !important;
-        font-weight: 800 !important;
-        white-space: normal !important;
-        overflow: visible !important;
-        text-overflow: clip !important;
-        line-height: 1.3 !important;
-        margin-bottom: 4px !important;
-        color: var(--color-primary) !important;
-      }
-      .page-h1-header-block .page-subtitle {
-        font-size: 0.80rem !important;
-        line-height: 1.3 !important;
-      }
-
-      .content-block {
-        padding: 16px 14px !important;
-      }
-
-      /* COMPACT, LOW-HEIGHT QUICK ANSWER BOX ON MOBILE */
-      .aeo-direct-answer-box {
-        padding: 8px 12px !important;
-        margin: 10px 0 14px 0 !important;
-        border-radius: 6px !important;
-      }
-      .aeo-box-title {
-        font-size: 0.82rem !important;
-        margin-bottom: 2px !important;
-      }
-      .aeo-direct-answer-box p {
-        font-size: 0.80rem !important;
-        line-height: 1.38 !important;
-      }
-
-      .content-subheading-lg {
-        margin: 28px 0 12px 0 !important;
-      }
-
-      .seo-rich-paragraph {
-        margin-bottom: 16px !important;
-      }
-
-      .table-responsive {
-        margin: 20px 0 24px 0 !important;
-      }
-
-      /* RESPONSIVE MOBILE CARD TABLES (EQUAL EDGE PADDING & 50px ROW HEIGHT) */
-      .table-domain-theme,
-      .table-domain-theme tbody,
-      .table-domain-theme tr,
-      .table-domain-theme td,
-      .seo-data-table,
-      .seo-data-table tbody,
-      .seo-data-table tr,
-      .seo-data-table td {
-        display: block !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .table-domain-theme thead,
-      .seo-data-table thead {
-        display: none !important;
-      }
-      .table-domain-theme tr,
-      .seo-data-table tr {
-        background: #ffffff !important;
-        border: 1px solid var(--color-border) !important;
-        border-radius: 10px !important;
-        margin-bottom: 12px !important;
-        padding: 8px 14px !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
-      }
-      .table-domain-theme td,
-      .seo-data-table td {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 8px 0 !important;
-        min-height: 48px !important;
-        border-bottom: 1px dashed #e2e8f0 !important;
-        font-size: 0.86rem !important;
-        text-align: right !important;
-        word-break: break-word !important;
-      }
-      .table-domain-theme td:last-child,
-      .seo-data-table td:last-child {
-        border-bottom: none !important;
-      }
-      .table-domain-theme td[data-label]::before,
-      .seo-data-table td[data-label]::before {
-        content: attr(data-label) !important;
-        font-weight: 700 !important;
-        color: var(--color-primary) !important;
-        text-align: left !important;
-        padding-right: 12px !important;
-        flex-shrink: 0;
-      }
-    }
-    /* BULLETPROOF RESPONSIVE MOBILE TABLE FIX (max-width: 768px) - ZERO VERTICAL WORD BREAKING */
+    /* DUAL-MODE MOBILE TABLE SYSTEM: PERFECT LANDMARK 2-COL TABLE (NO TRUNCATION) & STACKED CARDS */
     @media (max-width: 768px) {
       .table-responsive {
         width: 100% !important;
         margin: 16px 0 24px 0 !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        border-radius: 10px !important;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+        overflow-x: hidden !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
       }
 
-      .table-domain-theme,
-      .seo-data-table {
+      /* 1. 2-COLUMN KEY-VALUE TABLES (Landmarks, Dimensions, Specs) */
+      .table-compact-2col {
         display: table !important;
         width: 100% !important;
-        min-width: 100% !important;
         max-width: 100% !important;
         table-layout: fixed !important;
         border-collapse: separate !important;
         border-spacing: 0 !important;
-        background-color: #ffffff !important;
-        border: 1px solid var(--color-border) !important;
-        border-radius: 10px !important;
+        background: #ffffff !important;
+        border: 1px solid var(--color-border, #e2e8f0) !important;
+        border-radius: 12px !important;
         overflow: hidden !important;
-        margin: 0 !important;
         box-sizing: border-box !important;
       }
-
-      .table-domain-theme thead,
-      .seo-data-table thead {
-        display: table-header-group !important;
-      }
-      .table-domain-theme tbody,
-      .seo-data-table tbody {
-        display: table-row-group !important;
-      }
-      .table-domain-theme tr,
-      .seo-data-table tr {
-        display: table-row !important;
-        background-color: #ffffff !important;
-      }
-      .table-domain-theme tr:nth-child(even),
-      .seo-data-table tr:nth-child(even) {
-        background-color: #f8fafc !important;
-      }
-
-      .table-domain-theme th,
-      .seo-data-table th {
+      .table-compact-2col thead { display: table-header-group !important; }
+      .table-compact-2col tbody { display: table-row-group !important; }
+      .table-compact-2col tr { display: table-row !important; background: #ffffff !important; }
+      .table-compact-2col tr:nth-child(even) { background: #f8fafc !important; }
+      
+      .table-compact-2col th {
         display: table-cell !important;
-        background-color: var(--color-primary) !important;
+        background: var(--color-primary, #0c192b) !important;
         color: #ffffff !important;
-        font-family: var(--font-heading) !important;
+        font-family: var(--font-heading, inherit) !important;
         font-weight: 700 !important;
-        font-size: 0.78rem !important;
-        padding: 10px 10px !important;
+        font-size: 0.70rem !important;
+        padding: 10px 6px !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.4px !important;
-        border-bottom: 3px solid var(--color-accent) !important;
+        letter-spacing: 0.2px !important;
         vertical-align: middle !important;
         box-sizing: border-box !important;
-        line-height: 1.3 !important;
+        overflow: hidden !important;
       }
-
-      .table-domain-theme td,
-      .seo-data-table td {
+      .table-compact-2col td {
         display: table-cell !important;
-        padding: 10px 10px !important;
+        padding: 10px 6px !important;
         border-bottom: 1px solid #e2e8f0 !important;
-        font-size: 0.84rem !important;
-        line-height: 1.4 !important;
-        color: var(--color-text-dark) !important;
+        font-size: 0.82rem !important;
+        line-height: 1.35 !important;
         vertical-align: middle !important;
+        background: transparent !important;
         box-sizing: border-box !important;
         word-break: normal !important;
-        overflow-wrap: normal !important;
-        word-wrap: normal !important;
-        white-space: normal !important;
-        hyphens: manual !important;
+        overflow-wrap: break-word !important;
+      }
+      .table-compact-2col th:first-child,
+      .table-compact-2col td:first-child {
+        width: 56% !important;
+        text-align: left !important;
+        font-weight: 600 !important;
+        padding-right: 4px !important;
+      }
+      .table-compact-2col th:last-child,
+      .table-compact-2col td:last-child {
+        width: 44% !important;
+        text-align: right !important;
+        font-weight: 700 !important;
+        padding-left: 2px !important;
+      }
+      .table-compact-2col td::before {
+        display: none !important;
+        content: none !important;
+      }
+      .table-compact-2col .price-highlight-pill {
+        font-size: 0.72rem !important;
+        padding: 3px 6px !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
-      .table-domain-theme tr:last-child td,
-      .seo-data-table tr:last-child td {
+      /* 100% GUARANTEED MOBILE NAVIGATION DROPDOWN MENU FIX */
+    @media (max-width: 1200px) {
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 99999 !important;
+      }
+      .header-container {
+        position: relative !important;
+      }
+      .mobile-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 100001 !important;
+        padding: 0 !important;
+      }
+      .mobile-toggle .bar {
+        width: 24px !important;
+        height: 2.5px !important;
+        background-color: #0c192b !important;
+        transition: all 0.3s ease !important;
+        display: block !important;
+      }
+      
+      #navbar:not(.active),
+      .site-navigation:not(.active) {
+        display: none !important;
+      }
+
+      #navbar.active,
+      .site-navigation.active {
+        display: block !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background-color: #FCF9F4 !important;
+        border-top: 1px solid #e2e8f0 !important;
+        border-bottom: 3px solid #e31837 !important;
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3) !important;
+        padding: 16px 24px !important;
+        z-index: 100000 !important;
+        box-sizing: border-box !important;
+      }
+
+      #navbar.active .nav-menu,
+      .site-navigation.active .nav-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+      }
+
+      #navbar.active .nav-link,
+      .site-navigation.active .nav-link {
+        display: block !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        color: #0c192b !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+        text-decoration: none !important;
+      }
+
+      #navbar.active li:last-child .nav-link,
+      .site-navigation.active li:last-child .nav-link {
         border-bottom: none !important;
       }
 
-      /* 2-COLUMN TABLES: PRECISE 46% LABEL / 54% VALUE PROPORTIONS */
-      .table-compact-2col th:first-child,
-      .table-compact-2col td:first-child,
-      .table-text-2col th:first-child,
-      .table-text-2col td:first-child {
-        width: 46% !important;
-        max-width: 46% !important;
-        min-width: 0 !important;
-        padding: 10px 8px 10px 10px !important;
-        text-align: left !important;
-        font-weight: 600 !important;
-      }
-
-      .table-compact-2col th:last-child,
-      .table-compact-2col td:last-child,
-      .table-text-2col th:last-child,
-      .table-text-2col td:last-child {
-        width: 54% !important;
-        max-width: 54% !important;
-        min-width: 0 !important;
-        padding: 10px 10px 10px 8px !important;
-        text-align: right !important;
+      #navbar.active .nav-link.active,
+      .site-navigation.active .nav-link.active {
+        color: #e31837 !important;
         font-weight: 700 !important;
-        color: var(--color-primary) !important;
-      }
-
-      /* CELL CONTENT FLEX WRAPPING & BADGE STYLING */
-      .table-cell-title {
-        display: flex !important;
-        align-items: flex-start !important;
-        gap: 6px !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: normal !important;
-      }
-      .table-cell-title i {
-        flex-shrink: 0 !important;
-        width: 14px !important;
-        height: 14px !important;
-        margin-top: 2px !important;
-        color: var(--color-accent) !important;
-      }
-      .table-cell-title span {
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: normal !important;
-      }
-
-      /* BADGES & PILLS NEVER COMPRESS OR BREAK VERTICALLY */
-      .price-highlight-pill,
-      .status-badge {
-        display: inline-block !important;
-        white-space: nowrap !important;
-        word-break: keep-all !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 3px 8px !important;
-        font-size: 0.78rem !important;
-        line-height: 1.2 !important;
-      }
-
-      /* MULTI-COLUMN TABLES SCROLL SMOOTHLY WITHOUT NARROW SQUEEZING */
-      .table-amenities-3col,
-      .table-domain-theme:not(.table-compact-2col):not(.table-text-2col) {
-        table-layout: auto !important;
-        min-width: 520px !important;
       }
     }
+  
+    /* PROPER SOLID RED HEADER CALL BUTTON WITH NUMBER DISPLAY */
+    .header-mobile-call-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      background-color: #e31837 !important;
+      color: #ffffff !important;
+      padding: 7px 16px !important;
+      border-radius: 50px !important;
+      font-weight: 700 !important;
+      font-size: 0.88rem !important;
+      border: none !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      box-shadow: 0 4px 12px rgba(227, 24, 55, 0.35) !important;
+      transition: all 0.2s ease !important;
+      margin-left: 6px !important;
+    }
+    .header-mobile-call-btn:hover {
+      background-color: #c4122c !important;
+      color: #ffffff !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 6px 16px rgba(227, 24, 55, 0.45) !important;
+    }
+    .header-mobile-call-btn svg,
+    .header-mobile-call-btn i {
+      width: 15px !important;
+      height: 15px !important;
+      color: #ffffff !important;
+      stroke: #ffffff !important;
+      flex-shrink: 0 !important;
+    }
+    
+  
+    /* HEADER CALL BUTTON VISIBILITY RULE: HIDE ON DESKTOP, SHOW ON MOBILE ONLY */
+    @media (min-width: 1200px) {
+      .header-mobile-call-btn {
+        display: none !important;
+      }
+    }
+    @media (max-width: 1199px) {
+      .header-mobile-call-btn {
+        display: inline-flex !important;
+      }
+      .header-actions {
+        display: none !important;
+      }
+    }
+
+    /* DESKTOP & MOBILE HERO IMAGE PROPER VIEW & FRAMING */
+    }
+    
+    }
+    
+    }
+
+    /* TIGHT SPACING BETWEEN H1 BLOCK & QUICK ANSWER BOX */
+    }
+    .content-block {
+      padding: 16px 20px !important;
+      margin-top: 0 !important;
+    }
+    .aeo-direct-answer-box {
+      margin: 2px 0 14px 0 !important;
+      padding: 10px 14px !important;
+    }
+
+    /* H1 TITLE 2-LINE FIT ON MOBILE */
+    }
+    
+    }
+
+    .main-layout-container {
+      padding-top: 16px !important;
+      margin-top: 0 !important;
+    }
+
+    /* UNIFORM SUBPAGE H1 TITLE SIZE ACROSS ALL PAGES */
+    .page-h1-header-block {
+      margin: 4px 0 8px 0 !important;
+      padding-bottom: 4px !important;
+      border-bottom: 1px solid rgba(227, 24, 55, 0.12) !important;
+    }
+    .page-h1-header-block .page-title,
+    .page-title {
+      font-size: 1.55rem !important;
+      line-height: 1.3 !important;
+      font-weight: 800 !important;
+      color: var(--color-primary, #0c192b) !important;
+      font-family: var(--font-heading, inherit) !important;
+      margin-bottom: 4px !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+    }
+    .page-h1-header-block .page-subtitle {
+      font-size: 0.88rem !important;
+      line-height: 1.35 !important;
+      color: var(--color-text-muted, #64748b) !important;
+      margin-bottom: 0 !important;
+    }
+    @media (max-width: 768px) {
+      .page-h1-header-block .page-title,
+      .page-title {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 4px !important;
+      }
+      .page-h1-header-block .page-subtitle {
+        font-size: 0.82rem !important;
+        line-height: 1.35 !important;
+      }
+    }
+    
+  
+    /* REAL PROPER TABLE STYLING FOR ALL SUBPAGES */
+    .table-responsive {
+      width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      margin: 20px 0 !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+
+    table.table-domain-theme {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      background: #ffffff !important;
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      border: none !important;
+      margin: 0 !important;
+      display: table !important;
+    }
+
+    table.table-domain-theme thead {
+      display: table-header-group !important;
+      background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+    }
+
+    table.table-domain-theme thead tr {
+      display: table-row !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    table.table-domain-theme thead th {
+      display: table-cell !important;
+      padding: 12px 16px !important;
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      text-align: left !important;
+      border-bottom: 2px solid var(--color-accent, #e31837) !important;
+      white-space: nowrap !important;
+      letter-spacing: 0.3px !important;
+      background: transparent !important;
+    }
+
+    table.table-domain-theme tbody {
+      display: table-row-group !important;
+      width: 100% !important;
+    }
+
+    table.table-domain-theme tbody tr {
+      display: table-row !important;
+      width: 100% !important;
+      background: #ffffff !important;
+      border: none !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      transition: background-color 0.15s ease !important;
+    }
+
+    table.table-domain-theme tbody tr:nth-child(even) {
+      background-color: #f8fafc !important;
+    }
+
+    table.table-domain-theme tbody tr:hover {
+      background-color: #f1f5f9 !important;
+    }
+
+    table.table-domain-theme tbody td {
+      display: table-cell !important;
+      padding: 12px 16px !important;
+      font-size: 0.9rem !important;
+      line-height: 1.5 !important;
+      color: var(--color-text-dark, #334155) !important;
+      vertical-align: middle !important;
+      border: none !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      text-align: left !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
+      background: transparent !important;
+    }
+
+    table.table-domain-theme tbody td:last-child {
+      border-bottom: 1px solid #e2e8f0 !important;
+    }
+
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.85rem !important;
+    }
+    
+  
+    /* 1. DESKTOP VIEW (>= 769px): REAL GRID TABLES WITH DARK HEADER */
+    @media (min-width: 769px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important;
+        margin: 20px 0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+        border: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background: #ffffff !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        border: none !important;
+        margin: 0 !important;
+        display: table !important;
+      }
+
+      table.table-domain-theme thead {
+        display: table-header-group !important;
+        background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+      }
+
+      table.table-domain-theme thead tr {
+        display: table-row !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      table.table-domain-theme thead th {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        text-align: left !important;
+        border-bottom: 2px solid var(--color-accent, #e31837) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.3px !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: table-row-group !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: table-row !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme tbody tr:nth-child(even) {
+        background-color: #f8fafc !important;
+      }
+
+      table.table-domain-theme tbody tr:hover {
+        background-color: #f1f5f9 !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--color-text-dark, #334155) !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+      }
+    }
+
+    /* 2. MOBILE VIEW (<= 768px): 100% VISIBLE ZERO-SIDE-SCROLL STACKED CARDS */
+    @media (max-width: 768px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow: visible !important;
+        margin: 16px 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      table.table-domain-theme {
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      table.table-domain-theme thead {
+        display: none !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: block !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 14px !important;
+        padding: 12px 14px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.88rem !important;
+        line-height: 1.4 !important;
+        color: var(--color-text-dark, #334155) !important;
+        text-align: right !important;
+      }
+
+      table.table-domain-theme tbody tr td:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* First cell acts as Card Title Header */
+      table.table-domain-theme tbody tr td:first-child {
+        font-weight: 800 !important;
+        font-size: 0.95rem !important;
+        color: var(--color-primary, #0c192b) !important;
+        border-bottom: 2px solid rgba(227, 24, 55, 0.15) !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 6px !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+      }
+
+      /* Mobile Data Label Headers */
+      table.table-domain-theme tbody td[data-label]:not(:first-child)::before {
+        content: attr(data-label) !important;
+        font-weight: 700 !important;
+        color: #475569 !important;
+        font-size: 0.76rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        margin-right: 8px !important;
+        text-align: left !important;
+        flex-shrink: 0 !important;
+      }
+    }
+
+    /* COMMON PRICE HIGHLIGHT PILLS */
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.85rem !important;
+    }
+    
+  
+    /* UNIFIED SINGLE-CONTAINER TABLE CARDS FOR DESKTOP & MOBILE */
+    .table-responsive {
+      width: 100% !important;
+      overflow: hidden !important;
+      margin: 18px 0 !important;
+      border-radius: 12px !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+      background: #ffffff !important;
+      box-sizing: border-box !important;
+    }
+
+    table.table-domain-theme {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      background: #ffffff !important;
+      border: none !important;
+      margin: 0 !important;
+      display: table !important;
+      table-layout: auto !important;
+    }
+
+    table.table-domain-theme thead {
+      display: table-header-group !important;
+      background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+    }
+
+    table.table-domain-theme thead tr {
+      display: table-row !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    table.table-domain-theme thead th {
+      display: table-cell !important;
+      padding: 12px 14px !important;
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      text-align: left !important;
+      border-bottom: 2px solid var(--color-accent, #e31837) !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+      letter-spacing: 0.2px !important;
+    }
+
+    table.table-domain-theme tbody {
+      display: table-row-group !important;
+    }
+
+    table.table-domain-theme tbody tr {
+      display: table-row !important;
+      background: #ffffff !important;
+      border-bottom: 1px solid #f1f5f9 !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    table.table-domain-theme tbody tr:nth-child(even) {
+      background-color: #f8fafc !important;
+    }
+
+    table.table-domain-theme tbody tr:hover {
+      background-color: #f1f5f9 !important;
+    }
+
+    table.table-domain-theme tbody tr:last-child {
+      border-bottom: none !important;
+    }
+
+    table.table-domain-theme tbody td {
+      display: table-cell !important;
+      padding: 11px 14px !important;
+      font-size: 0.88rem !important;
+      line-height: 1.45 !important;
+      color: var(--color-text-dark, #334155) !important;
+      vertical-align: middle !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      text-align: left !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
+      background: transparent !important;
+    }
+
+    table.table-domain-theme tbody tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 3px 8px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.84rem !important;
+    }
+
+    @media (max-width: 768px) {
+      .table-responsive {
+        margin: 14px 0 !important;
+        border-radius: 10px !important;
+        overflow-x: auto !important;
+      }
+
+      table.table-domain-theme thead th {
+        padding: 9px 10px !important;
+        font-size: 0.80rem !important;
+      }
+
+      table.table-domain-theme tbody td {
+        padding: 9px 10px !important;
+        font-size: 0.82rem !important;
+      }
+    }
+    
+  
+    /* PERFECT RELIABLE FAQ ACCORDION DISPLAY & TOGGLE STYLING */
+    .subpage-faq-accordion,
+    .faq-accordion-list,
+    .faq-container {
+      width: 100% !important;
+      margin: 20px 0 !important;
+    }
+
+    .faq-item {
+      background-color: #ffffff !important;
+      border-radius: 12px !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+      overflow: hidden !important;
+      margin-bottom: 12px !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .faq-question {
+      width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 16px 20px !important;
+      background: transparent !important;
+      border: none !important;
+      outline: none !important;
+      cursor: pointer !important;
+      text-align: left !important;
+      font-family: var(--font-heading, inherit) !important;
+      font-weight: 700 !important;
+      font-size: 1.02rem !important;
+      color: var(--color-primary, #0c192b) !important;
+      line-height: 1.4 !important;
+      gap: 12px !important;
+      transition: color 0.2s ease !important;
+    }
+
+    .faq-question span {
+      flex: 1 !important;
+      text-align: left !important;
+    }
+
+    .faq-icon {
+      width: 20px !important;
+      height: 20px !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.3s ease, color 0.3s ease !important;
+      color: #64748b !important;
+    }
+
+    .faq-answer {
+      display: none !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      padding: 0 20px !important;
+      transition: all 0.3s ease !important;
+      background: #ffffff !important;
+    }
+
+    .faq-answer p {
+      margin: 0 !important;
+      padding: 14px 0 !important;
+      font-size: 0.94rem !important;
+      line-height: 1.65 !important;
+      color: #475569 !important;
+    }
+
+    /* ACTIVE STATE WHEN CLICKED */
+    .faq-item.active {
+      border-color: var(--color-accent, #e31837) !important;
+      box-shadow: 0 4px 16px rgba(227, 24, 55, 0.08) !important;
+    }
+
+    .faq-item.active .faq-question {
+      color: var(--color-accent, #e31837) !important;
+    }
+
+    .faq-item.active .faq-question .faq-icon,
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg) !important;
+      color: var(--color-accent, #e31837) !important;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block !important;
+      max-height: 2000px !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      padding: 0 20px 16px 20px !important;
+      border-top: 1px solid #f1f5f9 !important;
+    }
+    
+  
+    /* PERFECT MOBILE & DESKTOP TABLE VIEWING EXPERIENCE */
+    
+    /* 1. DESKTOP VIEW (>= 769px): REAL ELEGANT GRID TABLES */
+    @media (min-width: 769px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important;
+        margin: 20px 0 !important;
+        border-radius: 12px !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+        background: #ffffff !important;
+      }
+
+      table.table-domain-theme {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background: #ffffff !important;
+        border: none !important;
+        margin: 0 !important;
+        display: table !important;
+      }
+
+      table.table-domain-theme thead {
+        display: table-header-group !important;
+        background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+      }
+
+      table.table-domain-theme thead tr {
+        display: table-row !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme thead th {
+        display: table-cell !important;
+        padding: 13px 16px !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        text-align: left !important;
+        border-bottom: 2px solid var(--color-accent, #e31837) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.3px !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: table-row-group !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: table-row !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme tbody tr:nth-child(even) {
+        background-color: #f8fafc !important;
+      }
+
+      table.table-domain-theme tbody tr:hover {
+        background-color: #f1f5f9 !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--color-text-dark, #334155) !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* 2. MOBILE VIEW (<= 768px): ZERO SCROLL, SINGLE-LINE TEXT CELL CARDS */
+    @media (max-width: 768px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow: visible !important;
+        margin: 16px 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme {
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+
+      table.table-domain-theme thead {
+        display: none !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: block !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 14px !important;
+        padding: 10px 14px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.86rem !important;
+        line-height: 1.35 !important;
+        color: var(--color-text-dark, #334155) !important;
+        text-align: right !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+
+      table.table-domain-theme tbody tr td:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* First cell acts as Card Title Header on Mobile */
+      table.table-domain-theme tbody tr td:first-child {
+        font-weight: 800 !important;
+        font-size: 0.94rem !important;
+        color: var(--color-primary, #0c192b) !important;
+        border-bottom: 2px solid rgba(227, 24, 55, 0.15) !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 6px !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+        white-space: nowrap !important;
+      }
+
+      /* Mobile Data Label Headers */
+      table.table-domain-theme tbody td[data-label]:not(:first-child)::before {
+        content: attr(data-label) !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        font-size: 0.74rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        margin-right: 12px !important;
+        text-align: left !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* COMMON PRICE HIGHLIGHT PILLS */
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 3px 8px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.84rem !important;
+      white-space: nowrap !important;
+    }
+    
+  
+    /* PERFECT NO-TRUNCATION MOBILE & DESKTOP TABLE VIEWING EXPERIENCE */
+    
+    /* 1. DESKTOP VIEW (>= 769px): REAL ELEGANT GRID TABLES WITH DARK HEADER */
+    @media (min-width: 769px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important;
+        margin: 20px 0 !important;
+        border-radius: 12px !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+        background: #ffffff !important;
+      }
+
+      table.table-domain-theme {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        background: #ffffff !important;
+        border: none !important;
+        margin: 0 !important;
+        display: table !important;
+      }
+
+      table.table-domain-theme thead {
+        display: table-header-group !important;
+        background: linear-gradient(135deg, #0c192b 0%, #1e293b 100%) !important;
+      }
+
+      table.table-domain-theme thead tr {
+        display: table-row !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme thead th {
+        display: table-cell !important;
+        padding: 13px 16px !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        text-align: left !important;
+        border-bottom: 2px solid var(--color-accent, #e31837) !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.3px !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: table-row-group !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: table-row !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+
+      table.table-domain-theme tbody tr:nth-child(even) {
+        background-color: #f8fafc !important;
+      }
+
+      table.table-domain-theme tbody tr:hover {
+        background-color: #f1f5f9 !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: table-cell !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--color-text-dark, #334155) !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+    }
+
+    /* 2. MOBILE VIEW (<= 768px): ZERO TRUNCATION, FULL-TEXT RESPONSIVE CARDS */
+    @media (max-width: 768px) {
+      .table-responsive {
+        width: 100% !important;
+        overflow: visible !important;
+        margin: 16px 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+      table.table-domain-theme {
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+
+      table.table-domain-theme thead {
+        display: none !important;
+      }
+
+      table.table-domain-theme tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      table.table-domain-theme tbody tr {
+        display: block !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 14px !important;
+        padding: 12px 14px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
+
+      table.table-domain-theme tbody td {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px dashed #e2e8f0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        color: var(--color-text-dark, #334155) !important;
+        text-align: left !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+      }
+
+      table.table-domain-theme tbody tr td:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* First cell acts as Card Title Header on Mobile */
+      table.table-domain-theme tbody tr td:first-child {
+        font-weight: 800 !important;
+        font-size: 0.96rem !important;
+        color: var(--color-primary, #0c192b) !important;
+        border-bottom: 2px solid rgba(227, 24, 55, 0.15) !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 6px !important;
+        text-align: left !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        white-space: normal !important;
+      }
+
+      /* Hide label on first cell title */
+      table.table-domain-theme tbody tr td:first-child::before {
+        display: none !important;
+      }
+
+      /* Mobile Data Label Headers above content */
+      table.table-domain-theme tbody td[data-label]:not(:first-child)::before {
+        content: attr(data-label) !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        font-size: 0.74rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        margin-bottom: 4px !important;
+        text-align: left !important;
+        display: block !important;
+        width: 100% !important;
+      }
+    }
+
+    /* COMMON PRICE HIGHLIGHT PILLS */
+    table.table-domain-theme .price-highlight-pill {
+      background-color: rgba(227, 24, 55, 0.08) !important;
+      color: var(--color-accent, #e31837) !important;
+      font-weight: 700 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      display: inline-block !important;
+      font-size: 0.84rem !important;
+      white-space: normal !important;
+      word-break: normal !important;
+    }
+
+      .single-hero-image-wrapper img,
+      .subpage-hero-banner img,
+      .page-hero-banner-box img,
+      .page-header-banner img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        display: block !important;
+      }
+    }
+    
+  
+    
+    .single-hero-image-wrapper img,
+    .subpage-hero-banner img,
+    .page-hero-banner-box img,
+    .page-header-banner img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      display: block !important;
+    }
+    
+  
+    
+    .single-hero-image-wrapper,
+    .subpage-hero-banner,
+    .page-hero-banner-box {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      max-height: none !important;
+      overflow: hidden !important;
+      border-radius: 12px !important;
+      position: relative !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      margin: 0 0 16px 0 !important;
+      padding: 8px !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+      box-sizing: border-box !important;
+    }
+
+    .single-hero-image-wrapper img,
+    .subpage-hero-banner img,
+    .page-hero-banner-box img,
+    .page-header-banner img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      display: block !important;
+      border-radius: 8px !important;
+    }
+
+    .single-hero-image-wrapper,
+    .subpage-hero-banner,
+    .page-hero-banner-box {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      max-height: none !important;
+      overflow: hidden !important;
+      border-radius: 12px !important;
+      position: relative !important;
+      background: transparent !important;
+      margin: 0 0 14px 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .single-hero-image-wrapper img,
+    .subpage-hero-banner img,
+    .page-hero-banner-box img,
+    .page-header-banner img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      display: block !important;
+      border-radius: 12px !important;
+    }
+
+    
+    .single-hero-image-wrapper img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+    }
+    
+  
+    /* SURGICAL HEADER OFFSET FIX FOR DESKTOP VIEW */
+    @media (min-width: 769px) {
+      .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 10000 !important;
+      }
+
+      /* First element immediately following the header */
+      .main-layout-container {
+        padding-top: 72px !important;
+        margin-top: 0 !important;
+      }
+
+      .single-hero-image-wrapper {
+        margin-top: 0 !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 10000 !important;
+      }
+
+      .main-layout-container {
+        padding-top: 16px !important;
+        margin-top: 0 !important;
+      }
+    }
+    
+  
+    /* SURGICAL DESKTOP HEADER OFFSET & CANONICAL HERO BANNER FIX */
+    @media (min-width: 769px) {
+      .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 10000 !important;
+      }
+
+      .main-layout-container {
+        padding-top: 72px !important;
+        margin-top: 0 !important;
+      }
+
+      .single-hero-image-wrapper {
+        margin-top: 0 !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 10000 !important;
+      }
+
+      .main-layout-container {
+        padding-top: 16px !important;
+        margin-top: 0 !important;
+      }
+    }
+
+    /* DESKTOP PANORAMIC HERO BANNER MATCHING PRICING PAGE (~340px MAX HEIGHT) */
+    @media (min-width: 769px) {
+      .single-hero-image-wrapper,
+      .subpage-hero-banner,
+      .page-hero-banner-box {
+        width: 100% !important;
+        max-height: 340px !important;
+        aspect-ratio: 1024 / 340 !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+        margin: 26px 0 14px 0 !important;
+        position: relative !important;
+      }
+
+      .single-hero-image-wrapper img,
+      .subpage-hero-banner img,
+      .page-hero-banner-box img,
+      .page-header-banner img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        display: block !important;
+      }
+    }
+    
+  
+    /* SUBPAGE BULLET LIST TEXT ALIGNMENT FIX */
+    article ul,
+    .content-block ul,
+    ul.seo-rich-paragraph,
+    ul.seo-bullet-list,
+    .seo-feature-list {
+      padding-left: 1.5rem !important;
+      margin-left: 0 !important;
+      margin-bottom: 1.25rem !important;
+      list-style-position: outside !important;
+    }
+
+    article ul li,
+    .content-block ul li,
+    ul.seo-rich-paragraph li,
+    ul.seo-bullet-list li {
+      margin-bottom: 10px !important;
+      line-height: 1.65 !important;
+      color: var(--color-text-dark, #334155) !important;
+      padding-left: 4px !important;
+    }
+    
+  
+    /* NUMBERED ORDERED LIST (OL) ALIGNMENT FIX */
+    article ol,
+    .content-block ol,
+    ol.seo-rich-paragraph,
+    ol.seo-step-list,
+    .seo-step-list {
+      padding-left: 1.5rem !important;
+      margin-left: 0 !important;
+      margin-bottom: 1.25rem !important;
+      list-style-position: outside !important;
+    }
+
+    article ol li,
+    .content-block ol li,
+    ol.seo-rich-paragraph li,
+    ol.seo-step-list li {
+      margin-bottom: 10px !important;
+      line-height: 1.65 !important;
+      color: var(--color-text-dark, #334155) !important;
+      padding-left: 4px !important;
+    }
+    
+  
+    /* CLEAN FAQ ACCORDION STYLING - HIDE BROWSER DETAILS MARKERS */
+    details summary::-webkit-details-marker,
+    summary::-webkit-details-marker {
+      display: none !important;
+    }
+
+    details summary::marker,
+    summary::marker {
+      display: none !important;
+      font-size: 0 !important;
+      content: "" !important;
+    }
+
+    summary.faq-question,
+    .faq-question {
+      list-style: none !important;
+      list-style-type: none !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 12px 16px !important;
+      font-weight: 600 !important;
+      color: #0c192b !important;
+      background: #ffffff !important;
+      border-radius: 8px !important;
+      border: 1px solid #e2e8f0 !important;
+      transition: all 0.2s ease !important;
+      margin-bottom: 8px !important;
+    }
+
+    summary.faq-question:hover,
+    .faq-question:hover {
+      background: #f8fafc !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    .subpage-faq-accordion details[open] summary.faq-question {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      background: #fcf9f4 !important;
+      border-color: #e31837 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .subpage-faq-accordion .faq-answer,
+    .faq-answer {
+      padding: 14px 18px !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-top: none !important;
+      border-bottom-left-radius: 8px !important;
+      border-bottom-right-radius: 8px !important;
+      color: #334155 !important;
+      line-height: 1.6 !important;
+      margin-bottom: 10px !important;
+    }
+    
+  
+    
+    .faq-container .faq-item.active {
+      border-color: var(--color-accent, #e31837) !important;
+      box-shadow: 0 4px 14px rgba(227, 24, 55, 0.12) !important;
+    }
+
+    .faq-container .faq-question {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 16px 20px !important;
+      font-weight: 600 !important;
+      font-size: 0.98rem !important;
+      color: #0c192b !important;
+      background: #ffffff !important;
+      border: none !important;
+      text-align: left !important;
+      cursor: pointer !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .faq-container .faq-question:hover {
+      background: #f8fafc !important;
+    }
+
+    .faq-container .faq-icon {
+      transition: transform 0.3s ease !important;
+      color: #64748b !important;
+      flex-shrink: 0 !important;
+    }
+
+    .faq-container .faq-item.active .faq-icon {
+      transform: rotate(180deg) !important;
+      color: var(--color-accent, #e31837) !important;
+    }
+
+    .faq-container .faq-answer {
+      display: none;
+      padding: 14px 20px 18px 20px !important;
+      background: #ffffff !important;
+      border-top: 1px solid #f1f5f9 !important;
+      color: #334155 !important;
+      line-height: 1.65 !important;
+      font-size: 0.92rem !important;
+    }
+
+    .faq-container .faq-item.active .faq-answer {
+      display: block !important;
+    }
+    
+  
+    
+    .faq-container .faq-item.active {
+      border-color: var(--color-accent, #E31837) !important;
+      background-color: #FCF9F4 !important;
+      box-shadow: 0 4px 14px rgba(227, 24, 55, 0.08) !important;
+    }
+
+    .faq-container .faq-question {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 16px 22px !important;
+      font-weight: 700 !important;
+      font-size: 0.98rem !important;
+      color: #0C192B !important;
+      background: #FCF9F4 !important;
+      border: none !important;
+      text-align: left !important;
+      cursor: pointer !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .faq-container .faq-question:hover {
+      background: #F7F1E5 !important;
+    }
+
+    .faq-container .faq-plus-icon {
+      font-size: 1.35rem !important;
+      font-weight: 400 !important;
+      color: #0C192B !important;
+      transition: transform 0.3s ease, color 0.3s ease !important;
+      line-height: 1 !important;
+      flex-shrink: 0 !important;
+      margin-left: 12px !important;
+    }
+
+    .faq-container .faq-item.active .faq-plus-icon {
+      transform: rotate(45deg) !important;
+      color: var(--color-accent, #E31837) !important;
+    }
+
+    .faq-container .faq-answer {
+      display: none;
+      padding: 16px 22px 20px 22px !important;
+      background: #FCF9F4 !important;
+      border-top: 1px solid #E4DBCF !important;
+      color: #334155 !important;
+      line-height: 1.65 !important;
+      font-size: 0.92rem !important;
+    }
+
+    .faq-container .faq-item.active .faq-answer {
+      display: block !important;
+    }
+    
+  
+    /* EXACT REPRODUCTION OF IMAGE 2 SLIM WHITE FAQ CARD DESIGN */
+    .faq-container .faq-item {
+      background-color: #ffffff !important;
+      border-radius: 8px !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+      overflow: hidden !important;
+      margin-bottom: 10px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .faq-container .faq-item.active {
+      border-color: var(--color-accent, #e31837) !important;
+      background-color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(227, 24, 55, 0.08) !important;
+    }
+
+    .faq-container .faq-question {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 12px 20px !important;
+      font-weight: 700 !important;
+      font-size: 0.95rem !important;
+      color: #0c192b !important;
+      background: #ffffff !important;
+      border: none !important;
+      text-align: left !important;
+      cursor: pointer !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .faq-container .faq-question:hover {
+      background: #f8fafc !important;
+    }
+
+    .faq-container .faq-plus-icon {
+      font-size: 1.25rem !important;
+      font-weight: 300 !important;
+      color: #64748b !important;
+      transition: transform 0.3s ease, color 0.3s ease !important;
+      line-height: 1 !important;
+      flex-shrink: 0 !important;
+      margin-left: 12px !important;
+    }
+
+    .faq-container .faq-item.active .faq-plus-icon {
+      transform: rotate(45deg) !important;
+      color: var(--color-accent, #e31837) !important;
+    }
+
+    .faq-container .faq-answer {
+      display: none;
+      padding: 14px 20px 18px 20px !important;
+      background: #ffffff !important;
+      border-top: 1px solid #f1f5f9 !important;
+      color: #334155 !important;
+      line-height: 1.65 !important;
+      font-size: 0.92rem !important;
+    }
+
+    .faq-container .faq-item.active .faq-answer {
+      display: block !important;
+    }
+    
+  
+
+.faq-item {
+  background-color: #ffffff !important;
+  border-radius: 18px !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.faq-item:hover {
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+.faq-item.active {
+  border-color: var(--color-accent, #E31837) !important;
+  box-shadow: 0 4px 16px rgba(227, 24, 55, 0.1) !important;
+}
+
+.faq-question {
+  width: 100% !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 20px 24px !important;
+  font-weight: 700 !important;
+  font-size: 0.98rem !important;
+  color: #0C192B !important;
+  background: #ffffff !important;
+  border: none !important;
+  text-align: left !important;
+  outline: none !important;
+  margin: 0 !important;
+}
+
+.faq-question:hover {
+  background: #F8FAFC !important;
+}
+
+.faq-icon,
+.faq-plus-icon {
+  font-size: 1.4rem !important;
+  font-weight: 300 !important;
+  color: #64748B !important;
+  transition: transform 0.35s ease, color 0.35s ease !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  margin-left: 16px !important;
+}
+
+.faq-item.active .faq-icon,
+.faq-item.active .faq-plus-icon {
+  transform: rotate(45deg) !important;
+  color: var(--color-accent, #E31837) !important;
+}
+
+.faq-answer {
+  overflow: hidden !important;
+  max-height: 0;
+  transition: max-height 0.35s ease !important;
+  background: #ffffff !important;
+}
+
+.faq-answer-content,
+.faq-answer p {
+  padding: 0 24px 20px 24px !important;
+  border-top: 1px solid #F1F5F9 !important;
+  padding-top: 16px !important;
+  color: #334155 !important;
+  line-height: 1.65 !important;
+  font-size: 0.92rem !important;
+  margin: 0 !important;
+}
+
+  
+    
+    .faq-item {
+      width: 100% !important;
+      max-width: 100% !important;
+      background-color: #ffffff !important;
+      border-radius: 8px !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+      overflow: hidden !important;
+      margin-bottom: 10px !important;
+      box-sizing: border-box !important;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .faq-item:hover {
+      border-color: #cbd5e1 !important;
+    }
+
+    .faq-item.active {
+      border-color: var(--color-accent, #e31837) !important;
+      box-shadow: 0 4px 12px rgba(227, 24, 55, 0.08) !important;
+    }
+
+    .faq-question {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 14px 20px !important;
+      font-weight: 700 !important;
+      font-size: 0.95rem !important;
+      color: #0c192b !important;
+      background: #ffffff !important;
+      border: none !important;
+      text-align: left !important;
+      cursor: pointer !important;
+      outline: none !important;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc !important;
+    }
+
+    .faq-plus-icon {
+      font-size: 1.35rem !important;
+      font-weight: 400 !important;
+      color: #64748b !important;
+      transition: transform 0.3s ease, color 0.3s ease !important;
+      line-height: 1 !important;
+      flex-shrink: 0 !important;
+      margin-left: auto !important;
+    }
+
+    .faq-item.active .faq-plus-icon {
+      transform: rotate(45deg) !important;
+      color: var(--color-accent, #e31837) !important;
+    }
+
+    /* GUARANTEED OPEN ANSWER DISPLAY ON CLICK */
+    .faq-answer {
+      display: none;
+      padding: 16px 20px 20px 20px !important;
+      background: #ffffff !important;
+      border-top: 1px solid #f1f5f9 !important;
+      color: #334155 !important;
+      line-height: 1.65 !important;
+      font-size: 0.92rem !important;
+      box-sizing: border-box !important;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block !important;
+      max-height: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+  
+
+.faq-item {
+  width: 100% !important;
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  overflow: hidden !important;
+  margin-bottom: 10px !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.faq-item:hover {
+  border-color: #cbd5e1 !important;
+}
+
+.faq-item.active {
+  border-color: var(--color-accent, #e31837) !important;
+  box-shadow: 0 4px 12px rgba(227, 24, 55, 0.08) !important;
+}
+
+.faq-question {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 14px 20px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  color: #0c192b !important;
+  background: #ffffff !important;
+  border: none !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+.faq-question:hover {
+  background: #f8fafc !important;
+}
+
+.faq-plus-icon {
+  font-size: 1.35rem !important;
+  font-weight: 400 !important;
+  color: #64748b !important;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+.faq-item.active .faq-plus-icon {
+  transform: rotate(45deg) !important;
+  color: var(--color-accent, #e31837) !important;
+}
+
+/* FAQ ANSWER DISPLAY: MUST BE DISPLAY: BLOCK WITH MAX-HEIGHT: 0 FOR SCROLLHEIGHT ANIMATION TO WORK */
+.faq-answer {
+  display: block !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  padding: 0 20px !important;
+  transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease !important;
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+.faq-item.active .faq-answer {
+  display: block !important;
+  max-height: 1000px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  padding: 14px 20px 20px 20px !important;
+  border-top: 1px solid #f1f5f9 !important;
+}
+
+  
+/* CANONICAL UNIVERSAL FAQ STYLING FOR ALL PAGES */
+.faq-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin: 20px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.faq-item {
+  width: 100% !important;
+  max-width: 100% !important;
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  overflow: hidden !important;
+  margin-bottom: 10px !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.faq-item:hover {
+  border-color: #cbd5e1 !important;
+}
+
+.faq-item.active {
+  border-color: var(--color-accent, #e31837) !important;
+  box-shadow: 0 4px 12px rgba(227, 24, 55, 0.08) !important;
+}
+
+.faq-question {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 14px 20px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  color: #0c192b !important;
+  background: #ffffff !important;
+  border: none !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+.faq-question:hover {
+  background: #f8fafc !important;
+}
+
+.faq-plus-icon, .faq-icon {
+  font-size: 1.35rem !important;
+  font-weight: 400 !important;
+  color: #64748b !important;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+.faq-item.active .faq-plus-icon,
+.faq-item.active .faq-icon {
+  transform: rotate(45deg) !important;
+  color: var(--color-accent, #e31837) !important;
+}
+
+.faq-answer {
+  display: none;
+  padding: 16px 20px 20px 20px !important;
+  background: #ffffff !important;
+  border-top: 1px solid #f1f5f9 !important;
+  color: #334155 !important;
+  line-height: 1.65 !important;
+  font-size: 0.92rem !important;
+  box-sizing: border-box !important;
+}
+
+.faq-item.active .faq-answer {
+  display: block !important;
+}
+
   </style>
 
   <!-- Dynamic Header Offset Calculation Script -->
@@ -708,7 +2171,7 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area)."
-      }
+
     },
     {
       "@type": "Question",
@@ -716,7 +2179,7 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*."
-      }
+
     },
     {
       "@type": "Question",
@@ -724,7 +2187,7 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations."
-      }
+
     },
     {
       "@type": "Question",
@@ -732,7 +2195,7 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "All current figures are pre-launch, indicative prices marked with an asterisk. They are subject to change based on floor, tower, and final rates set at RERA registration."
-      }
+
     },
     {
       "@type": "Question",
@@ -740,250 +2203,39 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Not yet — RERA registration is currently listed as 'Coming Soon.' Buyers should verify registration status directly on the UP RERA portal before booking."
-      }
-    }
+
+
   ]
-}
+
 </script>
 
-  <style>
-    /* Domain Theme Typography Scale */
-    .page-h1-header-block .page-title {
-      font-size: 2.1rem !important; /* 34px bold */
-      font-weight: 800 !important;
-      color: var(--color-primary);
-      line-height: 1.25;
-      margin-bottom: 6px;
-    }
-    .content-subheading-lg {
-      font-size: 1.5rem !important; /* 24px semibold */
-      font-weight: 700 !important;
-      color: var(--color-primary);
-      margin: 32px 0 14px 0 !important;
-      padding-bottom: 6px;
-      border-bottom: 2px solid rgba(227, 24, 55, 0.15);
-    }
-    .seo-rich-paragraph {
-      font-size: 1.02rem !important; /* 16-17px regular */
-      line-height: 1.65 !important;
-      color: var(--color-text-dark) !important;
-      margin-bottom: 14px !important;
-    }
 
-    /* Secondary Disclaimers / Asterisked Notes (14px muted gray) */
-    .secondary-disclaimer-note {
-      font-size: 0.88rem !important; /* 14px */
-      color: #64748b !important;
-      background: #f8fafc;
-      border-left: 3px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 10px 14px;
-      margin: 12px 0 20px 0;
-      font-style: italic;
-      line-height: 1.5;
+  <!-- Subpage Mobile Menu Toggle Function -->
+  <script>
+    function toggleSubpageMobileMenu(btn) {
+      var nav = document.getElementById('navbar');
+      if (nav) {
+        nav.classList.toggle('active');
+      }
+      if (btn) {
+        btn.classList.toggle('active');
+      }
     }
-
-    /* DOMAIN THEME TABLES (Matches style-v19.css design tokens) */
-    .table-domain-theme {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      border-radius: var(--radius-medium);
-      overflow: hidden;
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-sm);
-      margin: 18px 0;
-      background-color: #FFFFFF;
-    }
-    .table-domain-theme th {
-      background-color: var(--color-primary);
-      color: #FFFFFF;
-      font-family: var(--font-heading);
-      font-size: 0.92rem;
-      font-weight: 700;
-      padding: 14px 18px;
-      text-align: left;
-    }
-    .table-domain-theme td {
-      padding: 13px 18px;
-      border-bottom: 1px solid var(--color-border);
-      font-size: 0.92rem;
-      color: var(--color-text-dark);
-    }
-    .table-domain-theme tr:last-child td {
-      border-bottom: none;
-    }
-    .table-domain-theme tr:nth-child(even) td {
-      background-color: #FCF9F4;
-    }
-
-    /* PRIMARY FEATURED PRICE LIST TABLE (Domain Accent Border) */
-    .table-featured-price {
-      border: 2px solid var(--color-accent) !important;
-      box-shadow: 0 8px 24px rgba(194, 34, 41, 0.12) !important;
-    }
-    .price-highlight-pill {
-      background: rgba(194, 34, 41, 0.1);
-      color: var(--color-accent);
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 4px 12px;
-      border-radius: 20px;
-      display: inline-block;
-    }
-
-    /* TOP CTA CARD BELOW PRICE TABLE */
-    .top-price-cta-card {
-      background: linear-gradient(135deg, rgba(12, 25, 43, 0.04) 0%, rgba(227, 24, 55, 0.06) 100%);
-      border: 1px dashed var(--color-accent);
-      border-radius: 12px;
-      padding: 14px 18px;
-      margin: 16px 0 24px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .top-price-cta-card strong {
-      color: var(--color-primary);
-      font-size: 1.02rem;
-      display: block;
-      margin-bottom: 2px;
-    }
-    .top-price-cta-card p {
-      color: var(--color-text-muted);
-      font-size: 0.86rem;
-      margin: 0;
-    }
-
-    /* CHECKLIST STATUS BADGES */
-    .status-badge {
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .status-included {
-      background: #dcfce7;
-      color: #15803d;
-    }
-    .status-excluded {
-      background: #f1f5f9;
-      color: #64748b;
-    }
-    .status-varies {
-      background: #fef3c7;
-      color: #b45309;
-    }
-
-    /* MARKET COMPARISON TABLE (HERO BRAND COLUMN) */
-    .table-market-comparison th.col-hero-brand {
-      background-color: var(--color-accent) !important;
-      color: #ffffff;
-      font-weight: 700;
-    }
-    .table-market-comparison td.col-hero-brand {
-      background-color: rgba(194, 34, 41, 0.04) !important;
-      font-weight: 600;
-      border-left: 1px solid rgba(194, 34, 41, 0.15);
-      border-right: 1px solid rgba(194, 34, 41, 0.15);
-    }
-
-    /* LIST STYLING FOR BULLETS & STEPS */
-    .seo-feature-list, .seo-step-list {
-      padding-left: 20px;
-      margin-bottom: 16px;
-    }
-    .seo-feature-list li, .seo-step-list li {
-      font-size: 0.98rem;
-      line-height: 1.65;
-      color: var(--color-text-dark);
-      margin-bottom: 8px;
-    }
-
-    /* COLLAPSIBLE ACCORDION FAQ STYLES */
-    details.faq-accordion-item {
-      background: #ffffff;
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      margin-bottom: 8px;
-      overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    details.faq-accordion-item[open] {
-      border-color: var(--color-accent);
-      box-shadow: 0 4px 12px rgba(194, 34, 41, 0.08);
-    }
-    details.faq-accordion-item summary {
-      padding: 12px 16px;
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-      user-select: none;
-    }
-    details.faq-accordion-item summary::-webkit-details-marker {
-      display: none;
-    }
-    details.faq-accordion-item summary span {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    details.faq-accordion-item summary::after {
-      content: '+';
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      transition: transform 0.2s ease;
-    }
-    details.faq-accordion-item[open] summary::after {
-      content: '−';
-    }
-    details.faq-accordion-item .faq-answer {
-      padding: 0 16px 14px 16px;
-      font-size: 0.94rem;
-      line-height: 1.6;
-      color: var(--color-text-dark);
-      border-top: 1px solid var(--color-border);
-      margin-top: 2px;
-    }
-    .faq-icon {
-      width: 16px;
-      height: 16px;
-      color: var(--color-accent);
-      flex-shrink: 0;
-    }
-  </style>
+  </script>
 
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-announcement">
-    <div class="container announcement-content">
-      <span class="badge badge-accent">Pre-Launch Advantage</span>
-      <span class="announcement-text">Book Early &amp; Secure Pre-Launch Pricing at Hero Homes Greater Noida!</span>
-      <a href="tel:+919686897597" class="announcement-phone"><i data-lucide="phone"></i> +91 96868 97597</a>
-    </div>
-  </div>
+  
 
   <!-- Header -->
-  <header class="site-header sticky-header">
+  <header id="main-header" class="site-header sticky-header">
     <div class="container header-container">
       <div class="logo">
         <a href="index.html" class="logo-link">
           <img src="images/logo.webp" alt="Hero Homes Logo" class="logo-img" width="170" height="63">
         </a>
-        <span class="location-badge">Greater Noida</span>
+        
       </div>
       
       <nav id="navbar" class="site-navigation">
@@ -993,7 +2245,7 @@
           <li><a href="floor-plans.html" class="nav-link">Floor Plans</a></li>
           <li><a href="amenities.html" class="nav-link">Amenities</a></li>
           <li><a href="location.html" class="nav-link">Location</a></li>
-          <li><a href="developer.html" class="nav-link">Developer</a></li>
+          <li><a href="blogs.html" class="nav-link">Blogs</a></li>
           <li><a href="faqs.html" class="nav-link">FAQs</a></li>
         </ul>
       </nav>
@@ -1007,7 +2259,7 @@
         </button>
       </div>
 
-      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle menu">
+      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle menu" onclick="toggleSubpageMobileMenu(this)">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -1022,8 +2274,8 @@
 
         <!-- Single Hero Image Section -->
         <div class="single-hero-image-wrapper">
-          <img src="images/hero_homes_pricing_banner.webp" alt="Hero Homes Greater Noida Premium Living Prime Location Banner" loading="eager" fetchpriority="high">
-          <span class="single-hero-caption">Hero Homes Greater Noida – Premium Living & Prime Location in Sector MU</span>
+          <img class = "image-cover" src="images/hero-banner-pricing.webp" alt="Hero Homes Greater Noida Premium Living Prime Location Banner" loading="eager" fetchpriority="high">
+          
         </div>
 
         <!-- H1 Header Block Below Hero Image -->
@@ -1067,19 +2319,34 @@
           <td data-label="Configuration"><strong>3 BHK + 2 Toilets</strong></td>
           <td data-label="Super Built-up Area">1,650 sq. ft.</td>
           <td data-label="Carpet Area">1,180 sq. ft.</td>
-          <td data-label="Starting Price*"><span class="price-highlight-pill">₹2.22 Cr*</span></td>
+          <td data-label="Starting Price*">
+            <div style="display: inline-flex; align-items: center; gap: 8px; flex-wrap: nowrap; justify-content: flex-end;">
+              <span class="price-highlight-pill">₹2.22 Cr*</span>
+              <button class="btn btn-primary btn-sm" style="background-color: #E31837 !important; color: #ffffff !important; border: none !important; padding: 5px 12px; font-size: 0.8rem; white-space: nowrap; font-weight: 600;" onclick="openEnquiryModal('3 BHK 1650 sqft Price Quote')"><i data-lucide="phone-call"></i> Get Quote</button>
+            </div>
+          </td>
         </tr>
         <tr>
           <td data-label="Configuration"><strong>3 BHK + 3 Toilets</strong></td>
           <td data-label="Super Built-up Area">1,900 sq. ft.</td>
           <td data-label="Carpet Area">1,360 sq. ft.</td>
-          <td data-label="Starting Price*"><span class="price-highlight-pill">₹2.56 Cr*</span></td>
+          <td data-label="Starting Price*">
+            <div style="display: inline-flex; align-items: center; gap: 8px; flex-wrap: nowrap; justify-content: flex-end;">
+              <span class="price-highlight-pill">₹2.56 Cr*</span>
+              <button class="btn btn-primary btn-sm" style="background-color: #E31837 !important; color: #ffffff !important; border: none !important; padding: 5px 12px; font-size: 0.8rem; white-space: nowrap; font-weight: 600;" onclick="openEnquiryModal('3 BHK 1900 sqft Price Quote')"><i data-lucide="phone-call"></i> Get Quote</button>
+            </div>
+          </td>
         </tr>
         <tr>
           <td data-label="Configuration"><strong>3 BHK + Servant Room</strong></td>
           <td data-label="Super Built-up Area">2,200 sq. ft.</td>
           <td data-label="Carpet Area">1,580 sq. ft.</td>
-          <td data-label="Starting Price*"><span class="price-highlight-pill">₹2.97 Cr*</span></td>
+          <td data-label="Starting Price*">
+            <div style="display: inline-flex; align-items: center; gap: 8px; flex-wrap: nowrap; justify-content: flex-end;">
+              <span class="price-highlight-pill">₹2.97 Cr*</span>
+              <button class="btn btn-primary btn-sm" style="background-color: #E31837 !important; color: #ffffff !important; border: none !important; padding: 5px 12px; font-size: 0.8rem; white-space: nowrap; font-weight: 600;" onclick="openEnquiryModal('3 BHK 2200 sqft Price Quote')"><i data-lucide="phone-call"></i> Get Quote</button>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -1357,97 +2624,163 @@
     <li><strong>Price trajectory:</strong> Pre-launch prices are typically a project's lowest; expect Hero Homes Greater Noida price figures to rise as RERA registration and construction milestones are completed.</li>
     <li><strong>Always verify independently:</strong> Cross-check current pricing, RERA registration number, and payment terms with Hero Realty's official sales channel before making any payment.</li>
   </ul>
+  <!-- 30 NORMAL TEXT FAQS (NO BUTTONS, NO ACCORDIONS) -->
+  <div class="pricing-faq-text-wrapper my-5">
+    <h2 class="content-subheading-lg mb-4">Frequently Asked Questions About Hero Homes Pricing</h2>
+    <div class="faq-text-list mt-4">
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">1. What is the starting price for apartments at Hero Homes Greater Noida?</h3>
+      <p class="seo-rich-paragraph">The starting price for Hero Homes Greater Noida is ₹2.22 Cr* for a 1,650 sq. ft. 3 BHK + 2 Toilets luxury residence. Pricing scales up to ₹2.97 Cr* for the flagship 2,200 sq. ft. 3 BHK + Servant Room configuration.</p>
+    </div>
 
-  <!-- COLLAPSIBLE FAQ ACCORDION SECTION FOR ALL 12 Q&AS -->
-  <h2 class="content-subheading-lg">Frequently Asked Questions About Hero Homes Sector MU Pricing</h2>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">2. What is the price of a 3 BHK + 2 Toilets (1,650 sq. ft.) apartment?</h3>
+      <p class="seo-rich-paragraph">The 3 BHK + 2 Toilets apartment (1,650 sq. ft. super built-up area) starts at ₹2.22 Cr*. This configuration offers ~1,180 sq. ft. carpet area with wide running balconies.</p>
+    </div>
 
-  <div class="faq-accordion-container my-3">
-    
-    <details class="faq-accordion-item" open>
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the starting price of Hero Homes Greater Noida?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">The starting price is ₹2.22 Cr* for the 3 BHK + 2 Toilets configuration (1,650 sq. ft. super built-up area).</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">3. What is the price of a 3 BHK + 3 Toilets (1,900 sq. ft.) unit?</h3>
+      <p class="seo-rich-paragraph">The 3 BHK + 3 Toilets unit (1,900 sq. ft. super built-up area) is priced starting at ₹2.56 Cr*. It provides ~1,360 sq. ft. carpet area and attached en-suite bathrooms for all bedrooms.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the price of Hero Homes Sector MU for the largest configuration?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">The 3 BHK + Servant Room configuration (2,200 sq. ft.) starts from ₹2.97 Cr*.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">4. How much does a 3 BHK + Servant Room (2,200 sq. ft.) cost?</h3>
+      <p class="seo-rich-paragraph">The largest 3 BHK + Servant Room configuration (2,200 sq. ft. super built-up area) starts at ₹2.97 Cr*. It features ~1,580 sq. ft. carpet area and a separate domestic help suite with a private entry.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the Hero Homes Sector MU price per square foot?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">Approximately ₹13,500 per sq. ft.* on super built-up area, based on current pre-launch pricing across all configurations.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">5. What is the average price per square foot at Hero Homes Sector MU?</h3>
+      <p class="seo-rich-paragraph">The indicative pre-launch base price rate is approximately ₹13,500 per sq. ft.* calculated on super built-up area across all 3 BHK configurations.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Greater Noida pricing final or subject to change?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">All current figures are pre-launch, indicative prices marked with an asterisk. They are subject to change based on floor, tower, and final rates set at RERA registration.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">6. Are these prices final or subject to pre-launch revisions?</h3>
+      <p class="seo-rich-paragraph">All listed price figures are indicative pre-launch estimates. Final binding rates, floor rise charges, and view premiums will be confirmed upon formal RERA registration and launch.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is Hero Homes Sector MU RERA registered?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">Not yet — RERA registration is currently listed as "Coming Soon." Buyers should verify registration status directly on the UP RERA portal before booking.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">7. What GST rate is applicable on the booking price of Hero Homes Greater Noida?</h3>
+      <p class="seo-rich-paragraph">Goods and Services Tax (GST) for under-construction residential properties in this segment is applicable at 5% without Input Tax Credit (ITC).</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What configurations does Hero Homes Sector MU Greater Noida offer?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">Three 3 BHK configurations: 1,650 sq. ft. (2 toilets), 1,900 sq. ft. (3 toilets), and 2,200 sq. ft. (with servant room).</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">8. Are stamp duty and registration fees included in the starting price?</h3>
+      <p class="seo-rich-paragraph">No. Stamp duty (typically ~5-7% of property value) and government registration charges are extra and payable at the time of final registry execution upon possession.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Does the quoted Hero Homes Greater Noida price include GST and registration charges?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">No. GST, registration, and stamp duty are typically charged separately from the base unit price — confirm exact figures with the sales team.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">9. What Preferential Location Charges (PLC) apply to park-facing or corner units?</h3>
+      <p class="seo-rich-paragraph">Units facing central green parks, clubhouses, or higher floors carry Preferential Location Charges (PLC) ranging between ₹150 to ₹400 per sq. ft., depending on position and tower orientation.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> What is the possession timeline for Hero Homes Sector MU?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">Currently indicated as 2031 onwards, though this should be reconfirmed once RERA registration is complete.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">10. Are car parking space charges included in the base unit price?</h3>
+      <p class="seo-rich-paragraph">Covered basement car parking is offered either inclusive in pre-launch bundle packages or charged separately (typically ₹4 Lakhs to ₹5 Lakhs per bay depending on single or back-to-back stilt alignment).</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Are there payment plans available for Hero Homes Greater Noida?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">Yes — commonly a pre-launch/group booking discount, a construction-linked plan, or a down-payment plan. Exact terms should be confirmed with the sales team, as they change across launch phases.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">11. What are the Extra Development Charges (EDC) and Infrastructure Development Charges (IDC)?</h3>
+      <p class="seo-rich-paragraph">EDC and IDC are government-mandated levies collected by the developer for external infrastructure services. These are calculated on per sq. ft. basis as specified in the official price sheet.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> How does Hero Homes Sector MU pricing compare to other projects nearby?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">Hero Homes Sector MU is positioned at a premium within its micro-market, largely due to its low-density design (six units per floor), airport-proximate location, and extensive amenities — factors buyers should weigh against simpler, potentially lower-priced alternatives.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">12. What are the Interest-Free Maintenance Security (IFMS) deposit rates?</h3>
+      <p class="seo-rich-paragraph">IFMS is a one-time refundable security deposit collected at possession (typically ₹50 to ₹100 per sq. ft.) to establish the initial society maintenance corpus fund.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Can I get a home loan for Hero Homes Greater Noida?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">Yes, home loan financing is generally available through banks and NBFCs for under-construction properties like Hero Homes Sector MU, subject to your eligibility and the lender's assessment.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">13. How much is the initial booking amount required to block a unit?</h3>
+      <p class="seo-rich-paragraph">The expressions of interest (EOI) or token booking amount for Hero Homes Sector MU starts from ₹5 Lakhs to ₹10 Lakhs, payable via bank cheque or digital transfer.</p>
+    </div>
 
-    <details class="faq-accordion-item">
-      <summary><span><i data-lucide="help-circle" class="faq-icon"></i> Is now a good time to book at the current Hero Homes Sector MU price?</span></summary>
-      <div class="faq-answer">
-        <p class="mb-0">That depends on your own risk tolerance — pre-launch pricing is typically lower than post-launch rates, but the project isn't yet RERA-registered, which carries more uncertainty. Weigh the lower entry price against that added risk before deciding.</p>
-      </div>
-    </details>
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">14. What construction-linked payment plans (CLP) are available for buyers?</h3>
+      <p class="seo-rich-paragraph">Hero Homes offers a standard Construction-Linked Plan (CLP) structured as 10% on booking, 10% within 30 days, and milestone-linked installments tied to foundation, slab, plaster, and finishing completion.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">15. Is there a flexible down-payment or subvention scheme available?</h3>
+      <p class="seo-rich-paragraph">Flexi-payment schemes (such as 25:25:25:25 or 30:40:30 time-linked structures) are periodically available during pre-launch promotional phases. Contact sales reps for current options.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">16. Which major banks and NBFCs have approved Hero Homes Greater Noida for home loans?</h3>
+      <p class="seo-rich-paragraph">Leading financial institutions including HDFC Bank, ICICI Bank, State Bank of India (SBI), Axis Bank, and Punjab National Bank provide pre-approved home loan facilities for eligible buyers.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">17. Can non-resident Indians (NRIs) apply for home loans and purchase units here?</h3>
+      <p class="seo-rich-paragraph">Yes. NRIs and OCI cardholders can legally purchase residential properties in India via NRE/NRO banking channels and access up to 80% home loan financing from participating Indian banks.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">18. What documents are required to book a unit at Hero Homes Greater Noida?</h3>
+      <p class="seo-rich-paragraph">Basic required documentation includes PAN card, Aadhaar card/passport, 2 passport-size photographs, address proof, and the booking amount cheque/payment reference.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">19. What is the estimated monthly maintenance fee after possession?</h3>
+      <p class="seo-rich-paragraph">Monthly maintenance charges are projected between ₹3.00 to ₹4.50 per sq. ft. per month, covering 24/7 security, clubhouse upkeep, swimming pool maintenance, and common area power backup.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">20. Does Hero Homes provide a price lock guarantee during pre-launch booking?</h3>
+      <p class="seo-rich-paragraph">Submitting an EOI token booking secures your unit allotment and locks the base price against subsequent pre-launch price hikes until RERA launch.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">21. What is the carpet area efficiency percentage relative to super built-up area?</h3>
+      <p class="seo-rich-paragraph">Hero Homes floor plans deliver an impressive ~71% to 75% carpet area efficiency, minimizing wasted corridor space and maximizing usable interior square footage.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">22. Are clubhouse membership fees included in the property price?</h3>
+      <p class="seo-rich-paragraph">Yes. Perpetual family access to the 25,000 sq. ft. central resort clubhouse is bundled into the unit pricing structure.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">23. What transfer fees or assignment charges apply if I resell before possession?</h3>
+      <p class="seo-rich-paragraph">First-time transfer before registry is generally permitted after payment of a mandatory threshold (e.g., 30-40% of total unit cost), subject to developer administrative transfer fees.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">24. Are there any hidden charges or surprise costs added at possession?</h3>
+      <p class="seo-rich-paragraph">No. All cost components—Base Rate, PLC, EDC/IDC, IFMS, Power Backup Charges, Electric Meter Installation, and Club Charges—are itemized line-by-line in the official Cost Sheet.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">25. Is there any early bird discount or special booking offer available right now?</h3>
+      <p class="seo-rich-paragraph">Pre-launch buyers can avail of limited-period inaugural discounts, inaugural PLC waivers, or complimentary modular kitchen accessories depending on active developer schemes.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">26. How does the price of Hero Homes Sector MU compare with neighboring projects in Greater Noida?</h3>
+      <p class="seo-rich-paragraph">At ~₹13,500 per sq. ft., Hero Homes offers competitive premium pricing compared to nearby Sector MU & Expressway projects, offering higher green cover (85%+) and superior low-density planning (6 units per floor).</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">27. Is home loan interest tax benefit applicable under Section 24 and 80EEA?</h3>
+      <p class="seo-rich-paragraph">Yes. Home buyers can claim tax deductions up to ₹2 Lakhs annually on home loan interest under Section 24(b) of the Income Tax Act once possession is handed over.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">28. What is the expected capital appreciation potential over 3-5 years in Sector MU?</h3>
+      <p class="seo-rich-paragraph">Sector MU benefits directly from proximity to Noida International Airport (Jewar), DMIC Industrial Township, and upcoming Metro extensions, driving strong projected appreciation as infrastructure matures.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">29. How can I request an itemized cost sheet and payment schedule on WhatsApp?</h3>
+      <p class="seo-rich-paragraph">Click the 'Download Cost Sheet' or 'Get Quote' buttons on this page or contact official representatives to instantly receive the PDF cost sheet on your phone.</p>
+    </div>
+
+    <div class="faq-text-item mb-4">
+      <h3 class="content-subheading-md">30. When is the project RERA registration number and official price list expected?</h3>
+      <p class="seo-rich-paragraph">RERA approval is in the advanced processing pipeline with UP RERA. The official registration number and locked public price list will be published upon final regulatory issuance.</p>
+    </div>
+    </div>
   </div>
 
+  
   <h2 class="content-subheading-lg">Final Thoughts on Hero Homes Greater Noida Pricing</h2>
   <p class="seo-rich-paragraph">Hero Homes Sector MU offers a clearly tiered pricing structure across its three 3 BHK configurations, starting at ₹2.22 Cr* and scaling up to ₹2.97 Cr* for the largest servant-room layout. Because the project is still pre-launch and not yet RERA-registered, every figure discussed here — the per-square-foot rate, the price list, and the payment plan options — should be treated as a starting point for your own verification, not a final number to book against.</p>
   
@@ -1477,11 +2810,9 @@
             <div class="form-group">
               <select name="configuration" class="form-control">
                 <option value="" disabled selected>Interested Configuration</option>
-                <option value="2 BHK">2 BHK Luxury</option>
-                <option value="3 BHK 1650 sq ft">3 BHK (1650 Sq. Ft.)</option>
+                                <option value="3 BHK 1650 sq ft">3 BHK (1650 Sq. Ft.)</option>
                 <option value="3 BHK + Servant">3 BHK + Servant (2200 Sq. Ft.)</option>
-                <option value="4 BHK">4 BHK Ultra Luxury</option>
-              </select>
+                              </select>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
               <i data-lucide="file-text"></i> Unlock Price List
@@ -1514,51 +2845,41 @@
       <div class="footer-contact">
         <h4>Contact Us</h4>
         <p><i data-lucide="map-pin"></i> Sector MU, DMIC Township, Greater Noida, UP</p>
-        <p><i data-lucide="phone"></i> +91 96868 97597</p>
+        <p><a href="tel:+919686897597" class="footer-phone-link" style="color: #ffffff; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="color: #e31837;"></i> +91 96868 97597</a></p>
         <p><i data-lucide="mail"></i> sales@herohomenoida.com</p>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container text-center">
+        <div class="footer-call-action-wrapper" style="margin-bottom: 14px;">
+          <a href="tel:+919686897597" class="btn btn-primary footer-call-btn" style="background-color: var(--color-accent, #e31837); color: #ffffff; padding: 10px 24px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; text-decoration: none; box-shadow: 0 4px 14px rgba(227, 24, 55, 0.3);">
+            <i data-lucide="phone"></i> <span>Call Now: +91 96868 97597</span>
+          </a>
+        </div>
         <p class="copyright">&copy; 2026 Hero Homes Greater Noida. Authorized Channel Partner. All Rights Reserved.</p>
         <p class="publisher-info" style="font-size: 0.72rem; color: #94A3B8; margin-top: 4px;">Published by Hero Homes Greater Noida | Official Partner Portal (Hero Realty)</p>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-menu-drawer" class="mobile-drawer">
-    <div class="mobile-drawer-header">
-      <div class="logo"><span class="logo-accent">HERO</span> HOMES</div>
-      <button id="mobile-menu-close" class="menu-close-btn" aria-label="Close menu">&times;</button>
-    </div>
-    <nav class="overlay-navigation">
-      <ul class="overlay-nav-menu">
-        <li><a href="index.html" class="overlay-nav-link">Overview</a></li>
-        <li><a href="pricing.html" class="overlay-nav-link">Pricing</a></li>
-        <li><a href="floor-plans.html" class="overlay-nav-link">Floor Plans</a></li>
-        <li><a href="amenities.html" class="overlay-nav-link">Amenities</a></li>
-        <li><a href="location.html" class="overlay-nav-link">Location</a></li>
-        <li><a href="developer.html" class="overlay-nav-link">Developer</a></li>
-        <li><a href="faqs.html" class="overlay-nav-link">FAQs</a></li>
-      </ul>
-    </nav>
-  </div>
+  
 
-  <!-- Modal Lead Form -->
-  <div id="enquiry-modal" class="modal-overlay">
-    <div class="modal-card glass-card">
-      <button class="modal-close" onclick="closeEnquiryModal()">&times;</button>
-      <h3 id="modal-title">Request Official Information</h3>
-      <p class="modal-subtitle">Leave your phone number to receive instant brochure &amp; price list on WhatsApp.</p>
-      <form onsubmit="handleFormSubmit(event, 'Page Modal Form')">
-        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required class="form-control"></div>
-        <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" class="form-control"></div>
-        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required class="form-control"></div>
-        <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
-      </form>
-    </div>
-  </div>
+  
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggleBtn = document.getElementById('mobile-menu-toggle');
+      var navMenu = document.getElementById('navbar');
+      if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleBtn.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+      }
+    });
+  </script>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -1575,20 +2896,60 @@
       window.location.href = 'thankyou.html';
     }
 
-    /* Bulletproof Accordion Toggle Handler for Mobile & Desktop */
+        /* Universal Subpage FAQ Accordion Toggle Handler */
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('details.faq-accordion-item summary').forEach(function(summary) {
-        summary.addEventListener('click', function(e) {
-          const details = summary.parentElement;
-          if (details.hasAttribute('open')) {
-            details.removeAttribute('open');
-          } else {
-            details.setAttribute('open', '');
+      function toggleSubpageFaq(questionBtn) {
+        if (!questionBtn) return;
+        const item = questionBtn.closest('.faq-item');
+        if (!item) return;
+
+        const container = item.closest('.faq-container, .faq-accordion-list, .subpage-faq-accordion');
+        const isCurrentlyActive = item.classList.contains('active');
+
+        if (container) {
+          container.querySelectorAll('.faq-item').forEach(function(otherItem) {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              const otherBtn = otherItem.querySelector('.faq-question');
+              if (otherBtn) {
+                otherBtn.setAttribute('aria-expanded', 'false');
+              }
+            }
+          });
+        }
+
+        if (isCurrentlyActive) {
+          item.classList.remove('active');
+          questionBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('active');
+          questionBtn.setAttribute('aria-expanded', 'true');
+        }
+      }
+
+      document.addEventListener('click', function(e) {
+        const questionBtn = e.target.closest('.faq-question');
+        if (questionBtn) {
+          toggleSubpageFaq(questionBtn);
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          const questionBtn = e.target.closest('.faq-question');
+          if (questionBtn) {
+            e.preventDefault();
+            toggleSubpageFaq(questionBtn);
           }
-          e.preventDefault();
-        });
+        }
       });
     });
   </script>
+
+    
+    
+
+    
+    
 </body>
 </html>

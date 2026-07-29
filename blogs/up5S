@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Canonical, Robots, X-Robots & Publisher Tags -->
+  <title>Hero Homes Greater Noida Blog | Insights, Updates & Guides</title>
+  <meta name="description" content="Latest news, price updates, infrastructure developments and buying guides for Hero Homes Greater Noida, Sector MU.">
+  <link rel="canonical" href="https://herohomenoida.com/blogs/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta http-equiv="X-Robots-Tag" content="index, follow">
+  <link rel="publisher" href="https://www.herohomenoida.com/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://herohomenoida.com/blogs/">
+  <meta property="og:title" content="Hero Homes Greater Noida Blog | Insights, Updates & Guides">
+  <meta property="og:description" content="Latest news, price updates, infrastructure developments and buying guides for Hero Homes Greater Noida, Sector MU.">
+  <meta property="og:image" content="https://herohomenoida.com/images/hero_homes_pricing_banner.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Preload Fonts & Styles -->
+  <link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/style-v19.css" as="style">
+
+  <script>
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/style-v19.css';
+      link.onload = function() {
+        document.body.classList.add('css-loaded');
+      };
+      document.head.appendChild(link);
+    })();
+  </script>
+  <noscript>
+    <link rel="stylesheet" href="/style-v19.css">
+  </noscript>
+
+  <style>
+    :root { --nav-offset: 0px; }
+    body { opacity: 0; }
+    body.css-loaded { opacity: 1; transition: opacity 0.15s ease-in; }
+
+    /* Blog card */
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-luxury);
+    }
+    .blog-card-image {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      border-radius: var(--radius-large) var(--radius-large) 0 0;
+      margin: -36px -36px 20px -36px;
+      width: calc(100% + 72px);
+    }
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .blog-card-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-accent);
+      margin-bottom: 10px;
+    }
+    .blog-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .blog-card p {
+      color: var(--color-text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .blog-card-meta {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+    .blog-card-link {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 768px) {
+      .grid-3-col.blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="main-header" class="site-header sticky-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/index.html" class="logo-link">
+          <img src="/images/logo.webp" alt="Hero Homes Logo" class="logo-img" width="170" height="63">
+        </a>
+      </div>
+
+      <nav id="navbar" class="site-navigation">
+        <ul class="nav-menu">
+          <li><a href="/index.html" class="nav-link">Overview</a></li>
+          <li><a href="/pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="/floor-plans.html" class="nav-link">Floor Plans</a></li>
+          <li><a href="/amenities.html" class="nav-link">Amenities</a></li>
+          <li><a href="/location.html" class="nav-link">Location</a></li>
+          <li><a href="/blogs/" class="nav-link active">Blog</a></li>
+          <li><a href="/faqs.html" class="nav-link">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+919686897597" class="btn btn-phone btn-outline">
+          <i data-lucide="phone"></i> <span>+91 96868 97597</span>
+        </a>
+        <button class="btn btn-primary" onclick="openEnquiryModal('Get Official Cost Sheet')">
+          <i data-lucide="download"></i> Download Brochure
+        </button>
+      </div>
+
+      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Blog Listing -->
+  <main class="section-padding">
+    <div class="container">
+      <p class="section-subtitle text-center">Hero Homes Greater Noida</p>
+      <h1 class="section-title text-center">Latest Articles & Updates</h1>
+      <p class="section-desc text-center max-width-800" style="margin: 0 auto 48px auto;">
+        Price updates, infrastructure news, floor plan breakdowns and buying guides for Sector MU, Greater Noida.
+      </p>
+
+      <div class="grid grid-3-col blog-grid gap-large">
+
+        <!-- Blog Card 1 -->
+        <a href="/blogs/why-sector-mu-is-the-next-big-address/" class="blog-card glass-card" style="text-decoration:none;">
+          <div class="blog-card-image">
+            <img src="/images/blogs/why-sector-mu-cover.webp" alt="Why Sector MU is the next big real estate address">
+          </div>
+          <span class="blog-card-tag">Location Insight</span>
+          <h3>Why Sector MU Is Greater Noida's Next Big Real Estate Address</h3>
+          <p>A look at the DMIC township, Jewar Airport connectivity, and why Sector MU is drawing serious investor attention.</p>
+          <div class="blog-card-meta">July 29, 2026 &middot; 5 min read</div>
+          <span class="blog-card-link">Read Article <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></span>
+        </a>
+
+        <!-- Duplicate this <a class="blog-card glass-card"> block for every new post -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="/images/logo.png" alt="Hero Homes Logo" class="footer-logo" width="160">
+        <p>Hero Homes Greater Noida is a landmark 17.3-acre premium residential development inside the DMIC Integrated Industrial Township by Hero Realty.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/index.html">Overview</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/floor-plans.html">Floor Plans</a></li>
+          <li><a href="/amenities.html">Amenities</a></li>
+          <li><a href="/location.html">Location</a></li>
+          <li><a href="/developer.html">Developer</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i data-lucide="map-pin"></i> Sector MU, DMIC Township, Greater Noida, UP</p>
+        <p><a href="tel:+919686897597" class="footer-phone-link" style="color: #ffffff; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="color: #e31837;"></i> +91 96868 97597</a></p>
+        <p><i data-lucide="mail"></i> sales@herohomenoida.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container text-center">
+        <p class="copyright">&copy; 2026 Hero Homes Greater Noida. Authorized Channel Partner. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+    function openEnquiryModal(title) {
+      document.getElementById('modal-title').innerText = title || 'Request Information';
+      document.getElementById('enquiry-modal').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>

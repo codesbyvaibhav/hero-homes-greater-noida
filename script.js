@@ -2,33 +2,10 @@
 // INITIALIZATION
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Capture campaign details & generate math security challenges
-  captureUtmParameters();
-  initializeAllCaptchas();
-
-  // Initialize Lucide Icons after initial render (non-blocking)
+  // Initialize Lucide Icons
   if (typeof lucide !== 'undefined') {
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(() => lucide.createIcons());
-    } else {
-      setTimeout(() => lucide.createIcons(), 50);
-    }
+    lucide.createIcons();
   }
-
-  // Auto-reset CAPTCHA visibility and button text when any form is reset
-  document.querySelectorAll('.enquiry-form').forEach(form => {
-    form.addEventListener('reset', () => {
-      const captchaGroup = form.querySelector('.form-captcha-group');
-      if (captchaGroup) {
-        captchaGroup.classList.remove('visible');
-        captchaGroup.style.setProperty('display', 'none', 'important'); // Reset inline display
-      }
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn && submitBtn.dataset.originalText) {
-        submitBtn.innerHTML = submitBtn.dataset.originalText;
-      }
-    });
-  });
 
   // Set up Header Scroll effect
   const header = document.getElementById('main-header');
@@ -82,40 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-    // Setup Exit Intent Popup and defer non-critical features to free up main thread on load
+    // Setup Exit Intent Popup
     window.addEventListener("load", () => {
       initFaqModule();
       initExitIntent();
-      
-      // Defer calculators and scroll indicators slightly to avoid layout thrashing during parsing
-      setTimeout(() => {
-        initEmiCalculator();
-        initInvestmentCalculator();
-        initGalleryScrollIndicator();
-      }, 50);
-    });
-
+      initEmiCalculator();
+      initInvestmentCalculator();
   });
 
-  function initGalleryScrollIndicator() {
-    const galleryContainer = document.querySelector('.gallery-container');
-    const galleryThumb = document.getElementById('gallery-scrollbar-thumb');
-
-    if (galleryContainer && galleryThumb) {
-      const updateThumb = () => {
-        const maxScroll = galleryContainer.scrollWidth - galleryContainer.clientWidth;
-        if (maxScroll <= 0) return;
-        const scrollRatio = galleryContainer.scrollLeft / maxScroll;
-        // Thumb is 30% wide, so it moves between 0% and 70%
-        const thumbLeft = scrollRatio * 70;
-        galleryThumb.style.left = `${thumbLeft}%`;
-      };
-
-      galleryContainer.addEventListener('scroll', updateThumb, { passive: true });
-      window.addEventListener('resize', updateThumb, { passive: true });
-      updateThumb();
-    }
-  }
+});
 
 // ==========================================
 // TABS SWITCHER (FLOOR PLANS)
@@ -247,29 +199,15 @@ function openEnquiryModal(source) {
   
   modalSourceInput.value = source;
   
-  // Auto-select the configuration dropdown option
-  const configSelect = document.getElementById('modal-config');
-  if (configSelect) {
-    if (source.includes('3 BHK + 2T') || source.includes('2 BHK')) {
-      configSelect.value = '3 BHK + 2T';
-    } else if (source.includes('3 BHK + 3T') || source.includes('3 BHK')) {
-      configSelect.value = '3 BHK + 3T';
-    } else if (source.includes('3 BHK + Servant') || source.includes('4 BHK')) {
-      configSelect.value = '3 BHK + Servant';
-    } else {
-      configSelect.value = 'All Sizes';
-    }
-  }
-  
-  if (source.includes('3 BHK + 2T') || source.includes('2 BHK')) {
-    modalTitle.innerText = 'Enquire: 3 BHK + 2 Toilets';
-    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 2 Toilets (1650 sq ft).';
-  } else if (source.includes('3 BHK + 3T') || source.includes('3 BHK')) {
-    modalTitle.innerText = 'Enquire: 3 BHK + 3 Toilets';
-    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 3 Toilets (1900 sq ft).';
-  } else if (source.includes('3 BHK + Servant') || source.includes('4 BHK')) {
-    modalTitle.innerText = 'Enquire: 3 BHK + Servant';
-    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + Servant Room (2200 sq ft).';
+  if (source.includes('2 BHK')) {
+    modalTitle.innerText = 'Enquire: Premium 2 BHK';
+    modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Premium 2 BHK.';
+  } else if (source.includes('3 BHK')) {
+    modalTitle.innerText = 'Enquire: Spacious 3 BHK';
+    modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Spacious 3 BHK.';
+  } else if (source.includes('4 BHK')) {
+    modalTitle.innerText = 'Enquire: Elite 4 BHK';
+    modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Elite 4 BHK.';
   } else {
     modalTitle.innerText = 'Enquire Now';
     modalDesc.innerText = 'Fill the form below to receive brochure, pricing lists, and site visit schedules.';
@@ -333,108 +271,6 @@ window.addEventListener('click', (e) => {
 });
 
 // ==========================================
-// TOAST ALERT NOTIFICATION SYSTEM
-// ==========================================
-function showToast(message, type = 'success') {
-  const container = document.getElementById('toast-container');
-  if (!container) return;
-
-  const toast = document.createElement('div');
-  toast.className = `toast-alert ${type}`;
-  
-  const icon = type === 'success' 
-    ? `<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`
-    : `<svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`;
-
-  toast.innerHTML = `
-    ${icon}
-    <div class="toast-message">${message}</div>
-  `;
-
-  container.appendChild(toast);
-  setTimeout(() => toast.classList.add('show'), 50);
-
-  setTimeout(() => {
-    toast.classList.remove('show');
-    toast.addEventListener('transitionend', () => toast.remove());
-  }, 4000);
-}
-
-// ==========================================
-// STATELESS MATH CAPTCHA SECURITY
-// ==========================================
-function generateCaptchaForForm(form) {
-  const labelSpan = form.querySelector('.math-question');
-  const inputN1 = form.querySelector('input[name="captcha_n1"]');
-  const inputN2 = form.querySelector('input[name="captcha_n2"]');
-  const inputAns = form.querySelector('input[name="captcha_ans"]');
-
-  if (!labelSpan || !inputN1 || !inputN2) return;
-
-  const num1 = Math.floor(Math.random() * 8) + 2;
-  const num2 = Math.floor(Math.random() * 9) + 1;
-
-  labelSpan.innerText = `${num1} + ${num2}`;
-  inputN1.value = num1;
-  inputN2.value = num2;
-  if (inputAns) inputAns.value = '';
-}
-
-function initializeAllCaptchas() {
-  const forms = document.querySelectorAll('.enquiry-form');
-  forms.forEach(form => generateCaptchaForForm(form));
-}
-
-// ==========================================
-// UTM TRACKING DATA SYSTEM
-// ==========================================
-function captureUtmParameters() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-  
-  utmFields.forEach(field => {
-    const value = urlParams.get(field);
-    if (value) {
-      sessionStorage.setItem(`hh_${field}`, value);
-    }
-  });
-
-  if (!sessionStorage.getItem('hh_landing_page')) {
-    sessionStorage.setItem('hh_landing_page', window.location.href);
-  }
-}
-
-function getStoredUtmData() {
-  return {
-    utm_source: sessionStorage.getItem('hh_utm_source') || '',
-    utm_medium: sessionStorage.getItem('hh_utm_medium') || '',
-    utm_campaign: sessionStorage.getItem('hh_utm_campaign') || '',
-    source_url: sessionStorage.getItem('hh_landing_page') || window.location.href
-  };
-}
-
-// Google Sheets Integration Endpoint (Optional Backup)
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzUrGLsDOgboZfC95a9JwNlqQJ55K7eQZ7cF6EdjtUgpx5Ti_9OPhSp7PayzFY-W3EIxw/exec';
-
-async function sendToGoogleSheets(leadData) {
-  if (!GOOGLE_SHEETS_URL) return;
-
-  try {
-    await fetch(GOOGLE_SHEETS_URL, {
-      method: 'POST',
-      mode: 'no-cors', // Essential for Google Apps Script Web App redirects
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(leadData)
-    });
-    console.log('[Google Sheets] Lead backup recorded successfully.');
-  } catch (err) {
-    console.error('[Google Sheets] Backup failed:', err);
-  }
-}
-
-// ==========================================
 // FORM SUBMISSION & VALIDATION
 // ==========================================
 let isSubmitting = false;
@@ -445,21 +281,23 @@ function handleFormSubmit(event, formName) {
   if (isSubmitting) return;
 
   const form = event.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
   const formData = new FormData(form);
   
+  // Rate Limit check via session storage
   if (sessionStorage.getItem('last_enquiry_submitted')) {
-    const lastSub = parseInt(sessionStorage.getItem('last_enquiry_submitted'), 10);
+    const lastSub = parseInt(sessionStorage.getItem('last_enquiry_submitted'));
     const now = Date.now();
-    if (now - lastSub < 30000) {
-      showToast('You have already submitted an enquiry recently. Our agent will call you shortly.', 'error');
+    if (now - lastSub < 30000) { // 30 seconds rate-limit
+      alert('You have already submitted an enquiry recently. Our agent will call you shortly.');
       return;
     }
   }
 
+  // Honeypot anti-spam check
   const trapVal = formData.get('website_trap');
   if (trapVal && trapVal.trim() !== '') {
-    console.warn('Bot submission blocked.');
+    // Hidden honeypot field filled. Bot submission detected. Silently ignore.
+    console.warn('Bot submission blocked via honeypot.');
     form.reset();
     closePopup();
     closeEnquiryModal();
@@ -470,133 +308,35 @@ function handleFormSubmit(event, formName) {
   const phone = formData.get('phone');
   const email = formData.get('email') || 'N/A';
   const config = formData.get('configuration') || 'All Sizes';
-  const message = formData.get('message') || '';
 
-  const captchaN1 = formData.get('captcha_n1');
-  const captchaN2 = formData.get('captcha_n2');
-  const captchaAns = formData.get('captcha_ans');
-
+  // Basic validation rules
   if (!name || name.trim().length < 3) {
-    showToast('Please enter a valid name (at least 3 characters).', 'error');
+    alert('Please enter a valid name (at least 3 characters).');
     return;
   }
 
   const phoneRegex = /^[0-9]{10}$/;
   if (!phone || !phoneRegex.test(phone)) {
-    showToast('Please enter a valid 10-digit mobile number.', 'error');
+    alert('Please enter a valid 10-digit mobile number.');
     return;
   }
-
-  // Trigger CAPTCHA check on submit click
-  const captchaGroup = form.querySelector('.form-captcha-group');
-  if (captchaGroup && !captchaGroup.classList.contains('visible')) {
-    // Make security challenge visible first
-    captchaGroup.classList.add('visible');
-    captchaGroup.style.setProperty('display', 'flex', 'important'); // Force inline display: flex
-    
-    // Focus captcha input
-    const captchaInput = captchaGroup.querySelector('.captcha-input');
-    if (captchaInput) {
-      captchaInput.focus();
-    }
-
-    // Update submit button text to guide user
-    if (submitBtn) {
-      if (!submitBtn.dataset.originalText) {
-        submitBtn.dataset.originalText = submitBtn.innerHTML;
-      }
-      submitBtn.innerHTML = '<i data-lucide="check-square"></i> Verify &amp; Submit';
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons({
-          attrs: { class: 'lucide' },
-          nameAttr: 'data-lucide',
-          node: submitBtn
-        });
-      }
-    }
-    return; // Halt and wait for user's entry
-  }
-
-  if (parseInt(captchaN1, 10) + parseInt(captchaN2, 10) !== parseInt(captchaAns, 10)) {
-    showToast('Incorrect security question answer. Please try again.', 'error');
-    generateCaptchaForForm(form);
-    return;
-  }
-
-  const utm = getStoredUtmData();
 
   isSubmitting = true;
-  if (submitBtn) {
-    submitBtn.classList.add('submitting');
-    submitBtn.disabled = true;
-  }
+  
+  // Simulated API call (CRM capture)
+  console.log(`[CRM Submission] Form: ${formName} | Name: ${name} | Phone: ${phone} | Email: ${email} | Config: ${config}`);
 
-  fetch('/api/lead', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name: name,
-      phone: phone,
-      email: email,
-      config: config,
-      message: message,
-      source: formName,
-      captcha_n1: captchaN1,
-      captcha_n2: captchaN2,
-      captcha_ans: captchaAns,
-      source_url: utm.source_url,
-      utm_source: utm.utm_source,
-      utm_medium: utm.utm_medium,
-      utm_campaign: utm.utm_campaign
-    })
-  })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(errData => {
-        throw new Error(errData.message || `API error ${response.status}`);
-      });
-    }
-    return response.json();
-  })
-  .then(data => {
+  // Display success feedback
+  setTimeout(() => {
     sessionStorage.setItem('last_enquiry_submitted', Date.now().toString());
-    showToast(data.message || 'Details submitted successfully.', 'success');
-    form.reset();
-    
-    // Dispatch asynchronous Google Sheet backup (runs in background, non-blocking)
-    sendToGoogleSheets({
-      name: name,
-      phone: phone,
-      email: email,
-      project: config,
-      message: message,
-      source: formName,
-      timestamp: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })
-    });
-    
-    setTimeout(() => {
-      closeEnquiryModal();
-      closePopup();
-      if (typeof closeBottomSheetForm === 'function') {
-        closeBottomSheetForm();
-      }
-      window.location.href = 'thankyou.html';
-    }, 1500);
-  })
-  .catch(error => {
-    console.error('Failed to send lead:', error);
-    showToast(error.message || 'There was a problem submitting your request. Please try again.', 'error');
-    generateCaptchaForForm(form);
-  })
-  .finally(() => {
     isSubmitting = false;
-    if (submitBtn) {
-      submitBtn.classList.remove('submitting');
-      submitBtn.disabled = false;
-    }
-  });
+    form.reset();
+    closeEnquiryModal();
+    closePopup();
+    
+    // Redirect to thank you page
+    window.location.href = 'thankyou.html';
+  }, 1000);
 }
 
 // ==========================================
@@ -614,20 +354,6 @@ function openBottomSheetForm(source) {
     form.reset();
     const sourceInput = form.querySelector('input[name="source"]');
     if (sourceInput) sourceInput.value = source;
-    
-    // Auto-select the configuration dropdown option
-    const sheetConfigSelect = document.getElementById('sheet-config');
-    if (sheetConfigSelect) {
-      if (source && (source.includes('3 BHK + 2T') || source.includes('2 BHK'))) {
-        sheetConfigSelect.value = '3 BHK + 2T';
-      } else if (source && (source.includes('3 BHK + 3T') || source.includes('3 BHK'))) {
-        sheetConfigSelect.value = '3 BHK + 3T';
-      } else if (source && (source.includes('3 BHK + Servant') || source.includes('4 BHK'))) {
-        sheetConfigSelect.value = '3 BHK + Servant';
-      } else {
-        sheetConfigSelect.value = 'All Sizes';
-      }
-    }
   }
   
   currentSheetStep = 1;
@@ -996,15 +722,5 @@ function renderFaqList() {
     } else {
       paginationContainer.style.display = 'none';
     }
-  }
-}
-
-// Global gallery scroll function for mobile arrow buttons
-function scrollGallery(direction) {
-  const container = document.querySelector('.gallery-container');
-  if (container) {
-    // Scroll by roughly one item width (280px + 16px gap)
-    const cardWidth = 296; 
-    container.scrollBy({ left: cardWidth * direction, behavior: 'smooth' });
   }
 }
