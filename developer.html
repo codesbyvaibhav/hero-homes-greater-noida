@@ -63,20 +63,7 @@
       align-items: flex-start;
       gap: 28px !important;
     }
-    .single-hero-image-wrapper {
-      margin: 0 0 4px 0 !important;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      position: relative;
-    }
-    .single-hero-image-wrapper img {
-      width: 100%;
-      height: 330px !important;
-      max-height: 330px !important;
-      object-fit: cover;
-      display: block;
-    }
+    /* ---------- HERO IMAGE (INHERITED FROM STYLE-V19.CSS) ---------- */
     .single-hero-caption {
       background: rgba(12, 25, 43, 0.95);
       color: #ffffff;
@@ -382,17 +369,6 @@
         margin-top: 0 !important;
         margin-bottom: 0 !important;
       }
-      .single-hero-image-wrapper {
-        margin: 0 !important;
-        border-radius: 8px !important;
-        background-color: #0c192b !important;
-      }
-      .single-hero-image-wrapper img {
-        height: auto !important;
-        max-height: 165px !important;
-        object-fit: contain !important;
-        background-color: #0c192b !important;
-      }
       .single-hero-caption {
         padding: 3px 6px !important;
         font-size: 0.65rem !important;
@@ -608,7 +584,7 @@
 
         <!-- Single Hero Image Section -->
         <div class="single-hero-image-wrapper">
-          <img src="images/exterior_daytime.webp" alt="Hero Realty Flagship Architectural Architecture" loading="eager" fetchpriority="high">
+          <img class="image-cover" src="images/exterior_daytime.webp" alt="Hero Realty Flagship Architectural Architecture" loading="eager" fetchpriority="high">
           <span class="single-hero-caption">Hero Homes – High-Rise Architectural Excellence & Quality Construction</span>
         </div>
 

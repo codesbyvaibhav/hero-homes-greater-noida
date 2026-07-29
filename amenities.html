@@ -1328,113 +1328,9 @@
       word-break: normal !important;
     }
 
-    /* ---------- HERO IMAGE ---------- */
+    /* ---------- HERO IMAGE (INHERITED FROM STYLE-V19.CSS) ---------- */
 
-    .single-hero-image-wrapper,
-    .subpage-hero-banner,
-    .page-hero-banner-box {
-      width: 100% !important;
-      height: auto !important;
-      aspect-ratio: auto !important;
-      max-height: none !important;
-      overflow: hidden !important;
-      border-radius: 12px !important;
-      position: relative !important;
-      background: transparent !important;
-      margin: 0 0 14px 0 !important;
-      padding: 0 !important;
-      border: none !important;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
-    }
-
-    .single-hero-image-wrapper img,
-    .subpage-hero-banner img,
-    .page-hero-banner-box img,
-    .page-header-banner img {
-      width: 100% !important;
-      height: auto !important;
-      max-height: none !important;
-      aspect-ratio: auto !important;
-      object-fit: cover !important;
-      object-position: center top !important;
-      display: block !important;
-      border-radius: 12px !important;
-    }
-
-    /* DESKTOP PANORAMIC HERO BANNER MATCHING PRICING PAGE (~340px MAX HEIGHT) */
-    @media (min-width: 769px) {
-      .single-hero-image-wrapper,
-      .subpage-hero-banner,
-      .page-hero-banner-box {
-        width: 100% !important;
-        max-height: 340px !important;
-        aspect-ratio: 1024 / 340 !important;
-        overflow: hidden !important;
-        border-radius: 12px !important;
-        margin: 26px 0 14px 0 !important;
-        position: relative !important;
-      }
-
-      .single-hero-image-wrapper img,
-      .subpage-hero-banner img,
-      .page-hero-banner-box img,
-      .page-header-banner img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center center !important;
-        display: block !important;
-      }
-    }
-
-    /* ===== HEADER OFFSET — SINGLE SOURCE OF TRUTH (identical on every subpage) ===== */
-    @media (min-width: 769px) {
-      .site-header {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        z-index: 10000 !important;
-      }
-      .main-layout-container {
-        padding-top: 104px !important;
-        margin-top: 0 !important;
-      }
-      .single-hero-image-wrapper {
-        margin-top: 0 !important;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .site-header {
-        position: sticky !important;
-        top: 0 !important;
-        z-index: 10000 !important;
-      }
-      .main-layout-container {
-        padding-top: 16px !important;
-        margin-top: 0 !important;
-      }
-    }
-
-    /* MOBILE HERO HEIGHT — SINGLE SOURCE OF TRUTH (same box shape on every subpage) */
-    @media (max-width: 768px) {
-      .single-hero-image-wrapper,
-      .subpage-hero-banner,
-      .page-hero-banner-box {
-        aspect-ratio: 375 / 210 !important;
-        height: auto !important;
-      }
-      .single-hero-image-wrapper img,
-      .subpage-hero-banner img,
-      .page-hero-banner-box img,
-      .page-header-banner img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center top !important;
-      }
-    }
+    /* ---------- HEADER OFFSET (INHERITED FROM STYLE-V19.CSS) ---------- */
 
     /* SUBPAGE BULLET LIST TEXT ALIGNMENT FIX */
     article ul,
@@ -2129,7 +2025,7 @@
 
         <!-- Single Hero Image Section -->
         <div class="single-hero-image-wrapper hero--amenities">
-          <img src="images/hero-homes-greater-noida-amenities.webp" alt="Hero Homes Greater Noida Luxury Swimming Pool & Clubhouse" loading="eager" fetchpriority="high">
+          <img class="image-cover" src="images/hero-homes-greater-noida-amenities.webp" alt="Hero Homes Greater Noida Luxury Swimming Pool & Clubhouse" loading="eager" fetchpriority="high">
           
         </div>
 

@@ -3711,108 +3711,89 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 
 
-/* ===== HERO IMAGE — SINGLE SOURCE OF TRUTH (mobile + desktop) ===== */
+/* ===================================================
+   UNIVERSAL HERO & BLOG IMAGE SYSTEM (SINGLE SOURCE OF TRUTH)
+=================================================== */
+
+/* Subpage Hero Banners (Standard 21:9 Aspect Ratio) */
 .single-hero-image-wrapper,
 .subpage-hero-banner,
-.page-hero-banner-box{
-    width:100% !important;
-    height:auto !important;
-    aspect-ratio: 16 / 9 !important;   /* fixed mobile hero box — same shape on every subpage */
-    min-height: unset !important;
-    max-height:none !important;
-    overflow:hidden !important;
-    border-radius:12px !important;
-    position:relative !important;
+.page-hero-banner-box,
+.page-header-banner {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 21 / 9 !important;
+    overflow: hidden !important;
+    border-radius: var(--radius-medium) !important;
+    position: relative !important;
 }
 
 .single-hero-image-wrapper img,
 .subpage-hero-banner img,
 .page-hero-banner-box img,
-.page-header-banner img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    display:block;
-    border-radius:12px;
+.page-header-banner img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: var(--radius-medium) !important;
 }
 
-/* Desktop: panoramic 1024x340 crop (unchanged — this is the one that looked right) */
-@media (min-width:769px){
-    .single-hero-image-wrapper,
-    .subpage-hero-banner,
-    .page-hero-banner-box{
-        aspect-ratio: 16 / 9;
-    }
+/* Blog Cover & Card Images (Standard 16:10 Aspect Ratio) */
+.blog-hero-image,
+.blog-card-image,
+.blog-card-image-wrapper,
+.blog-cover-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    overflow: hidden !important;
+    border-radius: var(--radius-medium) var(--radius-medium) 0 0 !important;
+    position: relative !important;
+}
 
-    .single-hero-image-wrapper img,
-    .subpage-hero-banner img,
-    .page-hero-banner-box img,
-    .page-header-banner img{
-        height:100% !important;
-        object-position:center center !important;
-    }
+.blog-hero-image img,
+.blog-card-image img,
+.blog-card-image-wrapper img,
+.blog-cover-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important;
+    object-position: center center !important;
 }
 
 /* ===================================================
-   UNIVERSAL HERO IMAGE SYSTEM
+   HEADER OFFSET & SPACING SYSTEM (BREATHING ROOM BELOW NAVBAR)
 =================================================== */
-
-.single-hero-image-wrapper,
-.subpage-hero-banner,
-.page-hero-banner-box,
-.page-header-banner{
-
-    width:100%;
-    overflow:hidden;
-    border-radius:12px;
-    aspect-ratio:16/9;
-    position:relative;
-
+@media (min-width: 769px) {
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 10000 !important;
+  }
+  .main-layout-container,
+  .blogs-hero-section {
+    padding-top: 104px !important;
+    margin-top: 0 !important;
+  }
+  .single-hero-image-wrapper {
+    margin-top: 0 !important;
+  }
 }
 
-.single-hero-image-wrapper img,
-.subpage-hero-banner img,
-.page-hero-banner-box img,
-.page-header-banner img{
-
-    width:100%;
-    height:100%;
-    display:block;
-
-    object-fit:cover;
-    object-position:center;
-
-}
-
-@media(max-width:768px){
-
-.single-hero-image-wrapper,
-.subpage-hero-banner,
-.page-hero-banner-box,
-.page-header-banner{
-
-    aspect-ratio:16/9;
-
-}
-
-.single-hero-image-wrapper img,
-.subpage-hero-banner img,
-.page-hero-banner-box img,
-.page-header-banner img{
-
-    object-position:center top;
-
-}
-
-}
-
-/* NOTE: Amenities no longer gets its own taller box — it now inherits the same
-   default hero sizing (1024:340, max-height 340px, object-position center center
-   on desktop) as Floor Plans and every other subpage, per the "single source of
-   truth" rules above. If the Amenities hero image still shows its baked-in
-   thumbnail strip getting cropped, the fix is to re-export/crop that source image
-   to match the 1024x340 box rather than reintroducing a page-specific CSS override. */
-
-
-   
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+  }
+  .main-layout-container,
+  .blogs-hero-section {
+    padding-top: 16px !important;
+    margin-top: 0 !important;
+  }
+}

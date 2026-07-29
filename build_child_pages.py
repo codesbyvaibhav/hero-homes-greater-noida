@@ -97,12 +97,7 @@ def generate_child_page(
     body {{ opacity: 0; }}
     body.css-loaded {{ opacity: 1; transition: opacity 0.15s ease-in; }}
 
-    /* ABSOLUTE ZERO GAP - HERO IMAGE TOUCHES HEADER FLUSH ON DESKTOP & MOBILE */
-    .main-layout-container {{
-      padding-top: 0 !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-    }}
+    /* HEADER OFFSET INHERITED FROM STYLE-V19.CSS (104px PADDING-TOP FOR 24px BREATHING ROOM BELOW NAVBAR) */
     .page-layout-grid {{
       align-items: flex-start;
       gap: 28px !important;
@@ -114,21 +109,7 @@ def generate_child_page(
       margin-top: 0 !important;
       padding-top: 0 !important;
     }}
-    .single-hero-image-wrapper {{
-      margin: 0 0 4px 0 !important;
-      padding-top: 0 !important;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      position: relative;
-    }}
-    .single-hero-image-wrapper img {{
-      width: 100%;
-      height: 330px !important;
-      max-height: 330px !important;
-      object-fit: cover;
-      display: block;
-    }}
+    /* ---------- HERO IMAGE (INHERITED FROM STYLE-V19.CSS) ---------- */
     .single-hero-caption {{
       background: rgba(12, 25, 43, 0.95);
       color: #ffffff;
@@ -441,20 +422,6 @@ def generate_child_page(
       .main-content-column {{
         margin-top: 0 !important;
         padding-top: 0 !important;
-      }}
-      .single-hero-image-wrapper {{
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-        padding-top: 0 !important;
-        border-radius: 8px !important;
-        background-color: #0c192b !important;
-      }}
-      .single-hero-image-wrapper img {{
-        height: auto !important;
-        max-height: 165px !important;
-        object-fit: contain !important;
-        background-color: #0c192b !important;
-      }}
       .single-hero-caption {{
         padding: 3px 6px !important;
         font-size: 0.65rem !important;
@@ -796,7 +763,7 @@ def generate_child_page(
 
         <!-- Single Hero Image Section -->
         <div class="single-hero-image-wrapper">
-          <img src="{hero_img}" alt="{hero_img_alt}" loading="eager" fetchpriority="high">
+          <img class="image-cover" src="{hero_img}" alt="{hero_img_alt}" loading="eager" fetchpriority="high">
           <span class="single-hero-caption">{hero_img_caption}</span>
         </div>
 
