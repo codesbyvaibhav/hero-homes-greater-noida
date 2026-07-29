@@ -4144,6 +4144,7 @@ table.project-table tr:hover {
     }
 
     table,
+    table.table-mobile-card,
     table.table-domain-theme,
     table.seo-data-table,
     table.blog-data-table,
@@ -4151,24 +4152,28 @@ table.project-table tr:hover {
     table.project-table,
     table.table-compact-2col,
     table thead,
+    table.table-mobile-card thead,
     table.table-domain-theme thead,
     table.seo-data-table thead,
     table.blog-data-table thead,
     table.specs-table thead,
     table.project-table thead,
     table tbody,
+    table.table-mobile-card tbody,
     table.table-domain-theme tbody,
     table.seo-data-table tbody,
     table.blog-data-table tbody,
     table.specs-table tbody,
     table.project-table tbody,
     table tr,
+    table.table-mobile-card tr,
     table.table-domain-theme tr,
     table.seo-data-table tr,
     table.blog-data-table tr,
     table.specs-table tr,
     table.project-table tr,
     table td,
+    table.table-mobile-card td,
     table.table-domain-theme td,
     table.seo-data-table td,
     table.blog-data-table td,
@@ -4185,6 +4190,7 @@ table.project-table tr:hover {
 
     /* Hide the multi-column table headers on mobile */
     table thead,
+    table.table-mobile-card thead,
     table.table-domain-theme thead,
     table.seo-data-table thead,
     table.blog-data-table thead,
@@ -4253,6 +4259,16 @@ table.project-table tr:hover {
         margin-bottom: 6px !important;
         text-align: left !important;
         justify-content: flex-start !important;
+    }
+
+    table td:first-child::before,
+    table.table-domain-theme td:first-child::before,
+    table.seo-data-table td:first-child::before,
+    table.blog-data-table td:first-child::before,
+    table.specs-table td:first-child::before,
+    table.project-table td:first-child::before {
+        display: none !important;
+        content: "" !important;
     }
 
     /* Red Field Name Label on Mobile */
