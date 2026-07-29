@@ -4281,4 +4281,83 @@ table.project-table tr:hover {
     }
 }
 
+/* ===================================================
+   FLOOR PLAN SPECS TABLE (.specs-table) - ELEGANT CLEAN DESIGN
+=================================================== */
+html body table.specs-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0 !important;
+    border-collapse: collapse !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+html body table.specs-table thead {
+    display: none !important;
+}
+
+html body table.specs-table tbody {
+    display: table-row-group !important;
+}
+
+html body table.specs-table tr {
+    display: table-row !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+html body table.specs-table tr:last-child {
+    border-bottom: none !important;
+}
+
+html body table.specs-table td {
+    display: table-cell !important;
+    padding: 14px 4px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+    vertical-align: middle !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+}
+
+html body table.specs-table tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Left Column: Bold Dark Text (Super Area, Carpet Area, etc.) */
+html body table.specs-table td:first-child {
+    width: 50% !important;
+    font-weight: 700 !important;
+    color: #334155 !important;
+    font-size: 0.95rem !important;
+    text-align: left !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    padding-left: 0 !important;
+}
+
+/* Right Column: Clean Dark Value Text (1,650 Sq. Ft., etc.) */
+html body table.specs-table td:last-child {
+    width: 50% !important;
+    font-weight: 400 !important;
+    color: #0c192b !important;
+    font-size: 0.95rem !important;
+    text-align: right !important;
+    padding-right: 0 !important;
+}
+
+html body table.specs-table td::before {
+    display: none !important;
+    content: "" !important;
+}
+
 
