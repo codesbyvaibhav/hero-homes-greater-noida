@@ -669,6 +669,33 @@
       e.preventDefault();
       window.location.href = '../thankyou.html';
     }
+
+    // Blog FAQ Accordion
+    document.addEventListener('DOMContentLoaded', function() {
+      var accordion = document.getElementById('hero-homes-faq-accordion');
+      if (!accordion) return;
+      accordion.addEventListener('click', function(e) {
+        var question = e.target.closest('.faq-question');
+        if (!question) return;
+        var item = question.parentElement;
+        var answer = item.querySelector('.faq-answer');
+        var icon = question.querySelector('i[data-lucide]');
+        var isOpen = answer.style.display !== 'none';
+        // Close all
+        accordion.querySelectorAll('.faq-item').forEach(function(fi) {
+          fi.querySelector('.faq-answer').style.display = 'none';
+          fi.classList.remove('active');
+          var ic = fi.querySelector('.faq-question i[data-lucide]');
+          if (ic) ic.style.transform = '';
+        });
+        // Open clicked (unless it was already open)
+        if (!isOpen) {
+          answer.style.display = 'block';
+          item.classList.add('active');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
   </script>
 </body>
 </html>
