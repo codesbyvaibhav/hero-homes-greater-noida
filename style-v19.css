@@ -3900,4 +3900,61 @@ input[type="range"]::-webkit-slider-thumb:hover {
     padding: 10px 12px !important;
     font-size: 0.85rem !important;
   }
+}
+
+/* ===================================================
+   COMPACT SUBPAGE FOOTER (EXCEPT INDEX & DEVELOPER)
+=================================================== */
+.site-footer.compact-footer {
+  padding: 40px 0 20px 0 !important;
+}
+
+.footer-content.compact-subpage-footer {
+  display: grid !important;
+  grid-template-columns: 1.3fr 1.2fr 1fr !important;
+  gap: 36px !important;
+  align-items: start !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-bottom: 24px !important;
+  margin-bottom: 16px !important;
+}
+
+.footer-content.compact-subpage-footer .footer-links ul {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 8px 16px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.footer-content.compact-subpage-footer .footer-links li {
+  margin-bottom: 0 !important;
+}
+
+.footer-content.compact-subpage-footer .footer-brand p {
+  font-size: 0.85rem !important;
+  color: #CBD5E1 !important;
+  line-height: 1.5 !important;
+  margin-top: 10px !important;
+}
+
+.footer-content.compact-subpage-footer .footer-links h4,
+.footer-content.compact-subpage-footer .footer-contact h4 {
+  margin-bottom: 12px !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+.footer-content.compact-subpage-footer .footer-contact p {
+  margin-bottom: 8px !important;
+  font-size: 0.85rem !important;
+}
+
+@media (max-width: 768px) {
+  .footer-content.compact-subpage-footer {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding-bottom: 16px !important;
+  }
 }
