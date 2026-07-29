@@ -3718,6 +3718,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* Subpage Hero Banners (Standard 21:9 Aspect Ratio) */
 .single-hero-image-wrapper,
 .subpage-hero-banner,
+.blog-hero-image,
 .page-hero-banner-box,
 .page-header-banner {
     width: 100% !important;
@@ -3726,6 +3727,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     overflow: hidden !important;
     border-radius: var(--radius-medium) !important;
     position: relative !important;
+    margin-top: 0 !important;
 }
 
 .single-hero-image-wrapper img,
