@@ -3718,7 +3718,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* Subpage Hero Banners (Standard 21:9 Aspect Ratio) */
 .single-hero-image-wrapper,
 .subpage-hero-banner,
-.blog-hero-image,
 .page-hero-banner-box,
 .page-header-banner {
     width: 100% !important;
@@ -3830,7 +3829,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
     overflow: hidden !important;
 }
 
-.blog-hero-image img,
+.blog-hero-image img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+}
+
 .blog-card-image img,
 .blog-card-image-wrapper img,
 .blog-cover-wrapper img {
