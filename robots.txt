@@ -1,4 +1,8 @@
 User-agent: *
-Allow: /
 
-Sitemap: https://herohomenoida.com/sitemap.xml
+Disallow: /thankyou
+Disallow: /thankyou.html
+Disallow: /hero-homes-dmic/thankyou
+Disallow: /hero-homes-dmic/thankyou.html
+
+Sitemap: https://www.herohomenoida.com/sitemap.xml
