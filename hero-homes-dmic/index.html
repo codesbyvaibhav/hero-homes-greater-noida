@@ -82,13 +82,20 @@
       link.rel = 'stylesheet';
       link.href = 'style-v19.css';
       link.onload = function() {
-        document.body.classList.add('css-loaded');
+        var linkCustom = document.createElement('link');
+        linkCustom.rel = 'stylesheet';
+        linkCustom.href = 'dmic-custom.css';
+        linkCustom.onload = function() {
+          document.body.classList.add('css-loaded');
+        };
+        document.head.appendChild(linkCustom);
       };
       document.head.appendChild(link);
     })();
   </script>
   <noscript>
     <link rel="stylesheet" href="style-v19.css">
+    <link rel="stylesheet" href="dmic-custom.css">
   </noscript>
 
   <style>
@@ -699,7 +706,7 @@
 
         <div class="overview-text">
           <h3>DMIC Integrated Industrial Township Development</h3>
-          <p>Hero Homes, Greater Noida is a landmark 17.3-acre premium residential development by Hero Realty, the flagship residential brand of Hero Group, located within the DMIC Integrated Industrial Township in Greater Noida. With a development potential of nearly 6 million sq. ft., it's positioned as one of the largest residential developments planned in the region. Pricing, floor plans, and configuration details are yet to be officially released. This page covers what buyers currently want to know — the project overview, location advantages, developer background, and what to expect next.</p>
+          <p>Hero Homes DMIC in Greater Noida is a landmark 17.3-acre premium residential development by Hero Realty, the flagship residential brand of Hero Group, located within the DMIC Integrated Industrial Township in Greater Noida. With a development potential of nearly 6 million sq. ft., it's positioned as one of the largest residential developments planned in the region. Pricing, floor plans, and configuration details are yet to be officially released. This page covers what buyers currently want to know — the project overview, location advantages, developer background, and what to expect next.</p>
           
           <!-- Project Overview Quick Facts -->
           <div class="quick-facts-grid">
@@ -766,32 +773,104 @@
         <p class="section-desc max-width-600">Select the layout that matches your family's needs. Explore detailed pricing, super built-up areas, and booking advantages.</p>
       </div>
 
-      <!-- Pricing Notice Card -->
-      <div class="card pricing-card featured text-center" style="max-width: 600px; margin: 0 auto;">
-        <div class="pricing-header">
-          <h3>Pricing Yet To Be Released</h3>
-          <p class="config-desc">Register for Pre-Launch Offers</p>
-          <div class="price-box" style="margin-top: 15px;">
-            <span class="main-price" style="font-size: 28px;">Price on Request</span>
+      <!-- Pricing Cards Grid -->
+      <div class="grid grid-4-col gap-medium pricing-cards-container">
+        <!-- Pricing Card 1 -->
+        <div class="card pricing-card text-center">
+          <div class="pricing-header">
+            <h3>2 BHK Apartments</h3>
+            <p class="config-desc">Hero Homes DMIC 2 BHK</p>
+            <div class="price-box">
+              <span class="starting-label">Pricing Status</span>
+              <span class="main-price" style="font-size: 22px;">Coming Soon</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Super Area:</strong> To be confirmed</li>
+              <li><strong>Bedrooms:</strong> 2 BHK Layout</li>
+              <li><strong>Balconies:</strong> Spacious Balconies</li>
+              <li><strong>Key Feature:</strong> Efficient Sizing</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('2 BHK Pricing Enquiry')">Request Cost Sheet</button>
           </div>
         </div>
-        <div class="pricing-details">
-          <ul style="text-align: left; max-width: 450px; margin: 0 auto;">
-            <li><strong>Scale:</strong> 17.3-Acre Premium Gated Sanctuary</li>
-            <li><strong>Development Potential:</strong> Nearly 6 Million Sq. Ft.</li>
-            <li><strong>Release Strategy:</strong> Phase-wise structured pricing</li>
-            <li><strong>Priority:</strong> Early registrants get pre-launch discount access</li>
-          </ul>
+
+        <!-- Pricing Card 2 (Featured) -->
+        <div class="card pricing-card featured text-center">
+          <div class="pricing-header">
+            <h3>3 BHK Flats</h3>
+            <p class="config-desc">Hero Homes DMIC 3 BHK</p>
+            <div class="price-box">
+              <span class="starting-label">Pricing Status</span>
+              <span class="main-price" style="font-size: 22px;">Coming Soon</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Super Area:</strong> To be confirmed</li>
+              <li><strong>Bedrooms:</strong> 3 BHK Layout</li>
+              <li><strong>Balconies:</strong> Wide Balconies</li>
+              <li><strong>Key Feature:</strong> Double Side Open</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('3 BHK Pricing Enquiry')">Request Cost Sheet</button>
+          </div>
         </div>
-        <div class="pricing-actions" style="margin-top: 20px;">
-          <button class="btn btn-primary btn-full" onclick="openEnquiryModal('DMIC Pricing Launch Register')">Register to Receive Cost Sheet</button>
-          <span class="urgency-stamp"><i data-lucide="clock"></i> Early Bird Registration Active</span>
+
+        <!-- Pricing Card 3 -->
+        <div class="card pricing-card text-center">
+          <div class="pricing-header">
+            <h3>3 BHK + Servant</h3>
+            <p class="config-desc">3 BHK + Servant Room</p>
+            <div class="price-box">
+              <span class="starting-label">Pricing Status</span>
+              <span class="main-price" style="font-size: 22px;">Coming Soon</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Super Area:</strong> To be confirmed</li>
+              <li><strong>Bedrooms:</strong> 3 BHK + Servant</li>
+              <li><strong>Balconies:</strong> Extra Balconies</li>
+              <li><strong>Key Feature:</strong> Private Foyer</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('3 BHK + Servant Pricing Enquiry')">Request Cost Sheet</button>
+          </div>
+        </div>
+
+        <!-- Pricing Card 4 -->
+        <div class="card pricing-card text-center">
+          <div class="pricing-header">
+            <h3>4 BHK Greater Noida</h3>
+            <p class="config-desc">Hero Homes DMIC 4 BHK</p>
+            <div class="price-box">
+              <span class="starting-label">Pricing Status</span>
+              <span class="main-price" style="font-size: 22px;">Coming Soon</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Super Area:</strong> To be confirmed</li>
+              <li><strong>Bedrooms:</strong> 4 BHK Layout</li>
+              <li><strong>Balconies:</strong> Wrap-around Balconies</li>
+              <li><strong>Key Feature:</strong> Ultra-Luxury Space</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('4 BHK Pricing Enquiry')">Request Cost Sheet</button>
+          </div>
         </div>
       </div>
 
       <!-- Detailed Pricing Copy -->
       <div class="pricing-details-text mt-large">
-        <p>Official pricing for Hero Homes, Greater Noida has not yet been announced. Given the scale of this development — 17.3 acres with nearly 6 million sq. ft. of development potential — pricing will likely be structured across multiple phases and unit types once launched, similar to how other large-format residential developments in this corridor have rolled out pricing in stages.</p>
+        <p>Official pricing for Hero Homes DMIC, Greater Noida has not yet been announced. Given the scale of this development — 17.3 acres with nearly 6 million sq. ft. of development potential — pricing will likely be structured across multiple phases and unit types once launched, similar to how other large-format residential developments in this corridor have rolled out pricing in stages.</p>
         <p>Register your interest directly with Hero Realty or an authorised channel partner so you receive the official cost sheet as soon as it's released, rather than relying on unverified numbers from third-party sources. Given the project's scale and its positioning within one of the region's most closely watched growth corridors, early registrants are typically first in line for pre-launch pricing, which tends to be more competitive than pricing offered once a project is formally launched and marketed more broadly.</p>
       </div>
 
@@ -809,7 +888,7 @@
     <div class="container">
       <div class="section-header text-center">
         <span class="section-subtitle">Layout Details</span>
-        <h2 class="section-title">Floor Plans (Coming Soon)</h2>
+        <h2 class="section-title">Floor Plans at Hero Homes DMIC</h2>
         <div class="header-line"></div>
       </div>
 
@@ -821,32 +900,100 @@
           </div>
           
           <h3>Design Philosophy &amp; Spacious Living</h3>
-          <p>Floor plans for Hero Homes, Greater Noida have not been officially released. What's confirmed at this stage is the scale of the development — 17.3 acres of land with a development potential of nearly 6 million sq. ft. — rather than specific unit sizes or configurations.</p>
+          <p>Floor plans for Hero Homes DMIC Township, Greater Noida have not been officially released. What's confirmed at this stage is the scale of the development — 17.3 acres of land with a development potential of nearly 6 million sq. ft. — rather than specific unit sizes or configurations.</p>
           <p>Given that Hero Realty's existing project, Hero Homes Sector 104 in Gurugram on Dwarka Expressway, offers a useful reference point for the brand's design approach, buyers can generally expect a similar emphasis on spacious layouts, efficient use of carpet area, and a strong focus on natural light and ventilation once the Greater Noida floor plans are released. Exact configurations, room counts, and carpet area figures for this specific project will be confirmed with the official launch.</p>
           <p>Once floor plans are available, it's worth checking the loading factor between carpet area and super built-up area, confirming tower orientation relative to the surrounding industrial township and green zones, and requesting the RERA-approved plan rather than relying solely on marketing renders.</p>
         </div>
       </div>
 
-      <!-- Teaser Card -->
-      <div class="card pricing-card featured text-center" style="max-width: 600px; margin: 0 auto;">
-        <div class="pricing-header">
-          <h3>Floor Plans Coming Soon</h3>
-          <p class="config-desc">Timeless Planning &amp; Smart Layouts</p>
-          <div class="price-box" style="margin-top: 15px;">
-            <span class="main-price" style="font-size: 28px;">Under Final Review</span>
+      <!-- Floor Plan Cards Grid -->
+      <div class="grid grid-4-col gap-medium floorplans-cards-container">
+        <!-- Card 1 -->
+        <div class="card pricing-card text-center">
+          <div class="pricing-header">
+            <h3>2 BHK Apartments</h3>
+            <p class="config-desc">Hero Homes DMIC 2 BHK</p>
+            <div class="price-box">
+              <span class="starting-label">Area Specs</span>
+              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Approach:</strong> Maximized carpet area efficiency</li>
+              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
+              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('2 BHK Layout Request')">Request Layout</button>
           </div>
         </div>
-        <div class="pricing-details">
-          <ul style="text-align: left; max-width: 450px; margin: 0 auto;">
-            <li><strong>Approach:</strong> Maximized carpet area efficiency</li>
-            <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
-            <li><strong>Reference Standards:</strong> dwarka expressway sector 104 benchmarks</li>
-            <li><strong>Action:</strong> Register to be notified when blueprints are unlocked</li>
-          </ul>
+
+        <!-- Card 2 (Featured) -->
+        <div class="card pricing-card featured text-center">
+          <div class="pricing-header">
+            <h3>3 BHK Flats</h3>
+            <p class="config-desc">Hero Homes DMIC 3 BHK</p>
+            <div class="price-box">
+              <span class="starting-label">Area Specs</span>
+              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Approach:</strong> Maximized carpet area efficiency</li>
+              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
+              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('3 BHK Layout Request')">Request Layout</button>
+          </div>
         </div>
-        <div class="pricing-actions" style="margin-top: 20px;">
-          <button class="btn btn-primary btn-full" onclick="openEnquiryModal('DMIC Floorplan Launch Register')">Request Layout Blueprints PDF</button>
-          <span class="urgency-stamp"><i data-lucide="flame"></i> Register for Priority Launch Access</span>
+
+        <!-- Card 3 -->
+        <div class="card pricing-card text-center">
+          <div class="pricing-header">
+            <h3>3 BHK + Servant</h3>
+            <p class="config-desc">3 BHK + Servant Room</p>
+            <div class="price-box">
+              <span class="starting-label">Area Specs</span>
+              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Approach:</strong> Dedicated servant accommodation</li>
+              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
+              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('3 BHK + Servant Layout Request')">Request Layout</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card pricing-card text-center">
+          <div class="pricing-header">
+            <h3>4 BHK Greater Noida</h3>
+            <p class="config-desc">Hero Homes DMIC 4 BHK</p>
+            <div class="price-box">
+              <span class="starting-label">Area Specs</span>
+              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
+            </div>
+          </div>
+          <div class="pricing-details">
+            <ul>
+              <li><strong>Approach:</strong> Premium luxury layout planning</li>
+              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
+              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
+            </ul>
+          </div>
+          <div class="pricing-actions">
+            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('4 BHK Layout Request')">Request Layout</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1065,7 +1212,7 @@
           </div>
 
           <h3>Delhi-Mumbai Industrial Corridor (DMIC) Strategic Connectivity</h3>
-          <p>Hero Homes, Greater Noida is located within the DMIC Integrated Industrial Township, a strategically positioned zone that's central to the argument for buying here. The Delhi-Mumbai Industrial Corridor is one of India's largest infrastructure and industrial development initiatives, and being located within its Greater Noida township places this project directly inside a zone earmarked for sustained public and private investment over the coming years.</p>
+          <p>Hero Homes DMIC, Greater Noida is located within the DMIC Integrated Industrial Township, a strategically positioned zone that's central to the argument for buying here. The Delhi-Mumbai Industrial Corridor is one of India's largest infrastructure and industrial development initiatives, and being located within its Greater Noida township places this project directly inside a zone earmarked for sustained public and private investment over the coming years.</p>
           <p>The single biggest location catalyst for this corridor is the Noida International Airport at Jewar, which is expected to bring a wave of aviation, logistics, hospitality, and MRO-linked employment to the surrounding belt as it scales up operations. Alongside the airport, the DMIC framework itself is designed to attract large-scale industrial and manufacturing investment, and this project sits within a residential district that has already attracted multiple leading national developers — a pattern that typically signals sustained infrastructure and demand growth rather than a short-term trend.</p>
           <p>Beyond the airport and DMIC, the project is positioned to benefit from expanding employment hubs across the corridor and broader regional infrastructure investments — road widening, expressway connectivity, and planned metro extensions — that are collectively reshaping Greater Noida from a purely peripheral address into what's increasingly being described as a major economic and residential destination in its own right. For buyers, this means the location's advantage isn't just about a single feature like airport proximity, but a broader, multi-year infrastructure and investment story playing out across the entire belt.</p>
           
