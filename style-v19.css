@@ -4506,17 +4506,24 @@ html body table.specs-table td[data-label]:not(:first-child)::before {
 /* ===================================================
    HEADINGS WORD-SPACING & TEXT ALIGNMENT FIX (NO STRETCHED GAPS)
 =================================================== */
-h1, h2, h3, h4, h5, h6,
+article h1, article h2, article h3, article h4, article h5, article h6,
 .blog-h1,
 .content-subheading-lg,
 .content-subheading-md,
-article h1, article h2, article h3, article h4, article h5, article h6,
-.main-content-column h1, .main-content-column h2, .main-content-column h3, .main-content-column h4 {
+.main-content-column article h1, .main-content-column article h2, .main-content-column article h3, .main-content-column article h4 {
     text-align: left !important;
     text-justify: auto !important;
     word-spacing: normal !important;
     letter-spacing: normal !important;
     hyphens: manual !important;
+}
+
+.text-center,
+.text-center h1, .text-center h2, .text-center h3, .text-center h4, .text-center h5, .text-center h6,
+.section-header.text-center, .section-header.text-center *,
+.section-title.text-center,
+.floorplan-tabs-container .section-header * {
+    text-align: center !important;
 }
 
 @media (max-width: 768px) {
@@ -4525,11 +4532,17 @@ article h1, article h2, article h3, article h4, article h5, article h6,
     main.main-content-column article .seo-rich-paragraph,
     .blog-content,
     .blog-content p,
-    .content-subheading-lg,
-    .content-subheading-md {
+    main.main-content-column article .content-subheading-lg,
+    main.main-content-column article .content-subheading-md {
         text-align: left !important;
         text-justify: auto !important;
         word-spacing: normal !important;
+    }
+
+    .text-center,
+    .text-center h1, .text-center h2, .text-center h3,
+    .section-header.text-center, .section-header.text-center * {
+        text-align: center !important;
     }
 }
 
