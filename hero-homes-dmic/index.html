@@ -896,7 +896,7 @@
       <div class="floorplans-intro-wrapper mt-medium mb-large">
         <div class="floorplans-intro-text">
           <div class="floorplans-intro-visual" style="margin-bottom: 25px;">
-            <img src="images/exterior_sunset.webp" alt="Hero Homes DMIC Greater Noida Architecture Exterior" class="img-responsive rounded-large shadow-large" loading="lazy">
+            <img src="images/hero-homes-dmic-floor-plan.webp" alt="Hero Homes DMIC Greater Noida Architecture Exterior" class="img-responsive rounded-large shadow-large" loading="lazy">
           </div>
           
           <h3>Design Philosophy &amp; Spacious Living</h3>
@@ -906,96 +906,184 @@
         </div>
       </div>
 
-      <!-- Floor Plan Cards Grid -->
-      <div class="grid grid-4-col gap-medium floorplans-cards-container">
-        <!-- Card 1 -->
-        <div class="card pricing-card text-center">
-          <div class="pricing-header">
-            <h3>2 BHK Apartments</h3>
-            <p class="config-desc">Hero Homes DMIC 2 BHK</p>
-            <div class="price-box">
-              <span class="starting-label">Area Specs</span>
-              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
-            </div>
-          </div>
-          <div class="pricing-details">
-            <ul>
-              <li><strong>Approach:</strong> Maximized carpet area efficiency</li>
-              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
-              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
-            </ul>
-          </div>
-          <div class="pricing-actions">
-            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('2 BHK Layout Request')">Request Layout</button>
-          </div>
+      <!-- Configuration Overview Table -->
+      <h3 class="content-subheading-lg mb-small mt-large text-center">Hero Homes DMIC: Configuration Overview</h3>
+      <p class="section-desc max-width-600 text-center mb-medium" style="margin: 0 auto 20px auto;">The table below summarizes the four proposed configurations at Hero Homes DMIC, Greater Noida:</p>
+      
+      <div class="table-responsive">
+        <table class="seo-data-table table-domain-theme">
+          <thead>
+            <tr>
+              <th>Configuration</th>
+              <th>Super Built-up Area</th>
+              <th>Carpet Area</th>
+              <th>Bedrooms</th>
+              <th>Balconies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Configuration"><strong>2 BHK Apartments</strong></td>
+              <td data-label="Super Built-up Area">To be confirmed</td>
+              <td data-label="Carpet Area">To be confirmed</td>
+              <td data-label="Bedrooms">2</td>
+              <td data-label="Balconies">Spacious Balconies</td>
+            </tr>
+            <tr>
+              <td data-label="Configuration"><strong>3 BHK Flats</strong></td>
+              <td data-label="Super Built-up Area">To be confirmed</td>
+              <td data-label="Carpet Area">To be confirmed</td>
+              <td data-label="Bedrooms">3</td>
+              <td data-label="Balconies">Wide Balconies</td>
+            </tr>
+            <tr>
+              <td data-label="Configuration"><strong>3 BHK + Servant</strong></td>
+              <td data-label="Super Built-up Area">To be confirmed</td>
+              <td data-label="Carpet Area">To be confirmed</td>
+              <td data-label="Bedrooms">3 + servant room</td>
+              <td data-label="Balconies">Extra Balconies</td>
+            </tr>
+            <tr>
+              <td data-label="Configuration"><strong>4 BHK Greater Noida</strong></td>
+              <td data-label="Super Built-up Area">To be confirmed</td>
+              <td data-label="Carpet Area">To be confirmed</td>
+              <td data-label="Bedrooms">4</td>
+              <td data-label="Balconies">Wrap-around Balconies</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Floor Plan Blueprints Tab Block -->
+      <div class="floorplan-tabs-container mt-large">
+        <div class="section-header text-center mb-small">
+          <span class="section-subtitle">Spacious &amp; Optimized Layouts</span>
+          <h2 class="section-title">Floor Plan Blueprints</h2>
+          <p class="section-desc max-width-600 mb-none" style="margin: 0 auto;">Explore proposed architectural blueprints of Hero Homes DMIC. Select a layout size to view dimensions.</p>
+        </div>
+        
+        <div class="floorplan-tabs tab-buttons text-center">
+          <button class="tab-btn active" onclick="switchFloorplan(event, 'fp-2bhk')">2 BHK</button>
+          <button class="tab-btn" onclick="switchFloorplan(event, 'fp-3bhk')">3 BHK</button>
+          <button class="tab-btn" onclick="switchFloorplan(event, 'fp-3bhk-servant')">3 BHK + Servant</button>
+          <button class="tab-btn" onclick="switchFloorplan(event, 'fp-4bhk')">4 BHK</button>
         </div>
 
-        <!-- Card 2 (Featured) -->
-        <div class="card pricing-card featured text-center">
-          <div class="pricing-header">
-            <h3>3 BHK Flats</h3>
-            <p class="config-desc">Hero Homes DMIC 3 BHK</p>
-            <div class="price-box">
-              <span class="starting-label">Area Specs</span>
-              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
+        <div class="tab-contents">
+          <!-- 2 BHK Floorplan content -->
+          <div id="fp-2bhk" class="tab-panel active">
+            <h3 class="floorplan-title">2 BHK Blueprint (Proposed Layout)</h3>
+            <div class="grid grid-2-col gap-large align-center">
+              <div class="floorplan-image-wrapper">
+                <div class="blueprint-overlay">
+                  <span class="blueprint-text">Blueprint Preview</span>
+                  <button class="btn btn-primary" onclick="openEnquiryModal('2 BHK Floor Plan Download')">
+                    <i data-lucide="eye"></i> Unlock High Resolution Blueprint
+                  </button>
+                </div>
+                <img src="images/floorplan_2bhk.jpg" alt="2 BHK Layout Plan" class="img-responsive rounded shadow blur-preview" loading="lazy">
+              </div>
+              <div class="floorplan-details">
+                <p>The proposed 2 BHK layout at Hero Homes DMIC optimizes spaces to prevent corridor wastage. It features two full-size bedrooms, two modern bathrooms, a contemporary kitchen, and spacious balconies looking out to the landscapes.</p>
+                <table class="table specs-table">
+                  <tr><th>Super Area</th><td data-label="Super Area">To be confirmed</td></tr>
+                  <tr><th>Carpet Area</th><td data-label="Carpet Area">To be confirmed</td></tr>
+                  <tr><th>Living Room</th><td data-label="Super Area">12'0" x 16'0" (Approx.)</td></tr>
+                  <tr><th>Master Bedroom</th><td data-label="Super Area">11'0" x 13'0" (Approx.)</td></tr>
+                </table>
+                <button class="btn btn-outline mt-medium" onclick="openEnquiryModal('2 BHK Custom Floorplan PDF')">
+                  <i data-lucide="download"></i> Download Floor Plan PDF
+                </button>
+              </div>
             </div>
           </div>
-          <div class="pricing-details">
-            <ul>
-              <li><strong>Approach:</strong> Maximized carpet area efficiency</li>
-              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
-              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
-            </ul>
-          </div>
-          <div class="pricing-actions">
-            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('3 BHK Layout Request')">Request Layout</button>
-          </div>
-        </div>
 
-        <!-- Card 3 -->
-        <div class="card pricing-card text-center">
-          <div class="pricing-header">
-            <h3>3 BHK + Servant</h3>
-            <p class="config-desc">3 BHK + Servant Room</p>
-            <div class="price-box">
-              <span class="starting-label">Area Specs</span>
-              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
+          <!-- 3 BHK Floorplan content -->
+          <div id="fp-3bhk" class="tab-panel">
+            <h3 class="floorplan-title">3 BHK Blueprint (Proposed Layout)</h3>
+            <div class="grid grid-2-col gap-large align-center">
+              <div class="floorplan-image-wrapper">
+                <div class="blueprint-overlay">
+                  <span class="blueprint-text">Blueprint Preview</span>
+                  <button class="btn btn-primary" onclick="openEnquiryModal('3 BHK Floor Plan Download')">
+                    <i data-lucide="eye"></i> Unlock High Resolution Blueprint
+                  </button>
+                </div>
+                <img src="images/floorplan_3bhk.jpg" alt="3 BHK Layout Plan" class="img-responsive rounded shadow blur-preview" loading="lazy">
+              </div>
+              <div class="floorplan-details">
+                <p>Designed for comfortable family living, the 3 BHK layout features three spacious bedrooms, three independent toilets, and an expansive living-cum-dining space. An optional foyer entrance ensures maximum privacy.</p>
+                <table class="table specs-table">
+                  <tr><th>Super Area</th><td data-label="Super Area">To be confirmed</td></tr>
+                  <tr><th>Carpet Area</th><td data-label="Super Area">To be confirmed</td></tr>
+                  <tr><th>Living/Dining</th><td data-label="Super Area">14'0" x 22'0" (Approx.)</td></tr>
+                  <tr><th>Master Bedroom</th><td data-label="Super Area">12'0" x 16'0" (Approx.)</td></tr>
+                </table>
+                <button class="btn btn-outline mt-medium" onclick="openEnquiryModal('3 BHK Custom Floorplan PDF')">
+                  <i data-lucide="download"></i> Download Floor Plan PDF
+                </button>
+              </div>
             </div>
           </div>
-          <div class="pricing-details">
-            <ul>
-              <li><strong>Approach:</strong> Dedicated servant accommodation</li>
-              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
-              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
-            </ul>
-          </div>
-          <div class="pricing-actions">
-            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('3 BHK + Servant Layout Request')">Request Layout</button>
-          </div>
-        </div>
 
-        <!-- Card 4 -->
-        <div class="card pricing-card text-center">
-          <div class="pricing-header">
-            <h3>4 BHK Greater Noida</h3>
-            <p class="config-desc">Hero Homes DMIC 4 BHK</p>
-            <div class="price-box">
-              <span class="starting-label">Area Specs</span>
-              <span class="main-price" style="font-size: 20px;">To be confirmed</span>
+          <!-- 3 BHK + Servant Floorplan content -->
+          <div id="fp-3bhk-servant" class="tab-panel">
+            <h3 class="floorplan-title">3 BHK + Servant Blueprint (Proposed Layout)</h3>
+            <div class="grid grid-2-col gap-large align-center">
+              <div class="floorplan-image-wrapper">
+                <div class="blueprint-overlay">
+                  <span class="blueprint-text">Blueprint Preview</span>
+                  <button class="btn btn-primary" onclick="openEnquiryModal('3 BHK + Servant Floor Plan Download')">
+                    <i data-lucide="eye"></i> Unlock High Resolution Blueprint
+                  </button>
+                </div>
+                <img src="images/floorplan_4bhk.jpg" alt="3 BHK + Servant Layout Plan" class="img-responsive rounded shadow blur-preview" loading="lazy">
+              </div>
+              <div class="floorplan-details">
+                <p>This layout includes three bedrooms, an additional servant room with dedicated washroom, and multiple balconies offering panoramic views. It provides private foyer entrances and luxury walk-in wardrobe spaces.</p>
+                <table class="table specs-table">
+                  <tr><th>Super Area</th><td data-label="Super Area">To be confirmed</td></tr>
+                  <tr><th>Carpet Area</th><td data-label="Super Area">To be confirmed</td></tr>
+                  <tr><th>Living Hall</th><td data-label="Super Area">16'0" x 24'0" (Approx.)</td></tr>
+                  <tr><th>Master Suite</th><td data-label="Super Area">14'0" x 18'0" (Approx.)</td></tr>
+                </table>
+                <button class="btn btn-outline mt-medium" onclick="openEnquiryModal('3 BHK + Servant Custom Floorplan PDF')">
+                  <i data-lucide="download"></i> Download Floor Plan PDF
+                </button>
+              </div>
             </div>
           </div>
-          <div class="pricing-details">
-            <ul>
-              <li><strong>Approach:</strong> Premium luxury layout planning</li>
-              <li><strong>Design:</strong> Vastu compliance and smart ventilation</li>
-              <li><strong>Price Status:</strong> Pricing Coming Soon</li>
-            </ul>
-          </div>
-          <div class="pricing-actions">
-            <button class="btn btn-primary btn-full" onclick="openEnquiryModal('4 BHK Layout Request')">Request Layout</button>
+
+          <!-- 4 BHK Floorplan content -->
+          <div id="fp-4bhk" class="tab-panel">
+            <h3 class="floorplan-title">4 BHK Blueprint (Proposed Layout)</h3>
+            <div class="grid grid-2-col gap-large align-center">
+              <div class="floorplan-image-wrapper">
+                <div class="blueprint-overlay">
+                  <span class="blueprint-text">Blueprint Preview</span>
+                  <button class="btn btn-primary" onclick="openEnquiryModal('4 BHK Floor Plan Download')">
+                    <i data-lucide="eye"></i> Unlock High Resolution Blueprint
+                  </button>
+                </div>
+                <img src="images/floorplan_3bhk.jpg" alt="4 BHK Layout Plan" class="img-responsive rounded shadow blur-preview" loading="lazy">
+              </div>
+              <div class="floorplan-details">
+                <p>The premium 4 BHK layout represents the peak of luxury at Hero Homes DMIC, featuring four grand bedrooms, massive wrap-around balconies, private foyer access, and high-end fitment provisions.</p>
+                <table class="table specs-table">
+                  <tr><th>Super Area</th><td data-label="Super Area">To be confirmed</td></tr>
+                  <tr><th>Carpet Area</th><td data-label="Super Area">To be confirmed</td></tr>
+                  <tr><th>Living Hall</th><td data-label="Super Area">18'0" x 26'0" (Approx.)</td></tr>
+                  <tr><th>Master Suite</th><td data-label="Super Area">15'0" x 20'0" (Approx.)</td></tr>
+                </table>
+                <button class="btn btn-outline mt-medium" onclick="openEnquiryModal('4 BHK Custom Floorplan PDF')">
+                  <i data-lucide="download"></i> Download Floor Plan PDF
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
