@@ -281,24 +281,80 @@ table.table-domain-theme tbody td {
   }
 }
 
-/* Tab buttons grid layout (2 buttons in each row) */
+/* Tab buttons styled as a single horizontal flex scrollable row (matching main domain index) */
 .floorplan-tabs.tab-buttons {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 12px !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  gap: 8px !important;
+  padding-bottom: 4px !important;
+  margin: 0 auto 30px auto !important;
+  border-bottom: 2px solid rgba(47, 42, 39, 0.08) !important;
+  scrollbar-width: none !important;
   width: 100% !important;
-  max-width: 500px !important;
-  margin: 0 auto 25px auto !important;
-  padding: 0 !important;
+  max-width: 100% !important;
+  justify-content: flex-start !important;
+}
+
+.floorplan-tabs.tab-buttons::-webkit-scrollbar {
+  display: none !important; /* Hide scrollbar for Chrome/Safari/Webkit */
 }
 
 .floorplan-tabs.tab-buttons .tab-btn {
-  width: 100% !important;
+  display: inline-block !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
   margin: 0 !important;
-  box-sizing: border-box !important;
-  padding: 10px 15px !important;
-  font-size: 0.85rem !important;
-  white-space: nowrap !important;
+  padding: 10px 16px !important;
+  font-family: var(--font-body, inherit) !important;
+  font-weight: 700 !important;
+  font-size: 0.92rem !important;
+  color: #2F2A27 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  position: relative !important;
   text-align: center !important;
+  transition: color 0.3s ease !important;
+}
+
+/* Underline border indicator - aligns natively without overlaps */
+.floorplan-tabs.tab-buttons .tab-btn::after {
+  display: block !important;
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important; /* Position it exactly on top of the container border */
+  left: 0 !important;
+  width: 100% !important;
+  height: 3px !important;
+  background-color: #e31837 !important;
+  border-radius: 2px !important;
+  opacity: 0 !important;
+  transition: opacity 0.25s ease !important;
+}
+
+/* Active tab text and underline highlight */
+.floorplan-tabs.tab-buttons .tab-btn.active {
+  color: #e31837 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.floorplan-tabs.tab-buttons .tab-btn.active::after {
+  opacity: 1 !important;
+}
+
+/* Hover style for inactive buttons */
+.floorplan-tabs.tab-buttons .tab-btn:hover:not(.active) {
+  color: #000000 !important;
+  background: transparent !important;
+}
+
+@media (min-width: 600px) {
+  .floorplan-tabs.tab-buttons {
+    justify-content: center !important;
+    gap: 24px !important;
+  }
 }
 
