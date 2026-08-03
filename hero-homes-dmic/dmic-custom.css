@@ -522,3 +522,8 @@ table.table-domain-theme tbody td {
   overflow-wrap: break-word !important;
 }
 
+/* Push the floor plan blueprints section down to create breathing space below the overview table */
+.floorplan-tabs-container {
+  margin-top: 90px !important;
+}
+
