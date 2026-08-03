@@ -467,7 +467,8 @@ table.table-domain-theme tbody td {
 /* Quick Answer Section Layout below Site Header */
 .quick-answer-section {
   background-color: #fcfbf9 !important;
-  padding: 10px 0 !important;
+  padding: 12px 0 !important;
+  margin-top: 80px !important; /* Clear fixed header */
   border-bottom: 1px solid rgba(47, 42, 39, 0.05) !important;
   position: relative !important;
   z-index: 100 !important;
@@ -496,5 +497,11 @@ table.table-domain-theme tbody td {
   height: auto !important;
   min-height: 140px !important;
   align-self: flex-start !important;
+}
+
+/* Reduce top padding on hero section since the fixed header is cleared by the quick answer bar */
+.hero-section {
+  padding-top: 30px !important;
+  min-height: calc(100vh - 150px) !important; /* Adjust height calculation */
 }
 
