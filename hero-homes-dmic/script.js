@@ -769,14 +769,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 // FULLSCREEN IMAGE GALLERY VIEWER (LIGHTBOX)
 // ==========================================
-const galleryImages = [
-  { src: 'images/exterior_sunset.webp', caption: 'Twilight High-Rise Facade - Hero Homes DMIC Greater Noida' },
-  { src: 'images/interior_living.webp', caption: 'Ultra-Modern Living Spaces & Smart Automation layout' },
-  { src: 'images/clubhouse_pool.webp', caption: 'Wellness Clubhouse & Infinity Swimming Pool area' },
-  { src: 'images/exterior_daytime.webp', caption: 'Grand Entry Gateway & High-Rise Towers - Hero Homes DMIC Greater Noida' },
-  { src: 'images/interior_bedroom.webp', caption: 'Elite Master Bedroom Suite with Luxury Finishes' },
-  { src: 'images/amenity_yoga_deck.webp', caption: 'Lush Green Outdoor Yoga & Meditation Deck' }
-];
+let galleryImages = [];
 let activeGalleryIndex = 0;
 
 function openFullscreenGallery(index) {
@@ -828,6 +821,16 @@ function navigateFullscreenGallery(direction) {
 
 // Touch swipe navigation & pinch-to-zoom on Fullscreen Gallery
 document.addEventListener('DOMContentLoaded', () => {
+  // Populate gallery images dynamically from DOM to prevent caching or filename mismatch issues
+  const domImages = document.querySelectorAll('.gallery-container .gallery-item img');
+  galleryImages = Array.from(domImages).map(img => {
+    const captionEl = img.parentElement.querySelector('.gallery-caption');
+    return {
+      src: img.getAttribute('src') || img.src,
+      caption: captionEl ? captionEl.textContent : (img.alt || '')
+    };
+  });
+
   const imgElement = document.getElementById('fullscreen-gallery-image');
   const modal = document.getElementById('fullscreen-gallery');
   
