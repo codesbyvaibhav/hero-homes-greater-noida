@@ -464,27 +464,44 @@ table.table-domain-theme tbody td {
   font-weight: 700 !important;
 }
 
-/* Quick Answer Section Layout below Hero Section */
+/* Quick Answer Section Layout below Trust Bar */
 .quick-answer-section {
   background-color: #fcfbf9 !important;
-  padding: 24px 0 !important;
-  border-bottom: 1px solid rgba(47, 42, 39, 0.05) !important;
+  padding: 30px 0 10px 0 !important;
   position: relative !important;
   z-index: 10 !important;
 }
 
 .quick-answer-section .quick-answer-box {
   margin: 0 !important;
-  background-color: rgba(241, 237, 230, 0.7) !important;
-  border-left: 4px solid #e31837 !important;
-  border-radius: 6px !important;
-  padding: 18px 24px !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+  background-color: #fdfaf5 !important; /* Creamy light background */
+  /* Grid paper pattern overlay */
+  background-image: 
+    linear-gradient(rgba(227, 24, 55, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(227, 24, 55, 0.03) 1px, transparent 1px) !important;
+  background-size: 16px 16px !important;
+  border-left: 4px solid #e31837 !important; /* Red left border */
+  border-radius: 4px !important;
+  padding: 20px 24px !important;
+  box-shadow: 0 4px 20px rgba(227, 24, 55, 0.03) !important;
+}
+
+.quick-answer-section .quick-answer-title {
+  font-family: inherit !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .quick-answer-section .quick-answer-box p {
   font-size: 0.88rem !important;
-  line-height: 1.55 !important;
+  line-height: 1.6 !important;
+  color: #333333 !important;
+  margin: 0 !important;
 }
 
 /* Prevent stretched height in testimonials client review cards */
