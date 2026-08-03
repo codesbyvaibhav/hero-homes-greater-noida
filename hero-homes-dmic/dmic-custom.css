@@ -464,3 +464,37 @@ table.table-domain-theme tbody td {
   font-weight: 700 !important;
 }
 
+/* Quick Answer Section Layout below Site Header */
+.quick-answer-section {
+  background-color: #fcfbf9 !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(47, 42, 39, 0.05) !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.quick-answer-section .quick-answer-box {
+  margin: 0 !important;
+  background-color: rgba(241, 237, 230, 0.7) !important;
+  border-left: 4px solid #e31837 !important;
+  border-radius: 4px !important;
+  padding: 12px 16px !important;
+  box-shadow: none !important;
+}
+
+.quick-answer-section .quick-answer-box p {
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Prevent stretched height in testimonials client review cards */
+.t-marquee-track {
+  align-items: flex-start !important;
+}
+
+.t-card.g-review-card {
+  height: auto !important;
+  min-height: 140px !important;
+  align-self: flex-start !important;
+}
+
