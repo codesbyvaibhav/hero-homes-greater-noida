@@ -515,3 +515,10 @@ table.table-domain-theme tbody td {
   align-self: flex-start !important;
 }
 
+/* Override the default nowrap setting on section titles to allow wrapping on long titles */
+.section-title {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
