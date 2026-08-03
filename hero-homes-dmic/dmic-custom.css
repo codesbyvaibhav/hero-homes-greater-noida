@@ -370,3 +370,97 @@ table.table-domain-theme tbody td {
   }
 }
 
+/* Quick Answer Box AEO / GEO Highlight Callout */
+.quick-answer-box {
+  background-color: rgba(241, 237, 230, 0.95) !important;
+  border-left: 4px solid #e31837 !important;
+  padding: 16px 20px !important;
+  margin: 18px 0 22px 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+  text-align: left !important;
+}
+
+.quick-answer-box p {
+  margin: 0 !important;
+  color: #2F2A27 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  font-family: var(--font-body, inherit) !important;
+}
+
+.quick-answer-box strong {
+  color: #e31837 !important;
+  font-weight: 700 !important;
+}
+
+.hero-desc-text {
+  color: #555555 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  margin-top: 15px !important;
+}
+
+/* Nearby Project Card Styles */
+.nearby-project-section {
+  padding: 15px 0 !important;
+  text-align: left !important;
+}
+
+.nearby-project-card {
+  background: #fdfcfb !important;
+  border: 1px solid rgba(47, 42, 39, 0.08) !important;
+  border-radius: var(--radius-large, 12px) !important;
+  padding: 24px !important;
+  margin-top: 15px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+  text-align: left !important;
+}
+
+.nearby-project-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-bottom: 12px !important;
+}
+
+.nearby-project-header h4 {
+  font-family: var(--font-display, inherit) !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #2F2A27 !important;
+  margin: 0 !important;
+}
+
+.nearby-status-badge {
+  background: #e31837 !important;
+  color: #ffffff !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  display: inline-block !important;
+}
+
+.nearby-desc {
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  color: #555555 !important;
+  margin-bottom: 18px !important;
+}
+
+.nearby-actions {
+  text-align: left !important;
+}
+
+.nearby-actions .btn {
+  padding: 8px 16px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+}
+
