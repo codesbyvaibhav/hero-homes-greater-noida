@@ -358,3 +358,15 @@ table.table-domain-theme tbody td {
   }
 }
 
+/* Force all gallery items on the DMIC page to use 16:9 aspect ratio */
+.gallery-section .gallery-item,
+.gallery-section .gallery-container.swipe-container .gallery-item {
+  aspect-ratio: 16 / 9 !important;
+}
+
+@media (max-width: 768px) {
+  .gallery-section .gallery-container.swipe-container .gallery-item {
+    flex: 0 0 300px !important; /* Adjusted slightly to look great in 16:9 on mobile swiping */
+  }
+}
+
