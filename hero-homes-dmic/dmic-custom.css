@@ -525,5 +525,11 @@ table.table-domain-theme tbody td {
 /* Push the floor plan blueprints section down to create breathing space below the overview table */
 .floorplan-tabs-container {
   margin-top: 90px !important;
+  gap: 24px !important; /* Reduce flex gap from 40px to 24px */
+}
+
+/* Reduce empty spacing between floorplan header text and tabs */
+.floorplan-tabs-container .section-header {
+  margin-bottom: 0 !important;
 }
 
