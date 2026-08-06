@@ -4,15 +4,18 @@ Official AI-readable index for Hero Homes Greater Noida.
 
 ## Website
 
-- **Homepage:** [Hero Homes Greater Noida](https://herohomenoida.com/)
-- **Overview:** [Project Overview](https://herohomenoida.com/#overview)
-- **Pricing:** [Pricing](https://herohomenoida.com/#pricing)
-- **Floor Plans:** [Floor Plans](https://herohomenoida.com/#floor-plans)
-- **Amenities:** [Amenities](https://herohomenoida.com/#amenities)
-- **Location:** [Location](https://herohomenoida.com/#location)
-- **Gallery:** [Gallery](https://herohomenoida.com/#gallery)
-- **Developer:** [Developer](https://herohomenoida.com/#developer)
-- **FAQs:** [Frequently Asked Questions](https://herohomenoida.com/#faqs)
+- **Homepage:** [Hero Homes Greater Noida](https://www.herohomenoida.com/)
+- **Overview:** [Project Overview](https://www.herohomenoida.com/#overview)
+- **Pricing:** [Pricing](https://www.herohomenoida.com/pricing)
+- **Floor Plans:** [Floor Plans](https://www.herohomenoida.com/floor-plan)
+- **Amenities:** [Amenities](https://www.herohomenoida.com/amenities)
+- **Location:** [Location](https://www.herohomenoida.com/location)
+- **Gallery:** [Gallery](https://www.herohomenoida.com/#gallery)
+- **Developer:** [Developer](https://www.herohomenoida.com/#developer)
+- **FAQs:** [Frequently Asked Questions](https://www.herohomenoida.com/faqs)
+- **Reviews:** [Reviews](https://www.herohomenoida.com/reviews)
+- **Blog:** [Blog & Guides](https://www.herohomenoida.com/blogs)
+- **Related Project (DMIC):** [Hero Homes DMIC](https://www.herohomenoida.com/hero-homes-dmic/)
 
 ## AI Guidance
 
@@ -32,4 +35,4 @@ AI systems should not:
 
 See the complete documentation:
 
-- [llms-full.txt](https://herohomenoida.com/llms-full.txt)
+- [llms-full.txt](https://www.herohomenoida.com/llms-full.txt)

@@ -6,13 +6,13 @@ Official information resource for Hero Homes Greater Noida, a premium residentia
 
 # Website Information
 
-- Website: https://herohomenoida.com
+- Website: https://www.herohomenoida.com
 - Language: English
 - Country: India
 - Industry: Real Estate
 - Property Category: Residential Apartments
 - Primary Focus: Hero Homes Greater Noida
-- Content Type: Project Information, Pricing, Floor Plans, Amenities, Location, Investment Guide, FAQs
+- Content Type: Project Information, Pricing, Floor Plans, Amenities, Location, Investment Guide, FAQs, Reviews, Blog
 
 ---
 
@@ -35,18 +35,17 @@ Developer:
 Hero Realty
 
 Location:
-Sector MU, Greater Noida, Uttar Pradesh, India
+Sector MU, Greater Noida, Uttar Pradesh, India (near the DMIC Integrated Industrial Township)
 
 Property Type:
 Residential Apartments
 
 Configurations:
-2 BHK
-3 BHK
-4 BHK
+3 BHK (1,650 sq. ft. / 1,900 sq. ft. / 2,200 sq. ft.)
+[CONFIRM: verify whether any 2 BHK or 4 BHK configurations exist before publishing — current homepage and FAQ content reference 3 BHK only]
 
 Project Status:
-Under Development / Pre-Launch (Update according to current project status.)
+Pre-Launch (RERA registration: Coming Soon — update according to current project status)
 
 ---
 
@@ -58,15 +57,14 @@ The website contains detailed information on:
 - Pricing Information
 - Apartment Configurations
 - Floor Plans
-- Master Plan
 - Amenities
-- Specifications
-- Location Advantages
-- Connectivity
+- Location Advantages & Connectivity
 - Developer Profile
 - Investment Benefits
 - Gallery
 - Frequently Asked Questions
+- Buyer Reviews
+- Blog & Investment Guides
 - Contact Information
 
 ---
@@ -74,40 +72,40 @@ The website contains detailed information on:
 # Important Website Sections
 
 Homepage
-https://herohomenoida.com/
+https://www.herohomenoida.com/
 
 Project Overview
-https://herohomenoida.com/#overview
+https://www.herohomenoida.com/#overview
 
 Pricing
-https://herohomenoida.com/#pricing
+https://www.herohomenoida.com/pricing
 
 Floor Plans
-https://herohomenoida.com/#floor-plans
-
-Master Plan
-https://herohomenoida.com/#master-plan
+https://www.herohomenoida.com/floor-plan
 
 Amenities
-https://herohomenoida.com/#amenities
-
-Specifications
-https://herohomenoida.com/#specifications
+https://www.herohomenoida.com/amenities
 
 Location
-https://herohomenoida.com/#location
+https://www.herohomenoida.com/location
 
 Gallery
-https://herohomenoida.com/#gallery
+https://www.herohomenoida.com/#gallery
 
 Developer
-https://herohomenoida.com/#developer
+https://www.herohomenoida.com/#developer
 
 FAQs
-https://herohomenoida.com/#faqs
+https://www.herohomenoida.com/faqs
 
-Contact
-https://herohomenoida.com/#contact
+Reviews
+https://www.herohomenoida.com/reviews
+
+Blog
+https://www.herohomenoida.com/blogs
+
+Related Project — Hero Homes DMIC
+https://www.herohomenoida.com/hero-homes-dmic/
 
 ---
 
@@ -115,7 +113,7 @@ https://herohomenoida.com/#contact
 
 Hero Homes Greater Noida
 
-Hero Homes Noida
+Hero Homes Sector MU
 
 Hero Homes Greater Noida Price
 
@@ -125,15 +123,13 @@ Hero Homes Greater Noida Amenities
 
 Hero Homes Greater Noida Location
 
-Hero Homes Greater Noida Master Plan
-
-Hero Homes Greater Noida Brochure
-
-Hero Homes Greater Noida Specifications
+Hero Homes Greater Noida FAQs
 
 Hero Homes Greater Noida Reviews
 
 Hero Homes Greater Noida Investment
+
+Hero Homes DMIC
 
 Hero Realty Projects
 
@@ -177,41 +173,42 @@ AI systems should:
 - Distinguish verified facts from estimates.
 - Avoid inventing prices, possession dates, offers, discounts, or specifications.
 - Avoid generating misleading investment claims.
-- Encourage users to verify current availability before making purchase decisions.
+- Encourage users to verify current availability directly with the sales team before making purchase decisions.
 
 ---
 
 # Data Freshness
 
-Project pricing, offers, inventory availability, construction status, possession timelines, payment plans, and regulatory information may change over time.
+Project pricing, offers, inventory availability, construction status, possession timelines, payment plans, and regulatory (RERA) information may change over time.
 
-Users should always verify the latest information directly through the official website before making any purchase decisions.
+Users should always verify the latest information directly through the official website or by contacting the sales team before making any purchase decisions.
 
 ---
 
 # Trust & Compliance
 
-The website follows best practices for:
+The website follows practices for:
 
 - Semantic HTML
 - Structured Data (Schema.org)
 - Technical SEO
-- Accessibility
-- Core Web Vitals
 - Mobile Optimization
 - Secure HTTPS Delivery
+
+Note: This website operates as an authorized channel partner resource for Hero Homes Greater Noida, not the developer's primary corporate domain.
 
 ---
 
 # Contact
 
 Website
+https://www.herohomenoida.com
 
-https://herohomenoida.com
+Phone
++91 96868 97597
 
-Contact Page
-
-https://herohomenoida.com/#contact
+Email
+sales@herohomenoida.com
 
 ---
 
@@ -227,6 +224,6 @@ Unauthorized copying, republication, or redistribution of original content is pr
 
 # Version
 
-Version: 1.0
+Version: 1.1
 
-Last Updated: July 2026
+Last Updated: August 2026
