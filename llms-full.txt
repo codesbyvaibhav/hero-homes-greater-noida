@@ -42,7 +42,6 @@ Residential Apartments
 
 Configurations:
 3 BHK (1,650 sq. ft. / 1,900 sq. ft. / 2,200 sq. ft.)
-[CONFIRM: verify whether any 2 BHK or 4 BHK configurations exist before publishing — current homepage and FAQ content reference 3 BHK only]
 
 Project Status:
 Pre-Launch (RERA registration: Coming Soon — update according to current project status)
