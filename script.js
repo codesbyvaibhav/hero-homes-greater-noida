@@ -271,24 +271,48 @@ window.addEventListener('click', (e) => {
 });
 
 // ==========================================
+// INTEGRATION CONFIGURATION
+// Configure your Google Sheets Webhook & Sell.Do API credentials below:
+// ==========================================
+const GOOGLE_SHEETS_WEBHOOK_URL = ''; // Paste your Google Apps Script Webhook URL here
+const SELLDO_API_URL = '';            // Paste your Sell.Do API or Webhook URL here (e.g. "https://app.sell.do/api/leads/create")
+const SELLDO_API_KEY = '';            // Paste your Sell.Do API / Form Key here (if applicable)
+
+// Helper: Extract UTM parameters & referrer
+function getUtmParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get('utm_source') || 'Direct',
+    utm_medium: params.get('utm_medium') || 'Website',
+    utm_campaign: params.get('utm_campaign') || 'Hero Homes Greater Noida',
+    gclid: params.get('gclid') || '',
+    referrer: document.referrer || ''
+  };
+}
+
+// ==========================================
 // FORM SUBMISSION & VALIDATION
 // ==========================================
 let isSubmitting = false;
 
 function handleFormSubmit(event, formName) {
-  event.preventDefault();
+  if (event && event.preventDefault) {
+    event.preventDefault();
+  }
   
   if (isSubmitting) return;
 
-  const form = event.target;
+  const form = event ? event.target : null;
+  if (!form) return;
+
   const formData = new FormData(form);
   
   // Rate Limit check via session storage
   if (sessionStorage.getItem('last_enquiry_submitted')) {
     const lastSub = parseInt(sessionStorage.getItem('last_enquiry_submitted'));
     const now = Date.now();
-    if (now - lastSub < 30000) { // 30 seconds rate-limit
-      alert('You have already submitted an enquiry recently. Our agent will call you shortly.');
+    if (now - lastSub < 15000) { // 15 seconds rate-limit
+      alert('You have already submitted an enquiry recently. Our sales advisor will call you shortly.');
       return;
     }
   }
@@ -296,21 +320,22 @@ function handleFormSubmit(event, formName) {
   // Honeypot anti-spam check
   const trapVal = formData.get('website_trap');
   if (trapVal && trapVal.trim() !== '') {
-    // Hidden honeypot field filled. Bot submission detected. Silently ignore.
     console.warn('Bot submission blocked via honeypot.');
     form.reset();
-    closePopup();
-    closeEnquiryModal();
+    if (typeof closePopup === 'function') closePopup();
+    if (typeof closeEnquiryModal === 'function') closeEnquiryModal();
     return;
   }
 
-  const name = formData.get('name');
-  const phone = formData.get('phone');
-  const email = formData.get('email') || 'N/A';
-  const config = formData.get('configuration') || 'All Sizes';
+  const name = (formData.get('name') || '').trim();
+  const phone = (formData.get('phone') || '').trim();
+  const email = (formData.get('email') || 'N/A').trim();
+  const config = (formData.get('configuration') || 'All Sizes').trim();
+  const formSource = formName || formData.get('source') || 'Website Form';
+  const utm = getUtmParams();
 
   // Basic validation rules
-  if (!name || name.trim().length < 3) {
+  if (!name || name.length < 3) {
     alert('Please enter a valid name (at least 3 characters).');
     return;
   }
@@ -322,21 +347,94 @@ function handleFormSubmit(event, formName) {
   }
 
   isSubmitting = true;
-  
-  // Simulated API call (CRM capture)
-  console.log(`[CRM Submission] Form: ${formName} | Name: ${name} | Phone: ${phone} | Email: ${email} | Config: ${config}`);
 
-  // Display success feedback
-  setTimeout(() => {
+  // Build complete lead payload object
+  const leadPayload = {
+    name: name,
+    phone: phone,
+    email: email,
+    configuration: config,
+    form_source: formSource,
+    page_url: window.location.href,
+    timestamp: new Date().toISOString(),
+    formatted_date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+    utm_source: utm.utm_source,
+    utm_medium: utm.utm_medium,
+    utm_campaign: utm.utm_campaign,
+    gclid: utm.gclid,
+    referrer: utm.referrer
+  };
+
+  // 1. FAILSAFE LOCAL BACKUP (Never lose a lead even if network drops)
+  try {
+    const existingLeads = JSON.parse(localStorage.getItem('hero_leads_backup') || '[]');
+    existingLeads.push(leadPayload);
+    localStorage.setItem('hero_leads_backup', JSON.stringify(existingLeads));
+  } catch (err) {
+    console.warn('Local backup storage error:', err);
+  }
+
+  console.log('[Lead Captured]', leadPayload);
+
+  // Dispatch promises array
+  const dispatchPromises = [];
+
+  // 2. DISPATCH TO GOOGLE SHEETS WEBHOOK (if configured)
+  if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.trim() !== '') {
+    dispatchPromises.push(
+      fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadPayload)
+      }).catch(err => console.error('Google Sheets dispatch error:', err))
+    );
+  }
+
+  // 3. DISPATCH TO SELL.DO CRM (if configured)
+  if (SELLDO_API_URL && SELLDO_API_URL.trim() !== '') {
+    const selldoBody = new URLSearchParams();
+    selldoBody.append('sell_do[form][lead][first_name]', name);
+    selldoBody.append('sell_do[form][lead][phone]', phone);
+    selldoBody.append('sell_do[form][lead][email]', email === 'N/A' ? '' : email);
+    selldoBody.append('sell_do[form][note][content]', `Source: ${formSource} | Config: ${config} | Page: ${window.location.pathname}`);
+    if (SELLDO_API_KEY) {
+      selldoBody.append('api_key', SELLDO_API_KEY);
+      selldoBody.append('form_key', SELLDO_API_KEY);
+    }
+    selldoBody.append('sell_do[campaign][srd]', utm.utm_source);
+
+    dispatchPromises.push(
+      fetch(SELLDO_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: selldoBody.toString()
+      }).catch(err => console.error('Sell.Do CRM dispatch error:', err))
+    );
+  }
+
+  // Complete submission feedback & redirect
+  const completeSubmission = () => {
     sessionStorage.setItem('last_enquiry_submitted', Date.now().toString());
     isSubmitting = false;
     form.reset();
-    closeEnquiryModal();
-    closePopup();
-    
-    // Redirect to thank you page
-    window.location.href = 'thankyou.html';
-  }, 1000);
+    if (typeof closeEnquiryModal === 'function') closeEnquiryModal();
+    if (typeof closePopup === 'function') closePopup();
+
+    // Determine correct thank you page path (handling subfolder blogs/)
+    const isBlog = window.location.pathname.includes('/blogs/');
+    const redirectUrl = isBlog ? '../thankyou.html' : 'thankyou.html';
+    window.location.href = redirectUrl;
+  };
+
+  if (dispatchPromises.length > 0) {
+    Promise.allSettled(dispatchPromises).finally(() => {
+      completeSubmission();
+    });
+  } else {
+    // If endpoints not yet configured, finish and redirect smoothly
+    setTimeout(completeSubmission, 400);
+  }
 }
 
 // ==========================================
