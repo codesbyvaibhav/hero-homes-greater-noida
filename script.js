@@ -351,15 +351,18 @@ function handleFormSubmit(event, formName) {
 
   isSubmitting = true;
 
-  // Build complete lead payload object
+  // Build complete lead payload object (Matching Google Apps Script & CRM schemas)
   const leadPayload = {
     name: name,
     phone: phone,
     email: email,
+    project: config && config !== 'All Sizes' ? `Hero Homes - ${config}` : 'Hero Homes Greater Noida',
+    message: `Configuration: ${config} | Form: ${formSource} | Page: ${window.location.pathname}`,
+    source: formSource,
     configuration: config,
     form_source: formSource,
     page_url: window.location.href,
-    timestamp: new Date().toISOString(),
+    timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
     formatted_date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
     utm_source: utm.utm_source,
     utm_medium: utm.utm_medium,
