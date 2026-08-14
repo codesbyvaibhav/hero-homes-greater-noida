@@ -272,11 +272,14 @@ window.addEventListener('click', (e) => {
 
 // ==========================================
 // INTEGRATION CONFIGURATION
-// Configure your Google Sheets Webhook & Sell.Do API credentials below:
+// Configure your Google Sheets Webhook, Sell.Do CRM, & Brevo Email API credentials below:
 // ==========================================
 const GOOGLE_SHEETS_WEBHOOK_URL = ''; // Paste your Google Apps Script Webhook URL here
-const SELLDO_API_URL = '';            // Paste your Sell.Do API or Webhook URL here (e.g. "https://app.sell.do/api/leads/create")
-const SELLDO_API_KEY = '';            // Paste your Sell.Do API / Form Key here (if applicable)
+const SELLDO_API_URL            = 'https://app.sell.do/api/leads/create'; // Sell.Do CRM endpoint
+const SELLDO_API_KEY            = ''; // Paste your Sell.Do API / Form Key here
+const SELLDO_SRD_CODE           = '6a4f77fe58f1e71b0c00dcde'; // Sell.Do SRD Code
+const BREVO_API_KEY             = ''; // Paste your Brevo (Sendinblue) API Key here
+const BREVO_NOTIFY_EMAIL        = ''; // Email address to receive lead notifications
 
 // Helper: Extract UTM parameters & referrer
 function getUtmParams() {
@@ -402,7 +405,7 @@ function handleFormSubmit(event, formName) {
       selldoBody.append('api_key', SELLDO_API_KEY);
       selldoBody.append('form_key', SELLDO_API_KEY);
     }
-    selldoBody.append('sell_do[campaign][srd]', utm.utm_source);
+    selldoBody.append('sell_do[campaign][srd]', SELLDO_SRD_CODE || utm.utm_source);
 
     dispatchPromises.push(
       fetch(SELLDO_API_URL, {
@@ -410,6 +413,37 @@ function handleFormSubmit(event, formName) {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: selldoBody.toString()
       }).catch(err => console.error('Sell.Do CRM dispatch error:', err))
+    );
+  }
+
+  // 4. DISPATCH TO BREVO (SENDINBLUE) EMAIL API (if configured)
+  if (BREVO_API_KEY && BREVO_API_KEY.trim() !== '' && BREVO_NOTIFY_EMAIL && BREVO_NOTIFY_EMAIL.trim() !== '') {
+    const brevoPayload = {
+      sender: { name: "Hero Homes Website", email: BREVO_NOTIFY_EMAIL },
+      to: [{ email: BREVO_NOTIFY_EMAIL }],
+      subject: `New Lead: ${name} - ${phone} (${config})`,
+      htmlContent: `
+        <h2>New Website Enquiry Received</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Configuration:</strong> ${config}</p>
+        <p><strong>Form Source:</strong> ${formSource}</p>
+        <p><strong>Page URL:</strong> ${window.location.href}</p>
+        <p><strong>Date & Time:</strong> ${leadPayload.formatted_date}</p>
+        <p><strong>UTM Source:</strong> ${utm.utm_source}</p>
+      `
+    };
+
+    dispatchPromises.push(
+      fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-key': BREVO_API_KEY
+        },
+        body: JSON.stringify(brevoPayload)
+      }).catch(err => console.error('Brevo Email API dispatch error:', err))
     );
   }
 
