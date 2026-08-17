@@ -420,21 +420,24 @@ function handleFormSubmit(event, formName) {
   }
 
   // 4. DISPATCH TO BREVO (SENDINBLUE) EMAIL API (if configured)
-  if (BREVO_API_KEY && BREVO_API_KEY.trim() !== '' && BREVO_NOTIFY_EMAIL && BREVO_NOTIFY_EMAIL.trim() !== '') {
+  if (BREVO_API_KEY && BREVO_API_KEY.trim() !== '') {
     const brevoPayload = {
-      sender: { name: "Hero Homes Website", email: BREVO_NOTIFY_EMAIL },
-      to: [{ email: BREVO_NOTIFY_EMAIL }],
-      subject: `New Lead: ${name} - ${phone} (${config})`,
+      sender: { name: "Hero Homes Website", email: BREVO_NOTIFY_EMAIL || "enquiry.homelynk@gmail.com" },
+      to: [{ email: BREVO_NOTIFY_EMAIL || "enquiry.homelynk@gmail.com" }],
+      subject: `New Lead: ${name} (${phone}) - ${config}`,
       htmlContent: `
-        <h2>New Website Enquiry Received</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Configuration:</strong> ${config}</p>
-        <p><strong>Form Source:</strong> ${formSource}</p>
-        <p><strong>Page URL:</strong> ${window.location.href}</p>
-        <p><strong>Date & Time:</strong> ${leadPayload.formatted_date}</p>
-        <p><strong>UTM Source:</strong> ${utm.utm_source}</p>
+        <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; max-width: 600px;">
+          <h2 style="color: #1a365d; margin-top: 0;">New Website Enquiry Received</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Name:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${name}</td></tr>
+            <tr><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Phone:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;"><a href="tel:${phone}">${phone}</a></td></tr>
+            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Email:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${email}</td></tr>
+            <tr><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Configuration:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${config}</td></tr>
+            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Form Source:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${formSource}</td></tr>
+            <tr><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Page URL:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${window.location.href}</td></tr>
+            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold;">Timestamp:</td><td style="padding: 10px;">${leadPayload.formatted_date}</td></tr>
+          </table>
+        </div>
       `
     };
 
@@ -442,11 +445,19 @@ function handleFormSubmit(event, formName) {
       fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'accept': 'application/json',
+          'content-type': 'application/json',
           'api-key': BREVO_API_KEY
         },
         body: JSON.stringify(brevoPayload)
-      }).catch(err => console.error('Brevo Email API dispatch error:', err))
+      })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(errData => console.error('[Brevo API Error]', errData));
+        }
+        return res.json().then(data => console.log('[Brevo API Success]', data));
+      })
+      .catch(err => console.error('Brevo Email API dispatch error:', err))
     );
   }
 
