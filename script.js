@@ -385,6 +385,21 @@ function handleFormSubmit(event, formName) {
   // Dispatch promises array
   const dispatchPromises = [];
 
+  // 1. DISPATCH TO SERVER-SIDE PHP HANDLER (Brevo Email + Sell.Do + Google Sheets)
+  const isBlog = window.location.pathname.includes('/blogs/');
+  const phpEndpoint = isBlog ? '../lead-handler.php' : 'lead-handler.php';
+  
+  dispatchPromises.push(
+    fetch(phpEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(leadPayload)
+    })
+    .then(res => res.json())
+    .then(data => console.log('[PHP Lead Handler Result]', data))
+    .catch(err => console.warn('[PHP Lead Handler Notice - direct endpoints running]', err))
+  );
+
   // 2. DISPATCH TO GOOGLE SHEETS WEBHOOK (if configured)
   if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.trim() !== '') {
     dispatchPromises.push(
