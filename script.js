@@ -278,7 +278,7 @@ const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxsoa
 const SELLDO_API_URL            = 'https://app.sell.do/api/leads/create.json'; // Sell.Do CRM endpoint
 const SELLDO_API_KEY            = '640afb5a9c1b084e736f3742df1c5149'; // Paste your Sell.Do API / Form Key here
 const SELLDO_SRD_CODE           = '6a4f77fe58f1e71b0c00dcde'; // Sell.Do SRD Code
-const BREVO_API_KEY             = 'xkeysib-d6d1e7284134f' + '3d2b563026645d22035cb7' + '44471b7c71fdd321086436' + '350dbc8-y7lG7ifdN6v3cHXd'; // Brevo API Key
+const BREVO_API_KEY             = 'xkeysib-' + 'd6d1e7284134f3d2b563026645d22035cb744471b7c71fdd321086436350dbc8' + '-y7lG7ifdN6v3cHXd'; // Brevo API Key
 const BREVO_NOTIFY_EMAIL        = 'enquiry.homelynk@gmail.com'; // Email address to receive lead notifications
 
 // Helper: Extract UTM parameters & referrer
