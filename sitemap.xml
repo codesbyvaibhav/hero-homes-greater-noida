@@ -114,11 +114,24 @@
     </url>
 
     <url>
-        <loc>https://www.herohomenoida.com/blogs/https://www.herohomenoida.com/blogs/hero-homes-sector-mu-explained</loc>
+        <loc>https://www.herohomenoida.com/blogs/hero-homes-sector-mu-explained</loc>
         <lastmod>2026-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://www.herohomenoida.com/privacy-policy</loc>
+        <lastmod>2026-08-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://www.herohomenoida.com/disclaimer</loc>
+        <lastmod>2026-08-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
 
 </urlset>
