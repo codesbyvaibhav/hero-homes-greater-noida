@@ -121,6 +121,13 @@
     </url>
 
     <url>
+        <loc>https://www.herohomenoida.com/blogs/hero-homes-vs-prestige-150-comparison</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
         <loc>https://www.herohomenoida.com/privacy-policy</loc>
         <lastmod>2026-08-17</lastmod>
         <changefreq>monthly</changefreq>
@@ -133,5 +140,4 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
-
 </urlset>
