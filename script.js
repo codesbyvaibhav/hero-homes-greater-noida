@@ -274,12 +274,12 @@ window.addEventListener('click', (e) => {
 // INTEGRATION CONFIGURATION
 // Configure your Google Sheets Webhook, Sell.Do CRM, & Brevo Email API credentials below:
 // ==========================================
-const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxsoa6l9UDoC7blD-SXigfwKrO5d7y7Heshg6f5_fqseA58-o4lmAk1LcBAsdstXzHQvQ/exec'; // Paste your Google Apps Script Webhook URL here
-const SELLDO_API_URL            = 'https://app.sell.do/api/leads/create.json'; // Sell.Do CRM endpoint
-const SELLDO_API_KEY            = '640afb5a9c1b084e736f3742df1c5149'; // Paste your Sell.Do API / Form Key here
+// const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxsoa6l9UDoC7blD-SXigfwKrO5d7y7Heshg6f5_fqseA58-o4lmAk1LcBAsdstXzHQvQ/exec'; // Paste your Google Apps Script Webhook URL here
+// const SELLDO_API_URL            = 'https://app.sell.do/api/leads/create.json'; // Sell.Do CRM endpoint
+// const SELLDO_API_KEY            = '640afb5a9c1b084e736f3742df1c5149'; // Paste your Sell.Do API / Form Key here
 const SELLDO_SRD_CODE           = '6a4f77fe58f1e71b0c00dcde'; // Sell.Do SRD Code
-const BREVO_API_KEY             = 'xkeysib-' + 'd6d1e7284134f3d2b563026645d22035cb744471b7c71fdd321086436350dbc8' + '-y7lG7ifdN6v3cHXd'; // Brevo API Key
-const BREVO_NOTIFY_EMAIL        = 'enquiry.homelynk@gmail.com'; // Email address to receive lead notifications
+// const BREVO_API_KEY             = 'xkeysib-' + 'd6d1e7284134f3d2b563026645d22035cb744471b7c71fdd321086436350dbc8' + '-y7lG7ifdN6v3cHXd'; // Brevo API Key
+// const BREVO_NOTIFY_EMAIL        = 'enquiry.homelynk@gmail.com'; // Email address to receive lead notifications
 
 // Helper: Extract UTM parameters & referrer
 function getUtmParams() {
@@ -400,81 +400,39 @@ function handleFormSubmit(event, formName) {
     .catch(err => console.warn('[PHP Lead Handler Notice - direct endpoints running]', err))
   );
 
-  // 2. DISPATCH TO GOOGLE SHEETS WEBHOOK (if configured)
-  if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.trim() !== '') {
-    dispatchPromises.push(
-      fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(leadPayload)
-      }).catch(err => console.error('Google Sheets dispatch error:', err))
-    );
-  }
+  // // 2. DISPATCH TO GOOGLE SHEETS WEBHOOK (if configured)
+  // if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.trim() !== '') {
+  //   dispatchPromises.push(
+  //     fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+  //       method: 'POST',
+  //       mode: 'no-cors',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(leadPayload)
+  //     }).catch(err => console.error('Google Sheets dispatch error:', err))
+  //   );
+  // }
 
   // 3. DISPATCH TO SELL.DO CRM (if configured)
-  if (SELLDO_API_URL && SELLDO_API_URL.trim() !== '') {
-    const selldoBody = new URLSearchParams();
-    selldoBody.append('sell_do[form][lead][first_name]', name);
-    selldoBody.append('sell_do[form][lead][phone]', phone);
-    selldoBody.append('sell_do[form][lead][email]', email === 'N/A' ? '' : email);
-    selldoBody.append('sell_do[form][note][content]', `Source: ${formSource} | Config: ${config} | Page: ${window.location.pathname}`);
-    if (SELLDO_API_KEY) {
-      selldoBody.append('api_key', SELLDO_API_KEY);
-      selldoBody.append('form_key', SELLDO_API_KEY);
-    }
-    selldoBody.append('sell_do[campaign][srd]', SELLDO_SRD_CODE || utm.utm_source);
+  // if (SELLDO_API_URL && SELLDO_API_URL.trim() !== '') {
+  //   const selldoBody = new URLSearchParams();
+  //   selldoBody.append('sell_do[form][lead][first_name]', name);
+  //   selldoBody.append('sell_do[form][lead][phone]', phone);
+  //   selldoBody.append('sell_do[form][lead][email]', email === 'N/A' ? '' : email);
+  //   selldoBody.append('sell_do[form][note][content]', `Source: ${formSource} | Config: ${config} | Page: ${window.location.pathname}`);
+  //   if (SELLDO_API_KEY) {
+  //     selldoBody.append('api_key', SELLDO_API_KEY);
+  //     selldoBody.append('form_key', SELLDO_API_KEY);
+  //   }
+  //   selldoBody.append('sell_do[campaign][srd]', SELLDO_SRD_CODE || utm.utm_source);
 
-    dispatchPromises.push(
-      fetch(SELLDO_API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: selldoBody.toString()
-      }).catch(err => console.error('Sell.Do CRM dispatch error:', err))
-    );
-  }
-
-  // 4. DISPATCH TO BREVO (SENDINBLUE) EMAIL API (if configured)
-  if (BREVO_API_KEY && BREVO_API_KEY.trim() !== '') {
-    const brevoPayload = {
-      sender: { name: "Hero Homes Website", email: BREVO_NOTIFY_EMAIL || "enquiry.homelynk@gmail.com" },
-      to: [{ email: BREVO_NOTIFY_EMAIL || "enquiry.homelynk@gmail.com" }],
-      subject: `New Lead: ${name} (${phone}) - ${config}`,
-      htmlContent: `
-        <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; max-width: 600px;">
-          <h2 style="color: #1a365d; margin-top: 0;">New Website Enquiry Received</h2>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Name:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${name}</td></tr>
-            <tr><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Phone:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;"><a href="tel:${phone}">${phone}</a></td></tr>
-            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Email:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${email}</td></tr>
-            <tr><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Configuration:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${config}</td></tr>
-            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Form Source:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${formSource}</td></tr>
-            <tr><td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #e2e8f0;">Page URL:</td><td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${window.location.href}</td></tr>
-            <tr style="background-color: #f8fafc;"><td style="padding: 10px; font-weight: bold;">Timestamp:</td><td style="padding: 10px;">${leadPayload.formatted_date}</td></tr>
-          </table>
-        </div>
-      `
-    };
-
-    dispatchPromises.push(
-      fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'content-type': 'application/json',
-          'api-key': BREVO_API_KEY
-        },
-        body: JSON.stringify(brevoPayload)
-      })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(errData => console.error('[Brevo API Error]', errData));
-        }
-        return res.json().then(data => console.log('[Brevo API Success]', data));
-      })
-      .catch(err => console.error('Brevo Email API dispatch error:', err))
-    );
-  }
+  //   dispatchPromises.push(
+  //     fetch(SELLDO_API_URL, {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //       body: selldoBody.toString()
+  //     }).catch(err => console.error('Sell.Do CRM dispatch error:', err))
+  //   );
+  // }
 
   // Complete submission feedback & redirect
   const completeSubmission = () => {
