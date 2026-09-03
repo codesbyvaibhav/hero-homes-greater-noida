@@ -99,10 +99,39 @@ if (!empty($BREVO_API_KEY)) {
         'api-key: ' . $BREVO_API_KEY
     ]);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    // $brevoRes = curl_exec($ch);
+    // $brevoCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    // curl_close($ch);
+    // $brevoSuccess = ($brevoCode >= 200 && $brevoCode < 300);'
+
     $brevoRes = curl_exec($ch);
     $brevoCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ($brevoRes === false) {
+        $brevoError = curl_error($ch);
+        curl_close($ch);
+
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Brevo cURL error',
+            'brevo_http_code' => $brevoCode,
+            'brevo_error' => $brevoError
+        ]);
+        exit();
+    }
+
     curl_close($ch);
+
     $brevoSuccess = ($brevoCode >= 200 && $brevoCode < 300);
+
+    // TEMPORARY DEBUGGING
+    echo json_encode([
+        'status' => 'debug',
+        'brevo_http_code' => $brevoCode,
+        'brevo_response' => json_decode($brevoRes, true),
+        'brevo_raw_response' => $brevoRes
+    ]);
+    exit();
 }
 
 // ------------------------------------------------------------
