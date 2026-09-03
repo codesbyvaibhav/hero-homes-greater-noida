@@ -106,32 +106,22 @@ if (!empty($BREVO_API_KEY)) {
 
     $brevoRes = curl_exec($ch);
     $brevoCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    if ($brevoRes === false) {
-        $brevoError = curl_error($ch);
-        curl_close($ch);
-
-        echo json_encode([
-            'status' => 'error',
-            'message' => 'Brevo cURL error',
-            'brevo_http_code' => $brevoCode,
-            'brevo_error' => $brevoError
-        ]);
-        exit();
-    }
+    $brevoError = curl_error($ch);
 
     curl_close($ch);
 
     $brevoSuccess = ($brevoCode >= 200 && $brevoCode < 300);
 
-    // TEMPORARY DEBUGGING
-    echo json_encode([
-        'status' => 'debug',
-        'brevo_http_code' => $brevoCode,
-        'brevo_response' => json_decode($brevoRes, true),
-        'brevo_raw_response' => $brevoRes
-    ]);
-    exit();
+    // TEMPORARY: save Brevo result to a file
+    file_put_contents(
+        __DIR__ . '/brevo-debug.txt',
+        date('Y-m-d H:i:s') .
+        "\nHTTP CODE: " . $brevoCode .
+        "\nCURL ERROR: " . $brevoError .
+        "\nBREVO RESPONSE: " . $brevoRes .
+        "\n------------------------\n",
+        FILE_APPEND
+    );
 }
 
 // ------------------------------------------------------------
