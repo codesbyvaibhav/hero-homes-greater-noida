@@ -733,6 +733,62 @@
         </p>
   </footer>
 
+  <!-- Lead Enquiry Modal -->
+  <div id="enquiry-modal" class="modal-overlay">
+    <div class="modal-card glass-card">
+      <button class="modal-close" onclick="closeEnquiryModal()" aria-label="Close modal">&times;</button>
+      <div class="modal-body text-center">
+        <h3 id="modal-title">Enquire About Hero Homes</h3>
+        <p id="modal-desc" class="form-desc">Provide your contact details below to get instant brochures and layout details.</p>
+        
+        <form id="modal-lead-form" class="enquiry-form mt-medium" onsubmit="handleFormSubmit(event, 'Modal Enquiry Form')">
+          <input type="hidden" id="modal-source" name="source" value="General Modal">
+          
+          <div class="form-group">
+            <label for="modal-name" class="sr-only">Your Name</label>
+            <input type="text" id="modal-name" name="name" placeholder="Full Name" required minlength="3">
+          </div>
+          
+          <div class="form-group">
+            <label for="modal-phone" class="sr-only">Phone Number</label>
+            <input type="tel" id="modal-phone" name="phone" placeholder="10-Digit Mobile Number" required pattern="[0-9]{10}">
+          </div>
+
+          <div class="form-group">
+            <label for="modal-email" class="sr-only">Email Address</label>
+            <input type="email" id="modal-email" name="email" placeholder="Email Address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="modal-config" class="sr-only">Preferred Size</label>
+            <select id="modal-config" name="configuration">
+              <option value="All Sizes" selected>Looking for All Sizes (3 BHK Options)</option>
+              <option value="3 BHK + 2T">3 BHK + 2 Toilets (1650 sq ft - ₹1.89 Cr*)</option>
+              <option value="3 BHK + 3T">3 BHK + 3 Toilets (1800 sq ft - ₹2.07 Cr*)</option>
+              <option value="3 BHK + Servant">3 BHK + Servant Room (2000 sq ft - ₹2.30 Cr*)</option>
+            </select>
+          </div>
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="website_trap" class="hidden-trap" style="display:none !important">
+
+          <!-- Math CAPTCHA Security -->
+          <div class="form-captcha-group" style="display: none !important;">
+            <span class="captcha-label">Security: <span class="math-question">...</span> = </span>
+            <input type="number" name="captcha_ans" class="captcha-input" placeholder="?">
+            <input type="hidden" name="captcha_n1" value="">
+            <input type="hidden" name="captcha_n2" value="">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            <i data-lucide="send"></i> Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Sticky Bottom CTA Bar -->
   <div class="sticky-bottom-cta-bar">
     <button class="btn-cta-bar btn-enquire" onclick="openEnquiryModal('Sticky Bar Enquire Now')">
@@ -749,10 +805,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
-    function openEnquiryModal(title) {
-      document.getElementById('modal-title').innerText = title || 'Request Information';
-      document.getElementById('enquiry-modal').style.display = 'flex';
-    }
+    
 
     // Blog FAQ Accordion
     document.addEventListener('DOMContentLoaded', function() {
