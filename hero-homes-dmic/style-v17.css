@@ -3241,3 +3241,37 @@ input[type="range"]::-webkit-slider-thumb:hover {
     white-space: nowrap;
   }
 }
+
+
+/* Left-aligned input field labels & headings */
+.form-group {
+  text-align: left !important;
+}
+
+.form-group label,
+.form-group .form-label,
+.form-group .form-label-bold,
+.enquiry-form label,
+.enquiry-form .form-label,
+.enquiry-form .form-label-bold,
+.modal-card label,
+.modal-body label {
+  display: block !important;
+  text-align: left !important;
+  margin-bottom: 6px !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  color: var(--color-primary, #0c192b) !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  clip: auto !important;
+  clip-path: none !important;
+  overflow: visible !important;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  text-align: left !important;
+}
