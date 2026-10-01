@@ -194,20 +194,41 @@
   const modalDesc = document.getElementById('modal-desc');
   const modalSourceInput = document.getElementById('modal-source');
 
-  function openEnquiryModal(source) {
+  function openEnquiryModal(source, preferredConfig) {
     if (!enquiryModal) return;
     
-    modalSourceInput.value = source;
+    modalSourceInput.value = source || 'General Modal';
     
-    if (source.includes('2 BHK')) {
-      modalTitle.innerText = 'Enquire: Premium 2 BHK';
-      modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Premium 2 BHK.';
-    } else if (source.includes('3 BHK')) {
-      modalTitle.innerText = 'Enquire: Spacious 3 BHK';
-      modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Spacious 3 BHK.';
-    } else if (source.includes('4 BHK')) {
-      modalTitle.innerText = 'Enquire: Elite 4 BHK';
-      modalDesc.innerText = 'Request floor plan blueprint details & exact pricing sheet for Elite 4 BHK.';
+    // Auto-select corresponding layout option in modal dropdown
+    const configSelect = document.getElementById('modal-config');
+    if (configSelect) {
+      let selectedVal = preferredConfig;
+      if (!selectedVal && source) {
+        if (source.includes('2T') || source.includes('2 Toilet') || source.includes('1650')) {
+          selectedVal = '3 BHK + 2T';
+        } else if (source.includes('3T') || source.includes('3 Toilet') || source.includes('1800') || source.includes('1900')) {
+          selectedVal = '3 BHK + 3T';
+        } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200')) {
+          selectedVal = '3 BHK + Servant';
+        }
+      }
+
+      if (selectedVal && Array.from(configSelect.options).some(opt => opt.value === selectedVal)) {
+        configSelect.value = selectedVal;
+      } else {
+        configSelect.value = 'All Sizes';
+      }
+    }
+
+    if (source.includes('2T') || source.includes('1650')) {
+      modalTitle.innerText = 'Enquire: 3 BHK + 2 Toilets (1650 sq ft)';
+      modalDesc.innerText = 'Request floor plan blueprint details & exact cost sheet for 3 BHK + 2 Toilets.';
+    } else if (source.includes('3T') || source.includes('1800') || source.includes('1900')) {
+      modalTitle.innerText = 'Enquire: 3 BHK + 3 Toilets (1800 sq ft)';
+      modalDesc.innerText = 'Request floor plan blueprint details & exact cost sheet for 3 BHK + 3 Toilets.';
+    } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200')) {
+      modalTitle.innerText = 'Enquire: 3 BHK + Servant Room (2000 sq ft)';
+      modalDesc.innerText = 'Request floor plan blueprint details & exact cost sheet for 3 BHK + Servant Room.';
     } else {
       modalTitle.innerText = 'Enquire Now';
       modalDesc.innerText = 'Fill the form below to receive brochure, pricing lists, and site visit schedules.';
@@ -502,15 +523,34 @@
   let currentSheetStep = 1;
   let cachedSheetHeight = 0;
 
-  function openBottomSheetForm(source) {
+  function openBottomSheetForm(source, preferredConfig) {
     const backdrop = document.getElementById('mobile-bottom-sheet-backdrop');
     const sheet = document.getElementById('mobile-bottom-sheet');
     const form = document.getElementById('mobile-sheet-lead-form');
     
     if (form) {
-      form.reset();
       const sourceInput = form.querySelector('input[name="source"]');
-      if (sourceInput) sourceInput.value = source;
+      if (sourceInput) sourceInput.value = source || 'Mobile Bottom Sheet Form';
+
+      const configSelect = document.getElementById('sheet-config');
+      if (configSelect) {
+        let selectedVal = preferredConfig;
+        if (!selectedVal && source) {
+          if (source.includes('2T') || source.includes('2 Toilet') || source.includes('1650')) {
+            selectedVal = '3 BHK + 2T';
+          } else if (source.includes('3T') || source.includes('3 Toilet') || source.includes('1800') || source.includes('1900')) {
+            selectedVal = '3 BHK + 3T';
+          } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200')) {
+            selectedVal = '3 BHK + Servant';
+          }
+        }
+
+        if (selectedVal && Array.from(configSelect.options).some(opt => opt.value === selectedVal)) {
+          configSelect.value = selectedVal;
+        } else {
+          configSelect.value = 'All Sizes';
+        }
+      }
     }
     
     currentSheetStep = 1;
