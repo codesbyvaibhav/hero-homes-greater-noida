@@ -3201,3 +3201,34 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .form-group textarea {
   text-align: left !important;
 }
+
+
+/* FINAL UNBEATABLE OVERRIDE: LEFT-ALIGN ALL FORM INPUT LABELS AND HEADINGS */
+.text-center .form-group,
+.text-center .form-group label,
+.text-center .form-group .form-label,
+.text-center .form-group .form-label-bold,
+.modal-body .form-group,
+.modal-body .form-group label,
+.modal-body .form-group .form-label,
+.modal-body .form-group .form-label-bold,
+.modal-card .form-group,
+.modal-card .form-group label,
+.modal-card .form-group .form-label,
+.modal-card .form-group .form-label-bold,
+.enquiry-form .form-group,
+.enquiry-form .form-group label,
+.enquiry-form .form-group .form-label,
+.enquiry-form .form-group .form-label-bold,
+.form-group,
+.form-group label,
+.form-group .form-label,
+.form-group .form-label-bold,
+label.form-label,
+label.form-label-bold {
+    text-align: left !important;
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
