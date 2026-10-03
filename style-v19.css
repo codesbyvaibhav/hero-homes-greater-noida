@@ -443,13 +443,13 @@ img {
   display: inline-block;
   background-color: var(--color-primary);
   color: var(--color-text-light);
-  font-weight: 700;
-  font-size: 0.7rem;
+  font-weight: 600;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  padding: 4px 14px;
+  padding: 3px 10px;
   border-radius: 50px;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+  margin-bottom: 14px;
 }
 
 .hero-title {
@@ -2257,10 +2257,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     min-height: auto !important;
   }
   .offer-tag {
-    font-size: 0.62rem !important;
-    padding: 3px 10px !important;
-    margin-bottom: 14px !important;
-    letter-spacing: 0.4px !important;
+    font-size: 0.55rem !important;
+    padding: 2px 8px !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 0.3px !important;
   }
   .section-padding {
     padding: 48px 0;
