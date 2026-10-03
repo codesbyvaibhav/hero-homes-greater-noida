@@ -406,8 +406,9 @@
     const dispatchPromises = [];
 
     // 2. DISPATCH TO SERVER PHP HANDLER (lead-handler.php)
-    const isBlog = window.location.pathname.includes('/blogs/');
-    const phpEndpoint = isBlog ? '../lead-handler.php' : 'lead-handler.php';
+    const pathName = window.location.pathname;
+    const isSubFolder = pathName.includes('/blogs/') || pathName.includes('/hero-leafsong-retreat/') || pathName.includes('/hero-homes-dmic/');
+    const phpEndpoint = isSubFolder ? '../lead-handler.php' : 'lead-handler.php';
     
     dispatchPromises.push(
       fetch(phpEndpoint, {
@@ -504,7 +505,7 @@
       if (typeof closeEnquiryModal === 'function') closeEnquiryModal();
       if (typeof closePopup === 'function') closePopup();
 
-      const redirectUrl = isBlog ? '../thankyou.html' : 'thankyou.html';
+      const redirectUrl = pathName.includes('/blogs/') ? '../thankyou.html' : 'thankyou.html';
       window.location.href = redirectUrl;
     };
 
