@@ -444,12 +444,12 @@ img {
   background-color: var(--color-primary);
   color: var(--color-text-light);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  padding: 6px 16px;
+  padding: 4px 14px;
   border-radius: 50px;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
 }
 
 .hero-title {
@@ -2257,10 +2257,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     min-height: auto !important;
   }
   .offer-tag {
-    font-size: 0.7rem !important;
-    padding: 4px 12px !important;
-    margin-bottom: 16px !important;
-    letter-spacing: 0.5px !important;
+    font-size: 0.62rem !important;
+    padding: 3px 10px !important;
+    margin-bottom: 14px !important;
+    letter-spacing: 0.4px !important;
   }
   .section-padding {
     padding: 48px 0;
