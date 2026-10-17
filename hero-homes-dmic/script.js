@@ -263,13 +263,13 @@ function openEnquiryModal(source) {
   
   if (source.includes('3 BHK + 2T') || source.includes('2 BHK')) {
     modalTitle.innerText = 'Enquire: 3 BHK + 2 Toilets';
-    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 2 Toilets (1650 sq ft).';
+    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 2 Toilets (1,656 - 1,674 sq ft).';
   } else if (source.includes('3 BHK + 3T') || source.includes('3 BHK')) {
     modalTitle.innerText = 'Enquire: 3 BHK + 3 Toilets';
-    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 3 Toilets (1900 sq ft).';
+    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 3 Toilets (1,937.52 sq ft).';
   } else if (source.includes('3 BHK + Servant') || source.includes('4 BHK')) {
     modalTitle.innerText = 'Enquire: 3 BHK + Servant';
-    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + Servant Room (2200 sq ft).';
+    modalDesc.innerText = 'Request layout blueprint details & pricing list for 3 BHK + 3T + Servant Room (2,289.34 sq ft).';
   } else {
     modalTitle.innerText = 'Enquire Now';
     modalDesc.innerText = 'Fill the form below to receive brochure, pricing lists, and site visit schedules.';

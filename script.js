@@ -204,11 +204,11 @@
     if (configSelect) {
       let selectedVal = preferredConfig;
       if (!selectedVal && source) {
-        if (source.includes('2T') || source.includes('2 Toilet') || source.includes('1650')) {
+        if (source.includes('2T') || source.includes('2 Toilet') || source.includes('1650') || source.includes('1656')) {
           selectedVal = '3 BHK + 2T';
-        } else if (source.includes('3T') || source.includes('3 Toilet') || source.includes('1800') || source.includes('1900')) {
+        } else if (source.includes('3T') || source.includes('3 Toilet') || source.includes('1800') || source.includes('1900') || source.includes('1937')) {
           selectedVal = '3 BHK + 3T';
-        } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200')) {
+        } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200') || source.includes('2289')) {
           selectedVal = '3 BHK + Servant';
         }
       }
@@ -220,15 +220,15 @@
       }
     }
 
-    if (source.includes('2T') || source.includes('1650')) {
-      modalTitle.innerText = 'Enquire: 3 BHK + 2 Toilets (1650 sq ft)';
+    if (source.includes('2T') || source.includes('1650') || source.includes('1656')) {
+      modalTitle.innerText = 'Enquire: 3 BHK + 2 Toilets (1,656 - 1,674 sq ft)';
       modalDesc.innerText = 'Request floor plan blueprint details & exact cost sheet for 3 BHK + 2 Toilets.';
-    } else if (source.includes('3T') || source.includes('1800') || source.includes('1900')) {
-      modalTitle.innerText = 'Enquire: 3 BHK + 3 Toilets (1800 sq ft)';
+    } else if (source.includes('3T') || source.includes('1800') || source.includes('1900') || source.includes('1937')) {
+      modalTitle.innerText = 'Enquire: 3 BHK + 3 Toilets (1,937.52 sq ft)';
       modalDesc.innerText = 'Request floor plan blueprint details & exact cost sheet for 3 BHK + 3 Toilets.';
-    } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200')) {
-      modalTitle.innerText = 'Enquire: 3 BHK + Servant Room (2000 sq ft)';
-      modalDesc.innerText = 'Request floor plan blueprint details & exact cost sheet for 3 BHK + Servant Room.';
+    } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200') || source.includes('2289')) {
+      modalTitle.innerText = 'Enquire: 3 BHK + 3T + Servant Room (2,289.34 sq ft)';
+      modalDesc.innerText = 'Request floor plan blueprint details & exact cost sheet for 3 BHK + 3T + Servant Room.';
     } else {
       modalTitle.innerText = 'Enquire Now';
       modalDesc.innerText = 'Fill the form below to receive brochure, pricing lists, and site visit schedules.';
@@ -537,11 +537,11 @@
       if (configSelect) {
         let selectedVal = preferredConfig;
         if (!selectedVal && source) {
-          if (source.includes('2T') || source.includes('2 Toilet') || source.includes('1650')) {
+          if (source.includes('2T') || source.includes('2 Toilet') || source.includes('1650') || source.includes('1656')) {
             selectedVal = '3 BHK + 2T';
-          } else if (source.includes('3T') || source.includes('3 Toilet') || source.includes('1800') || source.includes('1900')) {
+          } else if (source.includes('3T') || source.includes('3 Toilet') || source.includes('1800') || source.includes('1900') || source.includes('1937')) {
             selectedVal = '3 BHK + 3T';
-          } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200')) {
+          } else if (source.includes('Servant') || source.includes('2000') || source.includes('2200') || source.includes('2289')) {
             selectedVal = '3 BHK + Servant';
           }
         }
