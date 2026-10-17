@@ -430,13 +430,14 @@ img {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  gap: 40px;
   align-items: center;
 }
 
 .hero-content {
   color: var(--color-text-dark);
+  min-width: 0;
 }
 
 .offer-tag {
@@ -511,10 +512,10 @@ img {
 
 /* Quick Form Widget */
 .hero-form-widget {
-  padding: 20px !important;
-  max-width: 340px;
-  width: 100%;
-  min-height:520px;
+  padding: 24px 22px !important;
+  max-width: 380px !important;
+  width: 100% !important;
+  min-height: 500px;
   margin-left: auto;
 }
 .hero-form-widget h2 {
@@ -1072,6 +1073,9 @@ img {
    PRICING CARD SECTION
    ========================================== */
 .pricing-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
   align-items: stretch;
 }
 .pricing-card {
@@ -1079,7 +1083,8 @@ img {
   background-color: var(--color-bg-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
-  padding: 40px;
+  padding: 30px 16px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1098,11 +1103,11 @@ img {
 
 .card-badge {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 0.75rem;
+  top: 16px;
+  right: 16px;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 50px;
   text-transform: uppercase;
 }
@@ -1120,36 +1125,46 @@ img {
 }
 
 .pricing-header h3 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
   margin-bottom: 4px;
 }
 .config-desc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .price-box {
   background-color: var(--color-bg-light);
-  padding: 16px 20px;
+  padding: 12px 10px;
   border-radius: var(--radius-medium);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 .starting-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
   color: var(--color-text-muted);
 }
 .main-price {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 1.85rem;
+  font-weight: 800;
   color: var(--color-primary);
-  line-height: 1.1;
+  line-height: 1.15;
   display: block;
-  margin: 4px 0;
+  margin: 2px 0;
   white-space: nowrap;
+}
+.price-onwards {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-accent);
 }
 .emi-estimate {
   font-size: 0.8rem;
@@ -1160,15 +1175,22 @@ img {
 .pricing-details ul {
   list-style: none;
   text-align: left;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 .pricing-details li {
-  padding: 10px 0;
+  padding: 8px 0;
   border-bottom: 1px solid rgba(15, 23, 42, 0.05);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  word-break: break-word;
 }
 .pricing-details li strong {
   font-weight: 600;
+}
+
+.pricing-actions .btn {
+  padding: 10px 14px;
+  font-size: 0.85rem;
 }
 
 .urgency-stamp {
@@ -1176,10 +1198,10 @@ img {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--color-text-muted);
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .pricing-details-text,
@@ -2184,14 +2206,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
     background: linear-gradient(180deg, rgba(245, 241, 232, 0.96) 0%, rgba(245, 241, 232, 0.88) 60%, rgba(245, 241, 232, 0.65) 100%) !important;
   }
   .main-price {
-    font-size: 1.8rem !important;
+    font-size: 1.75rem !important;
   }
   .hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   .hero-form-widget {
-    max-width: 340px !important;
+    max-width: 380px !important;
     margin: 0 auto !important;
   }
   .amenity-grid {
