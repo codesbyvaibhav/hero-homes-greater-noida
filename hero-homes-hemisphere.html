@@ -227,9 +227,63 @@
         -webkit-overflow-scrolling: touch !important;
       }
       .gallery-container.swipe-container .gallery-item {
-        flex: 0 0 260px !important;
-        aspect-ratio: 4 / 3 !important;
-      }
+    /* Dedicated Hemisphere FAQ Accordion Styling */
+    #hemisphere-faq-list .faq-item {
+      background-color: #ffffff;
+      border-radius: var(--radius-medium, 12px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      margin-bottom: 14px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.25s ease;
+    }
+    #hemisphere-faq-list .faq-item:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+    #hemisphere-faq-list .faq-question {
+      width: 100%;
+      padding: 18px 22px;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary, #0c192b);
+      cursor: pointer;
+      gap: 12px;
+    }
+    #hemisphere-faq-list .faq-question:hover {
+      color: var(--color-accent, #e31837);
+    }
+    #hemisphere-faq-list .faq-icon {
+      transition: transform 0.25s ease, color 0.25s ease;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+    }
+    #hemisphere-faq-list .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--color-accent, #e31837);
+    }
+    #hemisphere-faq-list .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 22px;
+      transition: max-height 0.35s ease-out, padding 0.3s ease-out;
+    }
+    #hemisphere-faq-list .faq-item.active .faq-answer {
+      padding: 0 22px 20px 22px;
+      max-height: 500px !important;
+    }
+    #hemisphere-faq-list .faq-answer p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #475569;
     }
   </style>
 
@@ -647,7 +701,6 @@
                   </div>
                 </div>
                 <div class="pricing-details">
-                  <p style="font-size: 0.88rem; color: #475569; margin-bottom: 12px;">Smartly planned and beautifully proportioned, the golf suites suit young professionals, couples and investors who want a low-maintenance home inside a premium township. Large windows and well-placed balconies bring the greens into your living space.</p>
                   <ul>
                     <li><strong>Super Built-up Area:</strong> 1,100 – 1,250 sq. ft.</li>
                     <li><strong>Bedrooms:</strong> 2 BHK Layout</li>
@@ -674,7 +727,6 @@
                   </div>
                 </div>
                 <div class="pricing-details">
-                  <p style="font-size: 0.88rem; color: #475569; margin-bottom: 12px;">Our most sought-after configuration. These residences balance generous living areas, three well-sized bedrooms and wide balconies with golf course views. They are made for families who want space, light and a community to grow into.</p>
                   <ul>
                     <li><strong>Super Built-up Area:</strong> 1,650 – 2,100 sq. ft.</li>
                     <li><strong>Bedrooms:</strong> 3 BHK + Toilets</li>
@@ -700,7 +752,6 @@
                   </div>
                 </div>
                 <div class="pricing-details">
-                  <p style="font-size: 0.88rem; color: #475569; margin-bottom: 12px;">Designed for larger families and those who like to entertain, the four bedroom residences offer expansive layouts, premium specifications and panoramic wrap-around balconies that frame the fairways.</p>
                   <ul>
                     <li><strong>Super Built-up Area:</strong> 2,500 – 3,200 sq. ft.</li>
                     <li><strong>Bedrooms:</strong> 4 BHK + Family Lounge</li>
@@ -726,7 +777,6 @@
                   </div>
                 </div>
                 <div class="pricing-details">
-                  <p style="font-size: 0.88rem; color: #475569; margin-bottom: 12px;">The crown of the township. Each villa offers private living across multiple levels, a personal garden and a plunge pool, with the freedom and privacy of a standalone home within a secure, gated community.</p>
                   <ul>
                     <li><strong>Super Built-up Area:</strong> 3,500 – 5,500 sq. ft.</li>
                     <li><strong>Bedrooms:</strong> 4/5 BHK Private Villa</li>
@@ -1314,7 +1364,7 @@
               <div class="header-line"></div>
             </div>
 
-            <div class="faq-container max-width-800 mt-medium" id="faq-accordion-list">
+            <div class="faq-container max-width-800 mt-medium" id="hemisphere-faq-list">
               
               <!-- FAQ 1 -->
               <div class="faq-item active">
@@ -1847,26 +1897,52 @@
       }
     }
 
-    // Subpage Accordion Click Handler
-    document.addEventListener('DOMContentLoaded', function() {
-      const faqItems = document.querySelectorAll('#faq-accordion-list .faq-item');
-      faqItems.forEach(item => {
-        const btn = item.querySelector('.faq-question');
-        if (btn) {
-          btn.addEventListener('click', function() {
-            const isActive = item.classList.contains('active');
-            faqItems.forEach(other => {
-              other.classList.remove('active');
-              const otherBtn = other.querySelector('.faq-question');
-              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-            });
-            if (!isActive) {
-              item.classList.add('active');
-              btn.setAttribute('aria-expanded', 'true');
+    // Dedicated Hemisphere FAQ Accordion Toggle Handler
+    function toggleHemisphereFaq(questionBtn) {
+      if (!questionBtn) return;
+      const item = questionBtn.closest('.faq-item');
+      if (!item) return;
+
+      const container = item.closest('#hemisphere-faq-list');
+      const isCurrentlyActive = item.classList.contains('active');
+
+      if (container) {
+        container.querySelectorAll('.faq-item').forEach(function(otherItem) {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            const otherBtn = otherItem.querySelector('.faq-question');
+            if (otherBtn) {
+              otherBtn.setAttribute('aria-expanded', 'false');
             }
-          });
+          }
+        });
+      }
+
+      if (isCurrentlyActive) {
+        item.classList.remove('active');
+        questionBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        questionBtn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      const questionBtn = e.target.closest('#hemisphere-faq-list .faq-question');
+      if (questionBtn) {
+        e.preventDefault();
+        toggleHemisphereFaq(questionBtn);
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const questionBtn = e.target.closest('#hemisphere-faq-list .faq-question');
+        if (questionBtn) {
+          e.preventDefault();
+          toggleHemisphereFaq(questionBtn);
         }
-      });
+      }
     });
   </script>
 
