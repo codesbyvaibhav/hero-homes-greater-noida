@@ -76,8 +76,32 @@
   <link rel="stylesheet" href="style-v19.css">
 
   <style>
-    .hero-title { font-size: clamp(1.45rem, 5.5vw, 2.85rem) !important; }
-    .hero-title .highlight { white-space: nowrap; }
+    .hero-title {
+      line-height: 1.15 !important;
+      margin-bottom: 20px !important;
+    }
+    .hero-title .hero-brand-title {
+      font-size: clamp(1.35rem, 4.2vw, 2.25rem) !important;
+      font-weight: 700 !important;
+      display: inline-block !important;
+      white-space: nowrap !important;
+    }
+    .hero-title .hero-project-title {
+      font-size: clamp(2.4rem, 8vw, 4.5rem) !important;
+      font-weight: 900 !important;
+      display: inline-block !important;
+      letter-spacing: -0.5px !important;
+      line-height: 1.05 !important;
+      white-space: nowrap !important;
+      margin: 4px 0 !important;
+    }
+    .hero-title .hero-location-title {
+      font-size: clamp(1.2rem, 3.8vw, 2.05rem) !important;
+      font-weight: 700 !important;
+      display: inline-block !important;
+      color: var(--color-primary, #0c192b) !important;
+      white-space: nowrap !important;
+    }
     .specs-table th { width: 38%; font-weight: 700; color: var(--color-primary, #0c192b); }
     .zoning-grid {
       display: grid;
@@ -491,7 +515,7 @@
     <div class="container hero-container">
       <div class="hero-content">
         <div class="offer-tag">Golf-Side Residences | Sector 27, Greater Noida</div>
-        <h1 class="hero-title"><span class="highlight">Hero Homes</span><br><span class="highlight">The Hemisphere</span><br>Sector 27, Greater Noida</h1>
+        <h1 class="hero-title"><span class="highlight hero-brand-title">Hero Homes</span><br><span class="highlight hero-project-title">The Hemisphere</span><br><span class="hero-location-title">Sector 27, Greater Noida</span></h1>
         <p class="hero-subtitle">A premier 100+ acre golf-centric township right beside Jaypee Greens and Pari Chowk. Luxury golf suites, apartments, and independent villas surrounded by 80% open landscaped greens.</p>
         
         <div class="hero-usp-grid">
